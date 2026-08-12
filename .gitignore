@@ -6,3 +6,4 @@ __pycache__/
 var/
 
 work/
+*.egg-info/
