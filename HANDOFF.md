@@ -5,6 +5,26 @@ und Claude (Architektur-/Sicherheits-/Datenqualitäts-Review). Bitte vor jeder
 Änderung zuerst diese Datei lesen und nach Abschluss eines Abschnitts hier
 aktualisieren. Nicht gleichzeitig an derselben Datei arbeiten.
 
+## Status (maschinenlesbar für die Automatisierung)
+
+**Nächster Bearbeiter:** Codex
+
+Regeln für beide Loops (lokaler Codex-Loop und Claudes geplante
+Cloud-Aufgabe):
+
+1. `git pull` (bzw. frisch klonen).
+2. Diese Zeile lesen. Steht dort nicht der eigene Name, nichts tun und
+   beenden (der andere ist dran oder es ist pausiert).
+3. Steht `PAUSE` dort, nichts tun und beenden — der Mensch hat die
+   Automatisierung angehalten.
+4. Sonst: die unter "Nächste Aufgabe" im letzten Abschnitt beschriebene
+   Arbeit erledigen, Tests laufen lassen, Ergebnis in einem neuen
+   `## <Datum> – <Bearbeiter>`-Abschnitt dokumentieren (Format wie unten),
+   diese Zeile auf den jeweils anderen Namen setzen, committen und pushen.
+
+Zum Anhalten der Automatisierung diese Zeile manuell auf `PAUSE` setzen und
+committen.
+
 ## 2026-08-12 – Claude: Bestandsaufnahme + erstes Sicherheits-/Limit-Review
 
 **Bearbeiter:** Claude (Review + Korrekturen)
@@ -145,56 +165,12 @@ bitte `check` mit echten Paper-Keys ausführen und `account.cash` sowie
 
 ### Nächste Aufgabe (Vorschlag)
 
-Codex: `git init` + Erstcommit, danach Beginn des echten
+Update: Git-Repo wurde inzwischen von Claude lokal initialisiert (3 Commits,
+siehe `git log`). Der GitHub-Remote wird vom Menschen eingerichtet.
+
+Codex: Sobald der Remote steht, `git pull`, dann Beginn des echten
 Veröffentlichungstag-Backtests auf Basis von
 `work/senate-stock-watcher-data`. Bitte in einem neuen Abschnitt hier
 eintragen, welche Dateien dafür angefasst werden, bevor mit der Arbeit
-begonnen wird.
-
-## 2026-08-12 – Codex: Sicherheitsreview von Claudes Abschnitt
-
-**Bearbeiter:** Codex
-**Status:** Implementierung abgeschlossen; wartet auf Claude-Code-Review. Claude Code ist nicht aktiv (`claude auth status` meldet weiterhin nicht angemeldet)
-
-### Verifizierter Ausgangsstand
-
-- Claudes 21 Tests bestehen unverändert.
-- Bytecode-Prüfung besteht mit einem temporären, erlaubten Cache-Pfad.
-- Lokaler JSON-Dry-Run bleibt leer und sendet keine Order; SQLite zeigt eine Baseline-Meldung.
-
-### Abgegrenzter Codex-Abschnitt
-
-Codex bearbeitet ausschließlich:
-
-- `src/senator_copytrader/config.py`
-- `src/senator_copytrader/models.py`
-- `src/senator_copytrader/engine.py`
-- `src/senator_copytrader/broker.py`
-- zugehörige Tests und Beispielkonfigurationen/Dokumentation
-
-Ziele dieses Abschnitts:
-
-1. den weiterhin festen `max_orders_per_run`-Signaldeckel vollständig entfernen;
-2. Personen-, Ticker- und Assettyp-Normalisierung sicher machen, insbesondere fehlende/unbekannte Assettypen niemals implizit als Aktie zulassen;
-3. vor jeder Paper-Order ausdrücklich ein aktives Alpaca-Asset der Klasse `us_equity` verlangen.
-
-SQLite-Entscheidungsaudit und Backtest bleiben getrennte Folgeabschnitte.
-
-### Umgesetzte Korrekturen
-
-- `max_orders_per_run` vollständig aus Laufzeitmodell, Planung und Beispielkonfigurationen entfernt. Auch 75 passende Signale werden nicht abgeschnitten; ausschließlich Geld-, Positions-, Portfolio- und Cash-Limits begrenzen Käufe.
-- Personenvergleich normalisiert Groß-/Kleinschreibung, Akzente und Satzzeichen; Ticker normalisieren unter anderem Dollar-Präfixe und die verbreitete Klassen-Notation `BRK/B` zu `BRK.B`.
-- Assettypen werden konservativ auf `stock`, `etf` oder `unsupported` normalisiert. Fehlende oder unbekannte Typen werden nie mehr implizit als Aktie behandelt; unzulässige Konfigurationswerte werden abgewiesen.
-- Kauf und Verkauf prüfen vor jedem Alpaca-Orderpfad `class=us_equity`, `status=active` und `tradable=true`; Käufe verlangen zusätzlich Teilorderfähigkeit.
-- README und Beispielkonfigurationen an den tatsächlichen Stand angeglichen.
-
-### Testergebnisse
-
-- `PYTHONPATH=src python3 -m unittest discover -s tests -v`: 27/27 bestanden.
-- Bytecode-Prüfung mit temporärem Cache: bestanden.
-- Lokaler JSON-Dry-Run: keine geplante Aktion, keine Order; SQLite weiterhin eine Baseline-Meldung.
-- Statische Endpunkt-/Schlüsselprüfung: einziger Alpaca-Broker-Endpunkt bleibt `https://paper-api.alpaca.markets`; Schlüssel werden nur aus Umgebungsvariablen gelesen.
-
-### Übergabe an Claude Code
-
-Claude Code soll diesen abgegrenzten Abschnitt prüfen und ausschließlich `HANDOFF.md` ergänzen. Fokus: konservative Normalisierung, Alpaca-Assetfelder, vollständige Entfernung des Signaldeckels und neue Tests. Danach Rückgabe an Codex für das SQLite-Entscheidungsaudit. Vorher muss die lokale Claude-Anmeldung vollständig abgeschlossen werden.
+begonnen wird. Am Ende des Abschnitts **"Nächster Bearbeiter:" auf `Claude`
+setzen**, damit die automatisierte Review-Runde greift.
