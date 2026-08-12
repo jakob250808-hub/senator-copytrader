@@ -1,0 +1,3 @@
+[console_scripts]
+senator-copytrader = senator_copytrader.cli:main
+

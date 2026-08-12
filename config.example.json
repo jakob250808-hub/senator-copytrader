@@ -1,0 +1,21 @@
+{
+  "source": {
+    "provider": "quiver",
+    "endpoint": "https://api.quiverquant.com/beta/live/congresstrading",
+    "chamber": "Senate",
+    "politicians": ["Gary Peters"],
+    "max_report_age_days": 7
+  },
+  "strategy": {
+    "buy_notional_usd": 1000.0,
+    "sell_policy": "close_position",
+    "allowed_ticker_types": ["Stock", "ETF"],
+    "require_market_open": true,
+    "max_position_usd": 3000.0,
+    "max_portfolio_usd": 20000.0,
+    "max_daily_notional_usd": 5000.0
+  },
+  "storage": {
+    "database": "var/state.sqlite3"
+  }
+}

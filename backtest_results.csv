@@ -1,0 +1,11 @@
+senator,trades,buys,sells,late_filings,scored_buys,weighted_excess_vs_spy_pct,data_note
+Thomas H Tuberville,1499,587,912,278,455,-35.0,stocks scored
+Sheldon Whitehouse,1025,533,466,250,409,499.7,stocks scored; extreme long-term outlier
+Shelley M Capito,746,365,370,157,336,-68.4,stocks scored
+Susan M Collins,603,262,336,196,156,-224.0,stocks scored
+Markwayne Mullin,559,364,195,98,300,9.2,stocks scored
+John Boozman,434,226,208,22,211,-11.9,stocks scored
+David H McCormick,359,279,80,1,25,-51.5,only a small subset priceable
+Rick Scott,352,231,118,45,0,,mostly municipal bonds; no scored stock buys
+Ron L Wyden,303,228,74,52,170,251.5,stocks scored; extreme long-term outlier
+Jerry Moran,281,131,149,107,112,-5.0,stocks scored

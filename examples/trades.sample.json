@@ -1,0 +1,25 @@
+[
+  {
+    "Representative": "Gary Peters",
+    "ReportDate": "2026-08-07",
+    "TransactionDate": "2026-07-23",
+    "Ticker": "O",
+    "Transaction": "Purchase",
+    "Range": "$1,001 - $15,000",
+    "House": "Senate",
+    "Amount": "1001.0",
+    "Party": "Democrat",
+    "TickerType": "Stock"
+  },
+  {
+    "Representative": "Example Senator",
+    "ReportDate": "2026-08-08",
+    "TransactionDate": "2026-08-01",
+    "Ticker": "MSFT",
+    "Transaction": "Sale (Full)",
+    "Range": "$1,001 - $15,000",
+    "House": "Senate",
+    "TickerType": "Stock"
+  }
+]
+
