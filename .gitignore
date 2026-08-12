@@ -7,3 +7,4 @@ var/
 
 work/
 *.egg-info/
+.git_locks_to_delete/
