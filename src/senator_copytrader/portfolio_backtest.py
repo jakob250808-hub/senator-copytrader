@@ -66,6 +66,8 @@ class PortfolioSignal:
 class _Position:
     shares: float = 0.0
     paid_notional_usd: float = 0.0
+    entry_value_usd: float = 0.0
+    opened_on: Optional[date] = None
 
 
 def _resolve_kadoa_name(source_name: str, politicians: Sequence[str]) -> Optional[str]:
@@ -180,6 +182,9 @@ def run_portfolio_backtest(
     max_portfolio_usd: float = 20_000.0,
     max_daily_notional_usd: float = 5_000.0,
     cost_per_side: float = 0.001,
+    stop_loss_pct: Optional[float] = None,
+    take_profit_pct: Optional[float] = None,
+    max_holding_days: Optional[int] = None,
 ) -> Tuple[Mapping[str, object], Sequence[Mapping[str, object]]]:
     """Simulate the current bot rules from disclosure date through ``end``."""
 
@@ -211,6 +216,7 @@ def run_portfolio_backtest(
     daily_invested: List[float] = []
     total_buy_notional = 0.0
     total_sale_proceeds = 0.0
+    strategy_exit_rows: List[Dict[str, object]] = []
 
     def position_value(ticker: str, day: date, at_open: bool = False) -> float:
         position = positions[ticker]
@@ -225,12 +231,76 @@ def run_portfolio_backtest(
 
     for current_day in trading_days:
         daily_spent = 0.0
+        exited_tickers_today = set()
+
+        # Deterministische Exit-Prüfung am adjustierten Tages-Open, bevor neue
+        # Senatorensignale verarbeitet werden. Tageskurse erlauben keine
+        # ehrliche Intraday-Simulation; deshalb wird kein Hoch/Tief verwendet.
+        if (
+            stop_loss_pct is not None
+            or take_profit_pct is not None
+            or max_holding_days is not None
+        ):
+            for ticker in sorted(tuple(positions)):
+                position = positions[ticker]
+                series = price_series.get(ticker)
+                point = series.prices.get(current_day) if series else None
+                if point is None or position.shares <= 0 or position.opened_on is None:
+                    continue
+                avg_entry_price = position.entry_value_usd / position.shares
+                return_pct = (point.adjusted_open / avg_entry_price - 1.0) * 100.0
+                holding_days = max(0, (current_day - position.opened_on).days)
+                exit_reason = ""
+                if stop_loss_pct is not None and return_pct <= -stop_loss_pct:
+                    exit_reason = "stop_loss"
+                elif take_profit_pct is not None and return_pct >= take_profit_pct:
+                    exit_reason = "take_profit"
+                elif (
+                    max_holding_days is not None
+                    and holding_days >= max_holding_days
+                ):
+                    exit_reason = "max_holding_days"
+                if not exit_reason:
+                    continue
+
+                position = positions.pop(ticker)
+                proceeds = (
+                    position.shares * point.adjusted_open * (1.0 - cost_per_side)
+                )
+                cash += proceeds
+                total_sale_proceeds += proceeds
+                exited_tickers_today.add(ticker)
+                exit_row = {
+                    field: "" for field in PORTFOLIO_RESULT_FIELDS
+                }
+                exit_row.update(
+                    event_id="strategy-exit-{}-{}".format(
+                        current_day.isoformat(), ticker
+                    ),
+                    senator="Strategy",
+                    execution_date=current_day.isoformat(),
+                    action="risk_exit",
+                    ticker=ticker,
+                    asset_type=series.instrument_type,
+                    status="executed",
+                    reason=exit_reason,
+                    execution_price=f"{point.adjusted_open:.6f}",
+                    notional_usd=f"{proceeds:.2f}",
+                    shares=f"{-position.shares:.8f}",
+                    cash_after_usd=f"{cash:.2f}",
+                )
+                strategy_exit_rows.append(exit_row)
+
         for signal in scheduled.get(current_day, []):
             row = results[signal.event_id]
             row["execution_date"] = current_day.isoformat()
 
             if signal.action == "sell" and signal.ticker not in positions:
                 row.update(status="skipped", reason="no_position")
+                continue
+
+            if signal.action == "buy" and signal.ticker in exited_tickers_today:
+                row.update(status="skipped", reason="same_day_strategy_exit")
                 continue
 
             series = price_series.get(signal.ticker)
@@ -291,8 +361,11 @@ def run_portfolio_backtest(
 
             shares = buy_notional_usd * (1.0 - cost_per_side) / execution_price
             position = positions.setdefault(signal.ticker, _Position())
+            if position.opened_on is None:
+                position.opened_on = current_day
             position.shares += shares
             position.paid_notional_usd += buy_notional_usd
+            position.entry_value_usd += shares * execution_price
             cash -= buy_notional_usd
             daily_spent += buy_notional_usd
             total_buy_notional += buy_notional_usd
@@ -327,7 +400,9 @@ def run_portfolio_backtest(
         starting_cash_usd - risk_budget + risk_budget * spy_multiplier
     )
 
-    ordered_rows = tuple(results[signal.event_id] for signal in signals)
+    ordered_rows = tuple(results[signal.event_id] for signal in signals) + tuple(
+        strategy_exit_rows
+    )
     status_counts = Counter(str(row["status"]) for row in ordered_rows)
     reason_counts = Counter(str(row["reason"]) for row in ordered_rows)
     executed_buys_by_senator = Counter(
@@ -371,7 +446,11 @@ def run_portfolio_backtest(
             risk_matched_spy_value / starting_cash_usd - 1.0
         )
         * 100.0,
-        "signal_count": len(ordered_rows),
+        "signal_count": len(signals),
+        "strategy_exit_count": len(strategy_exit_rows),
+        "strategy_exit_counts": dict(
+            sorted(Counter(str(row["reason"]) for row in strategy_exit_rows).items())
+        ),
         "status_counts": dict(sorted(status_counts.items())),
         "reason_counts": dict(sorted(reason_counts.items())),
         "executed_buys_by_senator": dict(executed_buys_by_senator.most_common()),

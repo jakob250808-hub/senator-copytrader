@@ -89,6 +89,9 @@ def main() -> int:
         max_position_usd=strategy.max_position_usd,
         max_portfolio_usd=strategy.max_portfolio_usd,
         max_daily_notional_usd=strategy.max_daily_notional_usd,
+        stop_loss_pct=strategy.stop_loss_pct,
+        take_profit_pct=strategy.take_profit_pct,
+        max_holding_days=strategy.max_holding_days,
     )
     summary["order_sensitivity"] = summarize_order_sensitivity(
         signals,
@@ -101,6 +104,9 @@ def main() -> int:
         max_position_usd=strategy.max_position_usd,
         max_portfolio_usd=strategy.max_portfolio_usd,
         max_daily_notional_usd=strategy.max_daily_notional_usd,
+        stop_loss_pct=strategy.stop_loss_pct,
+        take_profit_pct=strategy.take_profit_pct,
+        max_holding_days=strategy.max_holding_days,
     )
     write_portfolio_results(args.output, rows)
     rendered_summary = json.dumps(summary, indent=2, sort_keys=True)

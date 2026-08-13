@@ -4,7 +4,12 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from senator_copytrader.broker import AccountSnapshot, BrokerResult, PaperBroker
+from senator_copytrader.broker import (
+    AccountSnapshot,
+    BrokerResult,
+    OpenPosition,
+    PaperBroker,
+)
 from senator_copytrader.config import (
     AppConfig,
     SourceConfig,
@@ -26,11 +31,20 @@ class FakeSource(TradeSource):
 
 
 class FakeBroker(PaperBroker):
-    def __init__(self, cash=100_000.0, position_values=None):
+    def __init__(
+        self,
+        cash=100_000.0,
+        position_values=None,
+        open_positions=None,
+        pending_closes=None,
+    ):
         self.buys = []
         self.closes = []
         self.cash = cash
         self.position_values = dict(position_values or {})
+        self.open_positions = dict(open_positions or {})
+        self.pending_closes = set(pending_closes or set())
+        self.get_open_positions_calls = 0
 
     def validate(self):
         return "PAPER123"
@@ -46,6 +60,13 @@ class FakeBroker(PaperBroker):
             position_values=dict(self.position_values),
         )
 
+    def get_open_positions(self):
+        self.get_open_positions_calls += 1
+        return dict(self.open_positions)
+
+    def has_pending_close_order(self, symbol):
+        return symbol in self.pending_closes
+
     def buy_notional(self, symbol, notional_usd, client_order_id):
         self.buys.append((symbol, notional_usd, client_order_id))
         # Wie beim echten Alpaca-Paperkonto wirkt sich ein ausgefuehrter Kauf
@@ -56,8 +77,11 @@ class FakeBroker(PaperBroker):
 
     def close_position(self, symbol):
         self.closes.append(symbol)
+        if symbol not in self.position_values:
+            return BrokerResult("skipped", "no position")
         self.position_values.pop(symbol, None)
-        return BrokerResult("skipped", "no position")
+        self.open_positions.pop(symbol, None)
+        return BrokerResult("submitted", "closed", "close-order")
 
 
 def make_trade(ticker="O", action="Purchase", report_date="2026-08-11"):
@@ -83,6 +107,9 @@ def make_config(db_path, **overrides):
         max_position_usd=1_000.0,
         max_portfolio_usd=5_000.0,
         max_daily_notional_usd=1_000.0,
+        stop_loss_pct=None,
+        take_profit_pct=None,
+        max_holding_days=None,
     )
     strategy_kwargs.update(overrides)
     return AppConfig(
@@ -96,6 +123,18 @@ def make_config(db_path, **overrides):
         ),
         strategy=StrategyConfig(**strategy_kwargs),
         storage=StorageConfig(database=str(db_path)),
+    )
+
+
+def seed_bot_position(store, ticker, opened_on):
+    trade = make_trade(ticker=ticker, report_date=opened_on.isoformat())
+    store.record(
+        trade,
+        "submitted",
+        broker_order_id="seed-buy",
+        details="seed",
+        notional_usd=1_000.0,
+        processed_on=opened_on,
     )
 
 
@@ -345,6 +384,179 @@ class EngineTests(unittest.TestCase):
 
         with self.assertRaises(SafetyError):
             changed.execute(today=date(2026, 8, 12))
+        store.close()
+
+    def test_stop_loss_closes_bot_owned_position(self):
+        store = StateStore(str(self.tmp_path / "state.db"))
+        seed_bot_position(store, "AAPL", date(2026, 8, 1))
+        broker = FakeBroker(
+            position_values={"AAPL": 900.0},
+            open_positions={
+                "AAPL": OpenPosition("AAPL", 900.0, 100.0, 91.0, -9.0)
+            },
+        )
+        engine = CopyEngine(
+            make_config(self.tmp_path / "state.db", stop_loss_pct=8.0),
+            FakeSource([]),
+            store,
+            broker,
+        )
+        engine.bootstrap()
+
+        result = engine.execute(today=date(2026, 8, 12))[0]
+
+        self.assertEqual(result.status, "submitted")
+        self.assertIn("Stop-Loss ausgelöst", result.message)
+        self.assertEqual(broker.closes, ["AAPL"])
+        event = store.connection.execute(
+            "SELECT action, exit_reason, details FROM events WHERE event_id = ?",
+            (result.event_id,),
+        ).fetchone()
+        self.assertEqual(event["action"], "risk_exit")
+        self.assertEqual(event["exit_reason"], "stop_loss")
+        self.assertIn("-9.0000 %", event["details"])
+        store.close()
+
+    def test_take_profit_closes_bot_owned_position(self):
+        store = StateStore(str(self.tmp_path / "state.db"))
+        seed_bot_position(store, "MSFT", date(2026, 7, 1))
+        broker = FakeBroker(
+            position_values={"MSFT": 1_250.0},
+            open_positions={
+                "MSFT": OpenPosition("MSFT", 1_250.0, 100.0, 125.0, 25.0)
+            },
+        )
+        engine = CopyEngine(
+            make_config(self.tmp_path / "state.db", take_profit_pct=20.0),
+            FakeSource([]),
+            store,
+            broker,
+        )
+        engine.bootstrap()
+
+        result = engine.execute(today=date(2026, 8, 12))[0]
+
+        self.assertEqual(result.status, "submitted")
+        self.assertIn("Take-Profit ausgelöst", result.message)
+        self.assertEqual(broker.closes, ["MSFT"])
+        store.close()
+
+    def test_max_holding_days_uses_local_history(self):
+        store = StateStore(str(self.tmp_path / "state.db"))
+        seed_bot_position(store, "NVDA", date(2026, 6, 1))
+        broker = FakeBroker(
+            position_values={"NVDA": 1_000.0},
+            open_positions={
+                "NVDA": OpenPosition("NVDA", 1_000.0, None, None, None)
+            },
+        )
+        engine = CopyEngine(
+            make_config(self.tmp_path / "state.db", max_holding_days=60),
+            FakeSource([]),
+            store,
+            broker,
+        )
+        engine.bootstrap()
+
+        result = engine.execute(today=date(2026, 8, 12))[0]
+
+        self.assertEqual(result.status, "submitted")
+        self.assertIn("Maximale Haltefrist erreicht", result.message)
+        self.assertIn("72 Kalendertage", result.message)
+        store.close()
+
+    def test_disabled_exit_fields_preserve_existing_behavior(self):
+        store = StateStore(str(self.tmp_path / "state.db"))
+        seed_bot_position(store, "AAPL", date(2025, 1, 1))
+        broker = FakeBroker(
+            position_values={"AAPL": 100.0},
+            open_positions={
+                "AAPL": OpenPosition("AAPL", 100.0, 100.0, 10.0, -90.0)
+            },
+        )
+        engine = CopyEngine(
+            make_config(self.tmp_path / "state.db"), FakeSource([]), store, broker
+        )
+        engine.bootstrap()
+
+        self.assertEqual(engine.execute(today=date(2026, 8, 12)), [])
+        self.assertEqual(broker.get_open_positions_calls, 0)
+        self.assertEqual(broker.closes, [])
+        store.close()
+
+    def test_exit_rules_ignore_positions_without_local_bot_buy(self):
+        store = StateStore(str(self.tmp_path / "state.db"))
+        broker = FakeBroker(
+            position_values={"MANUAL": 100.0},
+            open_positions={
+                "MANUAL": OpenPosition("MANUAL", 100.0, 100.0, 10.0, -90.0)
+            },
+        )
+        engine = CopyEngine(
+            make_config(self.tmp_path / "state.db", stop_loss_pct=8.0),
+            FakeSource([]),
+            store,
+            broker,
+        )
+        engine.bootstrap()
+
+        self.assertEqual(engine.execute(today=date(2026, 8, 12)), [])
+        self.assertEqual(broker.closes, [])
+        store.close()
+
+    def test_exit_blocks_immediate_reentry_from_same_run(self):
+        source = FakeSource([])
+        store = StateStore(str(self.tmp_path / "state.db"))
+        seed_bot_position(store, "AAPL", date(2026, 8, 1))
+        broker = FakeBroker(
+            position_values={"AAPL": 900.0},
+            open_positions={
+                "AAPL": OpenPosition("AAPL", 900.0, 100.0, 90.0, -10.0)
+            },
+        )
+        engine = CopyEngine(
+            make_config(self.tmp_path / "state.db", stop_loss_pct=8.0),
+            source,
+            store,
+            broker,
+        )
+        engine.bootstrap()
+        source.trades.append(make_trade(ticker="AAPL", report_date="2026-08-12"))
+
+        results = engine.execute(today=date(2026, 8, 12))
+
+        self.assertEqual([item.action for item in results], ["close_position", "buy"])
+        self.assertEqual(results[1].status, "skipped")
+        self.assertIn("kein sofortiger Wiedereinstieg", results[1].message)
+        self.assertEqual(broker.buys, [])
+        store.close()
+
+    def test_strategy_exit_preview_never_sends_or_records_order(self):
+        store = StateStore(str(self.tmp_path / "state.db"))
+        seed_bot_position(store, "AAPL", date(2026, 8, 1))
+        broker = FakeBroker(
+            position_values={"AAPL": 900.0},
+            open_positions={
+                "AAPL": OpenPosition("AAPL", 900.0, 100.0, 90.0, -10.0)
+            },
+        )
+        engine = CopyEngine(
+            make_config(self.tmp_path / "state.db", stop_loss_pct=8.0),
+            FakeSource([]),
+            store,
+            broker,
+        )
+
+        preview = engine.preview_strategy_exits(today=date(2026, 8, 12))
+
+        self.assertEqual(preview[0].status, "planned")
+        self.assertIn("Vorschau", preview[0].message)
+        self.assertEqual(broker.closes, [])
+        self.assertIsNone(
+            store.connection.execute(
+                "SELECT 1 FROM events WHERE action = 'risk_exit'"
+            ).fetchone()
+        )
         store.close()
 
 

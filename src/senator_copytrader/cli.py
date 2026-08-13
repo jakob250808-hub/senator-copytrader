@@ -73,6 +73,7 @@ def main(argv: Sequence[str] = None) -> int:
 
             if not args.execute_paper:
                 plans = [asdict(item) for item in engine.plan()]
+                exit_plans = [asdict(item) for item in engine.preview_strategy_exits()]
                 for item in plans:
                     item["trade"]["transaction_date"] = _date_text(
                         item["trade"]["transaction_date"]
@@ -82,6 +83,7 @@ def main(argv: Sequence[str] = None) -> int:
                     {
                         "mode": "dry-run",
                         "planned_actions": plans,
+                        "planned_strategy_exits": exit_plans,
                         "message": "Keine Order wurde gesendet.",
                     }
                 )

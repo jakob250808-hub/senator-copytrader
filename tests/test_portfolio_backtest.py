@@ -242,6 +242,53 @@ class PortfolioBacktestTests(unittest.TestCase):
         self.assertEqual(result["runs"], 20)
         self.assertLess(result["min_return_pct"], result["max_return_pct"])
 
+    def test_stop_loss_runs_before_signals_and_recycles_portfolio_budget(self):
+        first_day = date(2026, 1, 6)
+        second_day = date(2026, 1, 7)
+        signals = [
+            signal("buy-abc", "ABC", date(2026, 1, 5)),
+            signal("buy-def", "DEF", first_day),
+        ]
+        prices = {
+            "SPY": PriceSeries(
+                "SPY",
+                "ETF",
+                {
+                    first_day: PricePoint(100, 100),
+                    second_day: PricePoint(100, 100),
+                },
+            ),
+            "ABC": PriceSeries(
+                "ABC",
+                "EQUITY",
+                {
+                    first_day: PricePoint(100, 100),
+                    second_day: PricePoint(90, 90),
+                },
+            ),
+            "DEF": PriceSeries(
+                "DEF",
+                "EQUITY",
+                {second_day: PricePoint(50, 50)},
+            ),
+        }
+
+        summary, rows = run_portfolio_backtest(
+            signals,
+            prices,
+            first_day,
+            second_day,
+            max_portfolio_usd=1_000.0,
+            stop_loss_pct=8.0,
+        )
+
+        self.assertEqual(summary["strategy_exit_counts"], {"stop_loss": 1})
+        self.assertEqual(rows[0]["status"], "executed")
+        self.assertEqual(rows[1]["status"], "executed")
+        self.assertEqual(rows[2]["action"], "risk_exit")
+        self.assertEqual(rows[2]["execution_date"], second_day.isoformat())
+        self.assertEqual(set(summary["ending_positions"]), {"DEF"})
+
 
 if __name__ == "__main__":
     unittest.main()

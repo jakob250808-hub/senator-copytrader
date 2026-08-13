@@ -124,6 +124,47 @@ class BrokerTests(unittest.TestCase):
         self.assertEqual(snapshot.invested_usd(), 700.0)
         self.assertEqual(snapshot.position_usd("aapl"), 500.0)
 
+    def test_open_positions_expose_alpaca_exit_fields(self):
+        broker = RecordingBroker(
+            [
+                [
+                    {
+                        "symbol": "aapl",
+                        "market_value": "900.00",
+                        "avg_entry_price": "100.00",
+                        "current_price": "90.00",
+                        "unrealized_plpc": "-0.10",
+                        "side": "long",
+                    }
+                ]
+            ]
+        )
+
+        positions = broker.get_open_positions()
+
+        self.assertEqual(set(positions), {"AAPL"})
+        self.assertEqual(positions["AAPL"].avg_entry_price, 100.0)
+        self.assertEqual(positions["AAPL"].current_price, 90.0)
+        self.assertEqual(positions["AAPL"].unrealized_return_pct, -10.0)
+        self.assertEqual(broker.requests, [("GET", "/v2/positions", None)])
+
+    def test_pending_close_detection_only_matches_sell_for_symbol(self):
+        broker = RecordingBroker(
+            [
+                [
+                    {"symbol": "AAPL", "side": "buy"},
+                    {"symbol": "MSFT", "side": "sell"},
+                    {"symbol": "AAPL", "side": "sell"},
+                ]
+            ]
+        )
+
+        self.assertTrue(broker.has_pending_close_order("aapl"))
+        self.assertEqual(
+            broker.requests,
+            [("GET", "/v2/orders?status=open&direction=desc", None)],
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

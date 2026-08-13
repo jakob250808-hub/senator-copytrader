@@ -43,6 +43,18 @@ class AccountSnapshot:
         return self.position_values.get(symbol.upper(), 0.0)
 
 
+@dataclass(frozen=True)
+class OpenPosition:
+    """Preis- und Ergebniswerte einer aktuell offenen Brokerposition."""
+
+    symbol: str
+    market_value: float
+    avg_entry_price: Optional[float]
+    current_price: Optional[float]
+    unrealized_return_pct: Optional[float]
+    side: str = "long"
+
+
 class PaperBroker:
     def validate(self) -> str:
         raise NotImplementedError
@@ -51,6 +63,12 @@ class PaperBroker:
         raise NotImplementedError
 
     def get_account_snapshot(self) -> AccountSnapshot:
+        raise NotImplementedError
+
+    def get_open_positions(self) -> Dict[str, OpenPosition]:
+        raise NotImplementedError
+
+    def has_pending_close_order(self, symbol: str) -> bool:
         raise NotImplementedError
 
     def buy_notional(self, symbol: str, notional_usd: float, client_order_id: str) -> BrokerResult:
@@ -98,6 +116,37 @@ class AlpacaPaperBroker(PaperBroker):
             portfolio_value=float(account.get("portfolio_value", 0.0) or 0.0),
             is_margin_account=multiplier > 1,
             position_values=position_values,
+        )
+
+    def get_open_positions(self) -> Dict[str, OpenPosition]:
+        result: Dict[str, OpenPosition] = {}
+        for position in self._positions():
+            symbol = str(position.get("symbol", "")).upper()
+            if not symbol:
+                continue
+            unrealized_plpc = _optional_number(position.get("unrealized_plpc"))
+            result[symbol] = OpenPosition(
+                symbol=symbol,
+                market_value=abs(_optional_number(position.get("market_value")) or 0.0),
+                avg_entry_price=_optional_number(position.get("avg_entry_price")),
+                current_price=_optional_number(position.get("current_price")),
+                unrealized_return_pct=(
+                    unrealized_plpc * 100.0 if unrealized_plpc is not None else None
+                ),
+                side=str(position.get("side") or "long").casefold(),
+            )
+        return result
+
+    def has_pending_close_order(self, symbol: str) -> bool:
+        orders = self._request("GET", "/v2/orders?status=open&direction=desc")
+        if not isinstance(orders, list):
+            raise BrokerError("Unerwartete Antwort für offene Alpaca-Orders")
+        target = symbol.upper()
+        return any(
+            isinstance(order, dict)
+            and str(order.get("symbol", "")).upper() == target
+            and str(order.get("side", "")).casefold() == "sell"
+            for order in orders
         )
 
     def _positions(self) -> list:
@@ -192,3 +241,12 @@ class AlpacaPaperBroker(PaperBroker):
             raise BrokerError("Alpaca-Paper-API antwortete mit {}".format(message)) from exc
         except (URLError, TimeoutError, json.JSONDecodeError, UnicodeDecodeError) as exc:
             raise BrokerError("Alpaca-Paper-API nicht erreichbar: {}".format(exc)) from exc
+
+
+def _optional_number(value: Any) -> Optional[float]:
+    if value is None or value == "":
+        return None
+    try:
+        return float(value)
+    except (TypeError, ValueError):
+        return None

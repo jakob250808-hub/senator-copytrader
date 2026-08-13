@@ -84,6 +84,64 @@ class ConfigTests(unittest.TestCase):
             self.assertEqual(config.strategy.buy_notional_usd, 1_000.0)
             self.assertGreaterEqual(config.strategy.max_position_usd, config.strategy.buy_notional_usd)
             self.assertGreaterEqual(config.strategy.max_portfolio_usd, config.strategy.max_position_usd)
+            self.assertIsNone(config.strategy.stop_loss_pct)
+            self.assertIsNone(config.strategy.take_profit_pct)
+            self.assertIsNone(config.strategy.max_holding_days)
+
+    def test_optional_exit_values_are_loaded(self):
+        payload = {
+            "source": {"provider": "json", "file": "trades.json", "politicians": ["Gary Peters"]},
+            "strategy": {
+                "stop_loss_pct": 8,
+                "take_profit_pct": 25.5,
+                "max_holding_days": 60,
+            },
+            "storage": {"database": "state.db"},
+        }
+        with tempfile.TemporaryDirectory() as temp_dir:
+            path = Path(temp_dir) / "config.json"
+            path.write_text(json.dumps(payload), encoding="utf-8")
+            config = load_config(str(path))
+
+        self.assertEqual(config.strategy.stop_loss_pct, 8.0)
+        self.assertEqual(config.strategy.take_profit_pct, 25.5)
+        self.assertEqual(config.strategy.max_holding_days, 60)
+
+    def test_stop_loss_range_is_validated(self):
+        payload = {
+            "source": {"provider": "json", "file": "trades.json", "politicians": ["Gary Peters"]},
+            "strategy": {"stop_loss_pct": 0},
+            "storage": {"database": "state.db"},
+        }
+        with tempfile.TemporaryDirectory() as temp_dir:
+            path = Path(temp_dir) / "config.json"
+            path.write_text(json.dumps(payload), encoding="utf-8")
+            with self.assertRaisesRegex(ValueError, "stop_loss_pct"):
+                load_config(str(path))
+
+    def test_take_profit_must_be_finite(self):
+        payload = {
+            "source": {"provider": "json", "file": "trades.json", "politicians": ["Gary Peters"]},
+            "strategy": {"take_profit_pct": "nan"},
+            "storage": {"database": "state.db"},
+        }
+        with tempfile.TemporaryDirectory() as temp_dir:
+            path = Path(temp_dir) / "config.json"
+            path.write_text(json.dumps(payload), encoding="utf-8")
+            with self.assertRaisesRegex(ValueError, "take_profit_pct"):
+                load_config(str(path))
+
+    def test_max_holding_days_must_be_positive_integer(self):
+        payload = {
+            "source": {"provider": "json", "file": "trades.json", "politicians": ["Gary Peters"]},
+            "strategy": {"max_holding_days": 0},
+            "storage": {"database": "state.db"},
+        }
+        with tempfile.TemporaryDirectory() as temp_dir:
+            path = Path(temp_dir) / "config.json"
+            path.write_text(json.dumps(payload), encoding="utf-8")
+            with self.assertRaisesRegex(ValueError, "max_holding_days"):
+                load_config(str(path))
 
 
 if __name__ == "__main__":

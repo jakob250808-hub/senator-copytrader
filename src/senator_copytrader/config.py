@@ -1,9 +1,10 @@
 from __future__ import annotations
 
 import json
+import math
 from dataclasses import dataclass
 from pathlib import Path
-from typing import List
+from typing import List, Optional
 from urllib.parse import urlparse
 
 from .models import normalize_asset_type
@@ -28,6 +29,9 @@ class StrategyConfig:
     max_position_usd: float
     max_portfolio_usd: float
     max_daily_notional_usd: float
+    stop_loss_pct: Optional[float] = None
+    take_profit_pct: Optional[float] = None
+    max_holding_days: Optional[int] = None
 
 
 @dataclass(frozen=True)
@@ -74,6 +78,9 @@ def load_config(path: str) -> AppConfig:
         max_position_usd=float(strategy_data.get("max_position_usd", 3_000.0)),
         max_portfolio_usd=float(strategy_data.get("max_portfolio_usd", 20_000.0)),
         max_daily_notional_usd=float(strategy_data.get("max_daily_notional_usd", 5_000.0)),
+        stop_loss_pct=_optional_float(strategy_data, "stop_loss_pct"),
+        take_profit_pct=_optional_float(strategy_data, "take_profit_pct"),
+        max_holding_days=_optional_int(strategy_data, "max_holding_days"),
     )
     database = Path(str(storage_data.get("database", "var/state.sqlite3")))
     if not database.is_absolute():
@@ -119,3 +126,39 @@ def _validate(source: SourceConfig, strategy: StrategyConfig) -> None:
         raise ValueError("max_position_usd darf max_portfolio_usd nicht überschreiten")
     if strategy.buy_notional_usd > strategy.max_daily_notional_usd:
         raise ValueError("buy_notional_usd darf max_daily_notional_usd nicht überschreiten")
+    if strategy.stop_loss_pct is not None and not (
+        math.isfinite(strategy.stop_loss_pct) and 0 < strategy.stop_loss_pct <= 100
+    ):
+        raise ValueError("stop_loss_pct muss größer 0 und höchstens 100 sein")
+    if strategy.take_profit_pct is not None and not (
+        math.isfinite(strategy.take_profit_pct) and 0 < strategy.take_profit_pct <= 1_000
+    ):
+        raise ValueError("take_profit_pct muss größer 0 und höchstens 1000 sein")
+    if strategy.max_holding_days is not None and not (
+        1 <= strategy.max_holding_days <= 3_650
+    ):
+        raise ValueError("max_holding_days muss zwischen 1 und 3650 liegen")
+
+
+def _optional_float(data: dict, key: str) -> Optional[float]:
+    value = data.get(key)
+    if value is None:
+        return None
+    if isinstance(value, bool):
+        raise ValueError("{} muss eine Zahl oder null sein".format(key))
+    try:
+        return float(value)
+    except (TypeError, ValueError) as exc:
+        raise ValueError("{} muss eine Zahl oder null sein".format(key)) from exc
+
+
+def _optional_int(data: dict, key: str) -> Optional[int]:
+    value = data.get(key)
+    if value is None:
+        return None
+    if isinstance(value, bool):
+        raise ValueError("{} muss eine ganze Zahl oder null sein".format(key))
+    try:
+        return int(str(value))
+    except (TypeError, ValueError) as exc:
+        raise ValueError("{} muss eine ganze Zahl oder null sein".format(key)) from exc

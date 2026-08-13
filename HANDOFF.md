@@ -571,3 +571,112 @@ Reihenfolgen-Sensitivität und Cross-Senator-Verkäufe. Vor höheren Geldlimits
 sollten eine deterministische Signalpriorität und senatorbezogene Lots geklärt
 werden. Für Strategienachweis die heutige Watchlist einfrieren und ausschließlich
 ein künftiges Out-of-sample-Fenster bewerten.
+
+## 2026-08-14 – Codex: Deterministische Exits + aggressiver C-Backtest
+
+**Bearbeiter:** Codex (direkter Nutzerauftrag; deshalb trotz des auf Claude
+stehenden Automatisierungsmarkers ausgeführt)
+**Status:** abgeschlossen für diesen Abschnitt
+
+### Bearbeitete Dateien
+
+- `src/senator_copytrader/config.py` (optionale Exit-Felder und Validierung)
+- `src/senator_copytrader/broker.py` (Alpaca-Positionswerte/offene Verkäufe)
+- `src/senator_copytrader/engine.py` (unabhängige Exit-Prüfung und Vorschau)
+- `src/senator_copytrader/storage.py` (Exit-Grund und lokale Haltedauer)
+- `src/senator_copytrader/cli.py` (`planned_strategy_exits` im Dry-Run)
+- `src/senator_copytrader/portfolio_backtest.py` (dieselben Regeln am Tages-Open)
+- `scripts/run_backtest_1y.py` (Config-Exitfelder an Simulation weiterreichen)
+- `scripts/run_backtest_1y_scenarios.py` (C-/Exit-Szenarienvergleich)
+- `tests/test_config.py`, `tests/test_broker.py`, `tests/test_engine.py`,
+  `tests/test_portfolio_backtest.py`
+- `config.example.json`, `README.md`, `HANDOFF.md`
+- `backtest_1y_aggressive_report.md`,
+  `backtest_1y_aggressive_results.csv`,
+  `backtest_1y_aggressive_summary.json`
+
+### Exit-Regeln
+
+Neue optionale Strategy-Felder:
+
+- `stop_loss_pct`: Standard `None`/JSON `null`; gültig `0 < x <= 100`
+- `take_profit_pct`: Standard `None`/JSON `null`; gültig `0 < x <= 1000`
+- `max_holding_days`: Standard `None`/JSON `null`; gültig `1..3650`
+
+Sind alle drei deaktiviert, wird nicht einmal die zusätzliche
+Broker-Positionsabfrage ausgeführt; das bisherige Verhalten bleibt unverändert.
+Bei Aktivierung läuft die Prüfung vor neuen Senatorensignalen und auch ohne neue
+Meldung. Priorität bei gleichzeitig erfüllten Regeln: Stop-Loss, Take-Profit,
+maximale Haltedauer. Alpaca liefert `avg_entry_price`, `current_price`,
+`unrealized_plpc` und `market_value`; pro Ticker wird höchstens eine Regel
+ausgeführt.
+
+Die Haltedauer kommt aus SQLite: erster lokal als `submitted` gespeicherter Kauf
+seit der letzten übermittelten vollständigen Schließung. Nur Ticker mit solchem
+Bot-Kauf werden erfasst. Eine offene Verkaufsorder verhindert eine Doppelorder;
+ein mechanisch geschlossener Ticker wird im selben Lauf weder durch Kauf- noch
+Verkaufssignal doppelt verarbeitet. `events.action='risk_exit'` speichert
+`exit_reason`, Einstiegstag, Kalendertage, Einstiegspreis, beobachteten Kurs,
+Rendite, Brokerstatus und Order-ID. Wiederholungen desselben Tages aktualisieren
+den deterministischen Exit-Datensatz statt ihn zu duplizieren.
+
+Der normale Dry-Run zeigt diese Kandidaten als `planned_strategy_exits`, ohne
+eine Order zu senden. Es sind Polling-Regeln, keine dauerhaft beim Broker
+liegenden Stop-Orders: Zwischen zwei Läufen und bei Kurslücken ist die Schwelle
+nicht als Ausführungspreis garantiert. Alpaca aggregiert außerdem manuelle und
+Bot-Stücke desselben Tickers; deshalb bleibt ein separates Paperkonto nötig.
+Order-Fills werden weiterhin nicht nachträglich reconciled; wie bei den
+bisherigen Käufen/Verkäufen basiert die lokale Historie auf `submitted`.
+
+### Aggressiver Einjahres-Backtest
+
+Die Geldlimits in `config.example.json` wurden **nicht verändert**. Variante C
+wird ausschließlich historisch gerechnet: 40.000 USD Portfoliolimit, 10.000 USD
+Tageslimit, weiterhin 1.000 USD je Kauf und 3.000 USD je Ticker.
+
+| Szenario | Rendite | Max. Drawdown | Ø investiert | Regel-Exits |
+|---|---:|---:|---:|---:|
+| bisher 20k/5k, Exits aus | +5,92 % | −1,56 % | 17.512 USD | 0 |
+| C 40k/10k, Exits aus | **+9,93 %** | −2,57 % | 33.676 USD | 0 |
+| C, Stop 12 %, 90 Tage | +3,36 % | −1,66 % | 23.530 USD | 74 |
+| C, Stop 12 %, TP 25 %, 90 Tage | +1,45 % | −1,42 % | 21.877 USD | 77 |
+| C, Stop 15 %, TP 30 %, 120 Tage | +2,12 % | −2,25 % | 26.268 USD | 66 |
+
+Der primäre C-Lauf endet bei 109.925,00 USD; nach Schlussliquidation
+109.884,18 USD (+9,88 %). Investitionsspitze 44.965 USD, Käufe 74.000 USD,
+Umsatz 117.101,74 USD. Sein risikogleicher 40k-SPY-Mix erzielt +8,73 %, voller
+SPY +21,83 %.
+
+200 Reihenfolgen für C ohne Exits: Minimum +4,92 %, Median +9,72 %, Mittel
++9,63 %, P05–P95 +6,51 bis +12,76 %, Maximum +14,42 %; alle positiv, 69,5 %
+über dem risikogleichen SPY-Mix. Höheres Kapital reduziert die Wirkung der
+Burst-Skips, beseitigt sie aber nicht.
+
+Alle drei getesteten Exit-Sets schneiden in diesem Fenster deutlich schlechter
+ab. Sie recyceln Kapital und senken teilweise den Drawdown, realisieren aber die
+wenigen starken Gewinner zu früh und steigern den Umsatz auf rund 278.000 bis
+288.000 USD. Ergebnis: Mechanismus vorhanden, **keine Exit-Schwelle aktiviert**.
+Eine nachträgliche Wahl des besten Schwellenwerts aus diesem In-sample-Jahr wäre
+Overfitting.
+
+### Tests und Prüfungen
+
+```text
+PYTHONPATH=src python3 -m unittest discover -s tests -v
+Ran 55 tests in 0.046s – OK
+```
+
+Neu abgesichert: Stop-Loss, Take-Profit, maximale Haltedauer, deaktivierte
+Rückwärtskompatibilität, Fremdticker-Schutz, kein sofortiger Wiedereinstieg,
+orderfreie Vorschau, Alpaca-Positionsfelder, offene Verkaufsorder und
+Budget-Recycling im Backtest. Der historische Rohdatencommit bleibt
+`e51eacba83bb0188aa687fa4e5576dcafd90907f`.
+
+### Nächste Aufgabe
+
+Claude: Bitte Exit-/Storage-Review mit Fokus auf Alpaca-Orderzustände,
+`submitted` versus tatsächlich gefüllt, SQLite-Migration/Upsert, aggregierte
+Tickerpositionen und Polling-Gap-Risiko. Beim Backtest bitte besonders prüfen,
+ob Exit-vor-Signal am adjustierten Open ohne Intraday-Hoch/Tief sauber und die
+Schlussfolgerung „vorerst deaktiviert“ aus den fünf In-sample-Szenarien korrekt
+begrenzt ist. Die Live-Geldlimits erst nach separater Nutzerfreigabe verändern.

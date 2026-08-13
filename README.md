@@ -19,6 +19,22 @@ Es gibt absichtlich keinen Live-Trading-Modus.
   - `max_position_usd` – maximal investierter Betrag je Ticker.
   - `max_portfolio_usd` – maximal investierter Gesamtbetrag über alle Positionen.
   - `max_daily_notional_usd` – maximal an einem Kalendertag ausgegebener Betrag.
+- Drei optionale, feste Exit-Regeln ergänzen Senatoren-Verkäufe und sind
+  standardmäßig deaktiviert (`null`):
+  - `stop_loss_pct` – vollständiges Schließen ab diesem Verlust seit Einstieg.
+  - `take_profit_pct` – vollständiges Schließen ab diesem Gewinn seit Einstieg.
+  - `max_holding_days` – vollständiges Schließen nach dieser Zahl Kalendertage.
+- Die Haltedauer beginnt beim ersten lokal als `submitted` protokollierten Kauf
+  der aktuell offenen Tickerposition und wird nach einer übermittelten
+  vollständigen Schließung zurückgesetzt. Die Brokerposition muss beim Prüfen
+  tatsächlich offen sein.
+- Mechanische Exits laufen vor neuen Signalen und nur für Ticker, deren Kauf in
+  der lokalen Bot-Historie steht. Ticker ohne lokalen Bot-Kauf werden nicht
+  geschlossen. Manuell zum selben Ticker hinzugekaufte Stücke kann Alpaca in
+  seiner aggregierten Position jedoch nicht trennen; deshalb gehört der Bot in
+  ein separates Paperkonto. Bereits offene Verkaufsorders werden nicht
+  verdoppelt; ein im selben Lauf geschlossener Ticker wird nicht sofort wieder
+  gekauft.
 - Fehlende oder unbekannte Assettypen werden nicht als Aktie erraten. Vor jeder
   Order muss Alpaca den Ticker außerdem als aktives, handelbares US-Wertpapier
   (`us_equity`) bestätigen; Krypto, Optionen und andere Assetklassen werden abgewiesen.
@@ -99,6 +115,10 @@ nötig.
    senator-copytrader --config config.json run
    ```
 
+   Bei aktivierten Exit-Feldern enthält die Vorschau zusätzlich
+   `planned_strategy_exits`; dafür werden die aktuellen Paperpositionen gelesen,
+   aber keine Orders gesendet.
+
 4. Erst nach manueller Kontrolle bei Capitol Trades an das Paperkonto senden:
 
    ```bash
@@ -117,6 +137,10 @@ absichtlich einen neuen `bootstrap`-Lauf.
 
 Für einen dauerhaften Test kann Schritt 3 beziehungsweise 4 während der
 US-Handelszeiten alle 15 Minuten über einen Scheduler ausgeführt werden.
+Stop-Loss und Take-Profit sind in dieser Umsetzung Polling-Regeln: Sie werden
+nur bei einem Programmlauf geprüft. Kurslücken und Bewegungen zwischen zwei
+Läufen können deshalb zu einem schlechteren Ausführungspreis als der
+konfigurierten Schwelle führen.
 
 ## Kostenloser lokaler Funktionstest
 
@@ -196,6 +220,21 @@ anhand desselben zurückliegenden Jahres ausgewählt. Außerdem kann bei mehr al
 fünf gleichzeitigen Käufen die Feed-Reihenfolge die Rendite stark verändern.
 Für einen belastbaren Nachweis muss die Liste jetzt eingefroren und ein neues,
 zukünftiges Jahr abgewartet werden.
+
+### Aggressiver Szenarienvergleich
+
+Der zusätzliche Szenarienlauf vergleicht die bisherigen Grenzen mit Variante C
+(40.000 USD Portfoliolimit, 10.000 USD Tageslimit) und drei festen Exit-Sets.
+Die Live-Config und ihre Geldlimits werden dabei nicht verändert:
+
+```bash
+PYTHONPATH=src python3 scripts/run_backtest_1y_scenarios.py
+```
+
+Der Bericht steht in `backtest_1y_aggressive_report.md`, die vollständigen
+Entscheidungen der primären C-Variante in
+`backtest_1y_aggressive_results.csv` und alle Szenarien einschließlich je 200
+Reihenfolgen in `backtest_1y_aggressive_summary.json`.
 
 ## Grenzen des Tests
 

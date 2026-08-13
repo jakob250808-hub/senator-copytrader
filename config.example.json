@@ -44,7 +44,10 @@
     "require_market_open": true,
     "max_position_usd": 3000.0,
     "max_portfolio_usd": 20000.0,
-    "max_daily_notional_usd": 5000.0
+    "max_daily_notional_usd": 5000.0,
+    "stop_loss_pct": null,
+    "take_profit_pct": null,
+    "max_holding_days": null
   },
   "storage": {
     "database": "var/state.sqlite3"

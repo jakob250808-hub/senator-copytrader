@@ -1,0 +1,912 @@
+{
+  "primary_scenario": "aggressive_c_no_exits",
+  "scenario_order": [
+    "current_limits_no_exits",
+    "aggressive_c_no_exits",
+    "aggressive_c_sl12_hold90",
+    "aggressive_c_sl12_tp25_hold90",
+    "aggressive_c_sl15_tp30_hold120"
+  ],
+  "scenarios": {
+    "aggressive_c_no_exits": {
+      "average_invested_usd": 33675.75161272011,
+      "ending_cash_usd": 69101.73786540862,
+      "ending_invested_usd": 40823.26605752248,
+      "ending_positions": {
+        "AMD": {
+          "market_value_usd": 2787.56200313074,
+          "paid_notional_usd": 1000.0,
+          "shares": 5.771230299105752
+        },
+        "AMZN": {
+          "market_value_usd": 1262.4636369170469,
+          "paid_notional_usd": 1000.0,
+          "shares": 4.761677719106353
+        },
+        "ANET": {
+          "market_value_usd": 3065.3379120087006,
+          "paid_notional_usd": 2000.0,
+          "shares": 15.054208749217068
+        },
+        "BAC": {
+          "market_value_usd": 1368.0597707597824,
+          "paid_notional_usd": 1000.0,
+          "shares": 21.345917443140376
+        },
+        "BITB": {
+          "market_value_usd": 1358.3319170526358,
+          "paid_notional_usd": 2000.0,
+          "shares": 39.49787557895394
+        },
+        "BRK.B": {
+          "market_value_usd": 1032.4629208626002,
+          "paid_notional_usd": 1000.0,
+          "shares": 2.036697247706422
+        },
+        "CAG": {
+          "market_value_usd": 960.8051732327922,
+          "paid_notional_usd": 1000.0,
+          "shares": 62.430484197465006
+        },
+        "COST": {
+          "market_value_usd": 1046.7549956983562,
+          "paid_notional_usd": 1000.0,
+          "shares": 1.088272622828416
+        },
+        "DIS": {
+          "market_value_usd": 989.9355199168602,
+          "paid_notional_usd": 1000.0,
+          "shares": 9.445949342462887
+        },
+        "ERIE": {
+          "market_value_usd": 2076.2459948706855,
+          "paid_notional_usd": 2000.0,
+          "shares": 8.115725208186486
+        },
+        "ETN": {
+          "market_value_usd": 2446.318651701208,
+          "paid_notional_usd": 2000.0,
+          "shares": 5.396330982202165
+        },
+        "GH": {
+          "market_value_usd": 1494.8457061257768,
+          "paid_notional_usd": 1000.0,
+          "shares": 9.369724012992725
+        },
+        "GIGB": {
+          "market_value_usd": 1000.2100143187586,
+          "paid_notional_usd": 1000.0,
+          "shares": 22.187443959457305
+        },
+        "IGV": {
+          "market_value_usd": 1174.8778970191331,
+          "paid_notional_usd": 1000.0,
+          "shares": 11.0545531662915
+        },
+        "INTU": {
+          "market_value_usd": 539.4872310197678,
+          "paid_notional_usd": 1000.0,
+          "shares": 1.5057278130939777
+        },
+        "KEX": {
+          "market_value_usd": 1425.4403617599241,
+          "paid_notional_usd": 1000.0,
+          "shares": 10.363070375385991
+        },
+        "KO": {
+          "market_value_usd": 1232.6014968693712,
+          "paid_notional_usd": 1000.0,
+          "shares": 14.099765759400748
+        },
+        "KR": {
+          "market_value_usd": 781.0022438187045,
+          "paid_notional_usd": 1000.0,
+          "shares": 13.646728115772863
+        },
+        "MU": {
+          "market_value_usd": 2538.8608702777306,
+          "paid_notional_usd": 1000.0,
+          "shares": 2.672963398289382
+        },
+        "NTAP": {
+          "market_value_usd": 2083.1308941624757,
+          "paid_notional_usd": 1000.0,
+          "shares": 10.162109558224014
+        },
+        "PANW": {
+          "market_value_usd": 1855.2924444340126,
+          "paid_notional_usd": 1000.0,
+          "shares": 4.685081930388921
+        },
+        "TLH": {
+          "market_value_usd": 966.8781532402944,
+          "paid_notional_usd": 1000.0,
+          "shares": 9.953450270901774
+        },
+        "USIG": {
+          "market_value_usd": 1000.1904940165695,
+          "paid_notional_usd": 1000.0,
+          "shares": 19.841112815792165
+        },
+        "VWO": {
+          "market_value_usd": 1141.4899578684851,
+          "paid_notional_usd": 1000.0,
+          "shares": 18.917632664598667
+        },
+        "WFC": {
+          "market_value_usd": 3194.1291202410202,
+          "paid_notional_usd": 3000.0,
+          "shares": 36.25160706066048
+        },
+        "XLP": {
+          "market_value_usd": 995.4119155393914,
+          "paid_notional_usd": 1000.0,
+          "shares": 11.574557157434784
+        },
+        "XTWO": {
+          "market_value_usd": 1005.1387606596544,
+          "paid_notional_usd": 1000.0,
+          "shares": 20.565498939327966
+        }
+      },
+      "ending_value_usd": 109925.0039229311,
+      "executed_buys_by_senator": {
+        "Angus S. King Jr.": 10,
+        "David McCormick": 2,
+        "Gary C. Peters": 1,
+        "Jerry Moran": 2,
+        "John Boozman": 40,
+        "John Fetterman": 7,
+        "John W. Hickenlooper": 4,
+        "Mitch McConnell": 3,
+        "Sheldon Whitehouse": 3,
+        "Tommy Tuberville": 2
+      },
+      "label": "C: 40k/10k, Exits aus",
+      "liquidation_return_pct": 9.884180656873575,
+      "liquidation_value_usd": 109884.18065687358,
+      "market_end": "2026-08-13",
+      "market_start": "2025-08-13",
+      "max_drawdown_pct": -2.574823945725968,
+      "order_sensitivity": {
+        "max_return_pct": 14.421211409955603,
+        "mean_return_pct": 9.633032994734554,
+        "median_return_pct": 9.724110440344592,
+        "min_return_pct": 4.919877586892318,
+        "p05_return_pct": 6.51265968454407,
+        "p95_return_pct": 12.763605242947044,
+        "runs": 200,
+        "share_beating_risk_matched_spy": 0.695,
+        "share_positive": 1.0
+      },
+      "parameters": {
+        "buy_notional_usd": 1000.0,
+        "max_daily_notional_usd": 10000.0,
+        "max_holding_days": null,
+        "max_portfolio_usd": 40000.0,
+        "max_position_usd": 3000.0,
+        "starting_cash_usd": 100000.0,
+        "stop_loss_pct": null,
+        "take_profit_pct": null
+      },
+      "peak_invested_usd": 44964.99918035722,
+      "reason_counts": {
+        "daily_notional_limit": 19,
+        "invalid_or_missing_ticker": 53,
+        "no_position": 311,
+        "portfolio_limit": 102,
+        "position_closed": 34,
+        "position_limit": 7,
+        "position_opened_or_increased": 74,
+        "price_provider_http_404": 1,
+        "provider_instrument_type_MUTUALFUND": 6,
+        "source_asset_type_not_stock": 305,
+        "unsupported_action": 1
+      },
+      "requested_end": "2026-08-13",
+      "requested_start": "2025-08-13",
+      "return_pct": 9.925003922931097,
+      "risk_matched_spy_return_pct": 8.733167362027228,
+      "risk_matched_spy_value_usd": 108733.16736202723,
+      "signal_count": 913,
+      "spy_100k_return_pct": 21.832918405068092,
+      "spy_100k_value_usd": 121832.91840506809,
+      "starting_cash_usd": 100000.0,
+      "status_counts": {
+        "executed": 108,
+        "filtered": 366,
+        "skipped": 439
+      },
+      "strategy_exit_count": 0,
+      "strategy_exit_counts": {},
+      "total_buy_notional_usd": 74000.0,
+      "total_sale_proceeds_usd": 43101.73786540861,
+      "turnover_usd": 117101.73786540862
+    },
+    "aggressive_c_sl12_hold90": {
+      "average_invested_usd": 23530.214481176772,
+      "ending_cash_usd": 81861.07090405792,
+      "ending_invested_usd": 21497.77085653652,
+      "ending_positions": {
+        "AGZ": {
+          "market_value_usd": 1001.8002830678876,
+          "paid_notional_usd": 1000.0,
+          "shares": 9.197578956198656
+        },
+        "BRK.B": {
+          "market_value_usd": 3098.4839422851637,
+          "paid_notional_usd": 3000.0,
+          "shares": 6.112252159179049
+        },
+        "CMBS": {
+          "market_value_usd": 997.1802340410385,
+          "paid_notional_usd": 1000.0,
+          "shares": 20.63914441445907
+        },
+        "GBIL": {
+          "market_value_usd": 1004.8704127419202,
+          "paid_notional_usd": 1000.0,
+          "shares": 10.046695125654955
+        },
+        "GIGB": {
+          "market_value_usd": 1978.0409620495725,
+          "paid_notional_usd": 2000.0,
+          "shares": 43.87845789054384
+        },
+        "GOOG": {
+          "market_value_usd": 989.6770254265103,
+          "paid_notional_usd": 1000.0,
+          "shares": 2.8774699610438947
+        },
+        "IGV": {
+          "market_value_usd": 1174.8778970191331,
+          "paid_notional_usd": 1000.0,
+          "shares": 11.0545531662915
+        },
+        "JMBS": {
+          "market_value_usd": 992.7322557606117,
+          "paid_notional_usd": 1000.0,
+          "shares": 22.2785508340592
+        },
+        "KHC": {
+          "market_value_usd": 1047.2788153828265,
+          "paid_notional_usd": 1000.0,
+          "shares": 41.263942080886714
+        },
+        "O": {
+          "market_value_usd": 1010.0715139342759,
+          "paid_notional_usd": 1000.0,
+          "shares": 16.045615594796548
+        },
+        "PALL": {
+          "market_value_usd": 1019.964015561024,
+          "paid_notional_usd": 1000.0,
+          "shares": 42.7837252111051
+        },
+        "T": {
+          "market_value_usd": 1199.2391392588208,
+          "paid_notional_usd": 1000.0,
+          "shares": 48.78922469410672
+        },
+        "UNH": {
+          "market_value_usd": 924.967372531404,
+          "paid_notional_usd": 1000.0,
+          "shares": 2.3178654292343386
+        },
+        "USIG": {
+          "market_value_usd": 1000.1904940165695,
+          "paid_notional_usd": 1000.0,
+          "shares": 19.841112815792165
+        },
+        "WFC": {
+          "market_value_usd": 1068.7822679568026,
+          "paid_notional_usd": 1000.0,
+          "shares": 12.130090347896754
+        },
+        "XFIV": {
+          "market_value_usd": 997.6913384107525,
+          "paid_notional_usd": 1000.0,
+          "shares": 20.67188587020616
+        },
+        "XLP": {
+          "market_value_usd": 995.4119155393914,
+          "paid_notional_usd": 1000.0,
+          "shares": 11.574557157434784
+        },
+        "XLU": {
+          "market_value_usd": 996.5109715528142,
+          "paid_notional_usd": 1000.0,
+          "shares": 22.627405786485138
+        }
+      },
+      "ending_value_usd": 103358.84176059444,
+      "executed_buys_by_senator": {
+        "Angus S. King Jr.": 10,
+        "David McCormick": 3,
+        "Gary C. Peters": 8,
+        "Jerry Moran": 5,
+        "John Boozman": 84,
+        "John Fetterman": 8,
+        "John W. Hickenlooper": 4,
+        "Katie Boyd Britt": 10,
+        "Mitch McConnell": 3,
+        "Sheldon Whitehouse": 5,
+        "Tommy Tuberville": 13
+      },
+      "label": "C: SL 12 %, Haltedauer 90 Tage",
+      "liquidation_return_pct": 3.3373439897379065,
+      "liquidation_value_usd": 103337.34398973791,
+      "market_end": "2026-08-13",
+      "market_start": "2025-08-13",
+      "max_drawdown_pct": -1.6578902637463089,
+      "order_sensitivity": {
+        "max_return_pct": 4.557042524715116,
+        "mean_return_pct": 2.941527714532394,
+        "median_return_pct": 2.917135264288351,
+        "min_return_pct": 1.2838616706845496,
+        "p05_return_pct": 1.7720992641569768,
+        "p95_return_pct": 4.03953104346253,
+        "runs": 200,
+        "share_beating_risk_matched_spy": 0.0,
+        "share_positive": 1.0
+      },
+      "parameters": {
+        "buy_notional_usd": 1000.0,
+        "max_daily_notional_usd": 10000.0,
+        "max_holding_days": 90,
+        "max_portfolio_usd": 40000.0,
+        "max_position_usd": 3000.0,
+        "starting_cash_usd": 100000.0,
+        "stop_loss_pct": 12.0,
+        "take_profit_pct": null
+      },
+      "peak_invested_usd": 37782.38277703782,
+      "reason_counts": {
+        "daily_notional_limit": 35,
+        "invalid_or_missing_ticker": 53,
+        "max_holding_days": 52,
+        "no_position": 310,
+        "portfolio_limit": 9,
+        "position_closed": 35,
+        "position_limit": 3,
+        "position_opened_or_increased": 153,
+        "price_provider_http_404": 1,
+        "provider_instrument_type_MUTUALFUND": 6,
+        "same_day_strategy_exit": 2,
+        "source_asset_type_not_stock": 305,
+        "stop_loss": 22,
+        "unsupported_action": 1
+      },
+      "requested_end": "2026-08-13",
+      "requested_start": "2025-08-13",
+      "return_pct": 3.3588417605944443,
+      "risk_matched_spy_return_pct": 8.733167362027228,
+      "risk_matched_spy_value_usd": 108733.16736202723,
+      "signal_count": 913,
+      "spy_100k_return_pct": 21.832918405068092,
+      "spy_100k_value_usd": 121832.91840506809,
+      "starting_cash_usd": 100000.0,
+      "status_counts": {
+        "executed": 262,
+        "filtered": 366,
+        "skipped": 359
+      },
+      "strategy_exit_count": 74,
+      "strategy_exit_counts": {
+        "max_holding_days": 52,
+        "stop_loss": 22
+      },
+      "total_buy_notional_usd": 153000.0,
+      "total_sale_proceeds_usd": 134861.07090405797,
+      "turnover_usd": 287861.07090405794
+    },
+    "aggressive_c_sl12_tp25_hold90": {
+      "average_invested_usd": 21876.51629410009,
+      "ending_cash_usd": 79954.81599072744,
+      "ending_invested_usd": 21497.77085653652,
+      "ending_positions": {
+        "AGZ": {
+          "market_value_usd": 1001.8002830678876,
+          "paid_notional_usd": 1000.0,
+          "shares": 9.197578956198656
+        },
+        "BRK.B": {
+          "market_value_usd": 3098.4839422851637,
+          "paid_notional_usd": 3000.0,
+          "shares": 6.112252159179049
+        },
+        "CMBS": {
+          "market_value_usd": 997.1802340410385,
+          "paid_notional_usd": 1000.0,
+          "shares": 20.63914441445907
+        },
+        "GBIL": {
+          "market_value_usd": 1004.8704127419202,
+          "paid_notional_usd": 1000.0,
+          "shares": 10.046695125654955
+        },
+        "GIGB": {
+          "market_value_usd": 1978.0409620495725,
+          "paid_notional_usd": 2000.0,
+          "shares": 43.87845789054384
+        },
+        "GOOG": {
+          "market_value_usd": 989.6770254265103,
+          "paid_notional_usd": 1000.0,
+          "shares": 2.8774699610438947
+        },
+        "IGV": {
+          "market_value_usd": 1174.8778970191331,
+          "paid_notional_usd": 1000.0,
+          "shares": 11.0545531662915
+        },
+        "JMBS": {
+          "market_value_usd": 992.7322557606117,
+          "paid_notional_usd": 1000.0,
+          "shares": 22.2785508340592
+        },
+        "KHC": {
+          "market_value_usd": 1047.2788153828265,
+          "paid_notional_usd": 1000.0,
+          "shares": 41.263942080886714
+        },
+        "O": {
+          "market_value_usd": 1010.0715139342759,
+          "paid_notional_usd": 1000.0,
+          "shares": 16.045615594796548
+        },
+        "PALL": {
+          "market_value_usd": 1019.964015561024,
+          "paid_notional_usd": 1000.0,
+          "shares": 42.7837252111051
+        },
+        "T": {
+          "market_value_usd": 1199.2391392588208,
+          "paid_notional_usd": 1000.0,
+          "shares": 48.78922469410672
+        },
+        "UNH": {
+          "market_value_usd": 924.967372531404,
+          "paid_notional_usd": 1000.0,
+          "shares": 2.3178654292343386
+        },
+        "USIG": {
+          "market_value_usd": 1000.1904940165695,
+          "paid_notional_usd": 1000.0,
+          "shares": 19.841112815792165
+        },
+        "WFC": {
+          "market_value_usd": 1068.7822679568026,
+          "paid_notional_usd": 1000.0,
+          "shares": 12.130090347896754
+        },
+        "XFIV": {
+          "market_value_usd": 997.6913384107525,
+          "paid_notional_usd": 1000.0,
+          "shares": 20.67188587020616
+        },
+        "XLP": {
+          "market_value_usd": 995.4119155393914,
+          "paid_notional_usd": 1000.0,
+          "shares": 11.574557157434784
+        },
+        "XLU": {
+          "market_value_usd": 996.5109715528142,
+          "paid_notional_usd": 1000.0,
+          "shares": 22.627405786485138
+        }
+      },
+      "ending_value_usd": 101452.58684726396,
+      "executed_buys_by_senator": {
+        "Angus S. King Jr.": 10,
+        "David McCormick": 3,
+        "Gary C. Peters": 8,
+        "Jerry Moran": 5,
+        "John Boozman": 84,
+        "John Fetterman": 8,
+        "John W. Hickenlooper": 4,
+        "Katie Boyd Britt": 10,
+        "Mitch McConnell": 3,
+        "Sheldon Whitehouse": 5,
+        "Tommy Tuberville": 13
+      },
+      "label": "C: SL 12 %, TP 25 %, 90 Tage",
+      "liquidation_return_pct": 1.4310890764074324,
+      "liquidation_value_usd": 101431.08907640743,
+      "market_end": "2026-08-13",
+      "market_start": "2025-08-13",
+      "max_drawdown_pct": -1.419638948638624,
+      "order_sensitivity": {
+        "max_return_pct": 2.8281419894528703,
+        "mean_return_pct": 1.168065981330326,
+        "median_return_pct": 1.215718189250914,
+        "min_return_pct": -0.41633525272823935,
+        "p05_return_pct": 0.10594941863753105,
+        "p95_return_pct": 2.2366743536087825,
+        "runs": 200,
+        "share_beating_risk_matched_spy": 0.0,
+        "share_positive": 0.955
+      },
+      "parameters": {
+        "buy_notional_usd": 1000.0,
+        "max_daily_notional_usd": 10000.0,
+        "max_holding_days": 90,
+        "max_portfolio_usd": 40000.0,
+        "max_position_usd": 3000.0,
+        "starting_cash_usd": 100000.0,
+        "stop_loss_pct": 12.0,
+        "take_profit_pct": 25.0
+      },
+      "peak_invested_usd": 36295.041688804056,
+      "reason_counts": {
+        "daily_notional_limit": 39,
+        "invalid_or_missing_ticker": 53,
+        "max_holding_days": 45,
+        "no_position": 312,
+        "portfolio_limit": 5,
+        "position_closed": 33,
+        "position_limit": 3,
+        "position_opened_or_increased": 153,
+        "price_provider_http_404": 1,
+        "provider_instrument_type_MUTUALFUND": 6,
+        "same_day_strategy_exit": 2,
+        "source_asset_type_not_stock": 305,
+        "stop_loss": 22,
+        "take_profit": 10,
+        "unsupported_action": 1
+      },
+      "requested_end": "2026-08-13",
+      "requested_start": "2025-08-13",
+      "return_pct": 1.452586847263948,
+      "risk_matched_spy_return_pct": 8.733167362027228,
+      "risk_matched_spy_value_usd": 108733.16736202723,
+      "signal_count": 913,
+      "spy_100k_return_pct": 21.832918405068092,
+      "spy_100k_value_usd": 121832.91840506809,
+      "starting_cash_usd": 100000.0,
+      "status_counts": {
+        "executed": 263,
+        "filtered": 366,
+        "skipped": 361
+      },
+      "strategy_exit_count": 77,
+      "strategy_exit_counts": {
+        "max_holding_days": 45,
+        "stop_loss": 22,
+        "take_profit": 10
+      },
+      "total_buy_notional_usd": 153000.0,
+      "total_sale_proceeds_usd": 132954.81599072748,
+      "turnover_usd": 285954.8159907275
+    },
+    "aggressive_c_sl15_tp30_hold120": {
+      "average_invested_usd": 26267.617493766265,
+      "ending_cash_usd": 79721.1733835624,
+      "ending_invested_usd": 22397.41990122486,
+      "ending_positions": {
+        "AGZ": {
+          "market_value_usd": 1001.8002830678876,
+          "paid_notional_usd": 1000.0,
+          "shares": 9.197578956198656
+        },
+        "BRK.B": {
+          "market_value_usd": 3098.4839422851637,
+          "paid_notional_usd": 3000.0,
+          "shares": 6.112252159179049
+        },
+        "CMBS": {
+          "market_value_usd": 997.1802340410385,
+          "paid_notional_usd": 1000.0,
+          "shares": 20.63914441445907
+        },
+        "DVN": {
+          "market_value_usd": 962.3147174542853,
+          "paid_notional_usd": 1000.0,
+          "shares": 21.67863777170254
+        },
+        "GBIL": {
+          "market_value_usd": 1004.8704127419202,
+          "paid_notional_usd": 1000.0,
+          "shares": 10.046695125654955
+        },
+        "GIGB": {
+          "market_value_usd": 1978.0409620495725,
+          "paid_notional_usd": 2000.0,
+          "shares": 43.87845789054384
+        },
+        "GOOG": {
+          "market_value_usd": 989.6770254265103,
+          "paid_notional_usd": 1000.0,
+          "shares": 2.8774699610438947
+        },
+        "IGV": {
+          "market_value_usd": 1174.8778970191331,
+          "paid_notional_usd": 1000.0,
+          "shares": 11.0545531662915
+        },
+        "JMBS": {
+          "market_value_usd": 992.7322557606117,
+          "paid_notional_usd": 1000.0,
+          "shares": 22.2785508340592
+        },
+        "KHC": {
+          "market_value_usd": 1047.2788153828265,
+          "paid_notional_usd": 1000.0,
+          "shares": 41.263942080886714
+        },
+        "O": {
+          "market_value_usd": 1010.0715139342759,
+          "paid_notional_usd": 1000.0,
+          "shares": 16.045615594796548
+        },
+        "PALL": {
+          "market_value_usd": 1019.964015561024,
+          "paid_notional_usd": 1000.0,
+          "shares": 42.7837252111051
+        },
+        "SHY": {
+          "market_value_usd": 1006.1165951908552,
+          "paid_notional_usd": 1000.0,
+          "shares": 12.26522747973981
+        },
+        "T": {
+          "market_value_usd": 1199.2391392588208,
+          "paid_notional_usd": 1000.0,
+          "shares": 48.78922469410672
+        },
+        "UNH": {
+          "market_value_usd": 924.967372531404,
+          "paid_notional_usd": 1000.0,
+          "shares": 2.3178654292343386
+        },
+        "USIG": {
+          "market_value_usd": 1000.1904940165695,
+          "paid_notional_usd": 1000.0,
+          "shares": 19.841112815792165
+        },
+        "XFIV": {
+          "market_value_usd": 997.6913384107525,
+          "paid_notional_usd": 1000.0,
+          "shares": 20.67188587020616
+        },
+        "XLP": {
+          "market_value_usd": 995.4119155393914,
+          "paid_notional_usd": 1000.0,
+          "shares": 11.574557157434784
+        },
+        "XLU": {
+          "market_value_usd": 996.5109715528142,
+          "paid_notional_usd": 1000.0,
+          "shares": 22.627405786485138
+        }
+      },
+      "ending_value_usd": 102118.59328478726,
+      "executed_buys_by_senator": {
+        "Angus S. King Jr.": 12,
+        "David McCormick": 3,
+        "Gary C. Peters": 8,
+        "Jerry Moran": 5,
+        "John Boozman": 80,
+        "John Fetterman": 8,
+        "John W. Hickenlooper": 4,
+        "Katie Boyd Britt": 8,
+        "Mitch McConnell": 3,
+        "Sheldon Whitehouse": 5,
+        "Tommy Tuberville": 13
+      },
+      "label": "C: SL 15 %, TP 30 %, 120 Tage",
+      "liquidation_return_pct": 2.0961958648860524,
+      "liquidation_value_usd": 102096.19586488605,
+      "market_end": "2026-08-13",
+      "market_start": "2025-08-13",
+      "max_drawdown_pct": -2.248684112950139,
+      "order_sensitivity": {
+        "max_return_pct": 4.028144383761667,
+        "mean_return_pct": 2.1367053314942916,
+        "median_return_pct": 2.1429235933625446,
+        "min_return_pct": 0.09503069434375622,
+        "p05_return_pct": 0.8960533956460582,
+        "p95_return_pct": 3.3866100226791724,
+        "runs": 200,
+        "share_beating_risk_matched_spy": 0.0,
+        "share_positive": 1.0
+      },
+      "parameters": {
+        "buy_notional_usd": 1000.0,
+        "max_daily_notional_usd": 10000.0,
+        "max_holding_days": 120,
+        "max_portfolio_usd": 40000.0,
+        "max_position_usd": 3000.0,
+        "starting_cash_usd": 100000.0,
+        "stop_loss_pct": 15.0,
+        "take_profit_pct": 30.0
+      },
+      "peak_invested_usd": 40055.21182852643,
+      "reason_counts": {
+        "daily_notional_limit": 25,
+        "invalid_or_missing_ticker": 53,
+        "max_holding_days": 36,
+        "no_position": 308,
+        "portfolio_limit": 24,
+        "position_closed": 37,
+        "position_limit": 4,
+        "position_opened_or_increased": 149,
+        "price_provider_http_404": 1,
+        "provider_instrument_type_MUTUALFUND": 6,
+        "source_asset_type_not_stock": 305,
+        "stop_loss": 21,
+        "take_profit": 9,
+        "unsupported_action": 1
+      },
+      "requested_end": "2026-08-13",
+      "requested_start": "2025-08-13",
+      "return_pct": 2.1185932847872513,
+      "risk_matched_spy_return_pct": 8.733167362027228,
+      "risk_matched_spy_value_usd": 108733.16736202723,
+      "signal_count": 913,
+      "spy_100k_return_pct": 21.832918405068092,
+      "spy_100k_value_usd": 121832.91840506809,
+      "starting_cash_usd": 100000.0,
+      "status_counts": {
+        "executed": 252,
+        "filtered": 366,
+        "skipped": 361
+      },
+      "strategy_exit_count": 66,
+      "strategy_exit_counts": {
+        "max_holding_days": 36,
+        "stop_loss": 21,
+        "take_profit": 9
+      },
+      "total_buy_notional_usd": 149000.0,
+      "total_sale_proceeds_usd": 128721.1733835624,
+      "turnover_usd": 277721.1733835624
+    },
+    "current_limits_no_exits": {
+      "average_invested_usd": 17512.1544572535,
+      "ending_cash_usd": 85843.45710510838,
+      "ending_invested_usd": 20076.892929264795,
+      "ending_positions": {
+        "AMD": {
+          "market_value_usd": 2787.56200313074,
+          "paid_notional_usd": 1000.0,
+          "shares": 5.771230299105752
+        },
+        "AMZN": {
+          "market_value_usd": 1262.4636369170469,
+          "paid_notional_usd": 1000.0,
+          "shares": 4.761677719106353
+        },
+        "ANET": {
+          "market_value_usd": 1484.7910592851847,
+          "paid_notional_usd": 1000.0,
+          "shares": 7.291970802919708
+        },
+        "BAC": {
+          "market_value_usd": 1368.0597707597824,
+          "paid_notional_usd": 1000.0,
+          "shares": 21.345917443140376
+        },
+        "BRK.B": {
+          "market_value_usd": 1032.4629208626002,
+          "paid_notional_usd": 1000.0,
+          "shares": 2.036697247706422
+        },
+        "COST": {
+          "market_value_usd": 1046.7549956983562,
+          "paid_notional_usd": 1000.0,
+          "shares": 1.088272622828416
+        },
+        "ERIE": {
+          "market_value_usd": 1038.1229974353428,
+          "paid_notional_usd": 1000.0,
+          "shares": 4.057862604093243
+        },
+        "ETN": {
+          "market_value_usd": 2446.318651701208,
+          "paid_notional_usd": 2000.0,
+          "shares": 5.396330982202165
+        },
+        "GIGB": {
+          "market_value_usd": 1000.2100143187586,
+          "paid_notional_usd": 1000.0,
+          "shares": 22.187443959457305
+        },
+        "INTU": {
+          "market_value_usd": 539.4872310197678,
+          "paid_notional_usd": 1000.0,
+          "shares": 1.5057278130939777
+        },
+        "NTAP": {
+          "market_value_usd": 2083.1308941624757,
+          "paid_notional_usd": 1000.0,
+          "shares": 10.162109558224014
+        },
+        "PANW": {
+          "market_value_usd": 1855.2924444340126,
+          "paid_notional_usd": 1000.0,
+          "shares": 4.685081930388921
+        },
+        "TLH": {
+          "market_value_usd": 966.8781532402944,
+          "paid_notional_usd": 1000.0,
+          "shares": 9.953450270901774
+        },
+        "WFC": {
+          "market_value_usd": 1165.358156299226,
+          "paid_notional_usd": 1000.0,
+          "shares": 13.226173512956649
+        }
+      },
+      "ending_value_usd": 105920.35003437317,
+      "executed_buys_by_senator": {
+        "Angus S. King Jr.": 5,
+        "Jerry Moran": 2,
+        "John Boozman": 19,
+        "John Fetterman": 3,
+        "John W. Hickenlooper": 3,
+        "Mitch McConnell": 1
+      },
+      "label": "Aktuelle Limits, Exits aus",
+      "liquidation_return_pct": 5.900273141443901,
+      "liquidation_value_usd": 105900.2731414439,
+      "market_end": "2026-08-13",
+      "market_start": "2025-08-13",
+      "max_drawdown_pct": -1.5570615409527866,
+      "order_sensitivity": {
+        "max_return_pct": 11.679919774505265,
+        "mean_return_pct": 5.219820607257245,
+        "median_return_pct": 5.090440890431269,
+        "min_return_pct": 0.8513179351858247,
+        "p05_return_pct": 2.7597421982037877,
+        "p95_return_pct": 8.16967472401991,
+        "runs": 200,
+        "share_beating_risk_matched_spy": 0.62,
+        "share_positive": 1.0
+      },
+      "parameters": {
+        "buy_notional_usd": 1000.0,
+        "max_daily_notional_usd": 5000.0,
+        "max_holding_days": null,
+        "max_portfolio_usd": 20000.0,
+        "max_position_usd": 3000.0,
+        "starting_cash_usd": 100000.0,
+        "stop_loss_pct": null,
+        "take_profit_pct": null
+      },
+      "peak_invested_usd": 23637.155984851554,
+      "reason_counts": {
+        "daily_notional_limit": 31,
+        "invalid_or_missing_ticker": 53,
+        "no_position": 329,
+        "portfolio_limit": 134,
+        "position_closed": 16,
+        "position_limit": 4,
+        "position_opened_or_increased": 33,
+        "price_provider_http_404": 1,
+        "provider_instrument_type_MUTUALFUND": 6,
+        "source_asset_type_not_stock": 305,
+        "unsupported_action": 1
+      },
+      "requested_end": "2026-08-13",
+      "requested_start": "2025-08-13",
+      "return_pct": 5.920350034373167,
+      "risk_matched_spy_return_pct": 4.366583681013614,
+      "risk_matched_spy_value_usd": 104366.58368101361,
+      "signal_count": 913,
+      "spy_100k_return_pct": 21.832918405068092,
+      "spy_100k_value_usd": 121832.91840506809,
+      "starting_cash_usd": 100000.0,
+      "status_counts": {
+        "executed": 49,
+        "filtered": 366,
+        "skipped": 498
+      },
+      "strategy_exit_count": 0,
+      "strategy_exit_counts": {},
+      "total_buy_notional_usd": 33000.0,
+      "total_sale_proceeds_usd": 18843.45710510842,
+      "turnover_usd": 51843.45710510842
+    }
+  }
+}

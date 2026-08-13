@@ -44,6 +44,8 @@ class StateStore:
         }
         if "notional_usd" not in existing_columns:
             self.connection.execute("ALTER TABLE events ADD COLUMN notional_usd REAL")
+        if "exit_reason" not in existing_columns:
+            self.connection.execute("ALTER TABLE events ADD COLUMN exit_reason TEXT")
         self.connection.commit()
 
     def is_bootstrapped(self, selection_key: Optional[str] = None) -> bool:
@@ -88,6 +90,7 @@ class StateStore:
         details: str = "",
         notional_usd: Optional[float] = None,
         processed_on: Optional[date] = None,
+        exit_reason: Optional[str] = None,
     ) -> bool:
         processed_at = datetime.now(timezone.utc)
         if processed_on is not None:
@@ -96,8 +99,9 @@ class StateStore:
             """
             INSERT OR IGNORE INTO events(
                 event_id, representative, ticker, action, report_date,
-                status, broker_order_id, details, processed_at, notional_usd
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                status, broker_order_id, details, processed_at, notional_usd,
+                exit_reason
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             """,
             (
                 trade.event_id,
@@ -110,10 +114,88 @@ class StateStore:
                 details,
                 processed_at.isoformat(),
                 notional_usd,
+                exit_reason,
             ),
         )
         self.connection.commit()
         return cursor.rowcount == 1
+
+    def record_strategy_exit(
+        self,
+        ticker: str,
+        status: str,
+        reason: str,
+        details: str,
+        broker_order_id: Optional[str],
+        processed_on: date,
+        notional_usd: Optional[float] = None,
+    ) -> str:
+        """Protokolliere einen mechanischen Exit im bestehenden Event-Journal."""
+
+        event_id = "strategy-exit-{}-{}".format(
+            processed_on.isoformat(), ticker.upper()
+        )
+        processed_at = datetime.combine(processed_on, datetime.now(timezone.utc).timetz())
+        self.connection.execute(
+            """
+            INSERT INTO events(
+                event_id, representative, ticker, action, report_date,
+                status, broker_order_id, details, processed_at, notional_usd,
+                exit_reason
+            ) VALUES (?, 'Strategy', ?, 'risk_exit', NULL, ?, ?, ?, ?, ?, ?)
+            ON CONFLICT(event_id) DO UPDATE SET
+                status = excluded.status,
+                broker_order_id = excluded.broker_order_id,
+                details = excluded.details,
+                processed_at = excluded.processed_at,
+                notional_usd = excluded.notional_usd,
+                exit_reason = excluded.exit_reason
+            """,
+            (
+                event_id,
+                ticker.upper(),
+                status,
+                broker_order_id,
+                details,
+                processed_at.isoformat(),
+                notional_usd,
+                reason,
+            ),
+        )
+        self.connection.commit()
+        return event_id
+
+    def position_opened_on(self, ticker: str) -> Optional[date]:
+        """Erster lokaler Kauf der aktuell noch offenen Bot-Position.
+
+        Nur übermittelte Käufe zählen. Ein später übermittelter Senatorenverkauf
+        oder mechanischer Exit setzt die lokale Position auf geschlossen. Damit
+        werden fremde/manuelle Brokerpositionen nicht von Exit-Regeln erfasst.
+        """
+
+        row = self.connection.execute(
+            """
+            SELECT MIN(substr(processed_at, 1, 10)) AS opened_on
+            FROM events
+            WHERE ticker = ?
+              AND action = 'buy'
+              AND status = 'submitted'
+              AND processed_at > COALESCE(
+                    (
+                        SELECT MAX(processed_at)
+                        FROM events
+                        WHERE ticker = ?
+                          AND action IN ('sell', 'risk_exit')
+                          AND status = 'submitted'
+                    ),
+                    ''
+              )
+            """,
+            (ticker.upper(), ticker.upper()),
+        ).fetchone()
+        if not row or not row["opened_on"]:
+            return None
+        return date.fromisoformat(str(row["opened_on"]))
 
     def daily_buy_notional(self, day: date) -> float:
         """Summe der an diesem Kalendertag (UTC) bereits übermittelten Käufe.
