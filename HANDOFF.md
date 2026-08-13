@@ -461,3 +461,113 @@ gegen die aktuellen Rohmeldungen reviewen. Technisch bitte prüfen, ob
 Limit-Skips wirklich endgültig verbraucht bleiben sollen oder ob eine kleine,
 zeitlich begrenzte Pending-Queue der sinnvollere nächste Schritt ist. Geldlimits
 nicht ohne Rücksprache ändern.
+
+## 2026-08-14 – Codex: Einjahres-Backtest der 30er-Watchlist
+
+**Bearbeiter:** Codex (direkter Nutzerauftrag)
+**Status:** abgeschlossen für diesen Abschnitt
+
+### Bearbeitete Dateien
+
+- `src/senator_copytrader/portfolio_backtest.py` (limitgetreue Kontosimulation)
+- `scripts/run_backtest_1y.py` (reproduzierbarer Einjahreslauf)
+- `tests/test_portfolio_backtest.py` (Daten-/Limit-/Ausführungstests)
+- `backtest_1y_results.csv` (Entscheidung je veröffentlichtem Signal)
+- `backtest_1y_report.md` (Ergebnis, Benchmark und Grenzen)
+- `README.md` (Aufruf und Einordnung)
+- `HANDOFF.md` (Arbeitsprotokoll und Übergabe)
+
+### Festgelegte Methodik vor Berechnung
+
+- Zeitraum: 13.08.2025 bis 13.08.2026, ausschließlich anhand des
+  Veröffentlichungs-/Filing-Datums; kein Einstieg am rückwirkenden Handelstag.
+- Ausgangskapital 100.000 USD. Die vier Geldlimits aus `config.example.json`
+  werden unverändert simuliert: 1.000 USD je Kauf, 3.000 USD je Position,
+  20.000 USD Gesamtpositionen und 5.000 USD Käufe je Ausführungstag.
+- Kauf/Verkauf am adjustierten Eröffnungskurs des nächsten SPY-Handelstags;
+  0,10 % Kosten/Slippage je ausgeführter Seite. Verkäufe schließen wie der Bot
+  die vollständige vorhandene Tickerposition; ohne Position kein Short.
+- Offene Positionen werden am letzten verfügbaren Schlusskurs bewertet. Neben
+  dem laufenden Kontowert wird ein hypothetischer Liquidationswert nach weiteren
+  0,10 % ausgewiesen.
+- Benchmark sowohl 100.000 USD SPY als auch fairer risikogedeckelter Vergleich
+  80.000 USD Cash + 20.000 USD SPY. Cash wird ohne Zins gerechnet.
+- Rohmeldungen: statische, offene Kadoa-Dateien aus dem Commit
+  `e51eacba83bb0188aa687fa4e5576dcafd90907f` (Daily refresh 13.08.2026), die
+  laut Projekt aus Senate eFD/House Clerk/OGE normalisiert werden. Kursquelle:
+  Yahoo-Finance-Chart-API wie im bestehenden Backtest.
+
+Der alte lokale Senate-Stock-Watcher-Datensatz endet 2021 und ist für diese
+Aufgabe ungeeignet. Die neue Quelle wird nur im ignorierten `work/`-Ordner
+gehalten; Commit, Fenster und jede verwendete Meldung werden im Bericht/CSV
+festgehalten.
+
+### Ergebnis
+
+- Der deterministische Hauptlauf startet mit 100.000 USD und endet bei
+  **105.920,35 USD (+5,92 %)**; nach hypothetischer Schlussliquidation bleiben
+  105.900,27 USD (+5,90 %).
+- 100.000 USD SPY steigen im selben Fenster nach dem identischen Einstiegskosten-
+  Ansatz auf 121.832,92 USD (+21,83 %). Der risikogleichere Vergleich aus
+  80.000 USD Cash + 20.000 USD SPY endet bei 104.366,58 USD (+4,37 %). Der
+  Hauptlauf liegt damit +1,55 Prozentpunkte vor der risikogleichen Benchmark.
+- Durchschnittlich waren 17.512,15 USD investiert. Maximaler Drawdown: −1,56 %.
+  Umsatz: 51.843,46 USD aus 33.000 USD Käufen und 18.843,46 USD Verkäufen.
+- Von 913 Watchlist-Zeilen wurden nur 49 ausgeführt (33 Käufe, 16 Verkäufe), 366
+  fachlich gefiltert und 498 wegen Limits oder fehlender Position übersprungen.
+  Die größten Bremsen waren 305 Nicht-Aktien, 329 Verkäufe ohne Position, 134
+  Portfoliolimit- und 31 Tageslimit-Skips.
+- Nur sechs Namen erzeugten ausgeführte Käufe: Boozman 19, King 5, Fetterman 3,
+  Hickenlooper 3, Moran 2 und McConnell 1. McCormicks, Curtis', Scotts und viele
+  von Fettermans Zeilen bestätigen als Anleihen/strukturierte Bestände den
+  zuvor markierten Rauschverdacht.
+- Die tickerweite Verkaufslogik vermischt Senatorensignale: Im Lauf schließt
+  beispielsweise Tina Smith eine aus Morans Signal stammende BRK.B-Position und
+  Tuberville eine aus Fettermans Signal stammende MSFT-Position.
+
+### Robustheitsprüfung
+
+Weil das Tageslimit bei Meldungsclustern die ersten fünf Käufe bevorzugt, wurden
+200 deterministische Zufallsreihenfolgen (Seeds 0–199) gerechnet. Die Rendite
+reicht von +0,85 % bis +11,68 %, Median +5,09 %, 5.–95. Perzentil
++2,76 % bis +8,17 %. Alle Läufe sind positiv, aber nur 62 % schlagen den
+risikogleichen SPY-Mix. Der Hauptwert ist daher reihenfolgeabhängig.
+
+Noch wichtiger: Die Watchlist wurde am Ende des Testfensters gerade anhand der
+Aktivität desselben Jahres ausgewählt. Der Test ist deshalb in-sample und hat
+Universums-Look-ahead. Das positive Ergebnis ist nützlich für die technische
+Paper-Simulation, aber kein Beweis einer künftig kopierbaren Alpha.
+
+### Tests und Prüfungen
+
+```text
+PYTHONPATH=src python3 -m unittest discover -s tests -v
+Ran 41 tests in 0.029s – OK
+
+PYTHONPYCACHEPREFIX=/tmp/senator_copytrader_pycache \
+  PYTHONPATH=src python3 -m compileall -q src scripts tests
+OK
+
+python3 -m json.tool backtest_1y_summary.json
+OK
+
+Artefaktprüfung: 913 CSV-Zeilen, Status-/Grundsummen, Referenz-Endwert und
+200 Sensitivitätsläufe konsistent
+
+git diff --check
+OK
+```
+
+Neu abgesichert sind: Filing- statt Transaktionsdatum, Tuberville-/McConnell-
+Alias, fünf-von-sechs-Tageslimit, Positionslimit, vollständiges Schließen ohne
+Short und Reihenfolgen-Sensitivität. Alle 35 zuvor vorhandenen Tests bleiben
+grün.
+
+### Nächste Aufgabe
+
+Claude: Bitte Daten-/Methodikreview des Einjahreslaufs, besonders
+Kadoa-Assetklassifikation, Ausführung zum nächsten Open, SPY-Benchmark,
+Reihenfolgen-Sensitivität und Cross-Senator-Verkäufe. Vor höheren Geldlimits
+sollten eine deterministische Signalpriorität und senatorbezogene Lots geklärt
+werden. Für Strategienachweis die heutige Watchlist einfrieren und ausschließlich
+ein künftiges Out-of-sample-Fenster bewerten.

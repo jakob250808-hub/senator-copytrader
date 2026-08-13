@@ -168,6 +168,35 @@ Der aktuelle Befund ist **keine Handelsempfehlung**: Der mittlere Vorsprung
 gegen SPY ist sehr klein, der Median negativ, und fehlende historische Kurse
 delisteter Titel können das Ergebnis verzerren.
 
+## Einjahres-Kontosimulation der aktuellen Watchlist
+
+Die aktuelle 30er-Watchlist kann zusätzlich als echtes, begrenztes
+100.000-USD-Paperkonto über das letzte vollständige Datenjahr simuliert werden.
+Anders als der unabhängige 90-Tage-Signaltest berücksichtigt dieser Lauf die
+unveränderten Tages-, Positions- und Portfoliolimits sowie tickerweite
+Verkaufssignale.
+
+Benötigt wird der offene, statische Kadoa-Datensatz am dokumentierten Stand:
+
+```bash
+git clone --depth 1 https://github.com/kadoa-org/congress-trading-monitor.git \
+  work/congress-trading-monitor
+git -C work/congress-trading-monitor checkout \
+  e51eacba83bb0188aa687fa4e5576dcafd90907f
+PYTHONPATH=src python3 scripts/run_backtest_1y.py
+```
+
+Das Ergebnis steht in `backtest_1y_report.md`, die 913 Einzelentscheidungen in
+`backtest_1y_results.csv` und die maschinenlesbare Zusammenfassung in
+`backtest_1y_summary.json`. Der historische Kurscache bleibt unter `work/`
+ignoriert.
+
+Der Lauf ist bewusst als **in-sample** markiert: Die heutige Watchlist wurde
+anhand desselben zurückliegenden Jahres ausgewählt. Außerdem kann bei mehr als
+fünf gleichzeitigen Käufen die Feed-Reihenfolge die Rendite stark verändern.
+Für einen belastbaren Nachweis muss die Liste jetzt eingefroren und ein neues,
+zukünftiges Jahr abgewartet werden.
+
 ## Grenzen des Tests
 
 Politiker melden Trades erst nachträglich und nur in Wertspannen. Die

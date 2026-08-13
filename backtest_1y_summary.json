@@ -1,0 +1,133 @@
+{
+  "average_invested_usd": 17512.154645021164,
+  "ending_cash_usd": 85843.45742177244,
+  "ending_invested_usd": 20076.892894977173,
+  "ending_positions": {
+    "AMD": {
+      "market_value_usd": 2787.56200313074,
+      "paid_notional_usd": 1000.0,
+      "shares": 5.771230299105752
+    },
+    "AMZN": {
+      "market_value_usd": 1262.4636369170469,
+      "paid_notional_usd": 1000.0,
+      "shares": 4.761677719106353
+    },
+    "ANET": {
+      "market_value_usd": 1484.7910592851847,
+      "paid_notional_usd": 1000.0,
+      "shares": 7.291970802919708
+    },
+    "BAC": {
+      "market_value_usd": 1368.0597707597824,
+      "paid_notional_usd": 1000.0,
+      "shares": 21.345917443140376
+    },
+    "BRK.B": {
+      "market_value_usd": 1032.4629208626002,
+      "paid_notional_usd": 1000.0,
+      "shares": 2.036697247706422
+    },
+    "COST": {
+      "market_value_usd": 1046.7549956983562,
+      "paid_notional_usd": 1000.0,
+      "shares": 1.088272622828416
+    },
+    "ERIE": {
+      "market_value_usd": 1038.1229974353428,
+      "paid_notional_usd": 1000.0,
+      "shares": 4.057862604093243
+    },
+    "ETN": {
+      "market_value_usd": 2446.318651701208,
+      "paid_notional_usd": 2000.0,
+      "shares": 5.396330982202165
+    },
+    "GIGB": {
+      "market_value_usd": 1000.2099294261036,
+      "paid_notional_usd": 1000.0,
+      "shares": 22.18744207630177
+    },
+    "INTU": {
+      "market_value_usd": 539.4872816247988,
+      "paid_notional_usd": 1000.0,
+      "shares": 1.5057279543343969
+    },
+    "NTAP": {
+      "market_value_usd": 2083.1308941624757,
+      "paid_notional_usd": 1000.0,
+      "shares": 10.162109558224014
+    },
+    "PANW": {
+      "market_value_usd": 1855.2924444340126,
+      "paid_notional_usd": 1000.0,
+      "shares": 4.685081930388921
+    },
+    "TLH": {
+      "market_value_usd": 966.8781532402944,
+      "paid_notional_usd": 1000.0,
+      "shares": 9.953450270901774
+    },
+    "WFC": {
+      "market_value_usd": 1165.358156299226,
+      "paid_notional_usd": 1000.0,
+      "shares": 13.226173512956649
+    }
+  },
+  "ending_value_usd": 105920.35031674962,
+  "executed_buys_by_senator": {
+    "Angus S. King Jr.": 5,
+    "Jerry Moran": 2,
+    "John Boozman": 19,
+    "John Fetterman": 3,
+    "John W. Hickenlooper": 3,
+    "Mitch McConnell": 1
+  },
+  "liquidation_return_pct": 5.900273423854641,
+  "liquidation_value_usd": 105900.27342385464,
+  "market_end": "2026-08-13",
+  "market_start": "2025-08-13",
+  "max_drawdown_pct": -1.5570614779944147,
+  "order_sensitivity": {
+    "max_return_pct": 11.679919926256632,
+    "mean_return_pct": 5.219820915667398,
+    "median_return_pct": 5.090440927064977,
+    "min_return_pct": 0.8513174949010605,
+    "p05_return_pct": 2.759742306936304,
+    "p95_return_pct": 8.169675566043047,
+    "runs": 200,
+    "share_beating_risk_matched_spy": 0.62,
+    "share_positive": 1.0
+  },
+  "peak_invested_usd": 23637.156236560204,
+  "reason_counts": {
+    "daily_notional_limit": 31,
+    "invalid_or_missing_ticker": 53,
+    "no_position": 329,
+    "portfolio_limit": 134,
+    "position_closed": 16,
+    "position_limit": 4,
+    "position_opened_or_increased": 33,
+    "price_provider_http_404": 1,
+    "provider_instrument_type_MUTUALFUND": 6,
+    "source_asset_type_not_stock": 305,
+    "unsupported_action": 1
+  },
+  "requested_end": "2026-08-13",
+  "requested_start": "2025-08-13",
+  "return_pct": 5.920350316749623,
+  "risk_matched_spy_return_pct": 4.366583681013614,
+  "risk_matched_spy_value_usd": 104366.58368101361,
+  "signal_count": 913,
+  "spy_100k_return_pct": 21.832918405068092,
+  "spy_100k_value_usd": 121832.91840506809,
+  "starting_cash_usd": 100000.0,
+  "status_counts": {
+    "executed": 49,
+    "filtered": 366,
+    "skipped": 498
+  },
+  "total_buy_notional_usd": 33000.0,
+  "total_sale_proceeds_usd": 18843.45742177246,
+  "turnover_usd": 51843.45742177246
+}
