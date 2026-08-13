@@ -141,8 +141,10 @@ def main() -> int:
     for scenario in SCENARIOS:
         parameters = {
             "starting_cash_usd": args.starting_cash,
-            "buy_notional_usd": config.strategy.buy_notional_usd,
-            "max_position_usd": config.strategy.max_position_usd,
+            # Historische Vergleichsmatrix bewusst auf den damals getesteten
+            # 1k/3k-Werten einfrieren, unabhängig von späteren Live-Configs.
+            "buy_notional_usd": 1_000.0,
+            "max_position_usd": 3_000.0,
             "max_portfolio_usd": scenario["max_portfolio_usd"],
             "max_daily_notional_usd": scenario["max_daily_notional_usd"],
             "stop_loss_pct": scenario["stop_loss_pct"],

@@ -66,13 +66,13 @@ def make_trade(representative):
 
 
 class WatchlistTests(unittest.TestCase):
-    def test_example_watchlist_has_30_quiver_names_and_preserves_money_limits(self):
+    def test_example_watchlist_has_30_quiver_names_and_user_approved_money_limits(self):
         config = load_config(str(PROJECT_ROOT / "config.example.json"))
 
         self.assertEqual(config.source.politicians, QUIVER_CANONICAL_NAMES)
         self.assertEqual(len(config.source.politicians), 30)
-        self.assertEqual(config.strategy.buy_notional_usd, 1_000.0)
-        self.assertEqual(config.strategy.max_position_usd, 3_000.0)
+        self.assertEqual(config.strategy.buy_notional_usd, 3_000.0)
+        self.assertEqual(config.strategy.max_position_usd, 7_000.0)
         self.assertEqual(config.strategy.max_portfolio_usd, 20_000.0)
         self.assertEqual(config.strategy.max_daily_notional_usd, 5_000.0)
 

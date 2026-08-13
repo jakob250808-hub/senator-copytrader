@@ -680,3 +680,81 @@ Tickerpositionen und Polling-Gap-Risiko. Beim Backtest bitte besonders prüfen,
 ob Exit-vor-Signal am adjustierten Open ohne Intraday-Hoch/Tief sauber und die
 Schlussfolgerung „vorerst deaktiviert“ aus den fünf In-sample-Szenarien korrekt
 begrenzt ist. Die Live-Geldlimits erst nach separater Nutzerfreigabe verändern.
+
+## 2026-08-14 – Codex: Nutzerfreigabe für 3k-Kauf / 7k-Ticker
+
+**Bearbeiter:** Codex (direkter Nutzerauftrag; zwei ausdrücklich genannte
+Geldwerte trotz des auf Claude stehenden Automatisierungsmarkers geändert)
+**Status:** abgeschlossen für diesen Abschnitt
+
+### Geänderte Config
+
+- `buy_notional_usd`: 1.000 → **3.000 USD**
+- `max_position_usd`: 3.000 → **7.000 USD**
+- `max_portfolio_usd`: unverändert **20.000 USD**
+- `max_daily_notional_usd`: unverändert **5.000 USD**
+- Exit-Felder: weiterhin `null`/deaktiviert
+- `config.paper-demo.json`: unverändert klein
+
+Die Schutzprüfung in `tests/test_watchlist.py` fixiert nun exakt diese vier
+Werte. README und der reproduzierbare Einjahresbericht wurden angepasst. Die
+alte aggressive 1k/3k-Szenarienmatrix bleibt im Skript absichtlich auf ihren
+historischen Parametern eingefroren, damit ihr veröffentlichter Bericht trotz
+der neuen Beispielconfig reproduzierbar bleibt.
+
+### Kritischer Kapazitätseffekt
+
+3.000 USD je Kauf passen nur einmal in das unveränderte Tageslimit von 5.000
+USD. Zwei Käufe wären 6.000 USD und werden abgewiesen; 2.000 USD Tagesbudget
+bleiben strukturell ungenutzt. Das 7.000-USD-Tickerlimit erlaubt zwei Käufe
+(6.000 USD), aber keinen dritten. Das ist größer je ausgewähltem Signal, nicht
+automatisch mehr Gesamtinvestition.
+
+### Einjahres-Backtest des exakten Config-Stands
+
+- Endwert 98.045,15 USD, Rendite **−1,95 %**; nach Liquidation −1,97 %
+- Maximaler Drawdown −4,67 %
+- Durchschnittlich nur 15.141,91 USD investiert, Spitze 20.067,83 USD
+- 14 Käufe / 7 Verkäufe; 42.000 USD Kaufvolumen, 62.423,70 USD Umsatz
+- 53 Tageslimit- und 135 Portfoliolimit-Skips
+- 200 Reihenfolgen: Minimum −3,07 %, P05 −1,13 %, Median +3,48 %,
+  Mittel +3,87 %, P95 +9,79 %, Maximum +15,57 %
+- 83,5 % positiv, aber nur 42 % über dem risikogleichen SPY-Mix (+4,37 %)
+
+Der deterministische Hauptlauf verschlechtert sich gegenüber dem früheren
+1k/3k-Stand; die Rendite wird extrem reihenfolgeabhängig. Das Ziel von 7 % pro
+Monat wird durch diese Änderung im Test nicht annähernd belegt.
+
+### Nicht übernommene Zusatzszenarien
+
+Zur Kapazitätseinordnung wurde dieselbe 3k/7k-Kombination read-only mit höheren
+Gesamtlimits gerechnet; **keiner dieser Werte wurde in die Config übernommen**:
+
+| Portfolio / Tag | Hauptlauf | Median aus 200 | P05–P95 | Max. Drawdown |
+|---|---:|---:|---:|---:|
+| 20k / 5k (Config) | −1,95 % | +3,48 % | −1,13 bis +9,79 % | −4,67 % |
+| 40k / 10k | +14,35 % | +9,86 % | +4,05 bis +18,02 % | −3,32 % |
+| 60k / 15k | +17,76 % | +15,27 % | +8,35 bis +24,51 % | −4,55 % |
+| 80k / 20k | +16,63 % | +18,34 % | +10,75 bis +27,63 % | −7,32 % |
+| 100k / 30k | +20,38 % | +26,36 % | +17,68 bis +34,80 % | −6,44 % |
+
+Auch die aggressivste Zeile liegt im Hauptlauf weit unter den für 7 % monatlich
+nötigen +125 % jährlich. Die breite Streuung zeigt zudem steigendes
+Auswahl-/Konzentrationsrisiko statt einer nachgewiesenen stabilen Alpha.
+
+### Tests
+
+```text
+PYTHONPATH=src python3 -m unittest discover -s tests -v
+Ran 55 tests in 0.047s – OK
+
+python3 scripts/run_backtest_1y.py
+913 Signale; JSON/CSV konsistent
+```
+
+### Nächste Aufgabe
+
+Claude: Bitte nur die ausdrücklich geänderten 3k-/7k-Werte und die
+Backtest-Konsistenz reviewen. Portfolio-/Tageslimit nicht ohne neue
+Nutzerfreigabe anheben. Besonders darauf hinweisen, dass 3k/5k nur einen Kauf
+pro Tag zulässt und der Hauptlauf negativ ist.

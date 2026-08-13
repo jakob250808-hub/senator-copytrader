@@ -15,7 +15,7 @@ Es gibt absichtlich keinen Live-Trading-Modus.
   100 USD". Stattdessen verarbeitet der Bot alle gültigen Tagesmeldungen, solange
   die folgenden konfigurierbaren Limits eingehalten werden (`strategy` in
   `config.json`):
-  - `buy_notional_usd` – Betrag je einzelnem Kaufsignal (Standard: 1.000 USD).
+  - `buy_notional_usd` – Betrag je einzelnem Kaufsignal (Beispielconfig: 3.000 USD).
   - `max_position_usd` – maximal investierter Betrag je Ticker.
   - `max_portfolio_usd` – maximal investierter Gesamtbetrag über alle Positionen.
   - `max_daily_notional_usd` – maximal an einem Kalendertag ausgegebener Betrag.
@@ -86,13 +86,13 @@ Groß-/Kleinschreibung, Akzente, Satzpunkte, Mittelinitialen, Titel, Suffixe und
 die Schreibweise `Nachname, Vorname` werden für den Vergleich normalisiert; die
 Person selbst muss dennoch eindeutig der Quiver-Meldung entsprechen.
 
-Die größere Watchlist ändert keine Geldgrenze: Mit 1.000 USD je Kauf und 5.000
-USD Tageslimit können höchstens fünf Käufe pro Tag eingereicht werden. Einen
-zusätzlichen `max_orders_per_run`-Deckel gibt es nicht. Erreicht ein Signal ein
-Geldlimit, wird es als `skipped` protokolliert und nicht für einen späteren Lauf
-aufgehoben. Das ist bei Signalausbrüchen bewusst konservativ, kann aber Signale
-verwerfen; vor einer Änderung der Limits ist eine ausdrückliche Entscheidung
-nötig.
+Die Beispielconfig handelt jetzt aggressiver mit 3.000 USD je Kauf und 7.000 USD
+je Ticker. Portfolio- und Tageslimit bleiben bei 20.000 beziehungsweise 5.000
+USD. Dadurch kann pro Tag höchstens ein neuer Kauf eingereicht werden; 2.000 USD
+des Tagesbudgets bleiben ungenutzt. Je Ticker sind höchstens zwei gleich große
+Käufe möglich. Einen zusätzlichen `max_orders_per_run`-Deckel gibt es nicht.
+Erreicht ein Signal ein Geldlimit, wird es als `skipped` protokolliert und nicht
+für einen späteren Lauf aufgehoben.
 
 ## Empfohlener Ablauf
 
@@ -197,7 +197,7 @@ delisteter Titel können das Ergebnis verzerren.
 Die aktuelle 30er-Watchlist kann zusätzlich als echtes, begrenztes
 100.000-USD-Paperkonto über das letzte vollständige Datenjahr simuliert werden.
 Anders als der unabhängige 90-Tage-Signaltest berücksichtigt dieser Lauf die
-unveränderten Tages-, Positions- und Portfoliolimits sowie tickerweite
+konfigurierten Tages-, Positions- und Portfoliolimits sowie tickerweite
 Verkaufssignale.
 
 Benötigt wird der offene, statische Kadoa-Datensatz am dokumentierten Stand:
@@ -216,16 +216,18 @@ Das Ergebnis steht in `backtest_1y_report.md`, die 913 Einzelentscheidungen in
 ignoriert.
 
 Der Lauf ist bewusst als **in-sample** markiert: Die heutige Watchlist wurde
-anhand desselben zurückliegenden Jahres ausgewählt. Außerdem kann bei mehr als
-fünf gleichzeitigen Käufen die Feed-Reihenfolge die Rendite stark verändern.
+anhand desselben zurückliegenden Jahres ausgewählt. Mit der aktuellen
+3.000-/5.000-USD-Kombination kann bereits bei mehr als einem gleichzeitigen Kauf
+die Feed-Reihenfolge die Rendite stark verändern.
 Für einen belastbaren Nachweis muss die Liste jetzt eingefroren und ein neues,
 zukünftiges Jahr abgewartet werden.
 
 ### Aggressiver Szenarienvergleich
 
-Der zusätzliche Szenarienlauf vergleicht die bisherigen Grenzen mit Variante C
-(40.000 USD Portfoliolimit, 10.000 USD Tageslimit) und drei festen Exit-Sets.
-Die Live-Config und ihre Geldlimits werden dabei nicht verändert:
+Der zusätzliche, historisch eingefrorene Szenarienlauf vergleicht die früheren
+1.000-/3.000-USD-Grenzen mit Variante C (40.000 USD Portfoliolimit, 10.000 USD
+Tageslimit) und drei festen Exit-Sets. Die aktuelle Config und ihre Geldlimits
+werden dabei nicht verändert:
 
 ```bash
 PYTHONPATH=src python3 scripts/run_backtest_1y_scenarios.py

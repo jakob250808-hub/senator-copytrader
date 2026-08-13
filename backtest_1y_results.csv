@@ -48,11 +48,11 @@ senate_83d12cdb-288d-4937-91d3-31bbabbd3edb_t0,Rick Scott,2025-08-13,2025-07-17,
 senate_218c16a3-d408-4cc0-aa89-08730d05dfc3_t22,Angus S. King Jr.,2025-08-18,2025-07-14,,sell,,Municipal Security,Spouse,"$15,001 - $50,000",filtered,source_asset_type_not_stock,,,,
 senate_218c16a3-d408-4cc0-aa89-08730d05dfc3_t23,Angus S. King Jr.,2025-08-18,2025-07-14,,sell,,Municipal Security,Spouse,"$15,001 - $50,000",filtered,source_asset_type_not_stock,,,,
 senate_218c16a3-d408-4cc0-aa89-08730d05dfc3_t24,Angus S. King Jr.,2025-08-18,2025-07-15,2025-08-19,sell,UNH,Stock,Spouse,"$1,001 - $15,000",skipped,no_position,,,,
-senate_218c16a3-d408-4cc0-aa89-08730d05dfc3_t17,Angus S. King Jr.,2025-08-18,2025-07-21,2025-08-19,buy,ADSK,Stock,Spouse,"$1,001 - $15,000",executed,position_opened_or_increased,290.380005,1000.00,3.44031952,99000.00
-senate_218c16a3-d408-4cc0-aa89-08730d05dfc3_t19,Angus S. King Jr.,2025-08-18,2025-07-21,2025-08-19,buy,AMAT,Stock,Spouse,"$1,001 - $15,000",executed,position_opened_or_increased,163.043944,1000.00,6.12718249,98000.00
-senate_218c16a3-d408-4cc0-aa89-08730d05dfc3_t21,Angus S. King Jr.,2025-08-18,2025-07-21,2025-08-19,buy,AMD,Stock,Spouse,"$1,001 - $15,000",executed,position_opened_or_increased,173.100006,1000.00,5.77123030,97000.00
-senate_218c16a3-d408-4cc0-aa89-08730d05dfc3_t18,Angus S. King Jr.,2025-08-18,2025-07-21,2025-08-19,buy,ANET,Stock,Spouse,"$1,001 - $15,000",executed,position_opened_or_increased,137.000000,1000.00,7.29197080,96000.00
-senate_218c16a3-d408-4cc0-aa89-08730d05dfc3_t16,Angus S. King Jr.,2025-08-18,2025-07-21,2025-08-19,buy,BAC,Stock,Spouse,"$1,001 - $15,000",executed,position_opened_or_increased,46.800518,1000.00,21.34591744,95000.00
+senate_218c16a3-d408-4cc0-aa89-08730d05dfc3_t17,Angus S. King Jr.,2025-08-18,2025-07-21,2025-08-19,buy,ADSK,Stock,Spouse,"$1,001 - $15,000",executed,position_opened_or_increased,290.380005,3000.00,10.32095857,97000.00
+senate_218c16a3-d408-4cc0-aa89-08730d05dfc3_t19,Angus S. King Jr.,2025-08-18,2025-07-21,2025-08-19,buy,AMAT,Stock,Spouse,"$1,001 - $15,000",skipped,daily_notional_limit,,,,
+senate_218c16a3-d408-4cc0-aa89-08730d05dfc3_t21,Angus S. King Jr.,2025-08-18,2025-07-21,2025-08-19,buy,AMD,Stock,Spouse,"$1,001 - $15,000",skipped,daily_notional_limit,,,,
+senate_218c16a3-d408-4cc0-aa89-08730d05dfc3_t18,Angus S. King Jr.,2025-08-18,2025-07-21,2025-08-19,buy,ANET,Stock,Spouse,"$1,001 - $15,000",skipped,daily_notional_limit,,,,
+senate_218c16a3-d408-4cc0-aa89-08730d05dfc3_t16,Angus S. King Jr.,2025-08-18,2025-07-21,2025-08-19,buy,BAC,Stock,Spouse,"$1,001 - $15,000",skipped,daily_notional_limit,,,,
 senate_218c16a3-d408-4cc0-aa89-08730d05dfc3_t15,Angus S. King Jr.,2025-08-18,2025-07-21,2025-08-19,buy,BX,Stock,Spouse,"$1,001 - $15,000",skipped,daily_notional_limit,,,,
 senate_218c16a3-d408-4cc0-aa89-08730d05dfc3_t20,Angus S. King Jr.,2025-08-18,2025-07-21,2025-08-19,buy,GOOGL,Stock,Spouse,"$1,001 - $15,000",skipped,daily_notional_limit,,,,
 senate_218c16a3-d408-4cc0-aa89-08730d05dfc3_t13,Angus S. King Jr.,2025-08-18,2025-07-21,2025-08-19,buy,JPM,Stock,Spouse,"$1,001 - $15,000",skipped,daily_notional_limit,,,,
@@ -84,16 +84,16 @@ senate_59112b4e-976a-4c7a-92e5-112ab45d2bf8_t0,Sheldon Whitehouse,2025-09-03,202
 senate_d55832ea-b5e3-4e39-8587-5005dc48f3d6_t0,John Fetterman,2025-09-04,2025-08-26,,sell,,Corporate Bond,Child,"$1,001 - $15,000",filtered,source_asset_type_not_stock,,,,
 senate_d55832ea-b5e3-4e39-8587-5005dc48f3d6_t1,John Fetterman,2025-09-04,2025-08-26,,sell,,Corporate Bond,Child,"$1,001 - $15,000",filtered,source_asset_type_not_stock,,,,
 senate_d55832ea-b5e3-4e39-8587-5005dc48f3d6_t2,John Fetterman,2025-09-04,2025-08-27,,buy,,Corporate Bond,Child,"$1,001 - $15,000",filtered,source_asset_type_not_stock,,,,
-senate_59bccfcc-9400-4d3d-917f-ce22a0fd2feb_t17,John Boozman,2025-09-12,2025-08-01,2025-09-15,buy,AGZ,Stock,Joint,"$1,001 - $15,000",executed,position_opened_or_increased,106.722892,1000.00,9.36069083,94000.00
-senate_59bccfcc-9400-4d3d-917f-ce22a0fd2feb_t13,John Boozman,2025-09-12,2025-08-01,2025-09-15,buy,CMBS,Stock,Joint,"$1,001 - $15,000",executed,position_opened_or_increased,47.572681,1000.00,20.99944731,93000.00
+senate_59bccfcc-9400-4d3d-917f-ce22a0fd2feb_t17,John Boozman,2025-09-12,2025-08-01,2025-09-15,buy,AGZ,Stock,Joint,"$1,001 - $15,000",executed,position_opened_or_increased,106.722892,3000.00,28.08207248,94000.00
+senate_59bccfcc-9400-4d3d-917f-ce22a0fd2feb_t13,John Boozman,2025-09-12,2025-08-01,2025-09-15,buy,CMBS,Stock,Joint,"$1,001 - $15,000",skipped,daily_notional_limit,,,,
 senate_c104f1ee-c957-4485-9807-e4798463c3b9_t7,John Boozman,2025-09-12,2025-08-01,2025-09-15,sell,EFA,Stock,Joint,"$1,001 - $15,000",skipped,no_position,,,,
 senate_c104f1ee-c957-4485-9807-e4798463c3b9_t12,John Boozman,2025-09-12,2025-08-01,2025-09-15,sell,EMLP,Stock,Joint,"$1,001 - $15,000",skipped,no_position,,,,
 senate_c104f1ee-c957-4485-9807-e4798463c3b9_t3,John Boozman,2025-09-12,2025-08-01,2025-09-15,sell,EMRZX,Stock,Joint,"$1,001 - $15,000",skipped,no_position,,,,
-senate_59bccfcc-9400-4d3d-917f-ce22a0fd2feb_t18,John Boozman,2025-09-12,2025-08-01,2025-09-15,buy,GEM,Stock,Joint,"$1,001 - $15,000",executed,position_opened_or_increased,39.468282,1000.00,25.31146422,92000.00
-senate_c104f1ee-c957-4485-9807-e4798463c3b9_t11,John Boozman,2025-09-12,2025-08-01,2025-09-15,sell,GEM,Stock,Joint,"$1,001 - $15,000",executed,position_closed,39.468282,998.00,-25.31146422,92998.00
+senate_59bccfcc-9400-4d3d-917f-ce22a0fd2feb_t18,John Boozman,2025-09-12,2025-08-01,2025-09-15,buy,GEM,Stock,Joint,"$1,001 - $15,000",skipped,daily_notional_limit,,,,
+senate_c104f1ee-c957-4485-9807-e4798463c3b9_t11,John Boozman,2025-09-12,2025-08-01,2025-09-15,sell,GEM,Stock,Joint,"$1,001 - $15,000",skipped,no_position,,,,
 senate_c104f1ee-c957-4485-9807-e4798463c3b9_t10,John Boozman,2025-09-12,2025-08-01,2025-09-15,sell,GIGB,Stock,Joint,"$1,001 - $15,000",skipped,no_position,,,,
-senate_59bccfcc-9400-4d3d-917f-ce22a0fd2feb_t10,John Boozman,2025-09-12,2025-08-01,2025-09-15,buy,IEF,Stock,Joint,"$1,001 - $15,000",executed,position_opened_or_increased,93.786328,1000.00,10.65187239,91998.00
-senate_59bccfcc-9400-4d3d-917f-ce22a0fd2feb_t14,John Boozman,2025-09-12,2025-08-01,2025-09-15,buy,IEI,Stock,Joint,"$1,001 - $15,000",executed,position_opened_or_increased,116.068762,1000.00,8.60696694,90998.00
+senate_59bccfcc-9400-4d3d-917f-ce22a0fd2feb_t10,John Boozman,2025-09-12,2025-08-01,2025-09-15,buy,IEF,Stock,Joint,"$1,001 - $15,000",skipped,daily_notional_limit,,,,
+senate_59bccfcc-9400-4d3d-917f-ce22a0fd2feb_t14,John Boozman,2025-09-12,2025-08-01,2025-09-15,buy,IEI,Stock,Joint,"$1,001 - $15,000",skipped,daily_notional_limit,,,,
 senate_c104f1ee-c957-4485-9807-e4798463c3b9_t6,John Boozman,2025-09-12,2025-08-01,2025-09-15,sell,IVV,Stock,Joint,"$1,001 - $15,000",skipped,no_position,,,,
 senate_59bccfcc-9400-4d3d-917f-ce22a0fd2feb_t9,John Boozman,2025-09-12,2025-08-01,2025-09-15,buy,IWM,Stock,Joint,"$1,001 - $15,000",skipped,daily_notional_limit,,,,
 senate_59bccfcc-9400-4d3d-917f-ce22a0fd2feb_t8,John Boozman,2025-09-12,2025-08-01,2025-09-15,buy,JMBS,Stock,Joint,"$1,001 - $15,000",skipped,daily_notional_limit,,,,
@@ -135,34 +135,34 @@ senate_12bfb6c8-5dbf-4f2a-994b-c936a0a0a91d_t7,Sheldon Whitehouse,2025-10-03,202
 senate_12bfb6c8-5dbf-4f2a-994b-c936a0a0a91d_t2,Sheldon Whitehouse,2025-10-03,2025-09-04,2025-10-06,sell,NVDA,Stock,Self,"$15,001 - $50,000",skipped,no_position,,,,
 senate_12bfb6c8-5dbf-4f2a-994b-c936a0a0a91d_t0,Sheldon Whitehouse,2025-10-03,2025-09-04,2025-10-06,sell,UNH,Stock,Self,"$15,001 - $50,000",skipped,no_position,,,,
 senate_12bfb6c8-5dbf-4f2a-994b-c936a0a0a91d_t1,Sheldon Whitehouse,2025-10-03,2025-09-04,2025-10-06,sell,VZ,Stock,Self,"$1,001 - $15,000",skipped,no_position,,,,
-senate_8a808088-5410-434a-a082-cf86637ba3d7_t0,John W. Hickenlooper,2025-10-06,2025-09-02,2025-10-07,buy,INTU,Stock,Self,"$100,001 - $250,000",executed,position_opened_or_increased,663.466463,1000.00,1.50572795,89998.00
-senate_8a808088-5410-434a-a082-cf86637ba3d7_t2,John W. Hickenlooper,2025-10-06,2025-09-02,2025-10-07,buy,PANW,Stock,Self,"$100,001 - $250,000",executed,position_opened_or_increased,213.229996,1000.00,4.68508193,88998.00
+senate_8a808088-5410-434a-a082-cf86637ba3d7_t0,John W. Hickenlooper,2025-10-06,2025-09-02,2025-10-07,buy,INTU,Stock,Self,"$100,001 - $250,000",executed,position_opened_or_increased,663.466525,3000.00,4.51718344,91000.00
+senate_8a808088-5410-434a-a082-cf86637ba3d7_t2,John W. Hickenlooper,2025-10-06,2025-09-02,2025-10-07,buy,PANW,Stock,Self,"$100,001 - $250,000",skipped,daily_notional_limit,,,,
 senate_8a808088-5410-434a-a082-cf86637ba3d7_t1,John W. Hickenlooper,2025-10-06,2025-09-02,2025-10-07,sell,PEP,Stock,Self,"$100,001 - $250,000",skipped,no_position,,,,
 senate_638bfeba-3c29-426a-94f5-a962bf58ee8a_t1,John Fetterman,2025-10-07,2025-09-04,,sell,,Corporate Bond,Child,"$1,001 - $15,000",filtered,source_asset_type_not_stock,,,,
 senate_638bfeba-3c29-426a-94f5-a962bf58ee8a_t2,John Fetterman,2025-10-07,2025-09-09,,buy,,Corporate Bond,Child,"$1,001 - $15,000",filtered,source_asset_type_not_stock,,,,
 senate_638bfeba-3c29-426a-94f5-a962bf58ee8a_t0,John Fetterman,2025-10-07,2025-09-19,,sell,,Corporate Bond,Child,"$1,001 - $15,000",filtered,source_asset_type_not_stock,,,,
 senate_8ee74188-75a9-4289-b6bd-5ccb94fd6b18_t0,James Conley Justice II,2025-10-10,2025-08-28,2025-10-13,sell,PEBO,Stock,Self,"$250,001 - $500,000",skipped,no_position,,,,
-senate_c8fa5a56-c0db-4cf4-8370-c81d858f9ca9_t6,John Boozman,2025-10-10,2025-09-04,2025-10-13,buy,ADBE,Stock,Joint,"$1,001 - $15,000",executed,position_opened_or_increased,339.250000,1000.00,2.94473102,87998.00
+senate_c8fa5a56-c0db-4cf4-8370-c81d858f9ca9_t6,John Boozman,2025-10-10,2025-09-04,2025-10-13,buy,ADBE,Stock,Joint,"$1,001 - $15,000",executed,position_opened_or_increased,339.250000,3000.00,8.83419307,88000.00
 senate_70ec8a67-0057-40d2-b123-524323ae3c34_t0,David McCormick,2025-10-10,2025-09-10,,buy,,Municipal Security,Self,"$250,001 - $500,000",filtered,source_asset_type_not_stock,,,,
 senate_70ec8a67-0057-40d2-b123-524323ae3c34_t1,David McCormick,2025-10-10,2025-09-10,,sell,,Corporate Bond,Self,"$250,001 - $500,000",filtered,source_asset_type_not_stock,,,,
 senate_70ec8a67-0057-40d2-b123-524323ae3c34_t2,David McCormick,2025-10-10,2025-09-12,,buy,,Municipal Security,Spouse,"$100,001 - $250,000",filtered,source_asset_type_not_stock,,,,
-senate_c8fa5a56-c0db-4cf4-8370-c81d858f9ca9_t4,John Boozman,2025-10-10,2025-09-12,2025-10-13,buy,ETN,Stock,Joint,"$1,001 - $15,000",executed,position_opened_or_increased,370.598091,1000.00,2.69564260,86998.00
+senate_c8fa5a56-c0db-4cf4-8370-c81d858f9ca9_t4,John Boozman,2025-10-10,2025-09-12,2025-10-13,buy,ETN,Stock,Joint,"$1,001 - $15,000",skipped,daily_notional_limit,,,,
 senate_f87f8a40-efa5-43df-ad71-56327f5a18ce_t0,John Boozman,2025-10-10,2025-09-12,2025-10-13,sell,ORCL,Stock,Joint,"$1,001 - $15,000",skipped,no_position,,,,
-senate_f87f8a40-efa5-43df-ad71-56327f5a18ce_t6,John Boozman,2025-10-10,2025-09-16,2025-10-13,sell,AGZ,Stock,Joint,"$1,001 - $15,000",executed,position_closed,107.125502,1001.77,-9.36069083,87999.77
-senate_f87f8a40-efa5-43df-ad71-56327f5a18ce_t3,John Boozman,2025-10-10,2025-09-16,2025-10-13,sell,CMBS,Stock,Joint,"$1,001 - $15,000",executed,position_closed,47.733032,1001.36,-20.99944731,89001.13
+senate_f87f8a40-efa5-43df-ad71-56327f5a18ce_t6,John Boozman,2025-10-10,2025-09-16,2025-10-13,sell,AGZ,Stock,Joint,"$1,001 - $15,000",executed,position_closed,107.125494,3005.30,-28.08207248,91005.30
+senate_f87f8a40-efa5-43df-ad71-56327f5a18ce_t3,John Boozman,2025-10-10,2025-09-16,2025-10-13,sell,CMBS,Stock,Joint,"$1,001 - $15,000",skipped,no_position,,,,
 senate_f87f8a40-efa5-43df-ad71-56327f5a18ce_t7,John Boozman,2025-10-10,2025-09-16,2025-10-13,sell,GBIL,Stock,Joint,"$1,001 - $15,000",skipped,no_position,,,,
 senate_f87f8a40-efa5-43df-ad71-56327f5a18ce_t8,John Boozman,2025-10-10,2025-09-16,2025-10-13,sell,GIGB,Stock,Joint,"$1,001 - $15,000",skipped,no_position,,,,
-senate_c8fa5a56-c0db-4cf4-8370-c81d858f9ca9_t1,John Boozman,2025-10-10,2025-09-16,2025-10-13,buy,IEF,Stock,Joint,"$15,001 - $50,000",executed,position_opened_or_increased,93.830979,1000.00,10.64680356,88001.13
-senate_c8fa5a56-c0db-4cf4-8370-c81d858f9ca9_t3,John Boozman,2025-10-10,2025-09-16,2025-10-13,buy,IEI,Stock,Joint,"$15,001 - $50,000",executed,position_opened_or_increased,116.192403,1000.00,8.59780825,87001.13
+senate_c8fa5a56-c0db-4cf4-8370-c81d858f9ca9_t1,John Boozman,2025-10-10,2025-09-16,2025-10-13,buy,IEF,Stock,Joint,"$15,001 - $50,000",skipped,daily_notional_limit,,,,
+senate_c8fa5a56-c0db-4cf4-8370-c81d858f9ca9_t3,John Boozman,2025-10-10,2025-09-16,2025-10-13,buy,IEI,Stock,Joint,"$15,001 - $50,000",skipped,daily_notional_limit,,,,
 senate_f87f8a40-efa5-43df-ad71-56327f5a18ce_t2,John Boozman,2025-10-10,2025-09-16,2025-10-13,sell,JMBS,Stock,Joint,"$1,001 - $15,000",skipped,no_position,,,,
 senate_f87f8a40-efa5-43df-ad71-56327f5a18ce_t5,John Boozman,2025-10-10,2025-09-16,2025-10-13,sell,MBB,Stock,Joint,"$1,001 - $15,000",skipped,no_position,,,,
-senate_c8fa5a56-c0db-4cf4-8370-c81d858f9ca9_t0,John Boozman,2025-10-10,2025-09-16,2025-10-13,buy,SCHP,Stock,Joint,"$1,001 - $15,000",executed,position_opened_or_increased,25.859797,1000.00,38.63139320,86001.13
+senate_c8fa5a56-c0db-4cf4-8370-c81d858f9ca9_t0,John Boozman,2025-10-10,2025-09-16,2025-10-13,buy,SCHP,Stock,Joint,"$1,001 - $15,000",skipped,daily_notional_limit,,,,
 senate_c8fa5a56-c0db-4cf4-8370-c81d858f9ca9_t2,John Boozman,2025-10-10,2025-09-16,2025-10-13,buy,SHY,Stock,Joint,"$1,001 - $15,000",skipped,daily_notional_limit,,,,
 senate_f87f8a40-efa5-43df-ad71-56327f5a18ce_t4,John Boozman,2025-10-10,2025-09-16,2025-10-13,sell,TLT,Stock,Joint,"$15,001 - $50,000",skipped,no_position,,,,
 senate_c8fa5a56-c0db-4cf4-8370-c81d858f9ca9_t5,John Boozman,2025-10-10,2025-09-17,2025-10-13,buy,GOOGL,Stock,Joint,"$15,001 - $50,000",skipped,daily_notional_limit,,,,
 senate_f87f8a40-efa5-43df-ad71-56327f5a18ce_t1,John Boozman,2025-10-10,2025-09-17,2025-10-13,sell,MU,Stock,Joint,"$1,001 - $15,000",skipped,no_position,,,,
 senate_f29e80d0-cff1-4a0b-a856-635fb71b816a_t0,Susan M. Collins,2025-10-11,2025-09-30,,buy,,Municipal Security,Spouse,"$15,001 - $50,000",filtered,source_asset_type_not_stock,,,,
-senate_b83b6502-520b-4403-9777-60f6c2d93bc1_t1,Jerry Moran,2025-10-27,2025-09-23,2025-10-28,buy,BRK.B,Stock,Self,"$1,001 - $15,000",executed,position_opened_or_increased,484.959991,1000.00,2.05996374,85001.13
+senate_b83b6502-520b-4403-9777-60f6c2d93bc1_t1,Jerry Moran,2025-10-27,2025-09-23,2025-10-28,buy,BRK.B,Stock,Self,"$1,001 - $15,000",executed,position_opened_or_increased,484.959991,3000.00,6.17989123,88005.30
 senate_b83b6502-520b-4403-9777-60f6c2d93bc1_t0,Jerry Moran,2025-10-27,2025-09-23,2025-10-28,sell,GOOG,Stock,Spouse,"$1,001 - $15,000",skipped,no_position,,,,
 senate_b83b6502-520b-4403-9777-60f6c2d93bc1_t2,Jerry Moran,2025-10-27,2025-09-23,2025-10-28,sell,GOOG,Stock,Self,"$1,001 - $15,000",skipped,no_position,,,,
 senate_c6456d94-2e65-4740-87e8-15f307c7e596_t0,Rick Scott,2025-10-30,2025-10-02,,buy,,Municipal Security,Spouse,"$100,001 - $250,000",filtered,source_asset_type_not_stock,,,,
@@ -184,9 +184,9 @@ senate_b930d1b3-c58c-4b98-b28f-fc95c4a03bba_t0,David McCormick,2025-11-07,2025-1
 senate_b930d1b3-c58c-4b98-b28f-fc95c4a03bba_t1,David McCormick,2025-11-07,2025-10-24,,sell,,Municipal Security,Spouse,"$50,001 - $100,000",filtered,source_asset_type_not_stock,,,,
 senate_4290febc-6042-4538-a193-08a9f941647c_t0,Ted Cruz,2025-11-12,2025-11-11,2025-11-13,sell,GS,Stock,Spouse,"$100,001 - $250,000",skipped,no_position,,,,
 senate_6be39035-04e2-432c-8fcb-0b4866041d11_t5,John Boozman,2025-11-15,2025-10-02,2025-11-17,sell,IQV,Stock,Joint,"$1,001 - $15,000",skipped,no_position,,,,
-senate_97a4172e-e2d9-4dea-9014-d8aa2134d628_t2,John Boozman,2025-11-15,2025-10-03,2025-11-17,buy,EIPI,Stock,Joint,"$15,001 - $50,000",executed,position_opened_or_increased,19.073075,1000.00,52.37750187,84001.13
+senate_97a4172e-e2d9-4dea-9014-d8aa2134d628_t2,John Boozman,2025-11-15,2025-10-03,2025-11-17,buy,EIPI,Stock,Joint,"$15,001 - $50,000",executed,position_opened_or_increased,19.073075,3000.00,157.13250561,85005.30
 senate_6be39035-04e2-432c-8fcb-0b4866041d11_t6,John Boozman,2025-11-15,2025-10-03,2025-11-17,sell,EMLP,Stock,Joint,"$15,001 - $50,000",skipped,no_position,,,,
-senate_97a4172e-e2d9-4dea-9014-d8aa2134d628_t1,John Boozman,2025-11-15,2025-10-03,2025-11-17,buy,FTGC,Stock,Joint,"$1,001 - $15,000",executed,position_opened_or_increased,22.700718,1000.00,44.00741934,83001.13
+senate_97a4172e-e2d9-4dea-9014-d8aa2134d628_t1,John Boozman,2025-11-15,2025-10-03,2025-11-17,buy,FTGC,Stock,Joint,"$1,001 - $15,000",skipped,daily_notional_limit,,,,
 senate_6be39035-04e2-432c-8fcb-0b4866041d11_t2,John Boozman,2025-11-15,2025-10-03,2025-11-17,sell,LITP,Stock,Joint,"$1,001 - $15,000",skipped,no_position,,,,
 senate_6be39035-04e2-432c-8fcb-0b4866041d11_t4,John Boozman,2025-11-15,2025-10-03,2025-11-17,sell,SLV,Stock,Joint,"$1,001 - $15,000",skipped,no_position,,,,
 senate_6be39035-04e2-432c-8fcb-0b4866041d11_t1,John Boozman,2025-11-15,2025-10-03,2025-11-17,sell,URNM,Stock,Joint,"$1,001 - $15,000",skipped,no_position,,,,
@@ -198,8 +198,8 @@ senate_c20df8d3-0160-4a0c-a515-a7b1d2956f87_t1,Tommy Tuberville,2025-11-15,2025-
 senate_c20df8d3-0160-4a0c-a515-a7b1d2956f87_t5,Tommy Tuberville,2025-11-15,2025-10-07,2025-11-17,sell,ORCL,Stock,Joint,"$15,001 - $50,000",skipped,no_position,,,,
 senate_c20df8d3-0160-4a0c-a515-a7b1d2956f87_t0,Tommy Tuberville,2025-11-15,2025-10-07,2025-11-17,sell,PEP,Stock,Joint,"$15,001 - $50,000",skipped,no_position,,,,
 senate_6be39035-04e2-432c-8fcb-0b4866041d11_t7,John Boozman,2025-11-15,2025-10-09,2025-11-17,sell,COLPAL,Stock,Joint,"$1,001 - $15,000",skipped,no_position,,,,
-senate_97a4172e-e2d9-4dea-9014-d8aa2134d628_t3,John Boozman,2025-11-15,2025-10-09,2025-11-17,buy,COST,Stock,Joint,"$1,001 - $15,000",executed,position_opened_or_increased,917.968512,1000.00,1.08827262,82001.13
-senate_97a4172e-e2d9-4dea-9014-d8aa2134d628_t0,John Boozman,2025-11-15,2025-10-31,2025-11-17,buy,META,Stock,Joint,"$1,001 - $15,000",executed,position_opened_or_increased,607.460035,1000.00,1.64455263,81001.13
+senate_97a4172e-e2d9-4dea-9014-d8aa2134d628_t3,John Boozman,2025-11-15,2025-10-09,2025-11-17,buy,COST,Stock,Joint,"$1,001 - $15,000",skipped,daily_notional_limit,,,,
+senate_97a4172e-e2d9-4dea-9014-d8aa2134d628_t0,John Boozman,2025-11-15,2025-10-31,2025-11-17,buy,META,Stock,Joint,"$1,001 - $15,000",skipped,daily_notional_limit,,,,
 senate_6be39035-04e2-432c-8fcb-0b4866041d11_t3,John Boozman,2025-11-15,2025-10-31,2025-11-17,sell,OMC,Stock,Joint,"$1,001 - $15,000",skipped,no_position,,,,
 senate_6be39035-04e2-432c-8fcb-0b4866041d11_t0,John Boozman,2025-11-15,2025-11-03,2025-11-17,sell,TPYP,Stock,Joint,"$1,001 - $15,000",skipped,no_position,,,,
 senate_18a1aea6-282e-4152-b3dd-d773e0302c7e_t0,Gary C. Peters,2025-11-24,2025-07-10,2025-11-25,sell,OGN,Stock,Self,"$1,001 - $15,000",skipped,no_position,,,,
@@ -218,7 +218,7 @@ senate_5d118fc0-14f4-426a-8d38-05056392b4d8_t8,David McCormick,2025-11-27,2025-1
 senate_5d118fc0-14f4-426a-8d38-05056392b4d8_t2,David McCormick,2025-11-27,2025-11-04,,buy,,Municipal Security,Self,"$250,001 - $500,000",filtered,source_asset_type_not_stock,,,,
 senate_5d118fc0-14f4-426a-8d38-05056392b4d8_t4,David McCormick,2025-11-27,2025-11-18,,buy,,Municipal Security,Spouse,"$100,001 - $250,000",filtered,source_asset_type_not_stock,,,,
 senate_5d118fc0-14f4-426a-8d38-05056392b4d8_t3,David McCormick,2025-11-27,2025-11-19,,buy,,Municipal Security,Spouse,"$100,001 - $250,000",filtered,source_asset_type_not_stock,,,,
-senate_5d118fc0-14f4-426a-8d38-05056392b4d8_t1,David McCormick,2025-11-27,2025-11-24,2025-11-28,buy,BITB,Stock,Self,"$50,001 - $100,000",skipped,portfolio_limit,,,,
+senate_5d118fc0-14f4-426a-8d38-05056392b4d8_t1,David McCormick,2025-11-27,2025-11-24,2025-11-28,buy,BITB,Stock,Self,"$50,001 - $100,000",executed,position_opened_or_increased,50.584999,3000.00,59.24681337,82005.30
 senate_5d118fc0-14f4-426a-8d38-05056392b4d8_t0,David McCormick,2025-11-27,2025-11-25,2025-11-28,buy,BITB,Stock,Self,"$15,001 - $50,000",skipped,portfolio_limit,,,,
 senate_00818cb5-a732-46ec-82f8-38dd6247072a_t0,Sheldon Whitehouse,2025-12-01,2025-11-21,2025-12-02,buy,GH,Stock,Self,"$1,001 - $15,000",skipped,portfolio_limit,,,,
 senate_00818cb5-a732-46ec-82f8-38dd6247072a_t2,Sheldon Whitehouse,2025-12-01,2025-11-21,2025-12-02,buy,HSY,Stock,Self,"$1,001 - $15,000",skipped,portfolio_limit,,,,
@@ -236,13 +236,13 @@ senate_3a779539-8451-49d2-8419-d3eb72c7922a_t10,John Boozman,2025-12-08,2025-11-
 senate_3a779539-8451-49d2-8419-d3eb72c7922a_t4,John Boozman,2025-12-08,2025-11-20,2025-12-09,sell,RNWAX,Stock,Joint,"$1,001 - $15,000",skipped,no_position,,,,
 senate_2c4705cc-0f3e-4105-9093-f82fcec8bacd_t11,John Boozman,2025-12-08,2025-11-20,2025-12-09,buy,WWSYX,Stock,Joint,"$1,001 - $15,000",filtered,provider_instrument_type_MUTUALFUND,,,,
 senate_2c4705cc-0f3e-4105-9093-f82fcec8bacd_t6,John Boozman,2025-12-08,2025-11-21,2025-12-09,buy,CMBS,Stock,Joint,"$1,001 - $15,000",skipped,portfolio_limit,,,,
-senate_3a779539-8451-49d2-8419-d3eb72c7922a_t13,John Boozman,2025-12-08,2025-11-21,2025-12-09,sell,EIPI,Stock,Joint,"$1,001 - $15,000",executed,position_closed,19.154594,1002.27,-52.37750187,82003.40
+senate_3a779539-8451-49d2-8419-d3eb72c7922a_t13,John Boozman,2025-12-08,2025-11-21,2025-12-09,sell,EIPI,Stock,Joint,"$1,001 - $15,000",executed,position_closed,19.154595,3006.80,-157.13250561,85012.10
 senate_3a779539-8451-49d2-8419-d3eb72c7922a_t11,John Boozman,2025-12-08,2025-11-21,2025-12-09,sell,FISV,Stock,Joint,"$1,001 - $15,000",skipped,no_position,,,,
-senate_3a779539-8451-49d2-8419-d3eb72c7922a_t12,John Boozman,2025-12-08,2025-11-21,2025-12-09,sell,FTGC,Stock,Joint,"$1,001 - $15,000",executed,position_closed,22.751389,1000.23,-44.00741934,83003.63
-senate_2c4705cc-0f3e-4105-9093-f82fcec8bacd_t8,John Boozman,2025-12-08,2025-11-21,2025-12-09,buy,GIGB,Stock,Joint,"$1,001 - $15,000",executed,position_opened_or_increased,45.025470,1000.00,22.18744208,82003.63
+senate_3a779539-8451-49d2-8419-d3eb72c7922a_t12,John Boozman,2025-12-08,2025-11-21,2025-12-09,sell,FTGC,Stock,Joint,"$1,001 - $15,000",skipped,no_position,,,,
+senate_2c4705cc-0f3e-4105-9093-f82fcec8bacd_t8,John Boozman,2025-12-08,2025-11-21,2025-12-09,buy,GIGB,Stock,Joint,"$1,001 - $15,000",executed,position_opened_or_increased,45.025466,3000.00,66.56233188,82012.10
 senate_3a779539-8451-49d2-8419-d3eb72c7922a_t6,John Boozman,2025-12-08,2025-11-21,2025-12-09,sell,IVV,Stock,Joint,"$1,001 - $15,000",skipped,no_position,,,,
 senate_3a779539-8451-49d2-8419-d3eb72c7922a_t7,John Boozman,2025-12-08,2025-11-21,2025-12-09,sell,IWM,Stock,Joint,"$1,001 - $15,000",skipped,no_position,,,,
-senate_2c4705cc-0f3e-4105-9093-f82fcec8bacd_t5,John Boozman,2025-12-08,2025-11-21,2025-12-09,buy,JMBS,Stock,Joint,"$1,001 - $15,000",executed,position_opened_or_increased,44.094986,1000.00,22.65563683,81003.63
+senate_2c4705cc-0f3e-4105-9093-f82fcec8bacd_t5,John Boozman,2025-12-08,2025-11-21,2025-12-09,buy,JMBS,Stock,Joint,"$1,001 - $15,000",skipped,portfolio_limit,,,,
 senate_3a779539-8451-49d2-8419-d3eb72c7922a_t5,John Boozman,2025-12-08,2025-11-21,2025-12-09,sell,LLY,Stock,Joint,"$1,001 - $15,000",skipped,no_position,,,,
 senate_2c4705cc-0f3e-4105-9093-f82fcec8bacd_t7,John Boozman,2025-12-08,2025-11-21,2025-12-09,buy,MBB,Stock,Joint,"$1,001 - $15,000",skipped,portfolio_limit,,,,
 senate_2c4705cc-0f3e-4105-9093-f82fcec8bacd_t2,John Boozman,2025-12-08,2025-11-21,2025-12-09,buy,MDY,Stock,Joint,"$1,001 - $15,000",skipped,portfolio_limit,,,,
@@ -288,7 +288,7 @@ senate_0677bd3f-167e-4cae-8f1d-05eb4340fcdc_t4,John Boozman,2026-01-13,2025-12-3
 senate_d3daa40b-123d-4451-9974-02bf5a96d8da_t0,John Boozman,2026-01-13,2025-12-31,2026-01-14,sell,SMCI,Stock,Joint,"$1,001 - $15,000",skipped,no_position,,,,
 senate_b2bdf363-af39-43c8-ae93-13ed14aa3752_t3,Tommy Tuberville,2026-01-15,2025-12-17,2026-01-16,sell,AAPL,Stock,Self,"$50,001 - $100,000",skipped,no_position,,,,
 senate_b2bdf363-af39-43c8-ae93-13ed14aa3752_t4,Tommy Tuberville,2026-01-15,2025-12-17,2026-01-16,sell,GOOGL,Stock,Self,"$1,001 - $15,000",skipped,no_position,,,,
-senate_b2bdf363-af39-43c8-ae93-13ed14aa3752_t1,Tommy Tuberville,2026-01-15,2025-12-17,2026-01-16,buy,XLP,Stock,Self,"$15,001 - $50,000",skipped,portfolio_limit,,,,
+senate_b2bdf363-af39-43c8-ae93-13ed14aa3752_t1,Tommy Tuberville,2026-01-15,2025-12-17,2026-01-16,buy,XLP,Stock,Self,"$15,001 - $50,000",executed,position_opened_or_increased,81.127279,3000.00,36.94195137,79012.10
 senate_b2bdf363-af39-43c8-ae93-13ed14aa3752_t0,Tommy Tuberville,2026-01-15,2025-12-17,2026-01-16,buy,XLU,Stock,Self,"$15,001 - $50,000",skipped,portfolio_limit,,,,
 senate_b2bdf363-af39-43c8-ae93-13ed14aa3752_t2,Tommy Tuberville,2026-01-15,2025-12-17,2026-01-16,buy,XLV,Stock,Self,"$15,001 - $50,000",skipped,portfolio_limit,,,,
 senate_5a8fc13a-c5aa-44b1-a72e-a68badbdd5f4_t1,Mark R. Warner,2026-01-16,2025-12-10,,sell,,Other,Self,"$1,001 - $15,000",filtered,source_asset_type_not_stock,,,,
@@ -322,14 +322,14 @@ senate_d7cae837-f73c-4eb1-b9fb-e510f53d65de_t0,Angus S. King Jr.,2026-01-26,2025
 senate_d7cae837-f73c-4eb1-b9fb-e510f53d65de_t1,Angus S. King Jr.,2026-01-26,2025-12-29,2026-01-27,buy,LLY,Stock,Spouse,"$1,001 - $15,000",skipped,portfolio_limit,,,,
 senate_37900303-65bf-467d-962b-76555d510b28_t0,Katie Boyd Britt,2026-01-29,2026-01-28,2026-01-30,sell,JPM,Stock,Spouse,"$1,001 - $15,000",skipped,no_position,,,,
 senate_a8f2bab8-0feb-49cf-b80f-9826cb4a7a4c_t1,Tina Smith,2026-01-30,2026-01-27,,sell,,Stock,Spouse,"$50,001 - $100,000",filtered,invalid_or_missing_ticker,,,,
-senate_a8f2bab8-0feb-49cf-b80f-9826cb4a7a4c_t0,Tina Smith,2026-01-30,2026-01-27,2026-02-02,sell,BRK.B,Stock,Spouse,"$100,001 - $250,000",executed,position_closed,481.299988,990.47,-2.05996374,81994.10
+senate_a8f2bab8-0feb-49cf-b80f-9826cb4a7a4c_t0,Tina Smith,2026-01-30,2026-01-27,2026-02-02,sell,BRK.B,Stock,Spouse,"$100,001 - $250,000",executed,position_closed,481.299988,2971.41,-6.17989123,81983.50
 senate_d8dd8a6c-08c7-4432-8e62-5cd0ee9c4a8e_t2,Sheldon Whitehouse,2026-02-04,2026-01-09,2026-02-05,sell,HD,Stock,Self,"$1,001 - $15,000",skipped,no_position,,,,
 senate_d8dd8a6c-08c7-4432-8e62-5cd0ee9c4a8e_t5,Sheldon Whitehouse,2026-02-04,2026-01-09,2026-02-05,sell,MCD,Stock,Spouse,"$15,001 - $50,000",skipped,no_position,,,,
 senate_d8dd8a6c-08c7-4432-8e62-5cd0ee9c4a8e_t1,Sheldon Whitehouse,2026-02-04,2026-01-09,2026-02-05,sell,NVDA,Stock,Self,"$1,001 - $15,000",skipped,no_position,,,,
 senate_d8dd8a6c-08c7-4432-8e62-5cd0ee9c4a8e_t4,Sheldon Whitehouse,2026-02-04,2026-01-09,2026-02-05,sell,NVDA,Stock,Spouse,"$1,001 - $15,000",skipped,no_position,,,,
 senate_d8dd8a6c-08c7-4432-8e62-5cd0ee9c4a8e_t0,Sheldon Whitehouse,2026-02-04,2026-01-09,2026-02-05,sell,SBUX,Stock,Self,"$1,001 - $15,000",skipped,no_position,,,,
 senate_d8dd8a6c-08c7-4432-8e62-5cd0ee9c4a8e_t3,Sheldon Whitehouse,2026-02-04,2026-01-09,2026-02-05,sell,SBUX,Stock,Spouse,"$1,001 - $15,000",skipped,no_position,,,,
-senate_83722654-25b1-499e-8ad5-4a1349d993a6_t2,John W. Hickenlooper,2026-02-06,2026-01-14,2026-02-09,buy,ETN,Stock,Self,"$50,001 - $100,000",executed,position_opened_or_increased,369.905690,1000.00,2.70068838,80994.10
+senate_83722654-25b1-499e-8ad5-4a1349d993a6_t2,John W. Hickenlooper,2026-02-06,2026-01-14,2026-02-09,buy,ETN,Stock,Self,"$50,001 - $100,000",executed,position_opened_or_increased,369.905690,3000.00,8.10206515,78983.50
 senate_83722654-25b1-499e-8ad5-4a1349d993a6_t0,John W. Hickenlooper,2026-02-06,2026-01-14,2026-02-09,sell,LOW,Stock,Self,"$50,001 - $100,000",skipped,no_position,,,,
 senate_83722654-25b1-499e-8ad5-4a1349d993a6_t1,John W. Hickenlooper,2026-02-06,2026-01-14,2026-02-09,sell,TJX,Stock,Self,"$50,001 - $100,000",skipped,no_position,,,,
 senate_83722654-25b1-499e-8ad5-4a1349d993a6_t3,John W. Hickenlooper,2026-02-06,2026-01-14,2026-02-09,buy,UBER,Stock,Self,"$100,001 - $250,000",skipped,portfolio_limit,,,,
@@ -365,7 +365,7 @@ senate_135ebfe9-099e-4d58-ba46-f739b90d61da_t19,John Boozman,2026-02-15,2026-01-
 senate_bd886067-927f-48a8-9d43-8ab6fa713f98_t5,John Boozman,2026-02-15,2026-01-26,2026-02-17,sell,MU,Stock,Joint,"$1,001 - $15,000",skipped,no_position,,,,
 senate_135ebfe9-099e-4d58-ba46-f739b90d61da_t21,John Boozman,2026-02-15,2026-01-29,2026-02-17,buy,CAT,Stock,Joint,"$1,001 - $15,000",skipped,portfolio_limit,,,,
 senate_135ebfe9-099e-4d58-ba46-f739b90d61da_t20,John Boozman,2026-02-15,2026-01-29,2026-02-17,buy,CVS,Stock,Joint,"$1,001 - $15,000",skipped,portfolio_limit,,,,
-senate_135ebfe9-099e-4d58-ba46-f739b90d61da_t17,John Boozman,2026-02-15,2026-01-29,2026-02-17,buy,ETN,Stock,Joint,"$1,001 - $15,000",skipped,position_limit,,,,
+senate_135ebfe9-099e-4d58-ba46-f739b90d61da_t17,John Boozman,2026-02-15,2026-01-29,2026-02-17,buy,ETN,Stock,Joint,"$1,001 - $15,000",skipped,portfolio_limit,,,,
 senate_bd886067-927f-48a8-9d43-8ab6fa713f98_t11,John Boozman,2026-02-15,2026-01-29,2026-02-17,sell,FISV,Stock,Joint,"$1,001 - $15,000",skipped,no_position,,,,
 senate_bd886067-927f-48a8-9d43-8ab6fa713f98_t8,John Boozman,2026-02-15,2026-01-29,2026-02-17,sell,IVW,Stock,Joint,"$1,001 - $15,000",skipped,no_position,,,,
 senate_bd886067-927f-48a8-9d43-8ab6fa713f98_t3,John Boozman,2026-02-15,2026-01-29,2026-02-17,sell,OMC,Stock,Joint,"$1,001 - $15,000",skipped,no_position,,,,
@@ -423,15 +423,15 @@ senate_141ea86c-9411-4d3f-ae9b-ce6e5e8065d1_t7,John Boozman,2026-03-06,2026-02-0
 senate_2b56957f-6859-43e2-a447-898509c7f142_t6,John Boozman,2026-03-06,2026-02-06,2026-03-09,sell,DBLEX,Stock,Joint,"$1,001 - $15,000",skipped,no_position,,,,
 senate_141ea86c-9411-4d3f-ae9b-ce6e5e8065d1_t6,John Boozman,2026-03-06,2026-02-06,2026-03-09,buy,EMB,Stock,Joint,"$1,001 - $15,000",skipped,portfolio_limit,,,,
 senate_141ea86c-9411-4d3f-ae9b-ce6e5e8065d1_t8,John Boozman,2026-03-06,2026-02-06,2026-03-09,buy,GIGB,Stock,Joint,"$1,001 - $15,000",skipped,portfolio_limit,,,,
-senate_141ea86c-9411-4d3f-ae9b-ce6e5e8065d1_t4,John Boozman,2026-03-06,2026-02-06,2026-03-09,buy,IEF,Stock,Joint,"$1,001 - $15,000",skipped,position_limit,,,,
-senate_2b56957f-6859-43e2-a447-898509c7f142_t2,John Boozman,2026-03-06,2026-02-06,2026-03-09,sell,JMBS,Stock,Joint,"$1,001 - $15,000",executed,position_closed,44.776157,1013.42,-22.65563683,82007.51
+senate_141ea86c-9411-4d3f-ae9b-ce6e5e8065d1_t4,John Boozman,2026-03-06,2026-02-06,2026-03-09,buy,IEF,Stock,Joint,"$1,001 - $15,000",skipped,portfolio_limit,,,,
+senate_2b56957f-6859-43e2-a447-898509c7f142_t2,John Boozman,2026-03-06,2026-02-06,2026-03-09,sell,JMBS,Stock,Joint,"$1,001 - $15,000",skipped,no_position,,,,
 senate_2b56957f-6859-43e2-a447-898509c7f142_t4,John Boozman,2026-03-06,2026-02-06,2026-03-09,sell,MBB,Stock,Joint,"$1,001 - $15,000",skipped,no_position,,,,
 senate_2b56957f-6859-43e2-a447-898509c7f142_t3,John Boozman,2026-03-06,2026-02-06,2026-03-09,sell,SHY,Stock,Joint,"$15,001 - $50,000",skipped,no_position,,,,
-senate_141ea86c-9411-4d3f-ae9b-ce6e5e8065d1_t5,John Boozman,2026-03-06,2026-02-06,2026-03-09,buy,TLH,Stock,Joint,"$1,001 - $15,000",executed,position_opened_or_increased,100.367207,1000.00,9.95345027,81007.51
+senate_141ea86c-9411-4d3f-ae9b-ce6e5e8065d1_t5,John Boozman,2026-03-06,2026-02-06,2026-03-09,buy,TLH,Stock,Joint,"$1,001 - $15,000",skipped,portfolio_limit,,,,
 senate_141ea86c-9411-4d3f-ae9b-ce6e5e8065d1_t0,John Boozman,2026-03-06,2026-02-06,2026-03-09,buy,UBER,Stock,Joint,"$1,001 - $15,000",skipped,portfolio_limit,,,,
 senate_141ea86c-9411-4d3f-ae9b-ce6e5e8065d1_t9,John Boozman,2026-03-06,2026-02-06,2026-03-09,buy,XTWO,Stock,Joint,"$15,001 - $50,000",skipped,portfolio_limit,,,,
-senate_2b56957f-6859-43e2-a447-898509c7f142_t8,John Boozman,2026-03-06,2026-02-13,2026-03-09,sell,ADBE,Stock,Joint,"$1,001 - $15,000",executed,position_closed,281.320007,827.58,-2.94473102,81835.10
-senate_141ea86c-9411-4d3f-ae9b-ce6e5e8065d1_t2,John Boozman,2026-03-06,2026-02-13,2026-03-09,buy,MSFT,Stock,Joint,"$1,001 - $15,000",executed,position_opened_or_increased,404.044891,1000.00,2.47249754,80835.10
+senate_2b56957f-6859-43e2-a447-898509c7f142_t8,John Boozman,2026-03-06,2026-02-13,2026-03-09,sell,ADBE,Stock,Joint,"$1,001 - $15,000",executed,position_closed,281.320007,2482.75,-8.83419307,81466.25
+senate_141ea86c-9411-4d3f-ae9b-ce6e5e8065d1_t2,John Boozman,2026-03-06,2026-02-13,2026-03-09,buy,MSFT,Stock,Joint,"$1,001 - $15,000",executed,position_opened_or_increased,404.044891,3000.00,7.41749263,78466.25
 senate_2b56957f-6859-43e2-a447-898509c7f142_t0,John Boozman,2026-03-06,2026-02-19,2026-03-09,sell,UNP,Stock,Joint,"$1,001 - $15,000",skipped,no_position,,,,
 senate_4ce4bf43-4f25-4cc0-b084-4ab230a1b080_t0,Sheldon Whitehouse,2026-03-06,2026-02-23,2026-03-09,sell,HD,Stock,Self,"$1,001 - $15,000",skipped,no_position,,,,
 senate_4ce4bf43-4f25-4cc0-b084-4ab230a1b080_t3,Sheldon Whitehouse,2026-03-06,2026-02-23,2026-03-09,sell,MA,Stock,Spouse,"$1,001 - $15,000",skipped,no_position,,,,
@@ -440,14 +440,14 @@ senate_4ce4bf43-4f25-4cc0-b084-4ab230a1b080_t4,Sheldon Whitehouse,2026-03-06,202
 senate_4ce4bf43-4f25-4cc0-b084-4ab230a1b080_t2,Sheldon Whitehouse,2026-03-06,2026-02-23,2026-03-09,sell,VZ,Stock,Spouse,"$1,001 - $15,000",skipped,no_position,,,,
 senate_141ea86c-9411-4d3f-ae9b-ce6e5e8065d1_t3,John Boozman,2026-03-06,2026-02-26,2026-03-09,buy,KR,Stock,Joint,"$1,001 - $15,000",skipped,portfolio_limit,,,,
 senate_2b56957f-6859-43e2-a447-898509c7f142_t1,John Boozman,2026-03-06,2026-02-26,2026-03-09,sell,PG,Stock,Joint,"$1,001 - $15,000",skipped,no_position,,,,
-senate_2b56957f-6859-43e2-a447-898509c7f142_t7,John Boozman,2026-03-06,2026-02-27,2026-03-09,sell,AMAT,Stock,Joint,"$1,001 - $15,000",executed,position_closed,320.082094,1959.24,-6.12718249,82794.34
-senate_141ea86c-9411-4d3f-ae9b-ce6e5e8065d1_t1,John Boozman,2026-03-06,2026-02-27,2026-03-09,buy,NTAP,Stock,Joint,"$1,001 - $15,000",executed,position_opened_or_increased,98.306360,1000.00,10.16210956,81794.34
-senate_8ee57a8c-076d-4e8b-bf04-061edaf0724e_t0,Mitch McConnell,2026-03-19,2026-03-01,2026-03-20,buy,WFC,Stock,Spouse,"$1,001 - $15,000",executed,position_opened_or_increased,75.532050,1000.00,13.22617351,80794.34
-senate_09b9c1ed-1d73-4f17-b6f8-7b2d92021c5b_t8,Angus S. King Jr.,2026-03-24,2026-02-13,2026-03-25,sell,ADSK,Stock,Spouse,"$1,001 - $15,000",executed,position_closed,241.240005,829.11,-3.44031952,81623.45
+senate_2b56957f-6859-43e2-a447-898509c7f142_t7,John Boozman,2026-03-06,2026-02-27,2026-03-09,sell,AMAT,Stock,Joint,"$1,001 - $15,000",skipped,no_position,,,,
+senate_141ea86c-9411-4d3f-ae9b-ce6e5e8065d1_t1,John Boozman,2026-03-06,2026-02-27,2026-03-09,buy,NTAP,Stock,Joint,"$1,001 - $15,000",skipped,portfolio_limit,,,,
+senate_8ee57a8c-076d-4e8b-bf04-061edaf0724e_t0,Mitch McConnell,2026-03-19,2026-03-01,2026-03-20,buy,WFC,Stock,Spouse,"$1,001 - $15,000",skipped,portfolio_limit,,,,
+senate_09b9c1ed-1d73-4f17-b6f8-7b2d92021c5b_t8,Angus S. King Jr.,2026-03-24,2026-02-13,2026-03-25,sell,ADSK,Stock,Spouse,"$1,001 - $15,000",executed,position_closed,241.240005,2487.34,-10.32095857,80953.59
 senate_09b9c1ed-1d73-4f17-b6f8-7b2d92021c5b_t7,Angus S. King Jr.,2026-03-24,2026-02-13,2026-03-25,sell,BX,Stock,Spouse,"$1,001 - $15,000",skipped,no_position,,,,
 senate_09b9c1ed-1d73-4f17-b6f8-7b2d92021c5b_t6,Angus S. King Jr.,2026-03-24,2026-02-13,2026-03-25,sell,LLY,Stock,Spouse,"$1,001 - $15,000",skipped,no_position,,,,
-senate_09b9c1ed-1d73-4f17-b6f8-7b2d92021c5b_t5,Angus S. King Jr.,2026-03-24,2026-02-13,2026-03-25,sell,META,Stock,Spouse,"$1,001 - $15,000",executed,position_closed,598.185583,982.76,-1.64455263,82606.21
-senate_09b9c1ed-1d73-4f17-b6f8-7b2d92021c5b_t4,Angus S. King Jr.,2026-03-24,2026-02-13,2026-03-25,sell,MSFT,Stock,Spouse,"$1,001 - $15,000",executed,position_closed,376.105426,928.99,-2.47249754,83535.20
+senate_09b9c1ed-1d73-4f17-b6f8-7b2d92021c5b_t5,Angus S. King Jr.,2026-03-24,2026-02-13,2026-03-25,sell,META,Stock,Spouse,"$1,001 - $15,000",skipped,no_position,,,,
+senate_09b9c1ed-1d73-4f17-b6f8-7b2d92021c5b_t4,Angus S. King Jr.,2026-03-24,2026-02-13,2026-03-25,sell,MSFT,Stock,Spouse,"$1,001 - $15,000",executed,position_closed,376.105426,2786.97,-7.41749263,83740.56
 senate_09b9c1ed-1d73-4f17-b6f8-7b2d92021c5b_t3,Angus S. King Jr.,2026-03-24,2026-02-13,2026-03-25,sell,NFLX,Stock,Spouse,"$1,001 - $15,000",skipped,no_position,,,,
 senate_09b9c1ed-1d73-4f17-b6f8-7b2d92021c5b_t2,Angus S. King Jr.,2026-03-24,2026-02-13,2026-03-25,sell,ONON,Stock,Spouse,"$1,001 - $15,000",skipped,no_position,,,,
 senate_09b9c1ed-1d73-4f17-b6f8-7b2d92021c5b_t1,Angus S. King Jr.,2026-03-24,2026-02-13,2026-03-25,sell,PYPL,Stock,Spouse,"$1,001 - $15,000",skipped,no_position,,,,
@@ -468,17 +468,17 @@ senate_b7c1a149-760f-4a4e-96a7-e2d689bccd2e_t0,David McCormick,2026-03-28,2026-0
 senate_5a00d807-84f1-409b-9cb0-566e59553e38_t1,Tina Smith,2026-04-02,2026-03-31,2026-04-06,sell,BRK.B,Stock,Spouse,"$100,001 - $250,000",skipped,no_position,,,,
 senate_5a00d807-84f1-409b-9cb0-566e59553e38_t0,Tina Smith,2026-04-02,2026-03-31,2026-04-06,sell,MMM,Stock,Spouse,"$50,001 - $100,000",skipped,no_position,,,,
 senate_8d93e30a-19a8-43a9-93d8-e95d629b1039_t3,John Fetterman,2026-04-03,2026-03-11,,sell,,Corporate Bond,Child,"$1,001 - $15,000",filtered,source_asset_type_not_stock,,,,
-senate_8d93e30a-19a8-43a9-93d8-e95d629b1039_t2,John Fetterman,2026-04-03,2026-03-27,2026-04-06,buy,ERIE,Stock,Child,"$1,001 - $15,000",executed,position_opened_or_increased,246.188720,1000.00,4.05786260,82535.20
-senate_8d93e30a-19a8-43a9-93d8-e95d629b1039_t1,John Fetterman,2026-04-03,2026-03-27,2026-04-06,buy,MSFT,Stock,Child,"$1,001 - $15,000",executed,position_opened_or_increased,372.682794,1000.00,2.68056378,81535.20
+senate_8d93e30a-19a8-43a9-93d8-e95d629b1039_t2,John Fetterman,2026-04-03,2026-03-27,2026-04-06,buy,ERIE,Stock,Child,"$1,001 - $15,000",executed,position_opened_or_increased,246.188720,3000.00,12.17358781,80740.56
+senate_8d93e30a-19a8-43a9-93d8-e95d629b1039_t1,John Fetterman,2026-04-03,2026-03-27,2026-04-06,buy,MSFT,Stock,Child,"$1,001 - $15,000",skipped,daily_notional_limit,,,,
 senate_8d93e30a-19a8-43a9-93d8-e95d629b1039_t0,John Fetterman,2026-04-03,2026-03-27,2026-04-06,sell,T,Stock,Child,"$1,001 - $15,000",skipped,no_position,,,,
-senate_8d93e30a-19a8-43a9-93d8-e95d629b1039_t8,John Fetterman,2026-04-03,2026-03-30,2026-04-06,buy,AMZN,Stock,Child,"$1,001 - $15,000",executed,position_opened_or_increased,209.800003,1000.00,4.76167772,80535.20
-senate_8d93e30a-19a8-43a9-93d8-e95d629b1039_t6,John Fetterman,2026-04-03,2026-03-30,2026-04-06,buy,ERIE,Stock,Child,"$1,001 - $15,000",skipped,portfolio_limit,,,,
-senate_8d93e30a-19a8-43a9-93d8-e95d629b1039_t7,John Fetterman,2026-04-03,2026-03-30,2026-04-06,buy,GOOG,Stock,Child,"$1,001 - $15,000",skipped,portfolio_limit,,,,
-senate_8d93e30a-19a8-43a9-93d8-e95d629b1039_t5,John Fetterman,2026-04-03,2026-03-30,2026-04-06,buy,MSFT,Stock,Child,"$1,001 - $15,000",skipped,portfolio_limit,,,,
-senate_8d93e30a-19a8-43a9-93d8-e95d629b1039_t4,John Fetterman,2026-04-03,2026-03-30,2026-04-06,buy,MU,Stock,Child,"$1,001 - $15,000",skipped,portfolio_limit,,,,
+senate_8d93e30a-19a8-43a9-93d8-e95d629b1039_t8,John Fetterman,2026-04-03,2026-03-30,2026-04-06,buy,AMZN,Stock,Child,"$1,001 - $15,000",skipped,daily_notional_limit,,,,
+senate_8d93e30a-19a8-43a9-93d8-e95d629b1039_t6,John Fetterman,2026-04-03,2026-03-30,2026-04-06,buy,ERIE,Stock,Child,"$1,001 - $15,000",skipped,daily_notional_limit,,,,
+senate_8d93e30a-19a8-43a9-93d8-e95d629b1039_t7,John Fetterman,2026-04-03,2026-03-30,2026-04-06,buy,GOOG,Stock,Child,"$1,001 - $15,000",skipped,daily_notional_limit,,,,
+senate_8d93e30a-19a8-43a9-93d8-e95d629b1039_t5,John Fetterman,2026-04-03,2026-03-30,2026-04-06,buy,MSFT,Stock,Child,"$1,001 - $15,000",skipped,daily_notional_limit,,,,
+senate_8d93e30a-19a8-43a9-93d8-e95d629b1039_t4,John Fetterman,2026-04-03,2026-03-30,2026-04-06,buy,MU,Stock,Child,"$1,001 - $15,000",skipped,daily_notional_limit,,,,
 senate_e5e9e7aa-ffd0-4414-8d2e-1cb7592b9797_t0,Susan M. Collins,2026-04-08,2026-03-24,,buy,,Municipal Security,Spouse,"$15,001 - $50,000",filtered,source_asset_type_not_stock,,,,
 senate_853d0789-28db-4789-9654-a73cff7740d7_t0,Sheldon Whitehouse,2026-04-08,2026-03-30,2026-04-09,sell,PEP,Stock,Spouse,"$1,001 - $15,000",skipped,no_position,,,,
-senate_88c765c5-6550-47af-a81d-2e052c1c1b7e_t3,John Boozman,2026-04-14,2026-03-05,2026-04-15,buy,MSFT,Stock,Joint,"$1,001 - $15,000",skipped,portfolio_limit,,,,
+senate_88c765c5-6550-47af-a81d-2e052c1c1b7e_t3,John Boozman,2026-04-14,2026-03-05,2026-04-15,buy,MSFT,Stock,Joint,"$1,001 - $15,000",executed,position_opened_or_increased,397.139838,3000.00,7.54646024,77740.56
 senate_88c765c5-6550-47af-a81d-2e052c1c1b7e_t5,John Boozman,2026-04-14,2026-03-13,2026-04-15,buy,ARES,Stock,Joint,"$1,001 - $15,000",skipped,portfolio_limit,,,,
 senate_e9d6ab5f-3a50-49bc-9f00-3ef4655045aa_t2,John Boozman,2026-04-14,2026-03-19,2026-04-15,sell,BBEU,Stock,Joint,"$15,001 - $50,000",skipped,no_position,,,,
 senate_88c765c5-6550-47af-a81d-2e052c1c1b7e_t4,John Boozman,2026-04-14,2026-03-19,2026-04-15,buy,FTGC,Stock,Joint,"$1,001 - $15,000",skipped,portfolio_limit,,,,
@@ -514,9 +514,9 @@ senate_3f315067-5f69-42b3-b32d-063ce735957b_t0,Tina Smith,2026-05-10,2026-05-07,
 senate_8292d644-09cf-45f9-8126-cbf54a114745_t1,John Boozman,2026-05-11,2025-03-19,2026-05-12,sell,DTE,Stock,Joint,"$1,001 - $15,000",skipped,no_position,,,,
 senate_8292d644-09cf-45f9-8126-cbf54a114745_t0,John Boozman,2026-05-11,2025-03-19,2026-05-12,sell,IVW,Stock,Joint,"$1,001 - $15,000",skipped,no_position,,,,
 senate_27f15751-bcec-4e3e-a0ab-d7e843c08d06_t6,John Boozman,2026-05-11,2025-09-04,2026-05-12,buy,ADBE,Stock,Joint,"$1,001 - $15,000",skipped,portfolio_limit,,,,
-senate_27f15751-bcec-4e3e-a0ab-d7e843c08d06_t4,John Boozman,2026-05-11,2025-09-12,2026-05-12,buy,ETN,Stock,Joint,"$1,001 - $15,000",skipped,position_limit,,,,
+senate_27f15751-bcec-4e3e-a0ab-d7e843c08d06_t4,John Boozman,2026-05-11,2025-09-12,2026-05-12,buy,ETN,Stock,Joint,"$1,001 - $15,000",skipped,portfolio_limit,,,,
 senate_27f15751-bcec-4e3e-a0ab-d7e843c08d06_t1,John Boozman,2026-05-11,2025-09-16,2026-05-12,buy,IEF,Stock,Joint,"$15,001 - $50,000",skipped,portfolio_limit,,,,
-senate_27f15751-bcec-4e3e-a0ab-d7e843c08d06_t3,John Boozman,2026-05-11,2025-09-16,2026-05-12,buy,IEI,Stock,Joint,"$15,001 - $50,000",skipped,position_limit,,,,
+senate_27f15751-bcec-4e3e-a0ab-d7e843c08d06_t3,John Boozman,2026-05-11,2025-09-16,2026-05-12,buy,IEI,Stock,Joint,"$15,001 - $50,000",skipped,portfolio_limit,,,,
 senate_27f15751-bcec-4e3e-a0ab-d7e843c08d06_t0,John Boozman,2026-05-11,2025-09-16,2026-05-12,buy,SCHP,Stock,Joint,"$1,001 - $15,000",skipped,portfolio_limit,,,,
 senate_27f15751-bcec-4e3e-a0ab-d7e843c08d06_t2,John Boozman,2026-05-11,2025-09-16,2026-05-12,buy,SHY,Stock,Joint,"$1,001 - $15,000",skipped,portfolio_limit,,,,
 senate_27f15751-bcec-4e3e-a0ab-d7e843c08d06_t5,John Boozman,2026-05-11,2025-09-17,2026-05-12,buy,GOOGL,Stock,Joint,"$1,001 - $15,000",skipped,portfolio_limit,,,,
@@ -572,13 +572,13 @@ senate_4b69867f-0376-4526-93f2-cd556b1155c9_t0,John Fetterman,2026-06-12,2026-05
 senate_727b4eb6-d8c7-4792-aa5b-c651c2d72f9c_t10,John Boozman,2026-06-16,2026-05-13,2026-06-17,sell,CMBS,Stock,Joint,"$1,001 - $15,000",skipped,no_position,,,,
 senate_a9754ff5-901a-4877-b7be-a647bd361c52_t10,John Boozman,2026-06-16,2026-05-13,2026-06-17,sell,CMBS,Stock,Joint,"$1,001 - $15,000",skipped,no_position,,,,
 senate_2e076759-19df-458d-a3be-53610b8be5d0_t10,John Boozman,2026-06-16,2026-05-13,2026-06-17,buy,GIGB,Stock,Joint,"$1,001 - $15,000",skipped,portfolio_limit,,,,
-senate_727b4eb6-d8c7-4792-aa5b-c651c2d72f9c_t11,John Boozman,2026-06-16,2026-05-13,2026-06-17,sell,IEI,Stock,Joint,"$50,001 - $100,000",executed,position_closed,116.735843,2006.41,-17.20477519,82541.61
+senate_727b4eb6-d8c7-4792-aa5b-c651c2d72f9c_t11,John Boozman,2026-06-16,2026-05-13,2026-06-17,sell,IEI,Stock,Joint,"$50,001 - $100,000",skipped,no_position,,,,
 senate_a9754ff5-901a-4877-b7be-a647bd361c52_t11,John Boozman,2026-06-16,2026-05-13,2026-06-17,sell,IEI,Stock,Joint,"$50,001 - $100,000",skipped,no_position,,,,
 senate_727b4eb6-d8c7-4792-aa5b-c651c2d72f9c_t6,John Boozman,2026-06-16,2026-05-13,2026-06-17,sell,JMBS,Stock,Joint,"$1,001 - $15,000",skipped,no_position,,,,
 senate_a9754ff5-901a-4877-b7be-a647bd361c52_t6,John Boozman,2026-06-16,2026-05-13,2026-06-17,sell,JMBS,Stock,Joint,"$1,001 - $15,000",skipped,no_position,,,,
 senate_727b4eb6-d8c7-4792-aa5b-c651c2d72f9c_t12,John Boozman,2026-06-16,2026-05-13,2026-06-17,sell,MBB,Stock,Joint,"$1,001 - $15,000",skipped,no_position,,,,
 senate_a9754ff5-901a-4877-b7be-a647bd361c52_t12,John Boozman,2026-06-16,2026-05-13,2026-06-17,sell,MBB,Stock,Joint,"$1,001 - $15,000",skipped,no_position,,,,
-senate_727b4eb6-d8c7-4792-aa5b-c651c2d72f9c_t4,John Boozman,2026-06-16,2026-05-13,2026-06-17,sell,SCHP,Stock,Joint,"$1,001 - $15,000",executed,position_closed,26.140110,1008.82,-38.63139320,83550.43
+senate_727b4eb6-d8c7-4792-aa5b-c651c2d72f9c_t4,John Boozman,2026-06-16,2026-05-13,2026-06-17,sell,SCHP,Stock,Joint,"$1,001 - $15,000",skipped,no_position,,,,
 senate_a9754ff5-901a-4877-b7be-a647bd361c52_t4,John Boozman,2026-06-16,2026-05-13,2026-06-17,sell,SCHP,Stock,Joint,"$1,001 - $15,000",skipped,no_position,,,,
 senate_2e076759-19df-458d-a3be-53610b8be5d0_t12,John Boozman,2026-06-16,2026-05-13,2026-06-17,buy,XFIV,Stock,Joint,"$50,001 - $100,000",skipped,portfolio_limit,,,,
 senate_727b4eb6-d8c7-4792-aa5b-c651c2d72f9c_t17,John Boozman,2026-06-16,2026-05-15,2026-06-17,sell,ACN,Stock,Joint,"$1,001 - $15,000",skipped,no_position,,,,
@@ -696,7 +696,7 @@ senate_9c0b720d-7e27-4b02-8cf5-a85ba88c9543_t4,John Boozman,2026-07-13,2026-06-0
 senate_9c0b720d-7e27-4b02-8cf5-a85ba88c9543_t3,John Boozman,2026-07-13,2026-06-12,,buy,,Stock,Joint,"$1,001 - $15,000",filtered,invalid_or_missing_ticker,,,,
 senate_c52854ed-a778-483a-883c-0ba2bba17877_t3,John Boozman,2026-07-13,2026-06-12,2026-07-14,sell,ATO,Stock,Joint,"$1,001 - $15,000",skipped,no_position,,,,
 senate_9c0b720d-7e27-4b02-8cf5-a85ba88c9543_t2,John Boozman,2026-07-13,2026-06-17,,buy,,Stock,Joint,"$1,001 - $15,000",filtered,invalid_or_missing_ticker,,,,
-senate_c52854ed-a778-483a-883c-0ba2bba17877_t2,John Boozman,2026-07-13,2026-06-17,2026-07-14,sell,IEF,Stock,Joint,"$1,001 - $15,000",executed,position_closed,93.279774,1984.75,-21.29867595,85535.18
+senate_c52854ed-a778-483a-883c-0ba2bba17877_t2,John Boozman,2026-07-13,2026-06-17,2026-07-14,sell,IEF,Stock,Joint,"$1,001 - $15,000",skipped,no_position,,,,
 senate_c52854ed-a778-483a-883c-0ba2bba17877_t1,John Boozman,2026-07-13,2026-06-25,2026-07-14,sell,FTGC,Stock,Joint,"$1,001 - $15,000",skipped,no_position,,,,
 senate_9c0b720d-7e27-4b02-8cf5-a85ba88c9543_t0,John Boozman,2026-07-13,2026-06-25,2026-07-14,buy,IGV,Stock,Joint,"$1,001 - $15,000",skipped,portfolio_limit,,,,
 senate_9c0b720d-7e27-4b02-8cf5-a85ba88c9543_t1,John Boozman,2026-07-13,2026-06-25,2026-07-14,buy,PALL,Stock,Joint,"$1,001 - $15,000",skipped,portfolio_limit,,,,
@@ -712,7 +712,7 @@ senate_392ac3e5-07f6-4f8c-840f-84e9066ffb29_t8,Tommy Tuberville,2026-07-16,2026-
 senate_392ac3e5-07f6-4f8c-840f-84e9066ffb29_t9,Tommy Tuberville,2026-07-16,2026-06-08,2026-07-17,sell,PG,Stock,Joint,"$15,001 - $50,000",skipped,no_position,,,,
 senate_392ac3e5-07f6-4f8c-840f-84e9066ffb29_t10,Tommy Tuberville,2026-07-16,2026-06-08,2026-07-17,sell,TSCO,Stock,Joint,"$1,001 - $15,000",skipped,no_position,,,,
 senate_392ac3e5-07f6-4f8c-840f-84e9066ffb29_t0,Tommy Tuberville,2026-07-16,2026-06-09,2026-07-17,sell,WAB,Stock,Self,"$1,001 - $15,000",skipped,no_position,,,,
-senate_cff197e2-b90b-4b53-b97d-eecf226a1980_t1,Jerry Moran,2026-07-21,2026-06-23,2026-07-22,buy,BRK.B,Stock,Self,"$15,001 - $50,000",executed,position_opened_or_increased,490.500000,1000.00,2.03669725,84535.18
+senate_cff197e2-b90b-4b53-b97d-eecf226a1980_t1,Jerry Moran,2026-07-21,2026-06-23,2026-07-22,buy,BRK.B,Stock,Self,"$15,001 - $50,000",skipped,portfolio_limit,,,,
 senate_cff197e2-b90b-4b53-b97d-eecf226a1980_t0,Jerry Moran,2026-07-21,2026-06-23,2026-07-22,buy,GOOG,Stock,Self,"$1,001 - $15,000",skipped,portfolio_limit,,,,
 senate_bccf83ce-dd72-4ab6-8564-b3bbb1d2ee55_t1,Bernie Moreno,2026-07-24,2026-06-22,,sell,,Other,Self,"$1,001 - $15,000",filtered,source_asset_type_not_stock,,,,
 senate_bccf83ce-dd72-4ab6-8564-b3bbb1d2ee55_t0,Bernie Moreno,2026-07-24,2026-06-24,,sell,BAC,Other,Self,"$1,001 - $15,000",filtered,source_asset_type_not_stock,,,,
@@ -867,7 +867,7 @@ senate_2b076d77-6bc1-4b67-8be9-8f45a787479f_t5,Tommy Tuberville,2026-08-05,2024-
 senate_cce52b36-d00c-4710-a8ee-e84893fb4be1_t5,Tommy Tuberville,2026-08-05,2024-10-29,2026-08-06,sell,KMB,Stock,Joint,"$15,001 - $50,000",skipped,no_position,,,,
 senate_2b076d77-6bc1-4b67-8be9-8f45a787479f_t6,Tommy Tuberville,2026-08-05,2024-10-29,2026-08-06,sell,MCD,Stock,Joint,"$15,001 - $50,000",skipped,no_position,,,,
 senate_cce52b36-d00c-4710-a8ee-e84893fb4be1_t6,Tommy Tuberville,2026-08-05,2024-10-29,2026-08-06,sell,MCD,Stock,Joint,"$15,001 - $50,000",skipped,no_position,,,,
-senate_2b076d77-6bc1-4b67-8be9-8f45a787479f_t7,Tommy Tuberville,2026-08-05,2024-10-29,2026-08-06,sell,MSFT,Stock,Joint,"$15,001 - $50,000",executed,position_closed,488.549988,1308.28,-2.68056378,85843.46
+senate_2b076d77-6bc1-4b67-8be9-8f45a787479f_t7,Tommy Tuberville,2026-08-05,2024-10-29,2026-08-06,sell,MSFT,Stock,Joint,"$15,001 - $50,000",executed,position_closed,488.549988,3683.14,-7.54646024,81423.70
 senate_cce52b36-d00c-4710-a8ee-e84893fb4be1_t7,Tommy Tuberville,2026-08-05,2024-10-29,2026-08-06,sell,MSFT,Stock,Joint,"$15,001 - $50,000",skipped,no_position,,,,
 senate_2b076d77-6bc1-4b67-8be9-8f45a787479f_t10,Tommy Tuberville,2026-08-05,2024-10-29,2026-08-06,sell,OC,Stock,Joint,"$15,001 - $50,000",skipped,no_position,,,,
 senate_cce52b36-d00c-4710-a8ee-e84893fb4be1_t10,Tommy Tuberville,2026-08-05,2024-10-29,2026-08-06,sell,OC,Stock,Joint,"$15,001 - $50,000",skipped,no_position,,,,
@@ -894,7 +894,7 @@ senate_014817f0-9809-457f-8ac5-048948608e02_t13,Tommy Tuberville,2026-08-05,2025
 senate_014817f0-9809-457f-8ac5-048948608e02_t14,Tommy Tuberville,2026-08-05,2025-04-15,2026-08-06,sell,MSFT,Stock,Joint,"$15,001 - $50,000",skipped,no_position,,,,
 senate_014817f0-9809-457f-8ac5-048948608e02_t1,Tommy Tuberville,2026-08-05,2025-04-15,2026-08-06,sell,PYPL,Stock,Self,"$15,001 - $50,000",skipped,no_position,,,,
 senate_014817f0-9809-457f-8ac5-048948608e02_t9,Tommy Tuberville,2026-08-05,2025-04-15,2026-08-06,sell,STZ,Stock,Joint,"$15,001 - $50,000",skipped,no_position,,,,
-senate_014817f0-9809-457f-8ac5-048948608e02_t2,Tommy Tuberville,2026-08-05,2025-04-15,2026-08-06,buy,USIG,Stock,Self,"$50,001 - $100,000",skipped,portfolio_limit,,,,
+senate_014817f0-9809-457f-8ac5-048948608e02_t2,Tommy Tuberville,2026-08-05,2025-04-15,2026-08-06,buy,USIG,Stock,Self,"$50,001 - $100,000",executed,position_opened_or_increased,50.349998,3000.00,59.52333845,78423.70
 senate_1a5e6752-653a-4b11-82b6-efd51d466bb6_t6,Tommy Tuberville,2026-08-05,2025-10-07,,sell,,Municipal Security,Joint,"$15,001 - $50,000",filtered,source_asset_type_not_stock,,,,
 senate_1a5e6752-653a-4b11-82b6-efd51d466bb6_t3,Tommy Tuberville,2026-08-05,2025-10-07,2026-08-06,sell,AAPL,Stock,Joint,"$15,001 - $50,000",skipped,no_position,,,,
 senate_1a5e6752-653a-4b11-82b6-efd51d466bb6_t4,Tommy Tuberville,2026-08-05,2025-10-07,2026-08-06,sell,GOOGL,Stock,Joint,"$15,001 - $50,000",skipped,no_position,,,,
