@@ -71,10 +71,23 @@ class WatchlistTests(unittest.TestCase):
 
         self.assertEqual(config.source.politicians, QUIVER_CANONICAL_NAMES)
         self.assertEqual(len(config.source.politicians), 30)
-        self.assertEqual(config.strategy.buy_notional_usd, 3_000.0)
-        self.assertEqual(config.strategy.max_position_usd, 7_000.0)
-        self.assertEqual(config.strategy.max_portfolio_usd, 20_000.0)
-        self.assertEqual(config.strategy.max_daily_notional_usd, 5_000.0)
+        self.assertEqual(config.strategy.buy_notional_usd, 2_000.0)
+        self.assertEqual(config.strategy.max_position_usd, 6_000.0)
+        self.assertEqual(config.strategy.max_portfolio_usd, 60_000.0)
+        self.assertEqual(config.strategy.max_daily_notional_usd, 16_000.0)
+        self.assertEqual(
+            config.strategy.max_position_usd % config.strategy.buy_notional_usd,
+            0.0,
+        )
+        self.assertEqual(
+            config.strategy.max_portfolio_usd % config.strategy.buy_notional_usd,
+            0.0,
+        )
+        self.assertEqual(
+            config.strategy.max_daily_notional_usd
+            % config.strategy.buy_notional_usd,
+            0.0,
+        )
 
     def test_every_configured_quiver_name_passes_engine_filter(self):
         config = load_config(str(PROJECT_ROOT / "config.example.json"))

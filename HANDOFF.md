@@ -7,7 +7,7 @@ aktualisieren. Nicht gleichzeitig an derselben Datei arbeiten.
 
 ## Status (maschinenlesbar für die Automatisierung)
 
-**Nächster Bearbeiter:** Codex
+**Nächster Bearbeiter:** Claude
 
 Regeln für beide Loops (lokaler Codex-Loop und Claudes geplante
 Cloud-Aufgabe):
@@ -864,3 +864,130 @@ steigt.
   Auswertung das tatsächlich zeigt; ansonsten klar als nicht belegt markieren.
 - Tests, Backtest und Dokumentation sind reproduzierbar und gemeinsam
   committed/gepusht.
+
+## 2026-08-14 – Codex: Aggressivere Cash-only-Kapitalnutzung umgesetzt
+
+**Bearbeiter:** Codex (Implementierung des vorherigen Handoffs)
+**Status:** abgeschlossen für diesen Abschnitt
+
+### Bearbeitete Dateien
+
+- `src/senator_copytrader/portfolio_backtest.py` (Monate, Konzentration,
+  Kapitalauslastung und erweiterte Reihenfolgenstatistik)
+- `scripts/run_backtest_1y_capital_scenarios.py` (reproduzierbare 11er-Matrix)
+- `scripts/run_backtest_1y.py` (verwendete Parameter im JSON festhalten)
+- `tests/test_portfolio_backtest.py`, `tests/test_watchlist.py`
+- `config.example.json` (robustere aggressive Paper-Limits)
+- `backtest_1y_capital_report.md`, `backtest_1y_capital_results.csv`,
+  `backtest_1y_capital_summary.json`
+- `backtest_1y_report.md`, `backtest_1y_results.csv`,
+  `backtest_1y_summary.json` (aktueller Config-Stand)
+- `README.md`, `HANDOFF.md`
+
+`config.paper-demo.json` wurde nicht verändert. No-Margin-Schutz, reine
+Paper-API und doppelte Ausführungsfreigabe wurden nicht gelockert. Die
+Exit-Felder bleiben `null`.
+
+### Quantitative Szenarienmatrix
+
+Der neue Lauf verwendet weiterhin das eingefrorene Kadoa-Rohdatencommit
+`e51eacba83bb0188aa687fa4e5576dcafd90907f`, das Fenster 13.08.2025 bis
+13.08.2026, 100.000 USD Startcash, Einstieg/Verkauf am nächsten adjustierten
+Open und 0,10 % Kosten/Slippage je Seite. Je Variante wurden ein Hauptlauf und
+200 deterministische Reihenfolgen (Seeds 0–199) gerechnet.
+
+Enthalten sind die verlangten 3k/7k-Stufen 40k/10k, 60k/15k, 80k/20k und
+100k/30k sowie sechs logisch teilbare Alternativen. Die vollständige Tabelle
+steht in `backtest_1y_capital_report.md`. Wichtige Hauptlauf-/Robustheitswerte:
+
+| Variante | Hauptlauf | P05 | Median | Hauptlauf-DD | Ø investiert |
+|---|---:|---:|---:|---:|---:|
+| bisher 3k/7k, 20k/5k | −1,95 % | −1,13 % | +3,48 % | −4,67 % | 15.142 USD |
+| 3k/7k, 60k/15k | +17,76 % | +8,35 % | +15,27 % | −4,55 % | 52.536 USD |
+| 3k/7k, 80k/20k | +16,63 % | +10,75 % | +18,34 % | −7,32 % | 67.895 USD |
+| 3k/7k, 100k/30k | +20,38 % | +17,68 % | +26,36 % | −6,44 % | 87.022 USD |
+| **2k/6k, 60k/16k** | **+13,95 %** | **+9,53 %** | **+14,82 %** | **−4,54 %** | **51.362 USD** |
+| 3k/6k, 80k/24k | +19,08 % | +12,52 % | +21,77 % | −7,36 % | 69.176 USD |
+| 3k/6k, 99k/30k | +21,83 % | +18,14 % | +27,05 % | −7,16 % | 85.372 USD |
+
+Die 80k-/99k-Varianten investieren und verdienen in-sample mehr, erhöhen aber
+den Hauptlauf-Drawdown auf rund 7,2–7,4 % und den schlechtesten Drawdown über
+die 200 Reihenfolgen auf rund 12,7–13,0 %. Sie wurden deshalb nicht bloß wegen
+höherer Renditen übernommen.
+
+### Ausgewählte Paper-Konfiguration
+
+- `buy_notional_usd`: 3.000 → **2.000 USD**
+- `max_position_usd`: 7.000 → **6.000 USD**
+- `max_portfolio_usd`: 20.000 → **60.000 USD**
+- `max_daily_notional_usd`: 5.000 → **16.000 USD**
+
+Alle Beträge sind durch 2.000 teilbar: acht Käufe passen exakt in das
+Tagesbudget, drei exakt in das Tickerlimit und 30 in das Portfoliolimit. Die
+Kapitalbindung steigt im Hauptlauf von durchschnittlich 15.142 auf 51.362 USD,
+die Spitze von 20.068 auf 67.195 USD. Damit erfüllt die Änderung das eigentliche
+Kapitalnutzungsziel und lässt zugleich 40.000 USD planmäßigen Cashpuffer.
+
+Gegenüber der ähnlich ausgelasteten 3k/6k-/60k/15k-Variante ist die Auswahl
+robuster: Minimum aus 200 Reihenfolgen +6,96 statt +3,82 %, P05 +9,53 statt
++7,89 %, schlimmster Reihenfolgen-Drawdown −9,92 statt −12,59 % und geringere
+Senatorenkonzentration. Der Median sinkt nur von +15,37 auf +14,82 %. Das ist
+die Auswahlbegründung; nicht der höchste einzelne Backtestwert.
+
+### Ergebnis, Bremsen und Konzentration
+
+- Endwert 113.952,59 USD, Rendite +13,95 %; nach Schlussliquidation +13,89 %.
+- Risikogleicher 60k-SPY-Mix +13,10 %, voller SPY +21,83 %.
+- 200 Reihenfolgen: Minimum +6,96 %, P05 +9,53 %, Median +14,82 %, P95
+  +21,78 %, Maximum +26,34 %; alle positiv, 68 % über dem risikogleichen Mix.
+- Hauptlauf-Drawdown −4,54 %; Median der Reihenfolgen-Drawdowns −5,70 %,
+  schlechtester Drawdown −9,92 %.
+- 57 Käufe und 27 Verkäufe; Umsatz 181.278,15 USD. 117 Portfolio-, 23 Tages-,
+  5 Ticker- und 0 Cashlimit-Skips. Die Grenzen bleiben also relevant.
+- John Boozman erzeugt 28 von 57 Käufen (49,1 %). Größter Ticker ist MSFT mit
+  3 Käufen (5,3 %). Das Senatorenrisiko bleibt deutlich konzentriert.
+
+Kostensensitivität je Seite: 0,00 % → +14,15 %, 0,10 % → +13,95 %, 0,25 % →
++13,17 %, 0,50 % → +12,70 %. Harte Portfolio-Grenzen können bei anderen
+Varianten die Signalmenge ändern; deshalb ist strenge Monotonie nicht generell
+garantiert.
+
+### Monatsziel und Aussagegrenzen
+
+Der beste Monat erreicht +4,84 %, der schlechteste −2,13 %, der Median +0,69 %.
+Neun von 13 Kalendermonaten (inklusive zweier Teilmonate) sind positiv und
+**kein Monat erreicht 7 %**. Das Wunschziel von 7 % monatlich ist damit klar
+nicht belegt.
+
+Watchlist und Limits wurden anhand desselben Jahres gewählt. Der gesamte
+Vergleich bleibt in-sample mit Universums-Look-ahead und zusätzlichem
+Szenarienauswahl-Bias. Er ist eine technische Paper-Konfiguration, kein
+Out-of-sample-Alpha-Nachweis und keine Renditezusage. Die Watchlist sollte ab
+jetzt eingefroren und nur in einem zukünftigen Fenster bewertet werden.
+
+### Tests und Reproduzierbarkeit
+
+```text
+PYTHONPATH=src python3 -m unittest discover -s tests -v
+Ran 56 tests – OK
+
+PYTHONPYCACHEPREFIX=/tmp/senator_copytrader_pycache \
+  PYTHONPATH=src python3 -m compileall -q src scripts tests
+OK
+
+PYTHONPATH=src python3 scripts/run_backtest_1y_capital_scenarios.py
+11 Szenarien × (Hauptlauf + 200 Reihenfolgen), 4 Kostenstufen – OK
+
+PYTHONPATH=src python3 scripts/run_backtest_1y.py
+913 Signale; JSON/CSV konsistent – OK
+
+git diff --check
+OK
+```
+
+### Nächste Aufgabe
+
+Claude: Bitte die Auswahl 2k/6k/60k/16k und die neue Monats-, Konzentrations-
+und Reihenfolgenstatistik reviewen. Besonders prüfen: harte Portfolio-Grenze,
+risikogleicher SPY-Mix, Drawdown-Aggregation und die Begründung für 60k statt
+80k/99k. Keine Limits oder Exit-Schwellen ohne neue Nutzerfreigabe ändern.

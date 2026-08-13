@@ -391,6 +391,24 @@ def run_portfolio_backtest(
         peak_value = max(peak_value, value)
         max_drawdown_pct = min(max_drawdown_pct, (value / peak_value - 1.0) * 100.0)
 
+    month_end_values: Dict[str, Tuple[date, float]] = {}
+    for trading_day, value in zip(trading_days, daily_values):
+        month_end_values[trading_day.strftime("%Y-%m")] = (trading_day, value)
+    monthly_returns = []
+    previous_value = starting_cash_usd
+    for month, (month_end_day, value) in sorted(month_end_values.items()):
+        monthly_return = (value / previous_value - 1.0) * 100.0
+        monthly_returns.append(
+            {
+                "month": month,
+                "month_end": month_end_day.isoformat(),
+                "ending_value_usd": value,
+                "return_pct": monthly_return,
+            }
+        )
+        previous_value = value
+    monthly_return_values = [item["return_pct"] for item in monthly_returns]
+
     spy_entry = spy.prices[start_day].adjusted_open
     spy_exit = spy.prices[end_day].adjusted_close
     spy_multiplier = (1.0 - cost_per_side) * spy_exit / spy_entry
@@ -409,6 +427,20 @@ def run_portfolio_backtest(
         str(row["senator"])
         for row in ordered_rows
         if row["status"] == "executed" and row["action"] == "buy"
+    )
+    executed_buys_by_ticker = Counter(
+        str(row["ticker"])
+        for row in ordered_rows
+        if row["status"] == "executed" and row["action"] == "buy"
+    )
+    executed_buy_count = sum(executed_buys_by_senator.values())
+    largest_senator_buy_count = max(executed_buys_by_senator.values(), default=0)
+    largest_ticker_buy_count = max(executed_buys_by_ticker.values(), default=0)
+    limit_reasons = (
+        "cash_limit",
+        "position_limit",
+        "portfolio_limit",
+        "daily_notional_limit",
     )
     ending_positions = {
         ticker: {
@@ -436,6 +468,15 @@ def run_portfolio_backtest(
         "max_drawdown_pct": max_drawdown_pct,
         "average_invested_usd": sum(daily_invested) / len(daily_invested),
         "peak_invested_usd": max(daily_invested),
+        "average_starting_cash_invested_pct": (
+            sum(daily_invested) / len(daily_invested) / starting_cash_usd * 100.0
+        ),
+        "peak_starting_cash_invested_pct": (
+            max(daily_invested) / starting_cash_usd * 100.0
+        ),
+        "average_portfolio_limit_utilization_pct": (
+            sum(daily_invested) / len(daily_invested) / max_portfolio_usd * 100.0
+        ),
         "total_buy_notional_usd": total_buy_notional,
         "total_sale_proceeds_usd": total_sale_proceeds,
         "turnover_usd": total_buy_notional + total_sale_proceeds,
@@ -453,7 +494,39 @@ def run_portfolio_backtest(
         ),
         "status_counts": dict(sorted(status_counts.items())),
         "reason_counts": dict(sorted(reason_counts.items())),
+        "limit_skip_counts": {
+            reason: reason_counts.get(reason, 0) for reason in limit_reasons
+        },
+        "executed_buy_count": executed_buy_count,
         "executed_buys_by_senator": dict(executed_buys_by_senator.most_common()),
+        "executed_buys_by_ticker": dict(executed_buys_by_ticker.most_common()),
+        "largest_senator_buy_share": (
+            largest_senator_buy_count / executed_buy_count
+            if executed_buy_count
+            else 0.0
+        ),
+        "largest_ticker_buy_share": (
+            largest_ticker_buy_count / executed_buy_count
+            if executed_buy_count
+            else 0.0
+        ),
+        "monthly_returns": monthly_returns,
+        "monthly_return_summary": {
+            "month_count": len(monthly_returns),
+            "best_month": max(
+                monthly_returns, key=lambda item: item["return_pct"], default=None
+            ),
+            "worst_month": min(
+                monthly_returns, key=lambda item: item["return_pct"], default=None
+            ),
+            "median_return_pct": statistics.median(monthly_return_values),
+            "positive_month_count": sum(
+                value > 0.0 for value in monthly_return_values
+            ),
+            "months_at_or_above_7_pct": sum(
+                value >= 7.0 for value in monthly_return_values
+            ),
+        },
         "ending_positions": ending_positions,
     }
     return summary, ordered_rows
@@ -484,6 +557,13 @@ def summarize_order_sensitivity(
         raise ValueError("runs must be at least one")
     returns: List[float] = []
     risk_excess_returns: List[float] = []
+    drawdowns: List[float] = []
+    average_invested: List[float] = []
+    peak_invested: List[float] = []
+    turnovers: List[float] = []
+    limit_skips: List[float] = []
+    senator_concentration: List[float] = []
+    ticker_concentration: List[float] = []
     for seed in range(runs):
         shuffled = list(signals)
         random.Random(seed).shuffle(shuffled)
@@ -494,27 +574,47 @@ def summarize_order_sensitivity(
         risk_matched_return = float(summary["risk_matched_spy_return_pct"])
         returns.append(strategy_return)
         risk_excess_returns.append(strategy_return - risk_matched_return)
+        drawdowns.append(float(summary["max_drawdown_pct"]))
+        average_invested.append(float(summary["average_invested_usd"]))
+        peak_invested.append(float(summary["peak_invested_usd"]))
+        turnovers.append(float(summary["turnover_usd"]))
+        limit_skips.append(
+            float(sum(summary["limit_skip_counts"].values()))
+        )
+        senator_concentration.append(float(summary["largest_senator_buy_share"]))
+        ticker_concentration.append(float(summary["largest_ticker_buy_share"]))
 
     returns.sort()
 
-    def percentile(fraction: float) -> float:
-        index = (len(returns) - 1) * fraction
+    def percentile(values: Sequence[float], fraction: float) -> float:
+        ordered = sorted(values)
+        index = (len(ordered) - 1) * fraction
         lower = int(index)
-        upper = min(lower + 1, len(returns) - 1)
+        upper = min(lower + 1, len(ordered) - 1)
         weight = index - lower
-        return returns[lower] * (1.0 - weight) + returns[upper] * weight
+        return ordered[lower] * (1.0 - weight) + ordered[upper] * weight
 
     return {
         "runs": runs,
         "min_return_pct": min(returns),
-        "p05_return_pct": percentile(0.05),
+        "p05_return_pct": percentile(returns, 0.05),
         "median_return_pct": statistics.median(returns),
         "mean_return_pct": statistics.mean(returns),
-        "p95_return_pct": percentile(0.95),
+        "p95_return_pct": percentile(returns, 0.95),
         "max_return_pct": max(returns),
         "share_positive": sum(value > 0.0 for value in returns) / runs,
         "share_beating_risk_matched_spy": sum(
             value > 0.0 for value in risk_excess_returns
         )
         / runs,
+        "median_max_drawdown_pct": statistics.median(drawdowns),
+        "worst_max_drawdown_pct": min(drawdowns),
+        "median_average_invested_usd": statistics.median(average_invested),
+        "median_peak_invested_usd": statistics.median(peak_invested),
+        "median_turnover_usd": statistics.median(turnovers),
+        "median_limit_skip_count": statistics.median(limit_skips),
+        "median_largest_senator_buy_share": statistics.median(
+            senator_concentration
+        ),
+        "median_largest_ticker_buy_share": statistics.median(ticker_concentration),
     }

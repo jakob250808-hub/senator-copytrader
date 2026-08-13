@@ -241,6 +241,63 @@ class PortfolioBacktestTests(unittest.TestCase):
 
         self.assertEqual(result["runs"], 20)
         self.assertLess(result["min_return_pct"], result["max_return_pct"])
+        self.assertIn("median_average_invested_usd", result)
+        self.assertIn("median_limit_skip_count", result)
+
+    def test_summary_reports_months_limit_skips_and_buy_concentration(self):
+        january = date(2026, 1, 30)
+        february = date(2026, 2, 2)
+        signals = [
+            signal("a", "AAA", date(2026, 1, 29), senator="John Boozman"),
+            signal("b", "BBB", date(2026, 1, 29), senator="John Boozman"),
+        ]
+        prices = {
+            "SPY": PriceSeries(
+                "SPY",
+                "ETF",
+                {
+                    january: PricePoint(100, 100),
+                    february: PricePoint(100, 100),
+                },
+            ),
+            "AAA": PriceSeries(
+                "AAA",
+                "EQUITY",
+                {
+                    january: PricePoint(10, 10),
+                    february: PricePoint(10, 11),
+                },
+            ),
+            "BBB": PriceSeries(
+                "BBB",
+                "EQUITY",
+                {
+                    january: PricePoint(10, 10),
+                    february: PricePoint(10, 10),
+                },
+            ),
+        }
+
+        summary, _ = run_portfolio_backtest(
+            signals,
+            prices,
+            january,
+            february,
+            max_daily_notional_usd=1_000.0,
+        )
+
+        self.assertEqual(summary["executed_buy_count"], 1)
+        self.assertEqual(summary["executed_buys_by_senator"], {"John Boozman": 1})
+        self.assertEqual(summary["executed_buys_by_ticker"], {"AAA": 1})
+        self.assertEqual(summary["largest_senator_buy_share"], 1.0)
+        self.assertEqual(summary["largest_ticker_buy_share"], 1.0)
+        self.assertEqual(summary["limit_skip_counts"]["daily_notional_limit"], 1)
+        self.assertEqual(
+            [item["month"] for item in summary["monthly_returns"]],
+            ["2026-01", "2026-02"],
+        )
+        self.assertEqual(summary["monthly_return_summary"]["month_count"], 2)
+        self.assertGreater(summary["monthly_returns"][1]["return_pct"], 0.0)
 
     def test_stop_loss_runs_before_signals_and_recycles_portfolio_budget(self):
         first_day = date(2026, 1, 6)

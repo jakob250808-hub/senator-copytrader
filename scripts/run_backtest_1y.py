@@ -93,6 +93,18 @@ def main() -> int:
         take_profit_pct=strategy.take_profit_pct,
         max_holding_days=strategy.max_holding_days,
     )
+    summary = dict(summary)
+    summary["parameters"] = {
+        "starting_cash_usd": args.starting_cash,
+        "buy_notional_usd": strategy.buy_notional_usd,
+        "max_position_usd": strategy.max_position_usd,
+        "max_portfolio_usd": strategy.max_portfolio_usd,
+        "max_daily_notional_usd": strategy.max_daily_notional_usd,
+        "cost_per_side": 0.001,
+        "stop_loss_pct": strategy.stop_loss_pct,
+        "take_profit_pct": strategy.take_profit_pct,
+        "max_holding_days": strategy.max_holding_days,
+    }
     summary["order_sensitivity"] = summarize_order_sensitivity(
         signals,
         prices,

@@ -15,7 +15,7 @@ Es gibt absichtlich keinen Live-Trading-Modus.
   100 USD". Stattdessen verarbeitet der Bot alle gültigen Tagesmeldungen, solange
   die folgenden konfigurierbaren Limits eingehalten werden (`strategy` in
   `config.json`):
-  - `buy_notional_usd` – Betrag je einzelnem Kaufsignal (Beispielconfig: 3.000 USD).
+  - `buy_notional_usd` – Betrag je einzelnem Kaufsignal (Beispielconfig: 2.000 USD).
   - `max_position_usd` – maximal investierter Betrag je Ticker.
   - `max_portfolio_usd` – maximal investierter Gesamtbetrag über alle Positionen.
   - `max_daily_notional_usd` – maximal an einem Kalendertag ausgegebener Betrag.
@@ -86,13 +86,15 @@ Groß-/Kleinschreibung, Akzente, Satzpunkte, Mittelinitialen, Titel, Suffixe und
 die Schreibweise `Nachname, Vorname` werden für den Vergleich normalisiert; die
 Person selbst muss dennoch eindeutig der Quiver-Meldung entsprechen.
 
-Die Beispielconfig handelt jetzt aggressiver mit 3.000 USD je Kauf und 7.000 USD
-je Ticker. Portfolio- und Tageslimit bleiben bei 20.000 beziehungsweise 5.000
-USD. Dadurch kann pro Tag höchstens ein neuer Kauf eingereicht werden; 2.000 USD
-des Tagesbudgets bleiben ungenutzt. Je Ticker sind höchstens zwei gleich große
-Käufe möglich. Einen zusätzlichen `max_orders_per_run`-Deckel gibt es nicht.
-Erreicht ein Signal ein Geldlimit, wird es als `skipped` protokolliert und nicht
-für einen späteren Lauf aufgehoben.
+Die Beispielconfig nutzt das 100.000-USD-Paperkonto jetzt deutlich stärker:
+2.000 USD je Kauf, 6.000 USD je Ticker, 60.000 USD Portfoliolimit und 16.000 USD
+Tageslimit. Alle vier Beträge sind logisch teilbar: Pro Tag passen exakt acht
+Käufe, pro Ticker exakt drei. Der Einjahres-Backtest erhöhte die durchschnittliche
+Kapitalbindung damit von rund 15.142 auf 51.362 USD. Es bleibt bewusst ein
+40.000-USD-Cashpuffer; Varianten mit 80.000 bis 99.000 USD Portfoliolimit hatten
+deutlich höhere Drawdowns. Einen zusätzlichen `max_orders_per_run`-Deckel gibt
+es nicht. Erreicht ein Signal ein Geldlimit, wird es als `skipped` protokolliert
+und nicht für einen späteren Lauf aufgehoben.
 
 ## Empfohlener Ablauf
 
@@ -210,21 +212,42 @@ git -C work/congress-trading-monitor checkout \
 PYTHONPATH=src python3 scripts/run_backtest_1y.py
 ```
 
-Das Ergebnis steht in `backtest_1y_report.md`, die 913 Einzelentscheidungen in
-`backtest_1y_results.csv` und die maschinenlesbare Zusammenfassung in
-`backtest_1y_summary.json`. Der historische Kurscache bleibt unter `work/`
-ignoriert.
+Das Ergebnis des aktuellen Config-Stands steht in `backtest_1y_report.md`, die
+913 Einzelentscheidungen in `backtest_1y_results.csv` und die maschinenlesbare
+Zusammenfassung in `backtest_1y_summary.json`. Der historische Kurscache bleibt
+unter `work/` ignoriert.
 
 Der Lauf ist bewusst als **in-sample** markiert: Die heutige Watchlist wurde
-anhand desselben zurückliegenden Jahres ausgewählt. Mit der aktuellen
-3.000-/5.000-USD-Kombination kann bereits bei mehr als einem gleichzeitigen Kauf
-die Feed-Reihenfolge die Rendite stark verändern.
+anhand desselben zurückliegenden Jahres ausgewählt. Gleichzeitige Signale bleiben
+trotz des höheren Tagesbudgets reihenfolgeabhängig.
 Für einen belastbaren Nachweis muss die Liste jetzt eingefroren und ein neues,
 zukünftiges Jahr abgewartet werden.
 
+### Cash-only-Kapitalvergleich
+
+Der reproduzierbare Kapitalvergleich enthält die vorherigen 3.000-/7.000-USD-
+Varianten mit 40k/10k, 60k/15k, 80k/20k und 100k/30k sowie logisch teilbare
+Alternativen. Je Szenario werden ein Hauptlauf und 200 Signalreihenfolgen
+gerechnet; zusätzlich enthält die gewählte Variante Monatsrenditen,
+Kosten-/Slippage-Sensitivität, Geldlimit-Skips und Senator-/Tickerkonzentration:
+
+```bash
+PYTHONPATH=src python3 scripts/run_backtest_1y_capital_scenarios.py
+```
+
+Der vollständige Bericht steht in `backtest_1y_capital_report.md`, die
+Entscheidungen der gewählten 2k/6k/60k/16k-Variante in
+`backtest_1y_capital_results.csv` und alle Szenarien in
+`backtest_1y_capital_summary.json`. Im Hauptlauf waren durchschnittlich 51.362
+USD investiert, die Rendite lag bei +13,95 % und der maximale Drawdown bei
+−4,54 %. Über 200 Reihenfolgen betrug der Median +14,82 %, P05–P95 +9,53 bis
++21,78 % und der schlechteste Lauf +6,96 %. Nur 9 von 13 Monaten waren positiv;
+kein Monat erreichte 7 %. Das gewünschte Ziel von 7 % pro Monat ist daher nicht
+belegt.
+
 ### Aggressiver Szenarienvergleich
 
-Der zusätzliche, historisch eingefrorene Szenarienlauf vergleicht die früheren
+Der ältere, historisch eingefrorene Szenarienlauf vergleicht die früheren
 1.000-/3.000-USD-Grenzen mit Variante C (40.000 USD Portfoliolimit, 10.000 USD
 Tageslimit) und drei festen Exit-Sets. Die aktuelle Config und ihre Geldlimits
 werden dabei nicht verändert:

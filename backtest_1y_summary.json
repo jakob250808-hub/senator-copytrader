@@ -1,78 +1,333 @@
 {
-  "average_invested_usd": 15141.91318607236,
-  "ending_cash_usd": 78423.69854811687,
-  "ending_invested_usd": 19621.44699059009,
+  "average_invested_usd": 51362.02669546057,
+  "average_portfolio_limit_utilization_pct": 85.60337782576761,
+  "average_starting_cash_invested_pct": 51.36202669546057,
+  "ending_cash_usd": 53278.15239870759,
+  "ending_invested_usd": 60674.43857443093,
   "ending_positions": {
+    "AMD": {
+      "market_value_usd": 5575.12400626148,
+      "paid_notional_usd": 2000.0,
+      "shares": 11.542460598211504
+    },
+    "AMZN": {
+      "market_value_usd": 2524.9272738340937,
+      "paid_notional_usd": 2000.0,
+      "shares": 9.523355438212706
+    },
+    "ANET": {
+      "market_value_usd": 2969.5821185703694,
+      "paid_notional_usd": 2000.0,
+      "shares": 14.583941605839415
+    },
+    "BAC": {
+      "market_value_usd": 2736.119541519565,
+      "paid_notional_usd": 2000.0,
+      "shares": 42.69183488628075
+    },
     "BITB": {
-      "market_value_usd": 2037.497875578954,
-      "paid_notional_usd": 3000.0,
-      "shares": 59.246813368430914
+      "market_value_usd": 2716.6638341052717,
+      "paid_notional_usd": 4000.0,
+      "shares": 78.99575115790788
+    },
+    "BRK.B": {
+      "market_value_usd": 2064.9258417252004,
+      "paid_notional_usd": 2000.0,
+      "shares": 4.073394495412844
+    },
+    "CAG": {
+      "market_value_usd": 1921.6103464655844,
+      "paid_notional_usd": 2000.0,
+      "shares": 124.86096839493001
+    },
+    "COST": {
+      "market_value_usd": 2093.5099913967124,
+      "paid_notional_usd": 2000.0,
+      "shares": 2.176545245656832
     },
     "ERIE": {
-      "market_value_usd": 3114.3689923060283,
-      "paid_notional_usd": 3000.0,
-      "shares": 12.17358781227973
+      "market_value_usd": 4152.491989741371,
+      "paid_notional_usd": 4000.0,
+      "shares": 16.231450416372972
     },
     "ETN": {
-      "market_value_usd": 3672.9090864683317,
-      "paid_notional_usd": 3000.0,
-      "shares": 8.102065151789448
+      "market_value_usd": 4892.637303402416,
+      "paid_notional_usd": 4000.0,
+      "shares": 10.79266196440433
+    },
+    "GH": {
+      "market_value_usd": 2989.6914122515536,
+      "paid_notional_usd": 2000.0,
+      "shares": 18.73944802598545
     },
     "GIGB": {
-      "market_value_usd": 3000.630042956276,
-      "paid_notional_usd": 3000.0,
-      "shares": 66.56233187837192
+      "market_value_usd": 2000.4200286375171,
+      "paid_notional_usd": 2000.0,
+      "shares": 44.37488791891461
+    },
+    "IGV": {
+      "market_value_usd": 2349.7557940382662,
+      "paid_notional_usd": 2000.0,
+      "shares": 22.109106332583
     },
     "INTU": {
-      "market_value_usd": 1618.4616930593033,
-      "paid_notional_usd": 3000.0,
-      "shares": 4.517183439281933
+      "market_value_usd": 1078.9744620395356,
+      "paid_notional_usd": 2000.0,
+      "shares": 3.0114556261879555
+    },
+    "KO": {
+      "market_value_usd": 2465.2029937387424,
+      "paid_notional_usd": 2000.0,
+      "shares": 28.199531518801496
+    },
+    "NTAP": {
+      "market_value_usd": 4166.261788324951,
+      "paid_notional_usd": 2000.0,
+      "shares": 20.324219116448027
+    },
+    "PANW": {
+      "market_value_usd": 3710.5848888680252,
+      "paid_notional_usd": 2000.0,
+      "shares": 9.370163860777842
+    },
+    "TLH": {
+      "market_value_usd": 1933.7563064805888,
+      "paid_notional_usd": 2000.0,
+      "shares": 19.906900541803548
     },
     "USIG": {
-      "market_value_usd": 3000.5714820497083,
-      "paid_notional_usd": 3000.0,
-      "shares": 59.523338447376496
+      "market_value_usd": 2000.380988033139,
+      "paid_notional_usd": 2000.0,
+      "shares": 39.68222563158433
+    },
+    "WFC": {
+      "market_value_usd": 2330.716312598452,
+      "paid_notional_usd": 2000.0,
+      "shares": 26.452347025913298
     },
     "XLP": {
-      "market_value_usd": 3177.007818171487,
-      "paid_notional_usd": 3000.0,
-      "shares": 36.94195137408706
+      "market_value_usd": 1990.8238310787829,
+      "paid_notional_usd": 2000.0,
+      "shares": 23.149114314869568
+    },
+    "XTWO": {
+      "market_value_usd": 2010.2775213193088,
+      "paid_notional_usd": 2000.0,
+      "shares": 41.13099787865593
     }
   },
-  "ending_value_usd": 98045.14553870696,
+  "ending_value_usd": 113952.59097313852,
+  "executed_buy_count": 57,
   "executed_buys_by_senator": {
-    "Angus S. King Jr.": 1,
-    "David McCormick": 1,
-    "Jerry Moran": 1,
-    "John Boozman": 6,
-    "John Fetterman": 1,
-    "John W. Hickenlooper": 2,
+    "Angus S. King Jr.": 8,
+    "David McCormick": 2,
+    "Gary C. Peters": 1,
+    "Jerry Moran": 2,
+    "John Boozman": 28,
+    "John Fetterman": 6,
+    "John W. Hickenlooper": 4,
+    "Mitch McConnell": 1,
+    "Sheldon Whitehouse": 3,
     "Tommy Tuberville": 2
   },
-  "liquidation_return_pct": -1.974475908283635,
-  "liquidation_value_usd": 98025.52409171636,
+  "executed_buys_by_ticker": {
+    "ADBE": 1,
+    "ADSK": 1,
+    "AGZ": 1,
+    "AMAT": 1,
+    "AMD": 1,
+    "AMZN": 1,
+    "ANET": 1,
+    "BAC": 1,
+    "BITB": 2,
+    "BRK.B": 2,
+    "BX": 1,
+    "CAG": 1,
+    "CMBS": 1,
+    "COST": 1,
+    "EIPI": 1,
+    "ERIE": 2,
+    "ETN": 2,
+    "FTGC": 1,
+    "GEM": 1,
+    "GH": 1,
+    "GIGB": 1,
+    "GOOG": 1,
+    "GOOGL": 2,
+    "HSY": 1,
+    "IEF": 2,
+    "IEI": 2,
+    "IGV": 1,
+    "INTU": 1,
+    "IWM": 1,
+    "JMBS": 2,
+    "JPM": 1,
+    "KO": 1,
+    "MBB": 2,
+    "META": 1,
+    "MSFT": 3,
+    "NTAP": 1,
+    "PANW": 1,
+    "SCHP": 1,
+    "SHY": 1,
+    "TLH": 1,
+    "UBER": 2,
+    "USIG": 1,
+    "WFC": 1,
+    "XLP": 1,
+    "XTWO": 1
+  },
+  "largest_senator_buy_share": 0.49122807017543857,
+  "largest_ticker_buy_share": 0.05263157894736842,
+  "limit_skip_counts": {
+    "cash_limit": 0,
+    "daily_notional_limit": 23,
+    "portfolio_limit": 117,
+    "position_limit": 5
+  },
+  "liquidation_return_pct": 13.891916534564096,
+  "liquidation_value_usd": 113891.9165345641,
   "market_end": "2026-08-13",
   "market_start": "2025-08-13",
-  "max_drawdown_pct": -4.668413913126046,
-  "order_sensitivity": {
-    "max_return_pct": 15.566655476064017,
-    "mean_return_pct": 3.8660612748712984,
-    "median_return_pct": 3.480752282165811,
-    "min_return_pct": -3.06975982216261,
-    "p05_return_pct": -1.1283712261060168,
-    "p95_return_pct": 9.79409018024191,
-    "runs": 200,
-    "share_beating_risk_matched_spy": 0.42,
-    "share_positive": 0.835
+  "max_drawdown_pct": -4.53892192471722,
+  "monthly_return_summary": {
+    "best_month": {
+      "ending_value_usd": 104629.77431244485,
+      "month": "2026-04",
+      "month_end": "2026-04-30",
+      "return_pct": 4.839704788402921
+    },
+    "median_return_pct": 0.6870132233752324,
+    "month_count": 13,
+    "months_at_or_above_7_pct": 0,
+    "positive_month_count": 9,
+    "worst_month": {
+      "ending_value_usd": 99799.76052357093,
+      "month": "2026-03",
+      "month_end": "2026-03-31",
+      "return_pct": -2.131126319340404
+    }
   },
-  "peak_invested_usd": 20067.826052422628,
+  "monthly_returns": [
+    {
+      "ending_value_usd": 100300.14598752817,
+      "month": "2025-08",
+      "month_end": "2025-08-29",
+      "return_pct": 0.30014598752816646
+    },
+    {
+      "ending_value_usd": 101383.46257951268,
+      "month": "2025-09",
+      "month_end": "2025-09-30",
+      "return_pct": 1.080074790837493
+    },
+    {
+      "ending_value_usd": 103511.65766796327,
+      "month": "2025-10",
+      "month_end": "2025-10-31",
+      "return_pct": 2.0991540773047657
+    },
+    {
+      "ending_value_usd": 102667.21255635135,
+      "month": "2025-11",
+      "month_end": "2025-11-28",
+      "return_pct": -0.8157971098488814
+    },
+    {
+      "ending_value_usd": 102469.3961734212,
+      "month": "2025-12",
+      "month_end": "2025-12-31",
+      "return_pct": -0.19267727057610262
+    },
+    {
+      "ending_value_usd": 103173.37447504536,
+      "month": "2026-01",
+      "month_end": "2026-01-30",
+      "return_pct": 0.6870132233752324
+    },
+    {
+      "ending_value_usd": 101972.93252726266,
+      "month": "2026-02",
+      "month_end": "2026-02-27",
+      "return_pct": -1.1635191287390323
+    },
+    {
+      "ending_value_usd": 99799.76052357093,
+      "month": "2026-03",
+      "month_end": "2026-03-31",
+      "return_pct": -2.131126319340404
+    },
+    {
+      "ending_value_usd": 104629.77431244485,
+      "month": "2026-04",
+      "month_end": "2026-04-30",
+      "return_pct": 4.839704788402921
+    },
+    {
+      "ending_value_usd": 108789.80901316956,
+      "month": "2026-05",
+      "month_end": "2026-05-29",
+      "return_pct": 3.975956870844466
+    },
+    {
+      "ending_value_usd": 108968.2484866016,
+      "month": "2026-06",
+      "month_end": "2026-06-30",
+      "return_pct": 0.16402223245970404
+    },
+    {
+      "ending_value_usd": 110849.87304282901,
+      "month": "2026-07",
+      "month_end": "2026-07-31",
+      "return_pct": 1.7267640641748683
+    },
+    {
+      "ending_value_usd": 113952.59097313852,
+      "month": "2026-08",
+      "month_end": "2026-08-13",
+      "return_pct": 2.799027049052838
+    }
+  ],
+  "order_sensitivity": {
+    "max_return_pct": 26.34487356131492,
+    "mean_return_pct": 15.03869431437007,
+    "median_average_invested_usd": 52300.86097257522,
+    "median_largest_senator_buy_share": 0.5076923076923077,
+    "median_largest_ticker_buy_share": 0.05263157894736842,
+    "median_limit_skip_count": 147.0,
+    "median_max_drawdown_pct": -5.704796006128793,
+    "median_peak_invested_usd": 71199.01859860492,
+    "median_return_pct": 14.823086104340177,
+    "median_turnover_usd": 175115.89718597312,
+    "min_return_pct": 6.9566971785582465,
+    "p05_return_pct": 9.526095024966363,
+    "p95_return_pct": 21.780062415766512,
+    "runs": 200,
+    "share_beating_risk_matched_spy": 0.68,
+    "share_positive": 1.0,
+    "worst_max_drawdown_pct": -9.918580239695219
+  },
+  "parameters": {
+    "buy_notional_usd": 2000.0,
+    "cost_per_side": 0.001,
+    "max_daily_notional_usd": 16000.0,
+    "max_holding_days": null,
+    "max_portfolio_usd": 60000.0,
+    "max_position_usd": 6000.0,
+    "starting_cash_usd": 100000.0,
+    "stop_loss_pct": null,
+    "take_profit_pct": null
+  },
+  "peak_invested_usd": 67194.71107037285,
+  "peak_starting_cash_invested_pct": 67.19471107037286,
   "reason_counts": {
-    "daily_notional_limit": 53,
+    "daily_notional_limit": 23,
     "invalid_or_missing_ticker": 53,
-    "no_position": 338,
-    "portfolio_limit": 135,
-    "position_closed": 7,
-    "position_opened_or_increased": 14,
+    "no_position": 318,
+    "portfolio_limit": 117,
+    "position_closed": 27,
+    "position_limit": 5,
+    "position_opened_or_increased": 57,
     "price_provider_http_404": 1,
     "provider_instrument_type_MUTUALFUND": 6,
     "source_asset_type_not_stock": 305,
@@ -80,21 +335,21 @@
   },
   "requested_end": "2026-08-13",
   "requested_start": "2025-08-13",
-  "return_pct": -1.954854461293043,
-  "risk_matched_spy_return_pct": 4.366583681013614,
-  "risk_matched_spy_value_usd": 104366.58368101361,
+  "return_pct": 13.952590973138523,
+  "risk_matched_spy_return_pct": 13.099751043040865,
+  "risk_matched_spy_value_usd": 113099.75104304086,
   "signal_count": 913,
   "spy_100k_return_pct": 21.832918405068092,
   "spy_100k_value_usd": 121832.91840506809,
   "starting_cash_usd": 100000.0,
   "status_counts": {
-    "executed": 21,
+    "executed": 84,
     "filtered": 366,
-    "skipped": 526
+    "skipped": 463
   },
   "strategy_exit_count": 0,
   "strategy_exit_counts": {},
-  "total_buy_notional_usd": 42000.0,
-  "total_sale_proceeds_usd": 20423.69854811688,
-  "turnover_usd": 62423.69854811688
+  "total_buy_notional_usd": 114000.0,
+  "total_sale_proceeds_usd": 67278.15239870759,
+  "turnover_usd": 181278.15239870758
 }

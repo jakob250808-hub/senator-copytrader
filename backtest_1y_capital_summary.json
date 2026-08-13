@@ -1,0 +1,3483 @@
+{
+  "data_commit": "e51eacba83bb0188aa687fa4e5576dcafd90907f",
+  "scenario_order": [
+    "current_3k_7k_20k_5k",
+    "required_3k_7k_40k_10k",
+    "required_3k_7k_60k_15k",
+    "required_3k_7k_80k_20k",
+    "required_3k_7k_100k_30k",
+    "aligned_2k_6k_60k_16k",
+    "aligned_2_5k_7_5k_60k_15k",
+    "aligned_3k_6k_40k_12k",
+    "aligned_3k_6k_60k_15k",
+    "aligned_3k_6k_80k_24k",
+    "aligned_3k_6k_99k_30k"
+  ],
+  "scenarios": {
+    "aligned_2_5k_7_5k_60k_15k": {
+      "average_invested_usd": 51748.301731903644,
+      "average_portfolio_limit_utilization_pct": 86.24716955317274,
+      "average_starting_cash_invested_pct": 51.748301731903645,
+      "ending_cash_usd": 54288.69534982855,
+      "ending_invested_usd": 59904.24909400918,
+      "ending_positions": {
+        "AMD": {
+          "market_value_usd": 6968.90500782685,
+          "paid_notional_usd": 2500.0,
+          "shares": 14.42807574776438
+        },
+        "AMZN": {
+          "market_value_usd": 3156.159092292617,
+          "paid_notional_usd": 2500.0,
+          "shares": 11.904194297765882
+        },
+        "ANET": {
+          "market_value_usd": 3711.977648212962,
+          "paid_notional_usd": 2500.0,
+          "shares": 18.22992700729927
+        },
+        "BAC": {
+          "market_value_usd": 3420.149426899456,
+          "paid_notional_usd": 2500.0,
+          "shares": 53.36479360785094
+        },
+        "BITB": {
+          "market_value_usd": 1697.914896315795,
+          "paid_notional_usd": 2500.0,
+          "shares": 49.37234447369243
+        },
+        "COST": {
+          "market_value_usd": 2616.8874892458907,
+          "paid_notional_usd": 2500.0,
+          "shares": 2.7206815570710403
+        },
+        "ERIE": {
+          "market_value_usd": 5190.614987176714,
+          "paid_notional_usd": 5000.0,
+          "shares": 20.289313020466217
+        },
+        "ETN": {
+          "market_value_usd": 6115.79662925302,
+          "paid_notional_usd": 5000.0,
+          "shares": 13.49082745550541
+        },
+        "GIGB": {
+          "market_value_usd": 2500.5250357968966,
+          "paid_notional_usd": 2500.0,
+          "shares": 55.468609898643265
+        },
+        "IGV": {
+          "market_value_usd": 2937.194742547833,
+          "paid_notional_usd": 2500.0,
+          "shares": 27.636382915728753
+        },
+        "INTU": {
+          "market_value_usd": 1348.7180775494194,
+          "paid_notional_usd": 2500.0,
+          "shares": 3.764319532734944
+        },
+        "NTAP": {
+          "market_value_usd": 5207.827235406189,
+          "paid_notional_usd": 2500.0,
+          "shares": 25.405273895560036
+        },
+        "PALL": {
+          "market_value_usd": 2549.91003890256,
+          "paid_notional_usd": 2500.0,
+          "shares": 106.95931302776275
+        },
+        "PANW": {
+          "market_value_usd": 4638.231111085031,
+          "paid_notional_usd": 2500.0,
+          "shares": 11.7127048259723
+        },
+        "TLH": {
+          "market_value_usd": 2417.1953831007363,
+          "paid_notional_usd": 2500.0,
+          "shares": 24.883625677254436
+        },
+        "WFC": {
+          "market_value_usd": 2913.395390748065,
+          "paid_notional_usd": 2500.0,
+          "shares": 33.06543378239162
+        },
+        "XTWO": {
+          "market_value_usd": 2512.8469016491363,
+          "paid_notional_usd": 2500.0,
+          "shares": 51.41374734831992
+        }
+      },
+      "ending_value_usd": 114192.94444383774,
+      "executed_buy_count": 43,
+      "executed_buys_by_senator": {
+        "Angus S. King Jr.": 6,
+        "David McCormick": 1,
+        "Jerry Moran": 1,
+        "John Boozman": 26,
+        "John Fetterman": 5,
+        "John W. Hickenlooper": 3,
+        "Mitch McConnell": 1
+      },
+      "executed_buys_by_ticker": {
+        "ADBE": 1,
+        "ADSK": 1,
+        "AGZ": 1,
+        "AMAT": 1,
+        "AMD": 1,
+        "AMZN": 1,
+        "ANET": 1,
+        "BAC": 1,
+        "BITB": 1,
+        "BRK.B": 1,
+        "BX": 1,
+        "CMBS": 1,
+        "COST": 1,
+        "EIPI": 1,
+        "ERIE": 2,
+        "ETN": 2,
+        "FTGC": 1,
+        "GEM": 1,
+        "GIGB": 1,
+        "GOOG": 1,
+        "IEF": 2,
+        "IEI": 2,
+        "IGV": 1,
+        "INTU": 1,
+        "IWM": 1,
+        "JMBS": 1,
+        "MBB": 1,
+        "META": 1,
+        "MSFT": 2,
+        "NTAP": 1,
+        "PALL": 1,
+        "PANW": 1,
+        "SCHP": 1,
+        "SHY": 1,
+        "TLH": 1,
+        "UBER": 1,
+        "WFC": 1,
+        "XTWO": 1
+      },
+      "label": "2,5k/7,5k, 60k/15k",
+      "largest_senator_buy_share": 0.6046511627906976,
+      "largest_ticker_buy_share": 0.046511627906976744,
+      "limit_skip_counts": {
+        "cash_limit": 0,
+        "daily_notional_limit": 28,
+        "portfolio_limit": 127,
+        "position_limit": 4
+      },
+      "liquidation_return_pct": 14.133040194743728,
+      "liquidation_value_usd": 114133.04019474372,
+      "market_end": "2026-08-13",
+      "market_start": "2025-08-13",
+      "max_drawdown_pct": -5.097766447504948,
+      "monthly_return_summary": {
+        "best_month": {
+          "ending_value_usd": 104910.39897820132,
+          "month": "2026-04",
+          "month_end": "2026-04-30",
+          "return_pct": 6.133414577542218
+        },
+        "median_return_pct": 0.7247073579589092,
+        "month_count": 13,
+        "months_at_or_above_7_pct": 0,
+        "positive_month_count": 9,
+        "worst_month": {
+          "ending_value_usd": 98847.66206363091,
+          "month": "2026-03",
+          "month_end": "2026-03-31",
+          "return_pct": -1.5575205242316592
+        }
+      },
+      "monthly_returns": [
+        {
+          "ending_value_usd": 100167.70578925508,
+          "month": "2025-08",
+          "month_end": "2025-08-29",
+          "return_pct": 0.1677057892550904
+        },
+        {
+          "ending_value_usd": 101056.22389735136,
+          "month": "2025-09",
+          "month_end": "2025-09-30",
+          "return_pct": 0.8870305065842743
+        },
+        {
+          "ending_value_usd": 102823.80523106134,
+          "month": "2025-10",
+          "month_end": "2025-10-31",
+          "return_pct": 1.7491068491787498
+        },
+        {
+          "ending_value_usd": 101718.54619942687,
+          "month": "2025-11",
+          "month_end": "2025-11-28",
+          "return_pct": -1.074905785825353
+        },
+        {
+          "ending_value_usd": 101636.26188453927,
+          "month": "2025-12",
+          "month_end": "2025-12-31",
+          "return_pct": -0.08089411219688314
+        },
+        {
+          "ending_value_usd": 101901.54579605351,
+          "month": "2026-01",
+          "month_end": "2026-01-30",
+          "return_pct": 0.26101305439156786
+        },
+        {
+          "ending_value_usd": 100411.59323700528,
+          "month": "2026-02",
+          "month_end": "2026-02-27",
+          "return_pct": -1.4621491238516082
+        },
+        {
+          "ending_value_usd": 98847.66206363091,
+          "month": "2026-03",
+          "month_end": "2026-03-31",
+          "return_pct": -1.5575205242316592
+        },
+        {
+          "ending_value_usd": 104910.39897820132,
+          "month": "2026-04",
+          "month_end": "2026-04-30",
+          "return_pct": 6.133414577542218
+        },
+        {
+          "ending_value_usd": 108924.44037746398,
+          "month": "2026-05",
+          "month_end": "2026-05-29",
+          "return_pct": 3.8261615991916242
+        },
+        {
+          "ending_value_usd": 109713.82381149504,
+          "month": "2026-06",
+          "month_end": "2026-06-30",
+          "return_pct": 0.7247073579589092
+        },
+        {
+          "ending_value_usd": 110534.25717420282,
+          "month": "2026-07",
+          "month_end": "2026-07-31",
+          "return_pct": 0.7477939736358241
+        },
+        {
+          "ending_value_usd": 114192.94444383774,
+          "month": "2026-08",
+          "month_end": "2026-08-13",
+          "return_pct": 3.3100030372202216
+        }
+      ],
+      "order_sensitivity": {
+        "max_return_pct": 29.45208282083469,
+        "mean_return_pct": 15.010102617066245,
+        "median_average_invested_usd": 52079.82706726998,
+        "median_largest_senator_buy_share": 0.5238095238095238,
+        "median_largest_ticker_buy_share": 0.05660377358490566,
+        "median_limit_skip_count": 157.0,
+        "median_max_drawdown_pct": -5.864535303420026,
+        "median_peak_invested_usd": 70712.70831731627,
+        "median_return_pct": 14.288935969516325,
+        "median_turnover_usd": 177318.7581052946,
+        "min_return_pct": 5.499374697775838,
+        "p05_return_pct": 7.877027644788659,
+        "p95_return_pct": 22.699291569885897,
+        "runs": 200,
+        "share_beating_risk_matched_spy": 0.635,
+        "share_positive": 1.0,
+        "worst_max_drawdown_pct": -11.38698583022254
+      },
+      "parameters": {
+        "buy_notional_usd": 2500.0,
+        "cost_per_side": 0.001,
+        "max_daily_notional_usd": 15000.0,
+        "max_holding_days": null,
+        "max_portfolio_usd": 60000.0,
+        "max_position_usd": 7500.0,
+        "starting_cash_usd": 100000.0,
+        "stop_loss_pct": null,
+        "take_profit_pct": null
+      },
+      "peak_invested_usd": 68629.21954221552,
+      "peak_starting_cash_invested_pct": 68.62921954221552,
+      "reason_counts": {
+        "daily_notional_limit": 28,
+        "invalid_or_missing_ticker": 53,
+        "no_position": 323,
+        "portfolio_limit": 127,
+        "position_closed": 22,
+        "position_limit": 4,
+        "position_opened_or_increased": 43,
+        "price_provider_http_404": 1,
+        "provider_instrument_type_MUTUALFUND": 6,
+        "source_asset_type_not_stock": 305,
+        "unsupported_action": 1
+      },
+      "requested_end": "2026-08-13",
+      "requested_start": "2025-08-13",
+      "return_pct": 14.19294444383774,
+      "risk_matched_spy_return_pct": 13.099751043040865,
+      "risk_matched_spy_value_usd": 113099.75104304086,
+      "signal_count": 913,
+      "spy_100k_return_pct": 21.832918405068092,
+      "spy_100k_value_usd": 121832.91840506809,
+      "starting_cash_usd": 100000.0,
+      "status_counts": {
+        "executed": 65,
+        "filtered": 366,
+        "skipped": 482
+      },
+      "strategy_exit_count": 0,
+      "strategy_exit_counts": {},
+      "total_buy_notional_usd": 107500.0,
+      "total_sale_proceeds_usd": 61788.69534982855,
+      "turnover_usd": 169288.69534982854
+    },
+    "aligned_2k_6k_60k_16k": {
+      "average_invested_usd": 51362.02669546057,
+      "average_portfolio_limit_utilization_pct": 85.60337782576761,
+      "average_starting_cash_invested_pct": 51.36202669546057,
+      "ending_cash_usd": 53278.15239870759,
+      "ending_invested_usd": 60674.43857443093,
+      "ending_positions": {
+        "AMD": {
+          "market_value_usd": 5575.12400626148,
+          "paid_notional_usd": 2000.0,
+          "shares": 11.542460598211504
+        },
+        "AMZN": {
+          "market_value_usd": 2524.9272738340937,
+          "paid_notional_usd": 2000.0,
+          "shares": 9.523355438212706
+        },
+        "ANET": {
+          "market_value_usd": 2969.5821185703694,
+          "paid_notional_usd": 2000.0,
+          "shares": 14.583941605839415
+        },
+        "BAC": {
+          "market_value_usd": 2736.119541519565,
+          "paid_notional_usd": 2000.0,
+          "shares": 42.69183488628075
+        },
+        "BITB": {
+          "market_value_usd": 2716.6638341052717,
+          "paid_notional_usd": 4000.0,
+          "shares": 78.99575115790788
+        },
+        "BRK.B": {
+          "market_value_usd": 2064.9258417252004,
+          "paid_notional_usd": 2000.0,
+          "shares": 4.073394495412844
+        },
+        "CAG": {
+          "market_value_usd": 1921.6103464655844,
+          "paid_notional_usd": 2000.0,
+          "shares": 124.86096839493001
+        },
+        "COST": {
+          "market_value_usd": 2093.5099913967124,
+          "paid_notional_usd": 2000.0,
+          "shares": 2.176545245656832
+        },
+        "ERIE": {
+          "market_value_usd": 4152.491989741371,
+          "paid_notional_usd": 4000.0,
+          "shares": 16.231450416372972
+        },
+        "ETN": {
+          "market_value_usd": 4892.637303402416,
+          "paid_notional_usd": 4000.0,
+          "shares": 10.79266196440433
+        },
+        "GH": {
+          "market_value_usd": 2989.6914122515536,
+          "paid_notional_usd": 2000.0,
+          "shares": 18.73944802598545
+        },
+        "GIGB": {
+          "market_value_usd": 2000.4200286375171,
+          "paid_notional_usd": 2000.0,
+          "shares": 44.37488791891461
+        },
+        "IGV": {
+          "market_value_usd": 2349.7557940382662,
+          "paid_notional_usd": 2000.0,
+          "shares": 22.109106332583
+        },
+        "INTU": {
+          "market_value_usd": 1078.9744620395356,
+          "paid_notional_usd": 2000.0,
+          "shares": 3.0114556261879555
+        },
+        "KO": {
+          "market_value_usd": 2465.2029937387424,
+          "paid_notional_usd": 2000.0,
+          "shares": 28.199531518801496
+        },
+        "NTAP": {
+          "market_value_usd": 4166.261788324951,
+          "paid_notional_usd": 2000.0,
+          "shares": 20.324219116448027
+        },
+        "PANW": {
+          "market_value_usd": 3710.5848888680252,
+          "paid_notional_usd": 2000.0,
+          "shares": 9.370163860777842
+        },
+        "TLH": {
+          "market_value_usd": 1933.7563064805888,
+          "paid_notional_usd": 2000.0,
+          "shares": 19.906900541803548
+        },
+        "USIG": {
+          "market_value_usd": 2000.380988033139,
+          "paid_notional_usd": 2000.0,
+          "shares": 39.68222563158433
+        },
+        "WFC": {
+          "market_value_usd": 2330.716312598452,
+          "paid_notional_usd": 2000.0,
+          "shares": 26.452347025913298
+        },
+        "XLP": {
+          "market_value_usd": 1990.8238310787829,
+          "paid_notional_usd": 2000.0,
+          "shares": 23.149114314869568
+        },
+        "XTWO": {
+          "market_value_usd": 2010.2775213193088,
+          "paid_notional_usd": 2000.0,
+          "shares": 41.13099787865593
+        }
+      },
+      "ending_value_usd": 113952.59097313852,
+      "executed_buy_count": 57,
+      "executed_buys_by_senator": {
+        "Angus S. King Jr.": 8,
+        "David McCormick": 2,
+        "Gary C. Peters": 1,
+        "Jerry Moran": 2,
+        "John Boozman": 28,
+        "John Fetterman": 6,
+        "John W. Hickenlooper": 4,
+        "Mitch McConnell": 1,
+        "Sheldon Whitehouse": 3,
+        "Tommy Tuberville": 2
+      },
+      "executed_buys_by_ticker": {
+        "ADBE": 1,
+        "ADSK": 1,
+        "AGZ": 1,
+        "AMAT": 1,
+        "AMD": 1,
+        "AMZN": 1,
+        "ANET": 1,
+        "BAC": 1,
+        "BITB": 2,
+        "BRK.B": 2,
+        "BX": 1,
+        "CAG": 1,
+        "CMBS": 1,
+        "COST": 1,
+        "EIPI": 1,
+        "ERIE": 2,
+        "ETN": 2,
+        "FTGC": 1,
+        "GEM": 1,
+        "GH": 1,
+        "GIGB": 1,
+        "GOOG": 1,
+        "GOOGL": 2,
+        "HSY": 1,
+        "IEF": 2,
+        "IEI": 2,
+        "IGV": 1,
+        "INTU": 1,
+        "IWM": 1,
+        "JMBS": 2,
+        "JPM": 1,
+        "KO": 1,
+        "MBB": 2,
+        "META": 1,
+        "MSFT": 3,
+        "NTAP": 1,
+        "PANW": 1,
+        "SCHP": 1,
+        "SHY": 1,
+        "TLH": 1,
+        "UBER": 2,
+        "USIG": 1,
+        "WFC": 1,
+        "XLP": 1,
+        "XTWO": 1
+      },
+      "label": "2k/6k, 60k/16k",
+      "largest_senator_buy_share": 0.49122807017543857,
+      "largest_ticker_buy_share": 0.05263157894736842,
+      "limit_skip_counts": {
+        "cash_limit": 0,
+        "daily_notional_limit": 23,
+        "portfolio_limit": 117,
+        "position_limit": 5
+      },
+      "liquidation_return_pct": 13.891916534564096,
+      "liquidation_value_usd": 113891.9165345641,
+      "market_end": "2026-08-13",
+      "market_start": "2025-08-13",
+      "max_drawdown_pct": -4.53892192471722,
+      "monthly_return_summary": {
+        "best_month": {
+          "ending_value_usd": 104629.77431244485,
+          "month": "2026-04",
+          "month_end": "2026-04-30",
+          "return_pct": 4.839704788402921
+        },
+        "median_return_pct": 0.6870132233752324,
+        "month_count": 13,
+        "months_at_or_above_7_pct": 0,
+        "positive_month_count": 9,
+        "worst_month": {
+          "ending_value_usd": 99799.76052357093,
+          "month": "2026-03",
+          "month_end": "2026-03-31",
+          "return_pct": -2.131126319340404
+        }
+      },
+      "monthly_returns": [
+        {
+          "ending_value_usd": 100300.14598752817,
+          "month": "2025-08",
+          "month_end": "2025-08-29",
+          "return_pct": 0.30014598752816646
+        },
+        {
+          "ending_value_usd": 101383.46257951268,
+          "month": "2025-09",
+          "month_end": "2025-09-30",
+          "return_pct": 1.080074790837493
+        },
+        {
+          "ending_value_usd": 103511.65766796327,
+          "month": "2025-10",
+          "month_end": "2025-10-31",
+          "return_pct": 2.0991540773047657
+        },
+        {
+          "ending_value_usd": 102667.21255635135,
+          "month": "2025-11",
+          "month_end": "2025-11-28",
+          "return_pct": -0.8157971098488814
+        },
+        {
+          "ending_value_usd": 102469.3961734212,
+          "month": "2025-12",
+          "month_end": "2025-12-31",
+          "return_pct": -0.19267727057610262
+        },
+        {
+          "ending_value_usd": 103173.37447504536,
+          "month": "2026-01",
+          "month_end": "2026-01-30",
+          "return_pct": 0.6870132233752324
+        },
+        {
+          "ending_value_usd": 101972.93252726266,
+          "month": "2026-02",
+          "month_end": "2026-02-27",
+          "return_pct": -1.1635191287390323
+        },
+        {
+          "ending_value_usd": 99799.76052357093,
+          "month": "2026-03",
+          "month_end": "2026-03-31",
+          "return_pct": -2.131126319340404
+        },
+        {
+          "ending_value_usd": 104629.77431244485,
+          "month": "2026-04",
+          "month_end": "2026-04-30",
+          "return_pct": 4.839704788402921
+        },
+        {
+          "ending_value_usd": 108789.80901316956,
+          "month": "2026-05",
+          "month_end": "2026-05-29",
+          "return_pct": 3.975956870844466
+        },
+        {
+          "ending_value_usd": 108968.2484866016,
+          "month": "2026-06",
+          "month_end": "2026-06-30",
+          "return_pct": 0.16402223245970404
+        },
+        {
+          "ending_value_usd": 110849.87304282901,
+          "month": "2026-07",
+          "month_end": "2026-07-31",
+          "return_pct": 1.7267640641748683
+        },
+        {
+          "ending_value_usd": 113952.59097313852,
+          "month": "2026-08",
+          "month_end": "2026-08-13",
+          "return_pct": 2.799027049052838
+        }
+      ],
+      "order_sensitivity": {
+        "max_return_pct": 26.34487356131492,
+        "mean_return_pct": 15.03869431437007,
+        "median_average_invested_usd": 52300.86097257522,
+        "median_largest_senator_buy_share": 0.5076923076923077,
+        "median_largest_ticker_buy_share": 0.05263157894736842,
+        "median_limit_skip_count": 147.0,
+        "median_max_drawdown_pct": -5.704796006128793,
+        "median_peak_invested_usd": 71199.01859860492,
+        "median_return_pct": 14.823086104340177,
+        "median_turnover_usd": 175115.89718597312,
+        "min_return_pct": 6.9566971785582465,
+        "p05_return_pct": 9.526095024966363,
+        "p95_return_pct": 21.780062415766512,
+        "runs": 200,
+        "share_beating_risk_matched_spy": 0.68,
+        "share_positive": 1.0,
+        "worst_max_drawdown_pct": -9.918580239695219
+      },
+      "parameters": {
+        "buy_notional_usd": 2000.0,
+        "cost_per_side": 0.001,
+        "max_daily_notional_usd": 16000.0,
+        "max_holding_days": null,
+        "max_portfolio_usd": 60000.0,
+        "max_position_usd": 6000.0,
+        "starting_cash_usd": 100000.0,
+        "stop_loss_pct": null,
+        "take_profit_pct": null
+      },
+      "peak_invested_usd": 67194.71107037285,
+      "peak_starting_cash_invested_pct": 67.19471107037286,
+      "reason_counts": {
+        "daily_notional_limit": 23,
+        "invalid_or_missing_ticker": 53,
+        "no_position": 318,
+        "portfolio_limit": 117,
+        "position_closed": 27,
+        "position_limit": 5,
+        "position_opened_or_increased": 57,
+        "price_provider_http_404": 1,
+        "provider_instrument_type_MUTUALFUND": 6,
+        "source_asset_type_not_stock": 305,
+        "unsupported_action": 1
+      },
+      "requested_end": "2026-08-13",
+      "requested_start": "2025-08-13",
+      "return_pct": 13.952590973138523,
+      "risk_matched_spy_return_pct": 13.099751043040865,
+      "risk_matched_spy_value_usd": 113099.75104304086,
+      "signal_count": 913,
+      "spy_100k_return_pct": 21.832918405068092,
+      "spy_100k_value_usd": 121832.91840506809,
+      "starting_cash_usd": 100000.0,
+      "status_counts": {
+        "executed": 84,
+        "filtered": 366,
+        "skipped": 463
+      },
+      "strategy_exit_count": 0,
+      "strategy_exit_counts": {},
+      "total_buy_notional_usd": 114000.0,
+      "total_sale_proceeds_usd": 67278.15239870759,
+      "turnover_usd": 181278.15239870758
+    },
+    "aligned_3k_6k_40k_12k": {
+      "average_invested_usd": 35596.599827099395,
+      "average_portfolio_limit_utilization_pct": 88.99149956774849,
+      "average_starting_cash_invested_pct": 35.596599827099396,
+      "ending_cash_usd": 75496.67252846732,
+      "ending_invested_usd": 40200.19031240388,
+      "ending_positions": {
+        "AMD": {
+          "market_value_usd": 8362.686009392222,
+          "paid_notional_usd": 3000.0,
+          "shares": 17.313690897317258
+        },
+        "ANET": {
+          "market_value_usd": 4454.373177855554,
+          "paid_notional_usd": 3000.0,
+          "shares": 21.875912408759124
+        },
+        "ERIE": {
+          "market_value_usd": 3114.3689923060283,
+          "paid_notional_usd": 3000.0,
+          "shares": 12.17358781227973
+        },
+        "ETN": {
+          "market_value_usd": 7338.955955103625,
+          "paid_notional_usd": 6000.0,
+          "shares": 16.188992946606493
+        },
+        "INTU": {
+          "market_value_usd": 1618.4616930593033,
+          "paid_notional_usd": 3000.0,
+          "shares": 4.517183439281933
+        },
+        "NTAP": {
+          "market_value_usd": 6249.392682487428,
+          "paid_notional_usd": 3000.0,
+          "shares": 30.486328674672045
+        },
+        "PANW": {
+          "market_value_usd": 5565.877333302037,
+          "paid_notional_usd": 3000.0,
+          "shares": 14.055245791166762
+        },
+        "WFC": {
+          "market_value_usd": 3496.074468897678,
+          "paid_notional_usd": 3000.0,
+          "shares": 39.67852053886995
+        }
+      },
+      "ending_value_usd": 115696.8628408712,
+      "executed_buy_count": 21,
+      "executed_buys_by_senator": {
+        "Angus S. King Jr.": 4,
+        "Jerry Moran": 1,
+        "John Boozman": 10,
+        "John Fetterman": 2,
+        "John W. Hickenlooper": 3,
+        "Mitch McConnell": 1
+      },
+      "executed_buys_by_ticker": {
+        "ADBE": 1,
+        "ADSK": 1,
+        "AGZ": 1,
+        "AMAT": 1,
+        "AMD": 1,
+        "ANET": 1,
+        "BRK.B": 1,
+        "CMBS": 1,
+        "ERIE": 1,
+        "ETN": 2,
+        "GEM": 1,
+        "IEF": 2,
+        "IEI": 1,
+        "INTU": 1,
+        "MSFT": 2,
+        "NTAP": 1,
+        "PANW": 1,
+        "WFC": 1
+      },
+      "label": "3k/6k, 40k/12k",
+      "largest_senator_buy_share": 0.47619047619047616,
+      "largest_ticker_buy_share": 0.09523809523809523,
+      "limit_skip_counts": {
+        "cash_limit": 0,
+        "daily_notional_limit": 34,
+        "portfolio_limit": 139,
+        "position_limit": 8
+      },
+      "liquidation_return_pct": 15.656662650558783,
+      "liquidation_value_usd": 115656.66265055879,
+      "market_end": "2026-08-13",
+      "market_start": "2025-08-13",
+      "max_drawdown_pct": -4.386606040073826,
+      "monthly_return_summary": {
+        "best_month": {
+          "ending_value_usd": 105280.79980951635,
+          "month": "2026-04",
+          "month_end": "2026-04-30",
+          "return_pct": 5.283061709476544
+        },
+        "median_return_pct": 0.15810218284886268,
+        "month_count": 13,
+        "months_at_or_above_7_pct": 0,
+        "positive_month_count": 7,
+        "worst_month": {
+          "ending_value_usd": 101741.19290379892,
+          "month": "2025-11",
+          "month_end": "2025-11-28",
+          "return_pct": -1.5505845930320894
+        }
+      },
+      "monthly_returns": [
+        {
+          "ending_value_usd": 99992.79263263587,
+          "month": "2025-08",
+          "month_end": "2025-08-29",
+          "return_pct": -0.007207367364125972
+        },
+        {
+          "ending_value_usd": 100973.16365097044,
+          "month": "2025-09",
+          "month_end": "2025-09-30",
+          "return_pct": 0.9804416823684159
+        },
+        {
+          "ending_value_usd": 103343.6232030668,
+          "month": "2025-10",
+          "month_end": "2025-10-31",
+          "return_pct": 2.3476134315155495
+        },
+        {
+          "ending_value_usd": 101741.19290379892,
+          "month": "2025-11",
+          "month_end": "2025-11-28",
+          "return_pct": -1.5505845930320894
+        },
+        {
+          "ending_value_usd": 101669.64742272213,
+          "month": "2025-12",
+          "month_end": "2025-12-31",
+          "return_pct": -0.07032105584258153
+        },
+        {
+          "ending_value_usd": 101830.38935459219,
+          "month": "2026-01",
+          "month_end": "2026-01-30",
+          "return_pct": 0.15810218284886268
+        },
+        {
+          "ending_value_usd": 101211.53496711743,
+          "month": "2026-02",
+          "month_end": "2026-02-27",
+          "return_pct": -0.6077305521437149
+        },
+        {
+          "ending_value_usd": 99997.85160127045,
+          "month": "2026-03",
+          "month_end": "2026-03-31",
+          "return_pct": -1.1991551815129564
+        },
+        {
+          "ending_value_usd": 105280.79980951635,
+          "month": "2026-04",
+          "month_end": "2026-04-30",
+          "return_pct": 5.283061709476544
+        },
+        {
+          "ending_value_usd": 110504.91418717508,
+          "month": "2026-05",
+          "month_end": "2026-05-29",
+          "return_pct": 4.962077023645972
+        },
+        {
+          "ending_value_usd": 112107.9761698253,
+          "month": "2026-06",
+          "month_end": "2026-06-30",
+          "return_pct": 1.4506703113084551
+        },
+        {
+          "ending_value_usd": 112094.00538879029,
+          "month": "2026-07",
+          "month_end": "2026-07-31",
+          "return_pct": -0.0124618974602142
+        },
+        {
+          "ending_value_usd": 115696.8628408712,
+          "month": "2026-08",
+          "month_end": "2026-08-13",
+          "return_pct": 3.21413927496359
+        }
+      ],
+      "order_sensitivity": {
+        "max_return_pct": 32.419703413447884,
+        "mean_return_pct": 11.986532926741884,
+        "median_average_invested_usd": 35944.25269345406,
+        "median_largest_senator_buy_share": 0.5,
+        "median_largest_ticker_buy_share": 0.08333333333333333,
+        "median_limit_skip_count": 178.0,
+        "median_max_drawdown_pct": -5.333211539285482,
+        "median_peak_invested_usd": 48633.63257656769,
+        "median_return_pct": 11.910313426328855,
+        "median_turnover_usd": 113455.52596325692,
+        "min_return_pct": 0.07587606688830295,
+        "p05_return_pct": 4.5716387491894865,
+        "p95_return_pct": 19.81703697751548,
+        "runs": 200,
+        "share_beating_risk_matched_spy": 0.72,
+        "share_positive": 1.0,
+        "worst_max_drawdown_pct": -10.513203782102154
+      },
+      "parameters": {
+        "buy_notional_usd": 3000.0,
+        "cost_per_side": 0.001,
+        "max_daily_notional_usd": 12000.0,
+        "max_holding_days": null,
+        "max_portfolio_usd": 40000.0,
+        "max_position_usd": 6000.0,
+        "starting_cash_usd": 100000.0,
+        "stop_loss_pct": null,
+        "take_profit_pct": null
+      },
+      "peak_invested_usd": 48871.268055603745,
+      "peak_starting_cash_invested_pct": 48.87126805560374,
+      "reason_counts": {
+        "daily_notional_limit": 34,
+        "invalid_or_missing_ticker": 53,
+        "no_position": 334,
+        "portfolio_limit": 139,
+        "position_closed": 11,
+        "position_limit": 8,
+        "position_opened_or_increased": 21,
+        "price_provider_http_404": 1,
+        "provider_instrument_type_MUTUALFUND": 6,
+        "source_asset_type_not_stock": 305,
+        "unsupported_action": 1
+      },
+      "requested_end": "2026-08-13",
+      "requested_start": "2025-08-13",
+      "return_pct": 15.696862840871194,
+      "risk_matched_spy_return_pct": 8.733167362027228,
+      "risk_matched_spy_value_usd": 108733.16736202723,
+      "signal_count": 913,
+      "spy_100k_return_pct": 21.832918405068092,
+      "spy_100k_value_usd": 121832.91840506809,
+      "starting_cash_usd": 100000.0,
+      "status_counts": {
+        "executed": 32,
+        "filtered": 366,
+        "skipped": 515
+      },
+      "strategy_exit_count": 0,
+      "strategy_exit_counts": {},
+      "total_buy_notional_usd": 63000.0,
+      "total_sale_proceeds_usd": 38496.67252846733,
+      "turnover_usd": 101496.67252846733
+    },
+    "aligned_3k_6k_60k_15k": {
+      "average_invested_usd": 52653.94042714912,
+      "average_portfolio_limit_utilization_pct": 87.75656737858188,
+      "average_starting_cash_invested_pct": 52.653940427149124,
+      "ending_cash_usd": 57501.07717218583,
+      "ending_invested_usd": 60247.65901751262,
+      "ending_positions": {
+        "AMD": {
+          "market_value_usd": 8362.686009392222,
+          "paid_notional_usd": 3000.0,
+          "shares": 17.313690897317258
+        },
+        "AMZN": {
+          "market_value_usd": 3787.3909107511404,
+          "paid_notional_usd": 3000.0,
+          "shares": 14.285033157319058
+        },
+        "ANET": {
+          "market_value_usd": 4454.373177855554,
+          "paid_notional_usd": 3000.0,
+          "shares": 21.875912408759124
+        },
+        "BAC": {
+          "market_value_usd": 4104.179312279347,
+          "paid_notional_usd": 3000.0,
+          "shares": 64.03775232942112
+        },
+        "COST": {
+          "market_value_usd": 3140.2649870950686,
+          "paid_notional_usd": 3000.0,
+          "shares": 3.2648178684852485
+        },
+        "ERIE": {
+          "market_value_usd": 6228.737984612057,
+          "paid_notional_usd": 6000.0,
+          "shares": 24.34717562455946
+        },
+        "ETN": {
+          "market_value_usd": 7338.955955103625,
+          "paid_notional_usd": 6000.0,
+          "shares": 16.188992946606493
+        },
+        "GIGB": {
+          "market_value_usd": 3000.630042956276,
+          "paid_notional_usd": 3000.0,
+          "shares": 66.56233187837192
+        },
+        "INTU": {
+          "market_value_usd": 1618.4616930593033,
+          "paid_notional_usd": 3000.0,
+          "shares": 4.517183439281933
+        },
+        "NTAP": {
+          "market_value_usd": 6249.392682487428,
+          "paid_notional_usd": 3000.0,
+          "shares": 30.486328674672045
+        },
+        "PANW": {
+          "market_value_usd": 5565.877333302037,
+          "paid_notional_usd": 3000.0,
+          "shares": 14.055245791166762
+        },
+        "TLH": {
+          "market_value_usd": 2900.634459720883,
+          "paid_notional_usd": 3000.0,
+          "shares": 29.86035081270532
+        },
+        "WFC": {
+          "market_value_usd": 3496.074468897678,
+          "paid_notional_usd": 3000.0,
+          "shares": 39.67852053886995
+        }
+      },
+      "ending_value_usd": 117748.73618969845,
+      "executed_buy_count": 34,
+      "executed_buys_by_senator": {
+        "Angus S. King Jr.": 5,
+        "Jerry Moran": 1,
+        "John Boozman": 20,
+        "John Fetterman": 4,
+        "John W. Hickenlooper": 3,
+        "Mitch McConnell": 1
+      },
+      "executed_buys_by_ticker": {
+        "ADBE": 1,
+        "ADSK": 1,
+        "AGZ": 1,
+        "AMAT": 1,
+        "AMD": 1,
+        "AMZN": 1,
+        "ANET": 1,
+        "BAC": 1,
+        "BRK.B": 1,
+        "CMBS": 1,
+        "COST": 1,
+        "EIPI": 1,
+        "ERIE": 2,
+        "ETN": 2,
+        "FTGC": 1,
+        "GEM": 1,
+        "GIGB": 1,
+        "IEF": 2,
+        "IEI": 1,
+        "INTU": 1,
+        "JMBS": 1,
+        "META": 1,
+        "MSFT": 2,
+        "NTAP": 1,
+        "PANW": 1,
+        "SCHP": 1,
+        "SHY": 1,
+        "TLH": 1,
+        "UBER": 1,
+        "WFC": 1
+      },
+      "label": "3k/6k, 60k/15k",
+      "largest_senator_buy_share": 0.5882352941176471,
+      "largest_ticker_buy_share": 0.058823529411764705,
+      "limit_skip_counts": {
+        "cash_limit": 0,
+        "daily_notional_limit": 30,
+        "portfolio_limit": 123,
+        "position_limit": 15
+      },
+      "liquidation_return_pct": 17.688488530680946,
+      "liquidation_value_usd": 117688.48853068094,
+      "market_end": "2026-08-13",
+      "market_start": "2025-08-13",
+      "max_drawdown_pct": -4.5716262721781415,
+      "monthly_return_summary": {
+        "best_month": {
+          "ending_value_usd": 106370.95519014279,
+          "month": "2026-04",
+          "month_end": "2026-04-30",
+          "return_pct": 6.093968330152544
+        },
+        "median_return_pct": 0.6438787846208216,
+        "month_count": 13,
+        "months_at_or_above_7_pct": 0,
+        "positive_month_count": 9,
+        "worst_month": {
+          "ending_value_usd": 100261.07691544565,
+          "month": "2026-03",
+          "month_end": "2026-03-31",
+          "return_pct": -1.7668329775648473
+        }
+      },
+      "monthly_returns": [
+        {
+          "ending_value_usd": 100172.79649831756,
+          "month": "2025-08",
+          "month_end": "2025-08-29",
+          "return_pct": 0.17279649831756227
+        },
+        {
+          "ending_value_usd": 101208.93691762445,
+          "month": "2025-09",
+          "month_end": "2025-09-30",
+          "return_pct": 1.0343530933812906
+        },
+        {
+          "ending_value_usd": 103708.15560827225,
+          "month": "2025-10",
+          "month_end": "2025-10-31",
+          "return_pct": 2.469365618059949
+        },
+        {
+          "ending_value_usd": 102387.07462931458,
+          "month": "2025-11",
+          "month_end": "2025-11-28",
+          "return_pct": -1.273844830437132
+        },
+        {
+          "ending_value_usd": 102232.12070499749,
+          "month": "2025-12",
+          "month_end": "2025-12-31",
+          "return_pct": -0.15134129466838342
+        },
+        {
+          "ending_value_usd": 102865.96806758281,
+          "month": "2026-01",
+          "month_end": "2026-01-30",
+          "return_pct": 0.620008034866415
+        },
+        {
+          "ending_value_usd": 102064.38411229005,
+          "month": "2026-02",
+          "month_end": "2026-02-27",
+          "return_pct": -0.779250874075399
+        },
+        {
+          "ending_value_usd": 100261.07691544565,
+          "month": "2026-03",
+          "month_end": "2026-03-31",
+          "return_pct": -1.7668329775648473
+        },
+        {
+          "ending_value_usd": 106370.95519014279,
+          "month": "2026-04",
+          "month_end": "2026-04-30",
+          "return_pct": 6.093968330152544
+        },
+        {
+          "ending_value_usd": 111340.40936223729,
+          "month": "2026-05",
+          "month_end": "2026-05-29",
+          "return_pct": 4.671814935958207
+        },
+        {
+          "ending_value_usd": 113122.08209015723,
+          "month": "2026-06",
+          "month_end": "2026-06-30",
+          "return_pct": 1.6002031410926598
+        },
+        {
+          "ending_value_usd": 113850.4511774571,
+          "month": "2026-07",
+          "month_end": "2026-07-31",
+          "return_pct": 0.6438787846208216
+        },
+        {
+          "ending_value_usd": 117748.73618969845,
+          "month": "2026-08",
+          "month_end": "2026-08-13",
+          "return_pct": 3.4240400208560784
+        }
+      ],
+      "order_sensitivity": {
+        "max_return_pct": 35.008167860366314,
+        "mean_return_pct": 15.777566456807184,
+        "median_average_invested_usd": 52089.99069554785,
+        "median_largest_senator_buy_share": 0.5277777777777778,
+        "median_largest_ticker_buy_share": 0.05714285714285714,
+        "median_limit_skip_count": 164.0,
+        "median_max_drawdown_pct": -6.358893538968297,
+        "median_peak_invested_usd": 70728.61917343583,
+        "median_return_pct": 15.374411172568214,
+        "median_turnover_usd": 180078.31051022367,
+        "min_return_pct": 3.815431701126104,
+        "p05_return_pct": 7.892378203726405,
+        "p95_return_pct": 24.858691832994115,
+        "runs": 200,
+        "share_beating_risk_matched_spy": 0.67,
+        "share_positive": 1.0,
+        "worst_max_drawdown_pct": -12.593148259245869
+      },
+      "parameters": {
+        "buy_notional_usd": 3000.0,
+        "cost_per_side": 0.001,
+        "max_daily_notional_usd": 15000.0,
+        "max_holding_days": null,
+        "max_portfolio_usd": 60000.0,
+        "max_position_usd": 6000.0,
+        "starting_cash_usd": 100000.0,
+        "stop_loss_pct": null,
+        "take_profit_pct": null
+      },
+      "peak_invested_usd": 70419.45921197475,
+      "peak_starting_cash_invested_pct": 70.41945921197475,
+      "reason_counts": {
+        "daily_notional_limit": 30,
+        "invalid_or_missing_ticker": 53,
+        "no_position": 327,
+        "portfolio_limit": 123,
+        "position_closed": 18,
+        "position_limit": 15,
+        "position_opened_or_increased": 34,
+        "price_provider_http_404": 1,
+        "provider_instrument_type_MUTUALFUND": 6,
+        "source_asset_type_not_stock": 305,
+        "unsupported_action": 1
+      },
+      "requested_end": "2026-08-13",
+      "requested_start": "2025-08-13",
+      "return_pct": 17.748736189698455,
+      "risk_matched_spy_return_pct": 13.099751043040865,
+      "risk_matched_spy_value_usd": 113099.75104304086,
+      "signal_count": 913,
+      "spy_100k_return_pct": 21.832918405068092,
+      "spy_100k_value_usd": 121832.91840506809,
+      "starting_cash_usd": 100000.0,
+      "status_counts": {
+        "executed": 52,
+        "filtered": 366,
+        "skipped": 495
+      },
+      "strategy_exit_count": 0,
+      "strategy_exit_counts": {},
+      "total_buy_notional_usd": 102000.0,
+      "total_sale_proceeds_usd": 59501.07717218585,
+      "turnover_usd": 161501.07717218585
+    },
+    "aligned_3k_6k_80k_24k": {
+      "average_invested_usd": 69175.960488121,
+      "average_portfolio_limit_utilization_pct": 86.46995061015124,
+      "average_starting_cash_invested_pct": 69.17596048812099,
+      "ending_cash_usd": 37664.79865267144,
+      "ending_invested_usd": 81414.4371824226,
+      "ending_positions": {
+        "AMD": {
+          "market_value_usd": 8362.686009392222,
+          "paid_notional_usd": 3000.0,
+          "shares": 17.313690897317258
+        },
+        "AMZN": {
+          "market_value_usd": 3787.3909107511404,
+          "paid_notional_usd": 3000.0,
+          "shares": 14.285033157319058
+        },
+        "ANET": {
+          "market_value_usd": 4454.373177855554,
+          "paid_notional_usd": 3000.0,
+          "shares": 21.875912408759124
+        },
+        "BAC": {
+          "market_value_usd": 4104.179312279347,
+          "paid_notional_usd": 3000.0,
+          "shares": 64.03775232942112
+        },
+        "BITB": {
+          "market_value_usd": 4074.995751157908,
+          "paid_notional_usd": 6000.0,
+          "shares": 118.49362673686183
+        },
+        "BRK.B": {
+          "market_value_usd": 3097.388762587801,
+          "paid_notional_usd": 3000.0,
+          "shares": 6.110091743119266
+        },
+        "COST": {
+          "market_value_usd": 3140.2649870950686,
+          "paid_notional_usd": 3000.0,
+          "shares": 3.2648178684852485
+        },
+        "DIS": {
+          "market_value_usd": 2969.8065597505806,
+          "paid_notional_usd": 3000.0,
+          "shares": 28.33784802738866
+        },
+        "ERIE": {
+          "market_value_usd": 6228.737984612057,
+          "paid_notional_usd": 6000.0,
+          "shares": 24.34717562455946
+        },
+        "ETN": {
+          "market_value_usd": 7338.955955103625,
+          "paid_notional_usd": 6000.0,
+          "shares": 16.188992946606493
+        },
+        "GH": {
+          "market_value_usd": 4484.53711837733,
+          "paid_notional_usd": 3000.0,
+          "shares": 28.109172038978176
+        },
+        "GIGB": {
+          "market_value_usd": 3000.630042956276,
+          "paid_notional_usd": 3000.0,
+          "shares": 66.56233187837192
+        },
+        "IGV": {
+          "market_value_usd": 3524.633691057399,
+          "paid_notional_usd": 3000.0,
+          "shares": 33.1636594988745
+        },
+        "INTU": {
+          "market_value_usd": 1618.4616930593033,
+          "paid_notional_usd": 3000.0,
+          "shares": 4.517183439281933
+        },
+        "NTAP": {
+          "market_value_usd": 6249.392682487428,
+          "paid_notional_usd": 3000.0,
+          "shares": 30.486328674672045
+        },
+        "PANW": {
+          "market_value_usd": 5565.877333302037,
+          "paid_notional_usd": 3000.0,
+          "shares": 14.055245791166762
+        },
+        "TLH": {
+          "market_value_usd": 2900.634459720883,
+          "paid_notional_usd": 3000.0,
+          "shares": 29.86035081270532
+        },
+        "WFC": {
+          "market_value_usd": 3496.074468897678,
+          "paid_notional_usd": 3000.0,
+          "shares": 39.67852053886995
+        },
+        "XTWO": {
+          "market_value_usd": 3015.4162819789635,
+          "paid_notional_usd": 3000.0,
+          "shares": 61.696496817983906
+        }
+      },
+      "ending_value_usd": 119079.23583509403,
+      "executed_buy_count": 50,
+      "executed_buys_by_senator": {
+        "Angus S. King Jr.": 8,
+        "David McCormick": 2,
+        "Jerry Moran": 2,
+        "John Boozman": 27,
+        "John Fetterman": 5,
+        "John W. Hickenlooper": 4,
+        "Mitch McConnell": 1,
+        "Sheldon Whitehouse": 1
+      },
+      "executed_buys_by_ticker": {
+        "ADBE": 1,
+        "ADSK": 1,
+        "AGZ": 1,
+        "AMAT": 1,
+        "AMD": 1,
+        "AMZN": 1,
+        "ANET": 1,
+        "BAC": 1,
+        "BITB": 2,
+        "BRK.B": 2,
+        "BX": 1,
+        "CMBS": 2,
+        "COST": 1,
+        "DIS": 1,
+        "EIPI": 1,
+        "ERIE": 2,
+        "ETN": 2,
+        "FTGC": 1,
+        "GEM": 1,
+        "GH": 1,
+        "GIGB": 1,
+        "GOOG": 1,
+        "GOOGL": 1,
+        "IEF": 2,
+        "IEI": 1,
+        "IGV": 1,
+        "INTU": 1,
+        "IWM": 1,
+        "JMBS": 2,
+        "JPM": 1,
+        "MBB": 2,
+        "META": 1,
+        "MSFT": 1,
+        "NTAP": 1,
+        "PANW": 1,
+        "SCHP": 1,
+        "SHY": 1,
+        "TLH": 1,
+        "UBER": 2,
+        "WFC": 1,
+        "XTWO": 1
+      },
+      "label": "3k/6k, 80k/24k",
+      "largest_senator_buy_share": 0.54,
+      "largest_ticker_buy_share": 0.04,
+      "limit_skip_counts": {
+        "cash_limit": 0,
+        "daily_notional_limit": 23,
+        "portfolio_limit": 108,
+        "position_limit": 21
+      },
+      "liquidation_return_pct": 18.99782139791162,
+      "liquidation_value_usd": 118997.82139791161,
+      "market_end": "2026-08-13",
+      "market_start": "2025-08-13",
+      "max_drawdown_pct": -7.357435172211801,
+      "monthly_return_summary": {
+        "best_month": {
+          "ending_value_usd": 106226.15966907759,
+          "month": "2026-04",
+          "month_end": "2026-04-30",
+          "return_pct": 7.737541418839444
+        },
+        "median_return_pct": 0.8102122569228376,
+        "month_count": 13,
+        "months_at_or_above_7_pct": 1,
+        "positive_month_count": 9,
+        "worst_month": {
+          "ending_value_usd": 100577.19690275978,
+          "month": "2026-02",
+          "month_end": "2026-02-27",
+          "return_pct": -2.8756260609481332
+        }
+      },
+      "monthly_returns": [
+        {
+          "ending_value_usd": 100450.21898129226,
+          "month": "2025-08",
+          "month_end": "2025-08-29",
+          "return_pct": 0.4502189812922497
+        },
+        {
+          "ending_value_usd": 102075.19386926902,
+          "month": "2025-09",
+          "month_end": "2025-09-30",
+          "return_pct": 1.617691732737181
+        },
+        {
+          "ending_value_usd": 104763.19734525471,
+          "month": "2025-10",
+          "month_end": "2025-10-31",
+          "return_pct": 2.633356228966166
+        },
+        {
+          "ending_value_usd": 103420.84392569569,
+          "month": "2025-11",
+          "month_end": "2025-11-28",
+          "return_pct": -1.2813215457096017
+        },
+        {
+          "ending_value_usd": 103188.31231661327,
+          "month": "2025-12",
+          "month_end": "2025-12-31",
+          "return_pct": -0.22484017752696372
+        },
+        {
+          "ending_value_usd": 103555.05299408638,
+          "month": "2026-01",
+          "month_end": "2026-01-30",
+          "return_pct": 0.35540912457976415
+        },
+        {
+          "ending_value_usd": 100577.19690275978,
+          "month": "2026-02",
+          "month_end": "2026-02-27",
+          "return_pct": -2.8756260609481332
+        },
+        {
+          "ending_value_usd": 98597.1633194355,
+          "month": "2026-03",
+          "month_end": "2026-03-31",
+          "return_pct": -1.968670478298007
+        },
+        {
+          "ending_value_usd": 106226.15966907759,
+          "month": "2026-04",
+          "month_end": "2026-04-30",
+          "return_pct": 7.737541418839444
+        },
+        {
+          "ending_value_usd": 112099.05296903236,
+          "month": "2026-05",
+          "month_end": "2026-05-29",
+          "return_pct": 5.52866950876354
+        },
+        {
+          "ending_value_usd": 113007.2932360819,
+          "month": "2026-06",
+          "month_end": "2026-06-30",
+          "return_pct": 0.8102122569228376
+        },
+        {
+          "ending_value_usd": 114604.74788068671,
+          "month": "2026-07",
+          "month_end": "2026-07-31",
+          "return_pct": 1.4135854411339688
+        },
+        {
+          "ending_value_usd": 119079.23583509403,
+          "month": "2026-08",
+          "month_end": "2026-08-13",
+          "return_pct": 3.9042779964628016
+        }
+      ],
+      "order_sensitivity": {
+        "max_return_pct": 37.344545652567554,
+        "mean_return_pct": 22.05090013862558,
+        "median_average_invested_usd": 71001.32161039766,
+        "median_largest_senator_buy_share": 0.5106382978723404,
+        "median_largest_ticker_buy_share": 0.05,
+        "median_limit_skip_count": 152.5,
+        "median_max_drawdown_pct": -8.010727089435393,
+        "median_peak_invested_usd": 96609.96478981557,
+        "median_return_pct": 21.7739881649227,
+        "median_turnover_usd": 238089.1534459047,
+        "min_return_pct": 9.955148272749348,
+        "p05_return_pct": 12.523066694633387,
+        "p95_return_pct": 30.492347789720526,
+        "runs": 200,
+        "share_beating_risk_matched_spy": 0.795,
+        "share_positive": 1.0,
+        "worst_max_drawdown_pct": -12.68452052538047
+      },
+      "parameters": {
+        "buy_notional_usd": 3000.0,
+        "cost_per_side": 0.001,
+        "max_daily_notional_usd": 24000.0,
+        "max_holding_days": null,
+        "max_portfolio_usd": 80000.0,
+        "max_position_usd": 6000.0,
+        "starting_cash_usd": 100000.0,
+        "stop_loss_pct": null,
+        "take_profit_pct": null
+      },
+      "peak_invested_usd": 91166.94486225006,
+      "peak_starting_cash_invested_pct": 91.16694486225006,
+      "reason_counts": {
+        "daily_notional_limit": 23,
+        "invalid_or_missing_ticker": 53,
+        "no_position": 319,
+        "portfolio_limit": 108,
+        "position_closed": 26,
+        "position_limit": 21,
+        "position_opened_or_increased": 50,
+        "price_provider_http_404": 1,
+        "provider_instrument_type_MUTUALFUND": 6,
+        "source_asset_type_not_stock": 305,
+        "unsupported_action": 1
+      },
+      "requested_end": "2026-08-13",
+      "requested_start": "2025-08-13",
+      "return_pct": 19.079235835094032,
+      "risk_matched_spy_return_pct": 17.466334724054477,
+      "risk_matched_spy_value_usd": 117466.33472405447,
+      "signal_count": 913,
+      "spy_100k_return_pct": 21.832918405068092,
+      "spy_100k_value_usd": 121832.91840506809,
+      "starting_cash_usd": 100000.0,
+      "status_counts": {
+        "executed": 76,
+        "filtered": 366,
+        "skipped": 471
+      },
+      "strategy_exit_count": 0,
+      "strategy_exit_counts": {},
+      "total_buy_notional_usd": 150000.0,
+      "total_sale_proceeds_usd": 87664.79865267142,
+      "turnover_usd": 237664.79865267142
+    },
+    "aligned_3k_6k_99k_30k": {
+      "average_invested_usd": 85371.93694729707,
+      "average_portfolio_limit_utilization_pct": 86.23427974474451,
+      "average_starting_cash_invested_pct": 85.37193694729707,
+      "ending_cash_usd": 23677.8554521835,
+      "ending_invested_usd": 98151.51584801354,
+      "ending_positions": {
+        "AMD": {
+          "market_value_usd": 8362.686009392222,
+          "paid_notional_usd": 3000.0,
+          "shares": 17.313690897317258
+        },
+        "AMZN": {
+          "market_value_usd": 3787.3909107511404,
+          "paid_notional_usd": 3000.0,
+          "shares": 14.285033157319058
+        },
+        "ANET": {
+          "market_value_usd": 4454.373177855554,
+          "paid_notional_usd": 3000.0,
+          "shares": 21.875912408759124
+        },
+        "BAC": {
+          "market_value_usd": 4104.179312279347,
+          "paid_notional_usd": 3000.0,
+          "shares": 64.03775232942112
+        },
+        "BITB": {
+          "market_value_usd": 4074.995751157908,
+          "paid_notional_usd": 6000.0,
+          "shares": 118.49362673686183
+        },
+        "BRK.B": {
+          "market_value_usd": 3097.388762587801,
+          "paid_notional_usd": 3000.0,
+          "shares": 6.110091743119266
+        },
+        "CAG": {
+          "market_value_usd": 2882.4155196983766,
+          "paid_notional_usd": 3000.0,
+          "shares": 187.29145259239502
+        },
+        "COST": {
+          "market_value_usd": 3140.2649870950686,
+          "paid_notional_usd": 3000.0,
+          "shares": 3.2648178684852485
+        },
+        "DIS": {
+          "market_value_usd": 2969.8065597505806,
+          "paid_notional_usd": 3000.0,
+          "shares": 28.33784802738866
+        },
+        "ERIE": {
+          "market_value_usd": 6228.737984612057,
+          "paid_notional_usd": 6000.0,
+          "shares": 24.34717562455946
+        },
+        "ETN": {
+          "market_value_usd": 7338.955955103625,
+          "paid_notional_usd": 6000.0,
+          "shares": 16.188992946606493
+        },
+        "GH": {
+          "market_value_usd": 4484.53711837733,
+          "paid_notional_usd": 3000.0,
+          "shares": 28.109172038978176
+        },
+        "GIGB": {
+          "market_value_usd": 3000.630042956276,
+          "paid_notional_usd": 3000.0,
+          "shares": 66.56233187837192
+        },
+        "IGV": {
+          "market_value_usd": 3524.633691057399,
+          "paid_notional_usd": 3000.0,
+          "shares": 33.1636594988745
+        },
+        "INTU": {
+          "market_value_usd": 1618.4616930593033,
+          "paid_notional_usd": 3000.0,
+          "shares": 4.517183439281933
+        },
+        "KEX": {
+          "market_value_usd": 4276.321085279772,
+          "paid_notional_usd": 3000.0,
+          "shares": 31.089211126157974
+        },
+        "KO": {
+          "market_value_usd": 3697.8044906081136,
+          "paid_notional_usd": 3000.0,
+          "shares": 42.299297278202246
+        },
+        "NTAP": {
+          "market_value_usd": 6249.392682487428,
+          "paid_notional_usd": 3000.0,
+          "shares": 30.486328674672045
+        },
+        "PANW": {
+          "market_value_usd": 5565.877333302037,
+          "paid_notional_usd": 3000.0,
+          "shares": 14.055245791166762
+        },
+        "TLH": {
+          "market_value_usd": 2900.634459720883,
+          "paid_notional_usd": 3000.0,
+          "shares": 29.86035081270532
+        },
+        "USIG": {
+          "market_value_usd": 3000.5714820497083,
+          "paid_notional_usd": 3000.0,
+          "shares": 59.523338447376496
+        },
+        "WFC": {
+          "market_value_usd": 6376.040556852653,
+          "paid_notional_usd": 6000.0,
+          "shares": 72.3645501382912
+        },
+        "XTWO": {
+          "market_value_usd": 3015.4162819789635,
+          "paid_notional_usd": 3000.0,
+          "shares": 61.696496817983906
+        }
+      },
+      "ending_value_usd": 121829.37130019705,
+      "executed_buy_count": 60,
+      "executed_buys_by_senator": {
+        "Angus S. King Jr.": 10,
+        "David McCormick": 2,
+        "Gary C. Peters": 1,
+        "Jerry Moran": 2,
+        "John Boozman": 29,
+        "John Fetterman": 6,
+        "John W. Hickenlooper": 4,
+        "Mitch McConnell": 2,
+        "Sheldon Whitehouse": 3,
+        "Tommy Tuberville": 1
+      },
+      "executed_buys_by_ticker": {
+        "ADBE": 1,
+        "ADSK": 1,
+        "AGZ": 1,
+        "AMAT": 1,
+        "AMD": 1,
+        "AMZN": 1,
+        "ANET": 1,
+        "BAC": 1,
+        "BITB": 2,
+        "BRK.B": 2,
+        "BX": 1,
+        "CAG": 1,
+        "CMBS": 1,
+        "COST": 1,
+        "DIS": 1,
+        "EIPI": 1,
+        "ERIE": 2,
+        "ETN": 2,
+        "FTGC": 1,
+        "GEM": 1,
+        "GH": 1,
+        "GIGB": 1,
+        "GOOG": 1,
+        "GOOGL": 1,
+        "HSY": 1,
+        "IEF": 2,
+        "IEI": 1,
+        "IGV": 1,
+        "INTU": 1,
+        "IWM": 1,
+        "JMBS": 2,
+        "JPM": 1,
+        "KEX": 1,
+        "KO": 1,
+        "LOW": 1,
+        "MBB": 2,
+        "META": 1,
+        "MSFT": 3,
+        "NTAP": 1,
+        "PANW": 1,
+        "SCHP": 2,
+        "SHY": 1,
+        "TLH": 1,
+        "UBER": 2,
+        "USIG": 1,
+        "VEA": 1,
+        "WFC": 2,
+        "XTWO": 1
+      },
+      "label": "3k/6k, 99k/30k",
+      "largest_senator_buy_share": 0.48333333333333334,
+      "largest_ticker_buy_share": 0.05,
+      "limit_skip_counts": {
+        "cash_limit": 0,
+        "daily_notional_limit": 19,
+        "portfolio_limit": 101,
+        "position_limit": 22
+      },
+      "liquidation_return_pct": 21.731219784349022,
+      "liquidation_value_usd": 121731.21978434903,
+      "market_end": "2026-08-13",
+      "market_start": "2025-08-13",
+      "max_drawdown_pct": -7.156814648275766,
+      "monthly_return_summary": {
+        "best_month": {
+          "ending_value_usd": 107958.90392424937,
+          "month": "2026-04",
+          "month_end": "2026-04-30",
+          "return_pct": 8.131542236544377
+        },
+        "median_return_pct": 1.0936309462291849,
+        "month_count": 13,
+        "months_at_or_above_7_pct": 1,
+        "positive_month_count": 9,
+        "worst_month": {
+          "ending_value_usd": 99840.34416903318,
+          "month": "2026-03",
+          "month_end": "2026-03-31",
+          "return_pct": -3.375656963215712
+        }
+      },
+      "monthly_returns": [
+        {
+          "ending_value_usd": 100507.91162158281,
+          "month": "2025-08",
+          "month_end": "2025-08-29",
+          "return_pct": 0.5079116215828128
+        },
+        {
+          "ending_value_usd": 101607.09724648512,
+          "month": "2025-09",
+          "month_end": "2025-09-30",
+          "return_pct": 1.0936309462291849
+        },
+        {
+          "ending_value_usd": 104798.45403973668,
+          "month": "2025-10",
+          "month_end": "2025-10-31",
+          "return_pct": 3.1408798004629146
+        },
+        {
+          "ending_value_usd": 103824.37854821968,
+          "month": "2025-11",
+          "month_end": "2025-11-28",
+          "return_pct": -0.9294750580458477
+        },
+        {
+          "ending_value_usd": 103387.19612304219,
+          "month": "2025-12",
+          "month_end": "2025-12-31",
+          "return_pct": -0.42107877869401733
+        },
+        {
+          "ending_value_usd": 104925.8378815842,
+          "month": "2026-01",
+          "month_end": "2026-01-30",
+          "return_pct": 1.4882324081125775
+        },
+        {
+          "ending_value_usd": 103328.35497885308,
+          "month": "2026-02",
+          "month_end": "2026-02-27",
+          "return_pct": -1.522487630295588
+        },
+        {
+          "ending_value_usd": 99840.34416903318,
+          "month": "2026-03",
+          "month_end": "2026-03-31",
+          "return_pct": -3.375656963215712
+        },
+        {
+          "ending_value_usd": 107958.90392424937,
+          "month": "2026-04",
+          "month_end": "2026-04-30",
+          "return_pct": 8.131542236544377
+        },
+        {
+          "ending_value_usd": 113708.04915340019,
+          "month": "2026-05",
+          "month_end": "2026-05-29",
+          "return_pct": 5.325309002011336
+        },
+        {
+          "ending_value_usd": 113853.47166635725,
+          "month": "2026-06",
+          "month_end": "2026-06-30",
+          "return_pct": 0.12789113351234782
+        },
+        {
+          "ending_value_usd": 116647.87007828077,
+          "month": "2026-07",
+          "month_end": "2026-07-31",
+          "return_pct": 2.4543813825127714
+        },
+        {
+          "ending_value_usd": 121829.37130019705,
+          "month": "2026-08",
+          "month_end": "2026-08-13",
+          "return_pct": 4.442002428710468
+        }
+      ],
+      "order_sensitivity": {
+        "max_return_pct": 40.09701336510341,
+        "mean_return_pct": 26.758470655195186,
+        "median_average_invested_usd": 87135.19100294201,
+        "median_largest_senator_buy_share": 0.48214285714285715,
+        "median_largest_ticker_buy_share": 0.04800307219662058,
+        "median_limit_skip_count": 142.0,
+        "median_max_drawdown_pct": -8.616511167493496,
+        "median_peak_invested_usd": 118466.17609147374,
+        "median_return_pct": 27.047807194479844,
+        "median_turnover_usd": 286674.26034226525,
+        "min_return_pct": 10.890159819092137,
+        "p05_return_pct": 18.143915585725427,
+        "p95_return_pct": 35.93760024139254,
+        "runs": 200,
+        "share_beating_risk_matched_spy": 0.805,
+        "share_positive": 1.0,
+        "worst_max_drawdown_pct": -13.030756517485887
+      },
+      "parameters": {
+        "buy_notional_usd": 3000.0,
+        "cost_per_side": 0.001,
+        "max_daily_notional_usd": 30000.0,
+        "max_holding_days": null,
+        "max_portfolio_usd": 99000.0,
+        "max_position_usd": 6000.0,
+        "starting_cash_usd": 100000.0,
+        "stop_loss_pct": null,
+        "take_profit_pct": null
+      },
+      "peak_invested_usd": 110644.864588054,
+      "peak_starting_cash_invested_pct": 110.644864588054,
+      "reason_counts": {
+        "daily_notional_limit": 19,
+        "invalid_or_missing_ticker": 53,
+        "no_position": 316,
+        "portfolio_limit": 101,
+        "position_closed": 29,
+        "position_limit": 22,
+        "position_opened_or_increased": 60,
+        "price_provider_http_404": 1,
+        "provider_instrument_type_MUTUALFUND": 6,
+        "source_asset_type_not_stock": 305,
+        "unsupported_action": 1
+      },
+      "requested_end": "2026-08-13",
+      "requested_start": "2025-08-13",
+      "return_pct": 21.829371300197042,
+      "risk_matched_spy_return_pct": 21.6145892210174,
+      "risk_matched_spy_value_usd": 121614.5892210174,
+      "signal_count": 913,
+      "spy_100k_return_pct": 21.832918405068092,
+      "spy_100k_value_usd": 121832.91840506809,
+      "starting_cash_usd": 100000.0,
+      "status_counts": {
+        "executed": 89,
+        "filtered": 366,
+        "skipped": 458
+      },
+      "strategy_exit_count": 0,
+      "strategy_exit_counts": {},
+      "total_buy_notional_usd": 180000.0,
+      "total_sale_proceeds_usd": 103677.85545218349,
+      "turnover_usd": 283677.8554521835
+    },
+    "current_3k_7k_20k_5k": {
+      "average_invested_usd": 15141.91318607236,
+      "average_portfolio_limit_utilization_pct": 75.7095659303618,
+      "average_starting_cash_invested_pct": 15.141913186072358,
+      "ending_cash_usd": 78423.69854811687,
+      "ending_invested_usd": 19621.44699059009,
+      "ending_positions": {
+        "BITB": {
+          "market_value_usd": 2037.497875578954,
+          "paid_notional_usd": 3000.0,
+          "shares": 59.246813368430914
+        },
+        "ERIE": {
+          "market_value_usd": 3114.3689923060283,
+          "paid_notional_usd": 3000.0,
+          "shares": 12.17358781227973
+        },
+        "ETN": {
+          "market_value_usd": 3672.9090864683317,
+          "paid_notional_usd": 3000.0,
+          "shares": 8.102065151789448
+        },
+        "GIGB": {
+          "market_value_usd": 3000.630042956276,
+          "paid_notional_usd": 3000.0,
+          "shares": 66.56233187837192
+        },
+        "INTU": {
+          "market_value_usd": 1618.4616930593033,
+          "paid_notional_usd": 3000.0,
+          "shares": 4.517183439281933
+        },
+        "USIG": {
+          "market_value_usd": 3000.5714820497083,
+          "paid_notional_usd": 3000.0,
+          "shares": 59.523338447376496
+        },
+        "XLP": {
+          "market_value_usd": 3177.007818171487,
+          "paid_notional_usd": 3000.0,
+          "shares": 36.94195137408706
+        }
+      },
+      "ending_value_usd": 98045.14553870696,
+      "executed_buy_count": 14,
+      "executed_buys_by_senator": {
+        "Angus S. King Jr.": 1,
+        "David McCormick": 1,
+        "Jerry Moran": 1,
+        "John Boozman": 6,
+        "John Fetterman": 1,
+        "John W. Hickenlooper": 2,
+        "Tommy Tuberville": 2
+      },
+      "executed_buys_by_ticker": {
+        "ADBE": 1,
+        "ADSK": 1,
+        "AGZ": 1,
+        "BITB": 1,
+        "BRK.B": 1,
+        "EIPI": 1,
+        "ERIE": 1,
+        "ETN": 1,
+        "GIGB": 1,
+        "INTU": 1,
+        "MSFT": 2,
+        "USIG": 1,
+        "XLP": 1
+      },
+      "label": "Ausgangsstand 3k/7k, 20k/5k",
+      "largest_senator_buy_share": 0.42857142857142855,
+      "largest_ticker_buy_share": 0.14285714285714285,
+      "limit_skip_counts": {
+        "cash_limit": 0,
+        "daily_notional_limit": 53,
+        "portfolio_limit": 135,
+        "position_limit": 0
+      },
+      "liquidation_return_pct": -1.974475908283635,
+      "liquidation_value_usd": 98025.52409171636,
+      "market_end": "2026-08-13",
+      "market_start": "2025-08-13",
+      "max_drawdown_pct": -4.668413913126046,
+      "monthly_return_summary": {
+        "best_month": {
+          "ending_value_usd": 97121.25224368622,
+          "month": "2026-07",
+          "month_end": "2026-07-31",
+          "return_pct": 1.1020473940584363
+        },
+        "median_return_pct": -0.09433634270499258,
+        "month_count": 13,
+        "months_at_or_above_7_pct": 0,
+        "positive_month_count": 6,
+        "worst_month": {
+          "ending_value_usd": 98171.02210105592,
+          "month": "2026-01",
+          "month_end": "2026-01-30",
+          "return_pct": -1.8737407201684153
+        }
+      },
+      "monthly_returns": [
+        {
+          "ending_value_usd": 100248.00578801939,
+          "month": "2025-08",
+          "month_end": "2025-08-29",
+          "return_pct": 0.24800578801940087
+        },
+        {
+          "ending_value_usd": 100276.47449014938,
+          "month": "2025-09",
+          "month_end": "2025-09-30",
+          "return_pct": 0.028398272769813993
+        },
+        {
+          "ending_value_usd": 100060.32088381462,
+          "month": "2025-10",
+          "month_end": "2025-10-31",
+          "return_pct": -0.21555764443632608
+        },
+        {
+          "ending_value_usd": 99965.92763659396,
+          "month": "2025-11",
+          "month_end": "2025-11-28",
+          "return_pct": -0.09433634270499258
+        },
+        {
+          "ending_value_usd": 100045.61757632754,
+          "month": "2025-12",
+          "month_end": "2025-12-31",
+          "return_pct": 0.07971710123400033
+        },
+        {
+          "ending_value_usd": 98171.02210105592,
+          "month": "2026-01",
+          "month_end": "2026-01-30",
+          "return_pct": -1.8737407201684153
+        },
+        {
+          "ending_value_usd": 97135.4582872647,
+          "month": "2026-02",
+          "month_end": "2026-02-27",
+          "return_pct": -1.054856913606561
+        },
+        {
+          "ending_value_usd": 96740.08513541799,
+          "month": "2026-03",
+          "month_end": "2026-03-31",
+          "return_pct": -0.4070327754849834
+        },
+        {
+          "ending_value_usd": 97252.67125216709,
+          "month": "2026-04",
+          "month_end": "2026-04-30",
+          "return_pct": 0.5298590713783025
+        },
+        {
+          "ending_value_usd": 96874.27523384921,
+          "month": "2026-05",
+          "month_end": "2026-05-29",
+          "return_pct": -0.38908547543823335
+        },
+        {
+          "ending_value_usd": 96062.59689790796,
+          "month": "2026-06",
+          "month_end": "2026-06-30",
+          "return_pct": -0.8378677765401688
+        },
+        {
+          "ending_value_usd": 97121.25224368622,
+          "month": "2026-07",
+          "month_end": "2026-07-31",
+          "return_pct": 1.1020473940584363
+        },
+        {
+          "ending_value_usd": 98045.14553870696,
+          "month": "2026-08",
+          "month_end": "2026-08-13",
+          "return_pct": 0.9512781947071725
+        }
+      ],
+      "order_sensitivity": {
+        "max_return_pct": 15.566655476064017,
+        "mean_return_pct": 3.8660612748712984,
+        "median_average_invested_usd": 15661.1770316269,
+        "median_largest_senator_buy_share": 0.4375,
+        "median_largest_ticker_buy_share": 0.1111111111111111,
+        "median_limit_skip_count": 190.0,
+        "median_max_drawdown_pct": -3.1542099684852665,
+        "median_peak_invested_usd": 21955.727691872715,
+        "median_return_pct": 3.480752282165811,
+        "median_turnover_usd": 54118.779437562975,
+        "min_return_pct": -3.06975982216261,
+        "p05_return_pct": -1.1283712261060168,
+        "p95_return_pct": 9.79409018024191,
+        "runs": 200,
+        "share_beating_risk_matched_spy": 0.42,
+        "share_positive": 0.835,
+        "worst_max_drawdown_pct": -7.965654507666664
+      },
+      "parameters": {
+        "buy_notional_usd": 3000.0,
+        "cost_per_side": 0.001,
+        "max_daily_notional_usd": 5000.0,
+        "max_holding_days": null,
+        "max_portfolio_usd": 20000.0,
+        "max_position_usd": 7000.0,
+        "starting_cash_usd": 100000.0,
+        "stop_loss_pct": null,
+        "take_profit_pct": null
+      },
+      "peak_invested_usd": 20067.826052422628,
+      "peak_starting_cash_invested_pct": 20.067826052422628,
+      "reason_counts": {
+        "daily_notional_limit": 53,
+        "invalid_or_missing_ticker": 53,
+        "no_position": 338,
+        "portfolio_limit": 135,
+        "position_closed": 7,
+        "position_opened_or_increased": 14,
+        "price_provider_http_404": 1,
+        "provider_instrument_type_MUTUALFUND": 6,
+        "source_asset_type_not_stock": 305,
+        "unsupported_action": 1
+      },
+      "requested_end": "2026-08-13",
+      "requested_start": "2025-08-13",
+      "return_pct": -1.954854461293043,
+      "risk_matched_spy_return_pct": 4.366583681013614,
+      "risk_matched_spy_value_usd": 104366.58368101361,
+      "signal_count": 913,
+      "spy_100k_return_pct": 21.832918405068092,
+      "spy_100k_value_usd": 121832.91840506809,
+      "starting_cash_usd": 100000.0,
+      "status_counts": {
+        "executed": 21,
+        "filtered": 366,
+        "skipped": 526
+      },
+      "strategy_exit_count": 0,
+      "strategy_exit_counts": {},
+      "total_buy_notional_usd": 42000.0,
+      "total_sale_proceeds_usd": 20423.69854811688,
+      "turnover_usd": 62423.69854811688
+    },
+    "required_3k_7k_100k_30k": {
+      "average_invested_usd": 87022.3010435818,
+      "average_portfolio_limit_utilization_pct": 87.02230104358179,
+      "average_starting_cash_invested_pct": 87.02230104358179,
+      "ending_cash_usd": 20364.262390916607,
+      "ending_invested_usd": 100017.46824418983,
+      "ending_positions": {
+        "ALB": {
+          "market_value_usd": 2329.7499730459886,
+          "paid_notional_usd": 3000.0,
+          "shares": 17.855227232769387
+        },
+        "AMD": {
+          "market_value_usd": 8362.686009392222,
+          "paid_notional_usd": 3000.0,
+          "shares": 17.313690897317258
+        },
+        "AMZN": {
+          "market_value_usd": 3787.3909107511404,
+          "paid_notional_usd": 3000.0,
+          "shares": 14.285033157319058
+        },
+        "ANET": {
+          "market_value_usd": 4454.373177855554,
+          "paid_notional_usd": 3000.0,
+          "shares": 21.875912408759124
+        },
+        "BAC": {
+          "market_value_usd": 4104.179312279347,
+          "paid_notional_usd": 3000.0,
+          "shares": 64.03775232942112
+        },
+        "BITB": {
+          "market_value_usd": 4074.995751157908,
+          "paid_notional_usd": 6000.0,
+          "shares": 118.49362673686183
+        },
+        "COST": {
+          "market_value_usd": 3140.2649870950686,
+          "paid_notional_usd": 3000.0,
+          "shares": 3.2648178684852485
+        },
+        "DIS": {
+          "market_value_usd": 2969.8065597505806,
+          "paid_notional_usd": 3000.0,
+          "shares": 28.33784802738866
+        },
+        "ERIE": {
+          "market_value_usd": 6228.737984612057,
+          "paid_notional_usd": 6000.0,
+          "shares": 24.34717562455946
+        },
+        "ETN": {
+          "market_value_usd": 7338.955955103625,
+          "paid_notional_usd": 6000.0,
+          "shares": 16.188992946606493
+        },
+        "GH": {
+          "market_value_usd": 4484.53711837733,
+          "paid_notional_usd": 3000.0,
+          "shares": 28.109172038978176
+        },
+        "GIGB": {
+          "market_value_usd": 3000.630042956276,
+          "paid_notional_usd": 3000.0,
+          "shares": 66.56233187837192
+        },
+        "IGV": {
+          "market_value_usd": 3524.633691057399,
+          "paid_notional_usd": 3000.0,
+          "shares": 33.1636594988745
+        },
+        "INTU": {
+          "market_value_usd": 1618.4616930593033,
+          "paid_notional_usd": 3000.0,
+          "shares": 4.517183439281933
+        },
+        "KEX": {
+          "market_value_usd": 4276.321085279772,
+          "paid_notional_usd": 3000.0,
+          "shares": 31.089211126157974
+        },
+        "KO": {
+          "market_value_usd": 3697.8044906081136,
+          "paid_notional_usd": 3000.0,
+          "shares": 42.299297278202246
+        },
+        "KR": {
+          "market_value_usd": 2343.0067314561134,
+          "paid_notional_usd": 3000.0,
+          "shares": 40.940184347318585
+        },
+        "NTAP": {
+          "market_value_usd": 6249.392682487428,
+          "paid_notional_usd": 3000.0,
+          "shares": 30.486328674672045
+        },
+        "PALL": {
+          "market_value_usd": 3059.8920466830723,
+          "paid_notional_usd": 3000.0,
+          "shares": 128.3511756333153
+        },
+        "PANW": {
+          "market_value_usd": 5565.877333302037,
+          "paid_notional_usd": 3000.0,
+          "shares": 14.055245791166762
+        },
+        "TLH": {
+          "market_value_usd": 2900.634459720883,
+          "paid_notional_usd": 3000.0,
+          "shares": 29.86035081270532
+        },
+        "USIG": {
+          "market_value_usd": 3000.5714820497083,
+          "paid_notional_usd": 3000.0,
+          "shares": 59.523338447376496
+        },
+        "WFC": {
+          "market_value_usd": 3496.074468897678,
+          "paid_notional_usd": 3000.0,
+          "shares": 39.67852053886995
+        },
+        "XFIV": {
+          "market_value_usd": 2993.0740152322574,
+          "paid_notional_usd": 3000.0,
+          "shares": 62.01565761061848
+        },
+        "XTWO": {
+          "market_value_usd": 3015.4162819789635,
+          "paid_notional_usd": 3000.0,
+          "shares": 61.696496817983906
+        }
+      },
+      "ending_value_usd": 120381.73063510645,
+      "executed_buy_count": 63,
+      "executed_buys_by_senator": {
+        "Angus S. King Jr.": 10,
+        "David McCormick": 2,
+        "Jerry Moran": 1,
+        "John Boozman": 36,
+        "John Fetterman": 5,
+        "John W. Hickenlooper": 4,
+        "Mitch McConnell": 1,
+        "Sheldon Whitehouse": 3,
+        "Tommy Tuberville": 1
+      },
+      "executed_buys_by_ticker": {
+        "ADBE": 1,
+        "ADSK": 1,
+        "AGZ": 1,
+        "ALB": 1,
+        "AMAT": 1,
+        "AMD": 1,
+        "AMZN": 1,
+        "ANET": 1,
+        "BAC": 1,
+        "BITB": 2,
+        "BRK.B": 1,
+        "BX": 1,
+        "CMBS": 2,
+        "COST": 1,
+        "DIS": 1,
+        "EIPI": 1,
+        "ERIE": 2,
+        "ETN": 2,
+        "FTGC": 1,
+        "GEM": 1,
+        "GH": 1,
+        "GIGB": 1,
+        "GOOG": 1,
+        "GOOGL": 2,
+        "HSY": 1,
+        "IEF": 2,
+        "IEI": 2,
+        "IGV": 1,
+        "INTU": 1,
+        "IWM": 1,
+        "JMBS": 2,
+        "JPM": 1,
+        "KEX": 1,
+        "KO": 1,
+        "KR": 1,
+        "LOW": 1,
+        "MBB": 2,
+        "META": 1,
+        "MSFT": 2,
+        "NTAP": 1,
+        "PALL": 1,
+        "PANW": 1,
+        "SCHP": 2,
+        "SHY": 2,
+        "TLH": 1,
+        "UBER": 2,
+        "USIG": 1,
+        "WFC": 1,
+        "XFIV": 1,
+        "XTWO": 1
+      },
+      "label": "3k/7k, 100k/30k",
+      "largest_senator_buy_share": 0.5714285714285714,
+      "largest_ticker_buy_share": 0.031746031746031744,
+      "limit_skip_counts": {
+        "cash_limit": 0,
+        "daily_notional_limit": 19,
+        "portfolio_limit": 111,
+        "position_limit": 9
+      },
+      "liquidation_return_pct": 20.281713166862268,
+      "liquidation_value_usd": 120281.71316686226,
+      "market_end": "2026-08-13",
+      "market_start": "2025-08-13",
+      "max_drawdown_pct": -6.4435688304990135,
+      "monthly_return_summary": {
+        "best_month": {
+          "ending_value_usd": 108755.05977171518,
+          "month": "2026-04",
+          "month_end": "2026-04-30",
+          "return_pct": 7.712477056291878
+        },
+        "median_return_pct": 1.0936309462291849,
+        "month_count": 13,
+        "months_at_or_above_7_pct": 1,
+        "positive_month_count": 8,
+        "worst_month": {
+          "ending_value_usd": 100967.93124057341,
+          "month": "2026-03",
+          "month_end": "2026-03-31",
+          "return_pct": -2.8097999544333563
+        }
+      },
+      "monthly_returns": [
+        {
+          "ending_value_usd": 100507.91162158281,
+          "month": "2025-08",
+          "month_end": "2025-08-29",
+          "return_pct": 0.5079116215828128
+        },
+        {
+          "ending_value_usd": 101607.09724648512,
+          "month": "2025-09",
+          "month_end": "2025-09-30",
+          "return_pct": 1.0936309462291849
+        },
+        {
+          "ending_value_usd": 105300.82743533963,
+          "month": "2025-10",
+          "month_end": "2025-10-31",
+          "return_pct": 3.635307265883214
+        },
+        {
+          "ending_value_usd": 104415.59413121382,
+          "month": "2025-11",
+          "month_end": "2025-11-28",
+          "return_pct": -0.8406707959340509
+        },
+        {
+          "ending_value_usd": 103925.43698267773,
+          "month": "2025-12",
+          "month_end": "2025-12-31",
+          "return_pct": -0.4694290662371148
+        },
+        {
+          "ending_value_usd": 105280.18378955052,
+          "month": "2026-01",
+          "month_end": "2026-01-30",
+          "return_pct": 1.303575761821052
+        },
+        {
+          "ending_value_usd": 103886.946619346,
+          "month": "2026-02",
+          "month_end": "2026-02-27",
+          "return_pct": -1.323361263302436
+        },
+        {
+          "ending_value_usd": 100967.93124057341,
+          "month": "2026-03",
+          "month_end": "2026-03-31",
+          "return_pct": -2.8097999544333563
+        },
+        {
+          "ending_value_usd": 108755.05977171518,
+          "month": "2026-04",
+          "month_end": "2026-04-30",
+          "return_pct": 7.712477056291878
+        },
+        {
+          "ending_value_usd": 114264.32689762305,
+          "month": "2026-05",
+          "month_end": "2026-05-29",
+          "return_pct": 5.065757066818066
+        },
+        {
+          "ending_value_usd": 113968.78728120297,
+          "month": "2026-06",
+          "month_end": "2026-06-30",
+          "return_pct": -0.25864556720740506
+        },
+        {
+          "ending_value_usd": 115287.88078165943,
+          "month": "2026-07",
+          "month_end": "2026-07-31",
+          "return_pct": 1.1574164575444579
+        },
+        {
+          "ending_value_usd": 120381.73063510645,
+          "month": "2026-08",
+          "month_end": "2026-08-13",
+          "return_pct": 4.418374090069466
+        }
+      ],
+      "order_sensitivity": {
+        "max_return_pct": 41.212959238185,
+        "mean_return_pct": 26.2316714874715,
+        "median_average_invested_usd": 88064.43431295294,
+        "median_largest_senator_buy_share": 0.4921855921855922,
+        "median_largest_ticker_buy_share": 0.04724702380952381,
+        "median_limit_skip_count": 140.0,
+        "median_max_drawdown_pct": -8.853500255744727,
+        "median_peak_invested_usd": 119653.03907903613,
+        "median_return_pct": 26.35841859973219,
+        "median_turnover_usd": 297788.4180103786,
+        "min_return_pct": 11.770324734320848,
+        "p05_return_pct": 17.679712677663815,
+        "p95_return_pct": 34.79718965374872,
+        "runs": 200,
+        "share_beating_risk_matched_spy": 0.785,
+        "share_positive": 1.0,
+        "worst_max_drawdown_pct": -13.160018823927944
+      },
+      "parameters": {
+        "buy_notional_usd": 3000.0,
+        "cost_per_side": 0.001,
+        "max_daily_notional_usd": 30000.0,
+        "max_holding_days": null,
+        "max_portfolio_usd": 100000.0,
+        "max_position_usd": 7000.0,
+        "starting_cash_usd": 100000.0,
+        "stop_loss_pct": null,
+        "take_profit_pct": null
+      },
+      "peak_invested_usd": 110523.82267704772,
+      "peak_starting_cash_invested_pct": 110.52382267704772,
+      "reason_counts": {
+        "daily_notional_limit": 19,
+        "invalid_or_missing_ticker": 53,
+        "no_position": 316,
+        "portfolio_limit": 111,
+        "position_closed": 29,
+        "position_limit": 9,
+        "position_opened_or_increased": 63,
+        "price_provider_http_404": 1,
+        "provider_instrument_type_MUTUALFUND": 6,
+        "source_asset_type_not_stock": 305,
+        "unsupported_action": 1
+      },
+      "requested_end": "2026-08-13",
+      "requested_start": "2025-08-13",
+      "return_pct": 20.381730635106443,
+      "risk_matched_spy_return_pct": 21.832918405068092,
+      "risk_matched_spy_value_usd": 121832.91840506809,
+      "signal_count": 913,
+      "spy_100k_return_pct": 21.832918405068092,
+      "spy_100k_value_usd": 121832.91840506809,
+      "starting_cash_usd": 100000.0,
+      "status_counts": {
+        "executed": 92,
+        "filtered": 366,
+        "skipped": 455
+      },
+      "strategy_exit_count": 0,
+      "strategy_exit_counts": {},
+      "total_buy_notional_usd": 189000.0,
+      "total_sale_proceeds_usd": 109364.26239091663,
+      "turnover_usd": 298364.26239091664
+    },
+    "required_3k_7k_40k_10k": {
+      "average_invested_usd": 34621.09031253243,
+      "average_portfolio_limit_utilization_pct": 86.55272578133109,
+      "average_starting_cash_invested_pct": 34.62109031253243,
+      "ending_cash_usd": 69558.57433469153,
+      "ending_invested_usd": 44787.346624320555,
+      "ending_positions": {
+        "AMD": {
+          "market_value_usd": 8362.686009392222,
+          "paid_notional_usd": 3000.0,
+          "shares": 17.313690897317258
+        },
+        "COST": {
+          "market_value_usd": 3140.2649870950686,
+          "paid_notional_usd": 3000.0,
+          "shares": 3.2648178684852485
+        },
+        "ERIE": {
+          "market_value_usd": 3114.3689923060283,
+          "paid_notional_usd": 3000.0,
+          "shares": 12.17358781227973
+        },
+        "ETN": {
+          "market_value_usd": 7338.955955103625,
+          "paid_notional_usd": 6000.0,
+          "shares": 16.188992946606493
+        },
+        "GIGB": {
+          "market_value_usd": 3000.630042956276,
+          "paid_notional_usd": 3000.0,
+          "shares": 66.56233187837192
+        },
+        "INTU": {
+          "market_value_usd": 1618.4616930593033,
+          "paid_notional_usd": 3000.0,
+          "shares": 4.517183439281933
+        },
+        "NTAP": {
+          "market_value_usd": 6249.392682487428,
+          "paid_notional_usd": 3000.0,
+          "shares": 30.486328674672045
+        },
+        "PANW": {
+          "market_value_usd": 5565.877333302037,
+          "paid_notional_usd": 3000.0,
+          "shares": 14.055245791166762
+        },
+        "TLH": {
+          "market_value_usd": 2900.634459720883,
+          "paid_notional_usd": 3000.0,
+          "shares": 29.86035081270532
+        },
+        "WFC": {
+          "market_value_usd": 3496.074468897678,
+          "paid_notional_usd": 3000.0,
+          "shares": 39.67852053886995
+        }
+      },
+      "ending_value_usd": 114345.92095901209,
+      "executed_buy_count": 24,
+      "executed_buys_by_senator": {
+        "Angus S. King Jr.": 3,
+        "Jerry Moran": 1,
+        "John Boozman": 14,
+        "John Fetterman": 2,
+        "John W. Hickenlooper": 3,
+        "Mitch McConnell": 1
+      },
+      "executed_buys_by_ticker": {
+        "ADBE": 1,
+        "ADSK": 1,
+        "AGZ": 1,
+        "AMAT": 1,
+        "AMD": 1,
+        "BRK.B": 1,
+        "CMBS": 1,
+        "COST": 1,
+        "EIPI": 1,
+        "ERIE": 1,
+        "ETN": 2,
+        "FTGC": 1,
+        "GEM": 1,
+        "GIGB": 1,
+        "IEF": 1,
+        "INTU": 1,
+        "JMBS": 1,
+        "MSFT": 2,
+        "NTAP": 1,
+        "PANW": 1,
+        "TLH": 1,
+        "WFC": 1
+      },
+      "label": "3k/7k, 40k/10k",
+      "largest_senator_buy_share": 0.5833333333333334,
+      "largest_ticker_buy_share": 0.08333333333333333,
+      "limit_skip_counts": {
+        "cash_limit": 0,
+        "daily_notional_limit": 37,
+        "portfolio_limit": 139,
+        "position_limit": 2
+      },
+      "liquidation_return_pct": 14.301133612387762,
+      "liquidation_value_usd": 114301.13361238776,
+      "market_end": "2026-08-13",
+      "market_start": "2025-08-13",
+      "max_drawdown_pct": -3.3168748839041196,
+      "monthly_return_summary": {
+        "best_month": {
+          "ending_value_usd": 110151.86781971066,
+          "month": "2026-05",
+          "month_end": "2026-05-29",
+          "return_pct": 5.121286989784868
+        },
+        "median_return_pct": 0.21607942143457848,
+        "month_count": 13,
+        "months_at_or_above_7_pct": 0,
+        "positive_month_count": 8,
+        "worst_month": {
+          "ending_value_usd": 100531.9458618391,
+          "month": "2026-03",
+          "month_end": "2026-03-31",
+          "return_pct": -1.0387380877770136
+        }
+      },
+      "monthly_returns": [
+        {
+          "ending_value_usd": 100005.63672645982,
+          "month": "2025-08",
+          "month_end": "2025-08-29",
+          "return_pct": 0.00563672645981228
+        },
+        {
+          "ending_value_usd": 100809.91056175168,
+          "month": "2025-09",
+          "month_end": "2025-09-30",
+          "return_pct": 0.8042285031310215
+        },
+        {
+          "ending_value_usd": 102901.13258646478,
+          "month": "2025-10",
+          "month_end": "2025-10-31",
+          "return_pct": 2.074421069377008
+        },
+        {
+          "ending_value_usd": 101900.38580342667,
+          "month": "2025-11",
+          "month_end": "2025-11-28",
+          "return_pct": -0.9725323306788769
+        },
+        {
+          "ending_value_usd": 101608.04018689538,
+          "month": "2025-12",
+          "month_end": "2025-12-31",
+          "return_pct": -0.2868935325674338
+        },
+        {
+          "ending_value_usd": 101827.59425226224,
+          "month": "2026-01",
+          "month_end": "2026-01-30",
+          "return_pct": 0.21607942143457848
+        },
+        {
+          "ending_value_usd": 101587.17049405584,
+          "month": "2026-02",
+          "month_end": "2026-02-27",
+          "return_pct": -0.23610865008828474
+        },
+        {
+          "ending_value_usd": 100531.9458618391,
+          "month": "2026-03",
+          "month_end": "2026-03-31",
+          "return_pct": -1.0387380877770136
+        },
+        {
+          "ending_value_usd": 104785.50156108214,
+          "month": "2026-04",
+          "month_end": "2026-04-30",
+          "return_pct": 4.2310488101848565
+        },
+        {
+          "ending_value_usd": 110151.86781971066,
+          "month": "2026-05",
+          "month_end": "2026-05-29",
+          "return_pct": 5.121286989784868
+        },
+        {
+          "ending_value_usd": 111483.75422758411,
+          "month": "2026-06",
+          "month_end": "2026-06-30",
+          "return_pct": 1.2091364715243857
+        },
+        {
+          "ending_value_usd": 111169.46437245712,
+          "month": "2026-07",
+          "month_end": "2026-07-31",
+          "return_pct": -0.2819153851649103
+        },
+        {
+          "ending_value_usd": 114345.92095901209,
+          "month": "2026-08",
+          "month_end": "2026-08-13",
+          "return_pct": 2.8573103275128853
+        }
+      ],
+      "order_sensitivity": {
+        "max_return_pct": 31.55320805883315,
+        "mean_return_pct": 10.499142861172656,
+        "median_average_invested_usd": 34212.94940233113,
+        "median_largest_senator_buy_share": 0.5,
+        "median_largest_ticker_buy_share": 0.08333333333333333,
+        "median_limit_skip_count": 177.0,
+        "median_max_drawdown_pct": -5.075413206219503,
+        "median_peak_invested_usd": 46861.95098743244,
+        "median_return_pct": 9.85633709978646,
+        "median_turnover_usd": 117142.96437294589,
+        "min_return_pct": -0.6555114251666772,
+        "p05_return_pct": 4.048287277299596,
+        "p95_return_pct": 18.016964203856748,
+        "runs": 200,
+        "share_beating_risk_matched_spy": 0.62,
+        "share_positive": 0.995,
+        "worst_max_drawdown_pct": -10.338990163779316
+      },
+      "parameters": {
+        "buy_notional_usd": 3000.0,
+        "cost_per_side": 0.001,
+        "max_daily_notional_usd": 10000.0,
+        "max_holding_days": null,
+        "max_portfolio_usd": 40000.0,
+        "max_position_usd": 7000.0,
+        "starting_cash_usd": 100000.0,
+        "stop_loss_pct": null,
+        "take_profit_pct": null
+      },
+      "peak_invested_usd": 49214.515237392785,
+      "peak_starting_cash_invested_pct": 49.21451523739279,
+      "reason_counts": {
+        "daily_notional_limit": 37,
+        "invalid_or_missing_ticker": 53,
+        "no_position": 332,
+        "portfolio_limit": 139,
+        "position_closed": 13,
+        "position_limit": 2,
+        "position_opened_or_increased": 24,
+        "price_provider_http_404": 1,
+        "provider_instrument_type_MUTUALFUND": 6,
+        "source_asset_type_not_stock": 305,
+        "unsupported_action": 1
+      },
+      "requested_end": "2026-08-13",
+      "requested_start": "2025-08-13",
+      "return_pct": 14.345920959012082,
+      "risk_matched_spy_return_pct": 8.733167362027228,
+      "risk_matched_spy_value_usd": 108733.16736202723,
+      "signal_count": 913,
+      "spy_100k_return_pct": 21.832918405068092,
+      "spy_100k_value_usd": 121832.91840506809,
+      "starting_cash_usd": 100000.0,
+      "status_counts": {
+        "executed": 37,
+        "filtered": 366,
+        "skipped": 510
+      },
+      "strategy_exit_count": 0,
+      "strategy_exit_counts": {},
+      "total_buy_notional_usd": 72000.0,
+      "total_sale_proceeds_usd": 41558.57433469153,
+      "turnover_usd": 113558.57433469154
+    },
+    "required_3k_7k_60k_15k": {
+      "average_invested_usd": 52536.46337176051,
+      "average_portfolio_limit_utilization_pct": 87.56077228626752,
+      "average_starting_cash_invested_pct": 52.53646337176051,
+      "ending_cash_usd": 57530.37131532525,
+      "ending_invested_usd": 60230.67878779439,
+      "ending_positions": {
+        "AMD": {
+          "market_value_usd": 8362.686009392222,
+          "paid_notional_usd": 3000.0,
+          "shares": 17.313690897317258
+        },
+        "AMZN": {
+          "market_value_usd": 3787.3909107511404,
+          "paid_notional_usd": 3000.0,
+          "shares": 14.285033157319058
+        },
+        "ANET": {
+          "market_value_usd": 4454.373177855554,
+          "paid_notional_usd": 3000.0,
+          "shares": 21.875912408759124
+        },
+        "BAC": {
+          "market_value_usd": 4104.179312279347,
+          "paid_notional_usd": 3000.0,
+          "shares": 64.03775232942112
+        },
+        "BRK.B": {
+          "market_value_usd": 3097.388762587801,
+          "paid_notional_usd": 3000.0,
+          "shares": 6.110091743119266
+        },
+        "COST": {
+          "market_value_usd": 3140.2649870950686,
+          "paid_notional_usd": 3000.0,
+          "shares": 3.2648178684852485
+        },
+        "ERIE": {
+          "market_value_usd": 3114.3689923060283,
+          "paid_notional_usd": 3000.0,
+          "shares": 12.17358781227973
+        },
+        "ETN": {
+          "market_value_usd": 7338.955955103625,
+          "paid_notional_usd": 6000.0,
+          "shares": 16.188992946606493
+        },
+        "GIGB": {
+          "market_value_usd": 3000.630042956276,
+          "paid_notional_usd": 3000.0,
+          "shares": 66.56233187837192
+        },
+        "INTU": {
+          "market_value_usd": 1618.4616930593033,
+          "paid_notional_usd": 3000.0,
+          "shares": 4.517183439281933
+        },
+        "NTAP": {
+          "market_value_usd": 6249.392682487428,
+          "paid_notional_usd": 3000.0,
+          "shares": 30.486328674672045
+        },
+        "PANW": {
+          "market_value_usd": 5565.877333302037,
+          "paid_notional_usd": 3000.0,
+          "shares": 14.055245791166762
+        },
+        "TLH": {
+          "market_value_usd": 2900.634459720883,
+          "paid_notional_usd": 3000.0,
+          "shares": 29.86035081270532
+        },
+        "WFC": {
+          "market_value_usd": 3496.074468897678,
+          "paid_notional_usd": 3000.0,
+          "shares": 39.67852053886995
+        }
+      },
+      "ending_value_usd": 117761.05010311963,
+      "executed_buy_count": 33,
+      "executed_buys_by_senator": {
+        "Angus S. King Jr.": 5,
+        "Jerry Moran": 2,
+        "John Boozman": 19,
+        "John Fetterman": 3,
+        "John W. Hickenlooper": 3,
+        "Mitch McConnell": 1
+      },
+      "executed_buys_by_ticker": {
+        "ADBE": 1,
+        "ADSK": 1,
+        "AGZ": 1,
+        "AMAT": 1,
+        "AMD": 1,
+        "AMZN": 1,
+        "ANET": 1,
+        "BAC": 1,
+        "BRK.B": 2,
+        "CMBS": 1,
+        "COST": 1,
+        "EIPI": 1,
+        "ERIE": 1,
+        "ETN": 2,
+        "FTGC": 1,
+        "GEM": 1,
+        "GIGB": 1,
+        "IEF": 2,
+        "IEI": 2,
+        "INTU": 1,
+        "JMBS": 1,
+        "META": 1,
+        "MSFT": 2,
+        "NTAP": 1,
+        "PANW": 1,
+        "SCHP": 1,
+        "TLH": 1,
+        "WFC": 1
+      },
+      "label": "3k/7k, 60k/15k",
+      "largest_senator_buy_share": 0.5757575757575758,
+      "largest_ticker_buy_share": 0.06060606060606061,
+      "limit_skip_counts": {
+        "cash_limit": 0,
+        "daily_notional_limit": 31,
+        "portfolio_limit": 132,
+        "position_limit": 6
+      },
+      "liquidation_return_pct": 17.700819424331836,
+      "liquidation_value_usd": 117700.81942433184,
+      "market_end": "2026-08-13",
+      "market_start": "2025-08-13",
+      "max_drawdown_pct": -4.547185439926816,
+      "monthly_return_summary": {
+        "best_month": {
+          "ending_value_usd": 106753.78860244254,
+          "month": "2026-04",
+          "month_end": "2026-04-30",
+          "return_pct": 6.440704734638825
+        },
+        "median_return_pct": 0.714742900673615,
+        "month_count": 13,
+        "months_at_or_above_7_pct": 0,
+        "positive_month_count": 9,
+        "worst_month": {
+          "ending_value_usd": 100294.139228582,
+          "month": "2026-03",
+          "month_end": "2026-03-31",
+          "return_pct": -1.7486824619160513
+        }
+      },
+      "monthly_returns": [
+        {
+          "ending_value_usd": 100172.79649831756,
+          "month": "2025-08",
+          "month_end": "2025-08-29",
+          "return_pct": 0.17279649831756227
+        },
+        {
+          "ending_value_usd": 101208.93691762445,
+          "month": "2025-09",
+          "month_end": "2025-09-30",
+          "return_pct": 1.0343530933812906
+        },
+        {
+          "ending_value_usd": 103706.07037901923,
+          "month": "2025-10",
+          "month_end": "2025-10-31",
+          "return_pct": 2.4673052967913778
+        },
+        {
+          "ending_value_usd": 102393.81716154015,
+          "month": "2025-11",
+          "month_end": "2025-11-28",
+          "return_pct": -1.2653581537542924
+        },
+        {
+          "ending_value_usd": 102225.22046520354,
+          "month": "2025-12",
+          "month_end": "2025-12-31",
+          "return_pct": -0.16465515302610534
+        },
+        {
+          "ending_value_usd": 102852.86846188048,
+          "month": "2026-01",
+          "month_end": "2026-01-30",
+          "return_pct": 0.6139854664246824
+        },
+        {
+          "ending_value_usd": 102079.1799455577,
+          "month": "2026-02",
+          "month_end": "2026-02-27",
+          "return_pct": -0.752228428718571
+        },
+        {
+          "ending_value_usd": 100294.139228582,
+          "month": "2026-03",
+          "month_end": "2026-03-31",
+          "return_pct": -1.7486824619160513
+        },
+        {
+          "ending_value_usd": 106753.78860244254,
+          "month": "2026-04",
+          "month_end": "2026-04-30",
+          "return_pct": 6.440704734638825
+        },
+        {
+          "ending_value_usd": 111790.85255615959,
+          "month": "2026-05",
+          "month_end": "2026-05-29",
+          "return_pct": 4.718393622989225
+        },
+        {
+          "ending_value_usd": 113249.36479579375,
+          "month": "2026-06",
+          "month_end": "2026-06-30",
+          "return_pct": 1.3046794136411632
+        },
+        {
+          "ending_value_usd": 114058.80659072965,
+          "month": "2026-07",
+          "month_end": "2026-07-31",
+          "return_pct": 0.714742900673615
+        },
+        {
+          "ending_value_usd": 117761.05010311963,
+          "month": "2026-08",
+          "month_end": "2026-08-13",
+          "return_pct": 3.245907635764178
+        }
+      ],
+      "order_sensitivity": {
+        "max_return_pct": 35.03975932351582,
+        "mean_return_pct": 15.71333616644772,
+        "median_average_invested_usd": 52101.45051430387,
+        "median_largest_senator_buy_share": 0.5300120048019208,
+        "median_largest_ticker_buy_share": 0.05714285714285714,
+        "median_limit_skip_count": 164.0,
+        "median_max_drawdown_pct": -6.366875761669544,
+        "median_peak_invested_usd": 70734.79968063018,
+        "median_return_pct": 15.271322671293763,
+        "median_turnover_usd": 181123.81234809972,
+        "min_return_pct": 2.553953805557474,
+        "p05_return_pct": 8.35417998540164,
+        "p95_return_pct": 24.50902417205966,
+        "runs": 200,
+        "share_beating_risk_matched_spy": 0.62,
+        "share_positive": 1.0,
+        "worst_max_drawdown_pct": -12.740381173187865
+      },
+      "parameters": {
+        "buy_notional_usd": 3000.0,
+        "cost_per_side": 0.001,
+        "max_daily_notional_usd": 15000.0,
+        "max_holding_days": null,
+        "max_portfolio_usd": 60000.0,
+        "max_position_usd": 7000.0,
+        "starting_cash_usd": 100000.0,
+        "stop_loss_pct": null,
+        "take_profit_pct": null
+      },
+      "peak_invested_usd": 70911.46795455467,
+      "peak_starting_cash_invested_pct": 70.91146795455467,
+      "reason_counts": {
+        "daily_notional_limit": 31,
+        "invalid_or_missing_ticker": 53,
+        "no_position": 329,
+        "portfolio_limit": 132,
+        "position_closed": 16,
+        "position_limit": 6,
+        "position_opened_or_increased": 33,
+        "price_provider_http_404": 1,
+        "provider_instrument_type_MUTUALFUND": 6,
+        "source_asset_type_not_stock": 305,
+        "unsupported_action": 1
+      },
+      "requested_end": "2026-08-13",
+      "requested_start": "2025-08-13",
+      "return_pct": 17.761050103119636,
+      "risk_matched_spy_return_pct": 13.099751043040865,
+      "risk_matched_spy_value_usd": 113099.75104304086,
+      "signal_count": 913,
+      "spy_100k_return_pct": 21.832918405068092,
+      "spy_100k_value_usd": 121832.91840506809,
+      "starting_cash_usd": 100000.0,
+      "status_counts": {
+        "executed": 49,
+        "filtered": 366,
+        "skipped": 498
+      },
+      "strategy_exit_count": 0,
+      "strategy_exit_counts": {},
+      "total_buy_notional_usd": 99000.0,
+      "total_sale_proceeds_usd": 56530.37131532525,
+      "turnover_usd": 155530.37131532526
+    },
+    "required_3k_7k_80k_20k": {
+      "average_invested_usd": 67895.25704686098,
+      "average_portfolio_limit_utilization_pct": 84.86907130857622,
+      "average_starting_cash_invested_pct": 67.89525704686098,
+      "ending_cash_usd": 35832.366542532814,
+      "ending_invested_usd": 80800.5345016193,
+      "ending_positions": {
+        "AMD": {
+          "market_value_usd": 8362.686009392222,
+          "paid_notional_usd": 3000.0,
+          "shares": 17.313690897317258
+        },
+        "AMZN": {
+          "market_value_usd": 3787.3909107511404,
+          "paid_notional_usd": 3000.0,
+          "shares": 14.285033157319058
+        },
+        "ANET": {
+          "market_value_usd": 4454.373177855554,
+          "paid_notional_usd": 3000.0,
+          "shares": 21.875912408759124
+        },
+        "BAC": {
+          "market_value_usd": 4104.179312279347,
+          "paid_notional_usd": 3000.0,
+          "shares": 64.03775232942112
+        },
+        "BITB": {
+          "market_value_usd": 4074.995751157908,
+          "paid_notional_usd": 6000.0,
+          "shares": 118.49362673686183
+        },
+        "BRK.B": {
+          "market_value_usd": 3097.388762587801,
+          "paid_notional_usd": 3000.0,
+          "shares": 6.110091743119266
+        },
+        "COST": {
+          "market_value_usd": 3140.2649870950686,
+          "paid_notional_usd": 3000.0,
+          "shares": 3.2648178684852485
+        },
+        "ERIE": {
+          "market_value_usd": 6228.737984612057,
+          "paid_notional_usd": 6000.0,
+          "shares": 24.34717562455946
+        },
+        "ETN": {
+          "market_value_usd": 7338.955955103625,
+          "paid_notional_usd": 6000.0,
+          "shares": 16.188992946606493
+        },
+        "GH": {
+          "market_value_usd": 4484.53711837733,
+          "paid_notional_usd": 3000.0,
+          "shares": 28.109172038978176
+        },
+        "GIGB": {
+          "market_value_usd": 3000.630042956276,
+          "paid_notional_usd": 3000.0,
+          "shares": 66.56233187837192
+        },
+        "INTU": {
+          "market_value_usd": 1618.4616930593033,
+          "paid_notional_usd": 3000.0,
+          "shares": 4.517183439281933
+        },
+        "NTAP": {
+          "market_value_usd": 6249.392682487428,
+          "paid_notional_usd": 3000.0,
+          "shares": 30.486328674672045
+        },
+        "PANW": {
+          "market_value_usd": 5565.877333302037,
+          "paid_notional_usd": 3000.0,
+          "shares": 14.055245791166762
+        },
+        "TLH": {
+          "market_value_usd": 2900.634459720883,
+          "paid_notional_usd": 3000.0,
+          "shares": 29.86035081270532
+        },
+        "USIG": {
+          "market_value_usd": 3000.5714820497083,
+          "paid_notional_usd": 3000.0,
+          "shares": 59.523338447376496
+        },
+        "WFC": {
+          "market_value_usd": 6376.040556852653,
+          "paid_notional_usd": 6000.0,
+          "shares": 72.3645501382912
+        },
+        "XTWO": {
+          "market_value_usd": 3015.4162819789635,
+          "paid_notional_usd": 3000.0,
+          "shares": 61.696496817983906
+        }
+      },
+      "ending_value_usd": 116632.90104415212,
+      "executed_buy_count": 44,
+      "executed_buys_by_senator": {
+        "Angus S. King Jr.": 6,
+        "David McCormick": 2,
+        "Jerry Moran": 2,
+        "John Boozman": 22,
+        "John Fetterman": 4,
+        "John W. Hickenlooper": 3,
+        "Mitch McConnell": 2,
+        "Sheldon Whitehouse": 2,
+        "Tommy Tuberville": 1
+      },
+      "executed_buys_by_ticker": {
+        "ADBE": 1,
+        "ADSK": 1,
+        "AGZ": 1,
+        "AMAT": 1,
+        "AMD": 1,
+        "AMZN": 1,
+        "ANET": 1,
+        "BAC": 1,
+        "BITB": 2,
+        "BRK.B": 2,
+        "BX": 1,
+        "CMBS": 1,
+        "COST": 1,
+        "EIPI": 1,
+        "ERIE": 2,
+        "ETN": 2,
+        "FTGC": 1,
+        "GEM": 1,
+        "GH": 1,
+        "GIGB": 1,
+        "HSY": 1,
+        "IEF": 2,
+        "IEI": 2,
+        "INTU": 1,
+        "IWM": 1,
+        "JMBS": 1,
+        "META": 1,
+        "MSFT": 1,
+        "NTAP": 1,
+        "PANW": 1,
+        "SCHP": 1,
+        "SHY": 1,
+        "TLH": 1,
+        "UBER": 1,
+        "USIG": 1,
+        "WFC": 2,
+        "XTWO": 1
+      },
+      "label": "3k/7k, 80k/20k",
+      "largest_senator_buy_share": 0.5,
+      "largest_ticker_buy_share": 0.045454545454545456,
+      "limit_skip_counts": {
+        "cash_limit": 0,
+        "daily_notional_limit": 28,
+        "portfolio_limit": 121,
+        "position_limit": 9
+      },
+      "liquidation_return_pct": 16.5521005096505,
+      "liquidation_value_usd": 116552.10050965051,
+      "market_end": "2026-08-13",
+      "market_start": "2025-08-13",
+      "max_drawdown_pct": -7.315830515762567,
+      "monthly_return_summary": {
+        "best_month": {
+          "ending_value_usd": 103784.38043124192,
+          "month": "2026-04",
+          "month_end": "2026-04-30",
+          "return_pct": 6.398754708545185
+        },
+        "median_return_pct": 1.0640803005958155,
+        "month_count": 13,
+        "months_at_or_above_7_pct": 0,
+        "positive_month_count": 9,
+        "worst_month": {
+          "ending_value_usd": 99663.92410999529,
+          "month": "2026-02",
+          "month_end": "2026-02-27",
+          "return_pct": -2.510710707349084
+        }
+      },
+      "monthly_returns": [
+        {
+          "ending_value_usd": 100201.24694710609,
+          "month": "2025-08",
+          "month_end": "2025-08-29",
+          "return_pct": 0.20124694710608182
+        },
+        {
+          "ending_value_usd": 101267.46867682162,
+          "month": "2025-09",
+          "month_end": "2025-09-30",
+          "return_pct": 1.0640803005958155
+        },
+        {
+          "ending_value_usd": 103388.56627727361,
+          "month": "2025-10",
+          "month_end": "2025-10-31",
+          "return_pct": 2.0945498373432514
+        },
+        {
+          "ending_value_usd": 101984.30825656257,
+          "month": "2025-11",
+          "month_end": "2025-11-28",
+          "return_pct": -1.3582333823500603
+        },
+        {
+          "ending_value_usd": 101593.80988158801,
+          "month": "2025-12",
+          "month_end": "2025-12-31",
+          "return_pct": -0.38290044973603443
+        },
+        {
+          "ending_value_usd": 102230.63972783348,
+          "month": "2026-01",
+          "month_end": "2026-01-30",
+          "return_pct": 0.6268392208026441
+        },
+        {
+          "ending_value_usd": 99663.92410999529,
+          "month": "2026-02",
+          "month_end": "2026-02-27",
+          "return_pct": -2.510710707349084
+        },
+        {
+          "ending_value_usd": 97542.85256019703,
+          "month": "2026-03",
+          "month_end": "2026-03-31",
+          "return_pct": -2.1282239975392803
+        },
+        {
+          "ending_value_usd": 103784.38043124192,
+          "month": "2026-04",
+          "month_end": "2026-04-30",
+          "return_pct": 6.398754708545185
+        },
+        {
+          "ending_value_usd": 109782.33250077843,
+          "month": "2026-05",
+          "month_end": "2026-05-29",
+          "return_pct": 5.779243509104148
+        },
+        {
+          "ending_value_usd": 111048.24823316761,
+          "month": "2026-06",
+          "month_end": "2026-06-30",
+          "return_pct": 1.1531142612407175
+        },
+        {
+          "ending_value_usd": 112628.01570828819,
+          "month": "2026-07",
+          "month_end": "2026-07-31",
+          "return_pct": 1.4225955836813853
+        },
+        {
+          "ending_value_usd": 116632.90104415212,
+          "month": "2026-08",
+          "month_end": "2026-08-13",
+          "return_pct": 3.5558518106514114
+        }
+      ],
+      "order_sensitivity": {
+        "max_return_pct": 35.74316928885073,
+        "mean_return_pct": 18.82300814616305,
+        "median_average_invested_usd": 68117.69309349608,
+        "median_largest_senator_buy_share": 0.5,
+        "median_largest_ticker_buy_share": 0.047619047619047616,
+        "median_limit_skip_count": 154.0,
+        "median_max_drawdown_pct": -7.181350733025288,
+        "median_peak_invested_usd": 93824.8252257389,
+        "median_return_pct": 18.3421738093,
+        "median_turnover_usd": 227279.6138068724,
+        "min_return_pct": 8.20357607086768,
+        "p05_return_pct": 10.747438570593946,
+        "p95_return_pct": 27.634596734410167,
+        "runs": 200,
+        "share_beating_risk_matched_spy": 0.55,
+        "share_positive": 1.0,
+        "worst_max_drawdown_pct": -12.881798124751276
+      },
+      "parameters": {
+        "buy_notional_usd": 3000.0,
+        "cost_per_side": 0.001,
+        "max_daily_notional_usd": 20000.0,
+        "max_holding_days": null,
+        "max_portfolio_usd": 80000.0,
+        "max_position_usd": 7000.0,
+        "starting_cash_usd": 100000.0,
+        "stop_loss_pct": null,
+        "take_profit_pct": null
+      },
+      "peak_invested_usd": 90074.92881230777,
+      "peak_starting_cash_invested_pct": 90.07492881230777,
+      "reason_counts": {
+        "daily_notional_limit": 28,
+        "invalid_or_missing_ticker": 53,
+        "no_position": 325,
+        "portfolio_limit": 121,
+        "position_closed": 20,
+        "position_limit": 9,
+        "position_opened_or_increased": 44,
+        "price_provider_http_404": 1,
+        "provider_instrument_type_MUTUALFUND": 6,
+        "source_asset_type_not_stock": 305,
+        "unsupported_action": 1
+      },
+      "requested_end": "2026-08-13",
+      "requested_start": "2025-08-13",
+      "return_pct": 16.632901044152113,
+      "risk_matched_spy_return_pct": 17.466334724054477,
+      "risk_matched_spy_value_usd": 117466.33472405447,
+      "signal_count": 913,
+      "spy_100k_return_pct": 21.832918405068092,
+      "spy_100k_value_usd": 121832.91840506809,
+      "starting_cash_usd": 100000.0,
+      "status_counts": {
+        "executed": 64,
+        "filtered": 366,
+        "skipped": 483
+      },
+      "strategy_exit_count": 0,
+      "strategy_exit_counts": {},
+      "total_buy_notional_usd": 132000.0,
+      "total_sale_proceeds_usd": 67832.36654253282,
+      "turnover_usd": 199832.3665425328
+    }
+  },
+  "selected_cost_sensitivity": {
+    "0.0000": {
+      "cost_per_side_pct": 0.0,
+      "ending_value_usd": 114148.08455559073,
+      "liquidation_return_pct": 14.148084555590735,
+      "return_pct": 14.148084555590735,
+      "turnover_usd": 181412.9108074116
+    },
+    "0.0010": {
+      "cost_per_side_pct": 0.1,
+      "ending_value_usd": 113952.59097313852,
+      "liquidation_return_pct": 13.891916534564096,
+      "return_pct": 13.952590973138523,
+      "turnover_usd": 181278.15239870758
+    },
+    "0.0025": {
+      "cost_per_side_pct": 0.25,
+      "ending_value_usd": 113171.51839373156,
+      "liquidation_return_pct": 13.020127485948585,
+      "return_pct": 13.171518393731564,
+      "turnover_usd": 172615.1552805436
+    },
+    "0.0050": {
+      "cost_per_side_pct": 0.5,
+      "ending_value_usd": 112700.35051877581,
+      "liquidation_return_pct": 12.398294815014443,
+      "return_pct": 12.700350518775805,
+      "turnover_usd": 176289.20976650086
+    }
+  },
+  "selected_scenario": "aligned_2k_6k_60k_16k"
+}
