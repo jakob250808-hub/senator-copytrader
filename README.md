@@ -60,8 +60,23 @@ export ALPACA_SECRET_KEY='...paper secret...'
 
 In `config.json` die Namen unter `politicians` sowie die Geld-, Positions- und
 Portfoliolimits an das eigene Paperkonto (hier: rund 100.000 USD) anpassen.
-Groß-/Kleinschreibung, Akzente und Satzpunkte in Namen werden normalisiert;
-die Person selbst muss dennoch eindeutig der Quiver-Meldung entsprechen.
+`config.example.json` enthält die am 13.08.2026 geprüfte 30er-Watchlist. Nur
+zwölf aktuell amtierende Senatoren erreichten in der verwendeten
+Zwölfmonatsauswertung mindestens zehn Meldungen; die übrigen 18 sind deshalb
+transparent als Beobachtungsgruppe nach jüngster und historischer Aktivität
+ergänzt. Auswahl, Ausschlüsse und Rauschverdacht stehen in `HANDOFF.md`.
+
+Groß-/Kleinschreibung, Akzente, Satzpunkte, Mittelinitialen, Titel, Suffixe und
+die Schreibweise `Nachname, Vorname` werden für den Vergleich normalisiert; die
+Person selbst muss dennoch eindeutig der Quiver-Meldung entsprechen.
+
+Die größere Watchlist ändert keine Geldgrenze: Mit 1.000 USD je Kauf und 5.000
+USD Tageslimit können höchstens fünf Käufe pro Tag eingereicht werden. Einen
+zusätzlichen `max_orders_per_run`-Deckel gibt es nicht. Erreicht ein Signal ein
+Geldlimit, wird es als `skipped` protokolliert und nicht für einen späteren Lauf
+aufgehoben. Das ist bei Signalausbrüchen bewusst konservativ, kann aber Signale
+verwerfen; vor einer Änderung der Limits ist eine ausdrückliche Entscheidung
+nötig.
 
 ## Empfohlener Ablauf
 
@@ -115,7 +130,9 @@ senator-copytrader --config config.paper-demo.json run
 
 Auch dabei zuerst `bootstrap` verwenden. Für einen simulierten neuen Eingang
 anschließend eine weitere Meldung mit neuem `ReportDate` und Ticker in die
-Beispieldatei einfügen.
+Beispieldatei einfügen. Die Demo bleibt absichtlich bei Gary Peters: Sie prüft
+kostenlos und deterministisch genau die mitgelieferte Beispielmeldung und soll
+keine Live-Abdeckung vortäuschen.
 
 ## Historischer Veröffentlichungstag-Backtest
 

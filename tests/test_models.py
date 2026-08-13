@@ -36,7 +36,10 @@ class ModelTests(unittest.TestCase):
         self.assertEqual(parse_date("08/07/2026").isoformat(), "2026-08-07")
 
     def test_identity_and_asset_normalizers_are_conservative(self):
-        self.assertEqual(normalize_person_name("Thomas H. Tuberville"), "thomas h tuberville")
+        self.assertEqual(normalize_person_name("Thomas H. Tuberville"), "thomas tuberville")
+        self.assertEqual(normalize_person_name("Peters, Gary C."), "gary peters")
+        self.assertEqual(normalize_person_name("Sen. Gary Peters"), "gary peters")
+        self.assertEqual(normalize_person_name("King, Angus S., Jr."), "angus king")
         self.assertEqual(normalize_ticker(" $brk/b "), "BRK.B")
         self.assertEqual(normalize_asset_type("Exchange Traded Fund"), "etf")
         self.assertEqual(normalize_asset_type("Option"), "unsupported")

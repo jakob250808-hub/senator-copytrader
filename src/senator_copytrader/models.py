@@ -10,6 +10,20 @@ from typing import Any, Dict, Optional
 
 
 PERSON_SEPARATOR_PATTERN = re.compile(r"[^a-z0-9]+")
+PERSON_IGNORED_TOKENS = {
+    "hon",
+    "honorable",
+    "ii",
+    "iii",
+    "iv",
+    "jr",
+    "mr",
+    "mrs",
+    "ms",
+    "sen",
+    "senator",
+    "sr",
+}
 ASSET_TYPE_ALIASES = {
     "stock": "stock",
     "stocks": "stock",
@@ -48,12 +62,21 @@ def normalize_action(value: Any) -> str:
 
 
 def normalize_person_name(value: Any) -> str:
-    """Return a comparison key that tolerates punctuation and accents."""
+    """Return a comparison key for the name variants used by disclosure feeds."""
 
     text = unicodedata.normalize("NFKD", str(value or "")).encode(
         "ascii", "ignore"
     ).decode("ascii")
-    return " ".join(PERSON_SEPARATOR_PATTERN.sub(" ", text.casefold()).split())
+    if "," in text:
+        family_name, given_names = text.split(",", 1)
+        text = "{} {}".format(given_names, family_name)
+
+    tokens = PERSON_SEPARATOR_PATTERN.sub(" ", text.casefold()).split()
+    return " ".join(
+        token
+        for token in tokens
+        if len(token) > 1 and token not in PERSON_IGNORED_TOKENS
+    )
 
 
 def normalize_ticker(value: Any) -> str:

@@ -269,3 +269,195 @@ Point-in-time-Kursquelle inklusive delisteter Titel oder – falls keine verfüg
 ist – der noch offene Retry/Backoff-/Rate-Limit-Schutz für den laufenden
 Paper-Bot sinnvoller als weitere Strategieoptimierung auf diesem verzerrten
 Sample.
+
+## 2026-08-13 – Codex: 30er-Live-Watchlist nach Signalqualität
+
+**Bearbeiter:** Codex (direkter Nutzerauftrag; deshalb trotz des noch auf Claude
+stehenden Automatisierungsmarkers ausgeführt)
+**Status:** abgeschlossen für diesen Abschnitt
+
+### Bearbeitete Dateien
+
+- `config.example.json` (30er-Live-Watchlist)
+- `src/senator_copytrader/models.py` (robuster Namensabgleich)
+- `tests/test_models.py` (Namensvarianten)
+- `tests/test_watchlist.py` (30 Namen, Engine-Filter und unveränderte Limits)
+- `README.md` (Watchlist-, Demo- und Kapazitätshinweise)
+- `HANDOFF.md` (Auswahlbelege, Rauschverdacht und Übergabe)
+
+`config.paper-demo.json` bleibt unverändert bei Gary Peters. Die kleine Config
+ist ein kostenloser, deterministischer Funktionstest für
+`examples/trades.sample.json`, keine simulierte Live-Watchlist.
+
+### Quellen und Methodik (Stichtag 13.08.2026)
+
+- Amtierender Status: offizielles
+  [U.S.-Senatsregister](https://www.senate.gov/senators/index.htm?source=email).
+  Jeder aufgenommene Name wurde dort einzeln gefunden. Dieses Register hat bei
+  Konflikten Vorrang vor den teils verzögerten Drittanbieterprofilen.
+- Zwölfmonatsaktivität und Tiebreak-Performance: öffentliche
+  [Capitol-Markets-Senatsrangliste, 1Y](https://www.capitolmarkets.org/leaderboard?chamber=senate&sort=trades&tf=1Y),
+  deren Forschungsseite die tägliche Aktualisierung aus öffentlichen Meldungen
+  beschreibt. Gezählt wurden Käufe und Verkäufe, nicht Schlagzeilen.
+- Eigentümer-/Asset-Plausibilisierung und historische Aktivität:
+  [GovTrades Senate Stock Tracker](https://www.govtrades.com/senate-stock-tracker)
+  sowie einzelne Quiver-Profile. Abweichende Zählweisen zwischen Aggregatoren
+  sind der Grund, weshalb die Schwelle mit `~10` und nicht als vermeintlich
+  exakte Wahrheit behandelt wird.
+- Feedformat: Die
+  [Quiver-API-Dokumentation](https://api.quiverquant.com/datasets/congress-trades)
+  zeigt `Representative: "John Boozman"`; die lokale Fixture verwendet
+  `Gary Peters`. Quiver-Profile zeigen daneben Mittelinitialen und Suffixe.
+
+Wichtiger Befund: Die verlangte Schnittmenge aus „aktuell amtierend“ und
+„mindestens ungefähr zehn Transaktionen im letzten Jahr“ enthält im
+Capitol-Markets-Snapshot nur 13 Namen. Nach dem Ausschluss von Alan Armstrongs
+extremem, nicht als wiederkehrendes Live-Muster belastbarem Einstandsblock
+bleiben **zwölf Kernnamen**. Eine angeblich vollständig schwellenkonforme
+30er-Liste wäre daher erfunden. Die Config enthält zwölf Kernnamen und 18 klar
+gekennzeichnete Beobachtungsnamen. Die Reihenfolge folgt erst Aktivität, dann
+Verwertbarkeit/Rauschprüfung und erst zuletzt der geschätzten Performance.
+Bei den beiden gleich aktiven Kernnamen mit je zehn Meldungen lag Hickenloopers
+1Y-Schätzung (13,6 %) vor Morans (4,2 %), daher steht Hickenlooper zuerst. Wo
+bei gleicher Aktivität keine hinreichend bewerteten Börsenticker vorlagen, wurde
+keine Scheingenauigkeit aus einer Einzelrendite erzeugt; dort entschieden
+jüngere beziehungsweise umfangreichere historische Aktivität.
+
+### Aufgenommene 30 Namen
+
+| Rang | Quiver-kompatibler Config-Name | 1Y-Meldungen | Stufe / Datenqualität |
+|---:|---|---:|---|
+| 1 | John Boozman | 212 | Kern; sehr aktiv, überwiegend Gemeinschaftsdepot |
+| 2 | David McCormick | 195 | Kern; **Rauschverdacht**, siehe unten |
+| 3 | Shelley Moore Capito | 41 | Kern; **Rauschverdacht**, Ehepartnerdepot |
+| 4 | Sheldon Whitehouse | 40 | Kern; jüngste Stichprobe mehrheitlich `Self` |
+| 5 | Tommy Tuberville | 35 | Kern; **Rauschverdacht**, Gemeinschafts-/Beraterdepot |
+| 6 | John Fetterman | 30 | Kern; **Rauschverdacht**, Kinder-/Familiendepot |
+| 7 | John R. Curtis | 25 | Kern; noch kurze Historie, keine Rendite belastbar |
+| 8 | Rick Scott | 16 | Kern; Self/Spouse gemischt, viele nicht direkt handelbare Assets |
+| 9 | Angus S. King Jr. | 12 | Kern |
+| 10 | Gary C. Peters | 11 | Kern; Feed-/Fixture-Namensfall explizit getestet |
+| 11 | John W. Hickenlooper | 10 | Kern; jüngste Eigentümerstichprobe `Self`; bessere Performance-Tiebreak-Schätzung |
+| 12 | Jerry Moran | 10 | Kern; Self/Spouse gemischt |
+| 13 | Tina Smith | 9 | Beobachtung; knapp unter Schwelle, Ehepartnerhinweis |
+| 14 | Bernie Moreno | 7 | Beobachtung; kurze Historie |
+| 15 | Katie Boyd Britt | 7 | Beobachtung; kurze Historie |
+| 16 | Mitch McConnell | 5 | Beobachtung; Ehepartnerdepot |
+| 17 | Susan M. Collins | 4 | Beobachtung; Ehepartnerdepot, historisch häufig aktiv |
+| 18 | Ron Wyden | <4 | Beobachtung; Startliste, 321 historische Meldungen |
+| 19 | Ted Cruz | 1 | Beobachtung; Startliste, aktuell kein regelmäßiges Signal |
+| 20 | Adam B. Schiff | 1 | Beobachtung; Ehepartner, kurze Senatshistorie |
+| 21 | James Conley Justice II | 1 | Beobachtung; neue/kurze Senatshistorie |
+| 22 | Bill Cassidy | 0 | Beobachtung; 208 historische Meldungen |
+| 23 | Jack Reed | 0 | Beobachtung; 200+ historische Meldungen |
+| 24 | Dan Sullivan | 0 | Beobachtung; 170 historische Meldungen |
+| 25 | Patty Murray | 0 | Beobachtung; 161 historische Meldungen |
+| 26 | John Hoeven | 0 | Beobachtung; Startliste, 149 historische Meldungen |
+| 27 | Mark R. Warner | 0 | Beobachtung; 105 historische Meldungen |
+| 28 | Thom Tillis | 0 | Beobachtung; 100 historische Meldungen |
+| 29 | Ashley B. Moody | 0 | Beobachtung; 57 historische Meldungen, knapp außerhalb 1Y |
+| 30 | Bill Hagerty | 0 | Beobachtung; 46 historische Meldungen |
+
+`0` bedeutet hier: keine Transaktion im verwendeten gleitenden 1Y-Fenster,
+nicht „noch nie gehandelt“. Diese Namen sind nur Reserve für eine erneute
+Aktivitätsaufnahme. Die Beobachtungsgruppe sollte künftig regelmäßig neu
+gerankt werden; sie ist keine Behauptung, dass alle 30 heute gleich starke
+Signale liefern.
+
+### Rauschverdacht und bewusste Ausschlüsse
+
+- **David McCormick:** Quiver beschreibt zahlreiche jüngste Positionen als
+  „Managed Structured Note Strategy“; im Gegencheck waren nur sehr wenige der
+  vielen Meldungszeilen direkt tickerfähig. Wegen der außergewöhnlichen
+  Aktivität in der Kernliste belassen, aber nicht als gleichwertiges
+  selbstbestimmtes Signal interpretieren.
+- **Shelley Moore Capito, Tommy Tuberville, John Fetterman, John Boozman:** Die
+  jüngste Eigentümerstichprobe war überwiegend Spouse, Joint oder Child. Sie
+  bleiben wegen regelmäßiger, zum Teil tickerfähiger Signale enthalten, sind
+  aber gegenüber Whitehouse/Hickenlooper qualitativ abzuwerten.
+- **Richard Blumenthal:** aktuell amtierend, aber ausgeschlossen. Der bekannte
+  hohe 2025-Umsatz stammt weitgehend aus Ehepartner-/Trust-/Fonds- und privaten
+  Gesellschaftspositionen; das ist Rebalancing-Rauschen statt sauberem
+  Aktienauswahlsignal.
+- **Alan Armstrong:** aktuell amtierend und im Roh-Ranking mit 703 Zeilen ganz
+  oben, aber ausgeschlossen. Der Block konzentriert sich auf seinen Eintritt in
+  den Senat und ist als einmalige Bestands-/Offenlegungswelle, nicht als
+  wiederkehrendes Live-Handelsmuster, zu bewerten. Das ist eine aus Muster und
+  Zeitpunkt abgeleitete Rauschklassifikation, keine Tatsachenbehauptung über
+  seine Handelsabsicht.
+- **Markwayne Mullin:** trotz teils noch als „Current“ markierter
+  Drittanbieterprofile nicht aufgenommen; er fehlt im offiziellen Register am
+  Stichtag. Dasselbe Amtierenden-Kriterium entfernt Kelly Loeffler, David
+  Perdue, Pat Roberts, Thomas Carper und Richard Burr.
+- **John Kennedy:** aktuell amtierend, aber mit nur einer Transaktion und damit
+  trotz publizierter hoher Einzelrendite kein regelmäßiges Live-Signal.
+
+### Namensformat und Tests
+
+`normalize_person_name()` kann jetzt neben Satzpunkten/Akzenten auch
+`Nachname, Vorname`, Titel, Suffixe und Mittelinitialen abgleichen. Damit werden
+beispielsweise alle folgenden Paare gleich behandelt:
+
+- `Gary Peters` (Fixture) ↔ `Gary C. Peters` (Config/Quiver-Profil)
+- `Peters, Gary C.` ↔ `Gary C. Peters`
+- `King, Angus S., Jr.` ↔ `Angus S. King Jr.`
+
+`tests/test_watchlist.py` lädt die echte Beispielconfig, verlangt genau 30
+verifizierte Namen, leitet für jeden eine Quiver-formatierte Meldung durch
+`CopyEngine.selected_trades()` und fixiert zusätzlich alle vier Geldlimits auf
+den vorgefundenen Werten. So schlägt der Test sowohl bei einem stillen
+Namensfilterfehler als auch bei einer versehentlichen Limitänderung fehl.
+
+### Kapazitätsprüfung – keine Limitänderung
+
+- `buy_notional_usd = 1.000`, `max_position_usd = 3.000`,
+  `max_portfolio_usd = 20.000` und `max_daily_notional_usd = 5.000` sind
+  unverändert.
+- `max_orders_per_run` existiert im aktuellen Modell nicht mehr; ein alter
+  Config-Eintrag wird absichtlich ignoriert. Der vorhandene Test plant 75
+  gültige Meldungen ohne technische Trunkierung. Dieser Teil passt also auch
+  für 30 Senatoren.
+- Das Tageslimit lässt höchstens **fünf neue Käufe pro Kalendertag** zu. Das
+  Portfoliolimit reicht bei 1.000 USD je Eröffnung zunächst für höchstens 20
+  gleich große Positionen, das Positionslimit für drei Käufe desselben Tickers
+  (jeweils ohne zwischenzeitliche Kurswertänderungen gerechnet).
+- Kritischer als die Höhe des Tageslimits: Ein wegen Tages-, Portfolio-,
+  Positions- oder Cashlimit übersprungenes Signal wird als verarbeitet
+  gespeichert und später **nicht erneut versucht**. Bei einem Meldungscluster
+  kann die 30er-Liste daher mehr als fünf gültige Käufe liefern und der Rest
+  dauerhaft entfallen.
+
+Ergebnis: Kein technischer Orderdeckel muss geändert werden. Das Tageslimit ist
+für einen konservativen Paper-Test vertretbar, aber nicht geeignet, wenn
+ausnahmslos jedes Burst-Signal ausgeführt werden soll. Entsprechend
+Nutzeranweisung wurden weder Limit noch Queue-Verhalten geändert. Vor einer
+Erhöhung sollte entschieden werden, ob Kapazitäts-Skips zunächst mit Ablaufdatum
+zurückgestellt werden sollen; das ist sicherer als blind mehr Tagesbudget
+freizugeben.
+
+### Tests und Prüfungen
+
+```text
+PYTHONPATH=src python3 -m unittest discover -s tests -v
+Ran 35 tests in 0.028s – OK
+
+PYTHONPYCACHEPREFIX=/tmp/senator_copytrader_pycache \
+  PYTHONPATH=src python3 -m compileall -q src scripts tests
+OK
+
+git diff --check
+OK
+```
+
+Zusätzlich per Test bestätigt: `config.example.json` enthält genau 30 Namen,
+alle 30 passieren den Engine-Filter im dokumentierten Quiver-Format, die reale
+Beispieldatei `Gary Peters` trifft `Gary C. Peters`, und die vier Geldlimits
+haben exakt ihre vorherigen Werte. `config.paper-demo.json` ist unverändert.
+
+### Nächste Aufgabe
+
+Claude: Bitte die Watchlist-Auswahl und besonders die Rauschklassifikationen
+gegen die aktuellen Rohmeldungen reviewen. Technisch bitte prüfen, ob
+Limit-Skips wirklich endgültig verbraucht bleiben sollen oder ob eine kleine,
+zeitlich begrenzte Pending-Queue der sinnvollere nächste Schritt ist. Geldlimits
+nicht ohne Rücksprache ändern.
