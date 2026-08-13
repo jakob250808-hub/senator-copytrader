@@ -7,7 +7,7 @@ aktualisieren. Nicht gleichzeitig an derselben Datei arbeiten.
 
 ## Status (maschinenlesbar für die Automatisierung)
 
-**Nächster Bearbeiter:** Claude
+**Nächster Bearbeiter:** Codex
 
 Regeln für beide Loops (lokaler Codex-Loop und Claudes geplante
 Cloud-Aufgabe):
@@ -758,3 +758,109 @@ Claude: Bitte nur die ausdrücklich geänderten 3k-/7k-Werte und die
 Backtest-Konsistenz reviewen. Portfolio-/Tageslimit nicht ohne neue
 Nutzerfreigabe anheben. Besonders darauf hinweisen, dass 3k/5k nur einen Kauf
 pro Tag zulässt und der Hauptlauf negativ ist.
+
+## 2026-08-14 – Codex: Handoff für aggressivere Kapitalnutzung
+
+**Bearbeiter:** Codex (Handoff für einen neuen Chat auf direkten
+Nutzerwunsch)
+**Status:** Handoff vorbereitet; Umsetzung ist die nächste Aufgabe
+
+### Nutzerziel
+
+Der Bot soll im Paper-Trading aggressiver handeln und deutlich mehr von den
+100.000 USD Startkapital investieren. Das langfristige Wunschziel des Nutzers
+sind 7 % pro Monat. Dieses Ziel ist eine Ambition, keine nachgewiesene oder zu
+versprechende Rendite. Der neue Chat soll die Kapitalnutzung erhöhen und danach
+ehrlich messen, welche Rendite und welches Risiko die Daten tatsächlich
+zeigen.
+
+### Verbindlicher Ausgangsstand
+
+- 30-Senatoren-Watchlist bleibt bestehen.
+- `buy_notional_usd`: **3.000 USD**
+- `max_position_usd`: **7.000 USD**
+- `max_portfolio_usd`: **20.000 USD**
+- `max_daily_notional_usd`: **5.000 USD**
+- Stop-Loss, Take-Profit und maximale Haltedauer sind implementiert, aber in
+  `config.example.json` weiterhin deaktiviert (`null`).
+- `config.paper-demo.json` bleibt klein und darf nicht aggressiv gemacht
+  werden.
+- Es wird ausschließlich mit vorhandenem Cash gearbeitet; keine Margin und
+  keine Live-Trading-Freigabe.
+- Aktueller Commit bei Erstellung dieses Handoffs: `e0db3b9`.
+
+### Warum der aktuelle Stand nicht genügt
+
+Mit 3.000 USD je Kauf und nur 5.000 USD Tageslimit passt lediglich ein Kauf in
+einen Tag. Dadurch bleiben jeweils 2.000 USD Tagesbudget ungenutzt. Im exakten
+Einjahres-Backtest wurden durchschnittlich nur 15.141,91 USD investiert; der
+Hauptlauf lag bei **−1,95 %** und war stark von der Reihenfolge gleichzeitiger
+Signale abhängig.
+
+Read-only bereits getestete Orientierung mit unverändert 3.000 USD je Kauf und
+7.000 USD je Ticker:
+
+| Portfolio / Tag | Hauptlauf | Median aus 200 | P05–P95 | Max. Drawdown |
+|---|---:|---:|---:|---:|
+| 20k / 5k | −1,95 % | +3,48 % | −1,13 bis +9,79 % | −4,67 % |
+| 40k / 10k | +14,35 % | +9,86 % | +4,05 bis +18,02 % | −3,32 % |
+| 60k / 15k | +17,76 % | +15,27 % | +8,35 bis +24,51 % | −4,55 % |
+| 80k / 20k | +16,63 % | +18,34 % | +10,75 bis +27,63 % | −7,32 % |
+| 100k / 30k | +20,38 % | +26,36 % | +17,68 bis +34,80 % | −6,44 % |
+
+Diese Tabelle ist keine Freigabe, einfach die renditestärkste Zeile zu
+übernehmen. Sie zeigt vor allem, dass Portfolio- und Tageslimit die
+Kapitalnutzung bremsen und dass die Ergebnisstreuung mit der Aggressivität
+steigt.
+
+### Nächste Aufgabe für Codex im neuen Chat
+
+1. Zuerst `git pull`, diese Datei und den aktuellen Backtest-Code lesen. Den
+   vorhandenen Stand nicht aus alten Chat-Zusammenfassungen rekonstruieren.
+2. Die Investitionsbremsen quantitativ untersuchen: Tageslimit-,
+   Portfoliolimit-, Tickerlimit- und Reihenfolge-Skips sowie durchschnittliche
+   und maximale Kapitalbindung ausweisen.
+3. Eine reproduzierbare Szenarienmatrix für eine **cash-only
+   Paper-Konfiguration** rechnen. Mindestens die bereits getesteten
+   40k/10k-, 60k/15k-, 80k/20k- und 100k/30k-Grenzen einbeziehen. Zusätzlich
+   prüfen, ob 3k Kaufbetrag / 7k Tickerlimit sinnvoll ist oder ob eine andere
+   Kombination das Tagesbudget sauberer ausnutzt. Keine Kombination darf mehr
+   als 100.000 USD Startkapital als planmäßiges Portfolio-Limit verwenden.
+4. Nicht nur die Jahresrendite optimieren. Je Szenario mindestens berichten:
+   Hauptlauf, 200 Reihenfolgen (Minimum, P05, Median, P95, Maximum), maximaler
+   Drawdown, durchschnittlich und maximal investiertes Kapital, Umsatz,
+   Signal-Skips, Konzentration pro Senator/Ticker und Vergleich mit dem
+   risikogleichen SPY-Mix.
+5. Für das 7-%-Monatsziel die Renditen jedes einzelnen Kalendermonats zeigen:
+   bester/schlechtester Monat, Median, Anzahl positiver Monate und Anzahl der
+   Monate ≥ 7 %. Nicht aus einer Jahresrendite auf stabile Monatsrenditen
+   schließen.
+6. Slippage/Gebühren konservativ einrechnen oder mindestens als
+   Sensitivität ausweisen. Wenn die vorhandenen Daten keinen echten
+   Out-of-sample-Test erlauben, das klar als Grenze dokumentieren und keine
+   Schwellen nachträglich auf dieses eine Jahr überoptimieren.
+7. Danach die robusteste aggressivere Variante für **Paper-Trading** auswählen
+   und in `config.example.json` umsetzen. Auswahlkriterium ist höhere,
+   nachvollziehbare Kapitalnutzung bei vertretbarer Streuung und Drawdown –
+   nicht bloß der höchste einzelne Backtestwert. Geldbeträge müssen logisch
+   teilbar sein, damit nicht erneut strukturell Tagesbudget liegen bleibt.
+8. Exit-Felder nicht gleichzeitig anhand desselben Jahres optimieren. Sie
+   bleiben deaktiviert, sofern ein unabhängiger Test keinen belastbaren Vorteil
+   zeigt. `config.paper-demo.json`, No-Margin-Schutz und doppelte
+   Ausführungsfreigabe unverändert lassen.
+9. Backtest-Artefakte, README und einen neuen Abschnitt in dieser Datei
+   aktualisieren. Alle Tests ausführen, Ergebnisse samt Grenzen ehrlich
+   dokumentieren, committen und auf `main` pushen.
+
+### Abnahmekriterien
+
+- Mehr Kapital wird nachweislich eingesetzt als die bisherigen durchschnittlich
+  rund 15.000 USD; bloß höhere Einzelorders ohne höhere Gesamtauslastung gelten
+  nicht als Erfolg.
+- Kein Margin-Einsatz, kein Live-Trade und keine Änderung der kleinen
+  Demo-Config.
+- Das Ergebnis nennt sowohl Renditechance als auch Verlust-/Konzentrationsrisiko.
+- 7 % pro Monat werden nur dann als erreicht bezeichnet, wenn die monatliche
+  Auswertung das tatsächlich zeigt; ansonsten klar als nicht belegt markieren.
+- Tests, Backtest und Dokumentation sind reproduzierbar und gemeinsam
+  committed/gepusht.
