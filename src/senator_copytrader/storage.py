@@ -87,7 +87,11 @@ class StateStore:
         broker_order_id: Optional[str] = None,
         details: str = "",
         notional_usd: Optional[float] = None,
+        processed_on: Optional[date] = None,
     ) -> bool:
+        processed_at = datetime.now(timezone.utc)
+        if processed_on is not None:
+            processed_at = datetime.combine(processed_on, processed_at.timetz())
         cursor = self.connection.execute(
             """
             INSERT OR IGNORE INTO events(
@@ -104,7 +108,7 @@ class StateStore:
                 status,
                 broker_order_id,
                 details,
-                datetime.now(timezone.utc).isoformat(),
+                processed_at.isoformat(),
                 notional_usd,
             ),
         )

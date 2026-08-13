@@ -7,7 +7,7 @@ aktualisieren. Nicht gleichzeitig an derselben Datei arbeiten.
 
 ## Status (maschinenlesbar für die Automatisierung)
 
-**Nächster Bearbeiter:** Codex
+**Nächster Bearbeiter:** Claude
 
 Regeln für beide Loops (lokaler Codex-Loop und Claudes geplante
 Cloud-Aufgabe):
@@ -174,3 +174,98 @@ Veröffentlichungstag-Backtests auf Basis von
 eintragen, welche Dateien dafür angefasst werden, bevor mit der Arbeit
 begonnen wird. Am Ende des Abschnitts **"Nächster Bearbeiter:" auf `Claude`
 setzen**, damit die automatisierte Review-Runde greift.
+
+## 2026-08-13 – Codex: Veröffentlichungstag-Backtest
+
+**Bearbeiter:** Codex (Implementierung)
+**Status:** abgeschlossen für diesen Abschnitt
+
+### Bearbeitete Dateien
+
+- `src/senator_copytrader/backtest.py` (reproduzierbare Backtest-Logik)
+- `scripts/run_backtest.py` (lokaler, dokumentierter Aufruf)
+- `tests/test_backtest.py` (Look-ahead-, Handelskalender- und Renditetests)
+- `backtest_results.csv` (neu berechnete Einzelergebnisse)
+- `backtest_report.md` (Methodik, Abdeckung, Ergebnisse und Grenzen)
+- `README.md` (Backtest ausführen und Ergebnis einordnen)
+- `HANDOFF.md` (Arbeitsprotokoll und Übergabe)
+- `src/senator_copytrader/storage.py` (bei Gesamttest entdeckte Datumskorrektur)
+- `src/senator_copytrader/engine.py` (Ausführungsdatum an Storage übergeben)
+
+### Ziel dieses Abschnitts
+
+Die tagesweisen Meldedateien liefern das tatsächliche Eingangsdatum. Signale
+werden erst ab diesem Datum verwendet, am nächsten vorhandenen Handelstag mit
+festem Dollarbetrag eröffnet, nach 90 Kalendertagen geschlossen und nach
+0,20 % Kosten/Slippage mit einem zeitgleichen SPY-Investment verglichen.
+Nicht-Aktien, nicht eindeutige Ticker und Signale ohne ausreichende Kursdaten
+werden mit nachvollziehbarem Ausschlussgrund gezählt statt stillschweigend
+verworfen.
+
+### Umsetzung
+
+- Die tagesweisen Archivdateien werden direkt gelesen; `date_recieved` ist der
+  Signalzeitpunkt. Identische, mehrfach vorhandene PTR-Zeilen werden
+  deterministisch dedupliziert.
+- Einstieg: adjustierter Eröffnungskurs des nächsten SPY-Handelstags. Ausstieg:
+  adjustierter Schlusskurs des ersten SPY-Handelstags mindestens 90
+  Kalendertage später. Es werden 0,10 % Kosten je Seite berechnet.
+- Der Kursabruf verwendet die Yahoo-Finance-Chart-API mit Retry/Backoff,
+  parallelem Abruf und lokalem, datumsbereichsgebundenem Cache unter `work/`.
+- Der Kursanbieter muss `EQUITY` oder `ETF` melden. Fehlende Ticker, Nicht-Aktien,
+  Investmentfonds und unvollständige Kursfenster stehen mit Ausschlussgrund in
+  `backtest_results.csv`.
+- Der verwendete Rohdatenstand ist festgehalten:
+  `384e08e84d809477cdfba7d52479147fbe5e6bd7`.
+- Beim Gesamttest fiel ein bestehender Datumsfehler im Tagesbudget auf:
+  `processed_at` verwendete immer das echte UTC-Datum statt des expliziten
+  Ausführungsdatums. `engine.py` und `storage.py` speichern nun konsistent das
+  übergebene Datum; der zuvor am Folgetag fehlschlagende Bestandstest ist wieder
+  stabil.
+
+### Ergebnisse
+
+- 1.161 Käufe der Zielgruppe im Archiv, davon 780 grundsätzlich geeignete
+  Aktienkäufe und 686 vollständig bewertbar (87,9 % der geeigneten Signale).
+- Mittlere 90-Tage-Rendite: Strategie +5,506 %, zeitgleiches SPY +5,355 %;
+  Differenz nur +0,151 Prozentpunkte.
+- Median der Differenz −0,056 Prozentpunkte; exakt 343 von 686 Signalen (50,0 %)
+  schlagen SPY. Fazit deshalb weiterhin: keine robuste Copytrading-Alpha.
+- 74 geeignete Signale sind beim heutigen Kursanbieter per HTTP 400/404 nicht
+  mehr auflösbar. Das betrifft häufig delistete/übernommene/umbenannte Titel und
+  erzeugt mögliches Survivorship Bias; der Bericht kennzeichnet dies klar.
+- Das Archiv endet 2021. Tuberville, Mullin und McCormick fehlen; Boozman hat 43
+  Meldungen, aber keine maschinenlesbaren Transaktionen; Scotts Käufe sind keine
+  Aktien. Nur fünf Personen liefern bewertete Signale.
+- Die aus später bekannter Aktivität abgeleitete Zehnergruppe selbst hat
+  Look-ahead-Bias. Der Bericht behauptet deshalb ausdrücklich keinen
+  publikationsreifen Out-of-sample-Test.
+
+### Tests und Prüfungen
+
+```text
+PYTHONPATH=src python3 -m unittest discover -s tests -v
+Ran 31 tests in 0.030s – OK
+
+PYTHONPYCACHEPREFIX=/tmp/senator_copytrader_pycache \
+  PYTHONPATH=src python3 -m compileall -q src scripts tests
+OK
+
+git diff --check
+OK
+```
+
+Zusätzlich geprüft: Die Ergebnisdatei enthält genau 1.161 Datenzeilen (686
+`scored`, 475 `excluded`) und jede Zeile entspricht dem dokumentierten Schema.
+
+### Offene Punkte / nächste Aufgabe
+
+Claude: Bitte Architektur-, Datenqualitäts- und Methodik-Review dieses Backtests,
+insbesondere Tickerextraktion/Deduplizierung, adjustierter Einstiegskurs,
+SPY-Handelskalender, Kostenrechnung, HTTP-Ausschlüsse und die Aussagen im
+Bericht. Fehler bitte klein korrigieren; ansonsten den nächsten sinnvollen
+Implementierungsschritt an Codex übergeben. Inhaltlich wäre danach entweder eine
+Point-in-time-Kursquelle inklusive delisteter Titel oder – falls keine verfügbar
+ist – der noch offene Retry/Backoff-/Rate-Limit-Schutz für den laufenden
+Paper-Bot sinnvoller als weitere Strategieoptimierung auf diesem verzerrten
+Sample.

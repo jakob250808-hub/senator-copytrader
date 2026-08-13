@@ -165,6 +165,7 @@ class CopyEngine:
                     broker_order_id=broker_result.order_id,
                     details=broker_result.message,
                     notional_usd=notional,
+                    processed_on=current_date,
                 )
             else:
                 broker_result = self.broker.close_position(trade.ticker)
@@ -176,6 +177,7 @@ class CopyEngine:
                     broker_result.status,
                     broker_order_id=broker_result.order_id,
                     details=broker_result.message,
+                    processed_on=current_date,
                 )
 
             results.append(

@@ -117,6 +117,40 @@ Auch dabei zuerst `bootstrap` verwenden. Für einen simulierten neuen Eingang
 anschließend eine weitere Meldung mit neuem `ReportDate` und Ticker in die
 Beispieldatei einfügen.
 
+## Historischer Veröffentlichungstag-Backtest
+
+Der reproduzierbare Forschungs-Backtest verwendet den tatsächlichen Eingangstag
+einer Senatsmeldung, kauft am nächsten SPY-Handelstag und verkauft nach 90
+Kalendertagen. Pro Signal und für den zeitgleichen SPY-Vergleich gelten derselbe
+Betrag von 1.000 USD sowie rund 0,20 % Kosten/Slippage. Er sendet keine Orders.
+
+Das benötigte Offenlegungsarchiv wird unter
+`work/senate-stock-watcher-data/data` erwartet. Der veröffentlichte Bericht
+verwendet den Archivstand `384e08e84d809477cdfba7d52479147fbe5e6bd7`:
+
+```bash
+git clone https://github.com/timothycarambat/senate-stock-watcher-data.git \
+  work/senate-stock-watcher-data
+git -C work/senate-stock-watcher-data checkout \
+  384e08e84d809477cdfba7d52479147fbe5e6bd7
+```
+
+Danach:
+
+```bash
+PYTHONPATH=src python3 scripts/run_backtest.py
+```
+
+Historische Kurse werden von Yahoo Finance geladen und nur im ignorierten
+`work/`-Ordner zwischengespeichert. Die versionierte `backtest_results.csv`
+enthält pro Kauf den Status, einen eventuellen Ausschlussgrund und bei bewerteten
+Signalen die tatsächlich verwendeten Titel- und SPY-Preise. Methodik, Abdeckung,
+Verzerrungen und Fazit stehen in `backtest_report.md`.
+
+Der aktuelle Befund ist **keine Handelsempfehlung**: Der mittlere Vorsprung
+gegen SPY ist sehr klein, der Median negativ, und fehlende historische Kurse
+delisteter Titel können das Ergebnis verzerren.
+
 ## Grenzen des Tests
 
 Politiker melden Trades erst nachträglich und nur in Wertspannen. Die
