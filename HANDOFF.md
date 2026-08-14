@@ -991,3 +991,111 @@ Claude: Bitte die Auswahl 2k/6k/60k/16k und die neue Monats-, Konzentrations-
 und Reihenfolgenstatistik reviewen. Besonders prüfen: harte Portfolio-Grenze,
 risikogleicher SPY-Mix, Drawdown-Aggregation und die Begründung für 60k statt
 80k/99k. Keine Limits oder Exit-Schwellen ohne neue Nutzerfreigabe ändern.
+
+## 2026-08-14 – Codex: Start des Multi-Strategie-Research
+
+**Bearbeiter:** Codex (direkter Nutzerauftrag)
+**Status:** erster unabhängiger Strategiebaustein implementiert und geprüft;
+Research-Gate nicht bestanden
+
+### Ziel und bewusste Trennung
+
+Das neue Nutzerziel sind langfristig 50–70 % pro Jahr im Paper-Trading. Diese
+Zahl bleibt eine Forschungsambition, keine Renditezusage. Statt die bestehende
+Senatorenstrategie G sofort zu hebeln, wurde ein davon unabhängiger
+Momentum-/Qualitäts-Backtester aufgebaut. `config.example.json`, die laufende
+Paper-Engine, Cash-only-Schutz und alle Senatorenlimits blieben unverändert.
+
+### Bearbeitete Dateien
+
+- `src/senator_copytrader/factor_backtest.py` (neuer Faktor-Backtester)
+- `src/senator_copytrader/backtest.py` (Dollarvolumen in Kurscache,
+  rückwärtskompatibel zu alten zweispaltigen Cachepunkten)
+- `scripts/run_factor_backtest.py` (reproduzierbarer Haupt-, Kosten- und
+  Walk-forward-Lauf)
+- `tests/test_factor_backtest.py` (Look-ahead, Regime, Qualität,
+  Assetklasse, Mitgliedschaftsexit und Kosten)
+- `factor_backtest_rebalances.csv`, `factor_backtest_summary.json`,
+  `factor_backtest_report.md`
+- `README.md`, `HANDOFF.md`
+
+### Fest eingefrorene Regeln
+
+- Historische S&P-500-Mitgliedschaft am Signaltag, nicht heutige Mitglieder.
+- Monatliches Signal am vorherigen Schlusskurs, Ausführung am folgenden Open.
+- 12-zu-1-Momentum: 252 Handelstage Rückblick, jüngste 21 ausgelassen.
+- Mindestens 5 USD Kurs und 10 Mio. USD durchschnittlicher Tagesumsatz über
+  63 Handelstage.
+- Höchstens 20 gleich gewichtete Long-Positionen, maximal 10 % je Titel,
+  kein Hebel und kein Short.
+- Vollständiger Cashmodus, wenn SPY unter seinem 200-Tage-Durchschnitt liegt.
+- 0,10 % Kosten je Seite im Hauptlauf; zusätzlich 0,00/0,25/0,50 % Stress.
+- Fundamentale Qualität ist als echte Point-in-Time-Schnittstelle vorhanden:
+  ROA und Gross Profitability hoch, Debt/Assets niedrig, nur mit
+  `available_date <= signal_date`. Ohne solche Daten bleibt das Gewicht null;
+  heutige Kennzahlen werden nicht rückwirkend verwendet.
+
+### Datenbasis und Grenzen
+
+Der lokale, nicht versionierte Rohdatenordner enthält den MIT-lizenzierten
+Mitgliedschaftsdatensatz `fja05680/sp500` am Commit
+`c31ac3cc56f28cf9a02b4e694eff7ceab596a0ff`. Der Autor rekonstruiert die
+Mitgliedschaften aus öffentlichen Änderungen und weist selbst darauf hin, dass
+für belastbare delistete Kurse ein bezahlter Anbieter nötig ist. Der Datensatz
+ist nicht offiziell von S&P.
+
+Yahoo lieferte von 2015 bis 30.06.2026 für 627 von 768 damaligen Tickern
+Kursdaten (81,6 %); 141 fehlen vollständig. Umbenennungen, Ticker-Reuse,
+Delistings und finale Auszahlungen bleiben damit potenzielle Verzerrungen. Die
+Ergebnisse sind ein Strategie-/Kosten-/Risikotest, kein publikationsreifer
+Alpha-Nachweis. Der Kurscache liegt ignoriert unter
+`work/factor_prices.json` (rund 122 MB).
+
+### Ergebnisse
+
+- Hauptlauf 02.01.2015–30.06.2026: +104,12 % gesamt, aber nur **+6,41 %
+  CAGR**, SPY +337,62 % im selben Fenster.
+- Maximaler Drawdown **−33,07 %**, annualisierte Volatilität 21,52 %,
+  Sharpe bei Nullzins 0,40.
+- 138 monatliche Rebalances, 25 davon defensiv; durchschnittlich 89.744 USD
+  investiert. Umsatz 10,13 Mio. USD und modellierte Kosten 10.127 USD.
+- Kostenstress: 0,00 % je Seite +7,28 % CAGR; 0,25 % +5,11 %; 0,50 % nur
+  +2,98 %. Die Strategie ist deutlich umsatz- und kostensensitiv.
+- Feste rollierende Fünfjahres-/Einjahresprüfung ab 2020: fünf von sieben
+  Testfenstern positiv, aber nur drei schlagen SPY. 2022 und 2023 sind negativ;
+  2026 ist ein außergewöhnlich starkes, nur sechsmonatiges Teilfenster und wird
+  nicht als Jahresrendite hochgerechnet.
+
+Das vorab gesetzte Gate – mindestens ungefähr 25 % robuste ungehebelte CAGR
+bei höchstens 20 % Drawdown – wird klar verfehlt. Der Baustein wird deshalb
+weder gehebelt noch in die Paper-Konfiguration übernommen. Das ist ein
+wertvolles negatives Resultat: simples Large-Cap-Momentum ist nicht der gesuchte
+Weg zum 50–70-%-Ziel.
+
+### Tests und Reproduzierbarkeit
+
+```text
+PYTHONPATH=src python3 -m unittest discover -s tests -v
+63 Tests – OK
+
+PYTHONPYCACHEPREFIX=/tmp/senator_factor_pycache \
+  PYTHONPATH=src python3 -m compileall -q src scripts tests
+OK
+
+PYTHONPATH=src python3 scripts/run_factor_backtest.py
+Hauptlauf + vier Kostenstufen + sieben rollierende Testfenster – OK
+
+git diff --check
+OK
+```
+
+### Nächste Aufgabe
+
+Claude: Bitte Methodikreview des Faktor-Backtests, besonders Rebalance am
+Folge-Open, 12-zu-1-Indexierung, Mitgliedschafts-Enddaten, Identifier-Reuse,
+Delisting-Behandlung, Dollarvolumen und die rollierenden Reset-Fenster. Keine
+Paper-Limits ändern. Danach sollte der Mensch zwischen zwei Datenwegen wählen:
+(1) SimFin/vergleichbare Point-in-Time-Fundamentals plus ein Kursanbieter mit
+delisteten Titeln oder (2) vorerst nur fünf kostenlose Jahre als kleiner
+Qualitäts-Prototyp. Erst mit diesen Daten den 30-%-Qualitätsanteil aktivieren;
+anschließend Earnings-Reaction als separaten Baustein prüfen.

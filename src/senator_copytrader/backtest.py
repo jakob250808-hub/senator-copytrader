@@ -80,6 +80,7 @@ class Candidate:
 class PricePoint:
     adjusted_open: float
     adjusted_close: float
+    dollar_volume: float = 0.0
 
 
 @dataclass(frozen=True)
@@ -244,9 +245,12 @@ def download_price_series(symbol: str, start: date, end: date) -> PriceSeries:
         adjusted = (indicators.get("adjclose") or [{}])[0].get("adjclose") or []
         opens = quotes.get("open") or []
         closes = quotes.get("close") or []
+        volumes = quotes.get("volume") or []
+        if len(volumes) < len(timestamps):
+            volumes = list(volumes) + [0.0] * (len(timestamps) - len(volumes))
         prices: Dict[date, PricePoint] = {}
-        for timestamp, open_price, close_price, adjusted_close in zip(
-            timestamps, opens, closes, adjusted
+        for timestamp, open_price, close_price, adjusted_close, volume in zip(
+            timestamps, opens, closes, adjusted, volumes
         ):
             if None in (open_price, close_price, adjusted_close) or float(close_price) <= 0:
                 continue
@@ -255,6 +259,7 @@ def download_price_series(symbol: str, start: date, end: date) -> PriceSeries:
             prices[trading_day] = PricePoint(
                 adjusted_open=float(open_price) * factor,
                 adjusted_close=float(adjusted_close),
+                dollar_volume=float(close_price) * float(volume or 0.0),
             )
         return PriceSeries(
             symbol=symbol,
@@ -273,7 +278,11 @@ def _series_to_json(series: PriceSeries) -> Mapping[str, object]:
         "instrument_type": series.instrument_type,
         "error": series.error,
         "prices": {
-            day.isoformat(): [point.adjusted_open, point.adjusted_close]
+            day.isoformat(): [
+                point.adjusted_open,
+                point.adjusted_close,
+                point.dollar_volume,
+            ]
             for day, point in sorted(series.prices.items())
         },
     }
@@ -285,7 +294,11 @@ def _series_from_json(raw: Mapping[str, object]) -> PriceSeries:
         instrument_type=str(raw.get("instrument_type") or ""),
         error=str(raw.get("error") or ""),
         prices={
-            date.fromisoformat(day): PricePoint(float(values[0]), float(values[1]))
+            date.fromisoformat(day): PricePoint(
+                float(values[0]),
+                float(values[1]),
+                float(values[2]) if len(values) > 2 else 0.0,
+            )
             for day, values in (raw.get("prices") or {}).items()
         },
     )

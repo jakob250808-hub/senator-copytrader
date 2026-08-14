@@ -269,3 +269,38 @@ wirkliche Positionsgröße. Quiver-Daten sollten stichprobenartig mit Capitol
 Trades und bei wichtigen Fällen mit der offiziellen Senate-eFD-Meldung
 verglichen werden. Das Projekt ist ein technischer Paper-Test und keine
 Anlageempfehlung.
+
+## Multi-Strategie-Research: Momentum und Qualität
+
+Der erste unabhängige Strategiebaustein ist ein monatlicher, ungehebelter
+S&P-500-Momentumtest. Er verwendet die Mitgliedschaft am damaligen Signaltag,
+12-zu-1-Momentum, einen Liquiditätsfilter, höchstens 20 gleich gewichtete Titel
+und einen SPY-200-Tage-Filter. Der Kauf erfolgt erst am folgenden Tages-Open.
+Die Senatoren-Paper-Config wird dadurch nicht verändert.
+
+Für den kostenlosen Prototyp wird der MIT-lizenzierte historische
+Mitgliedschaftsdatensatz separat im ignorierten `work/`-Ordner erwartet:
+
+```bash
+git clone --depth 1 https://github.com/fja05680/sp500.git work/sp500-history
+git -C work/sp500-history checkout c31ac3cc56f28cf9a02b4e694eff7ceab596a0ff
+PYTHONPATH=src python3 scripts/run_factor_backtest.py
+```
+
+Der Lauf schreibt `factor_backtest_report.md`,
+`factor_backtest_summary.json` und `factor_backtest_rebalances.csv`. Historische
+Kurse bleiben im ignorierten `work/factor_prices.json`. Kosten werden mit 0,
+0,10, 0,25 und 0,50 % je Seite gestresst.
+
+Der fundamentale Qualitätsanteil wird nur aktiviert, wenn `--quality-csv`
+übergeben wird. Die Datei muss folgende Point-in-Time-Spalten enthalten:
+`ticker,available_date,return_on_assets,gross_profitability,debt_to_assets`.
+`available_date` ist der Tag, an dem die Werte tatsächlich öffentlich verfügbar
+waren, nicht das Quartalsende. Zukünftig veröffentlichte oder zu alte Werte
+werden nicht benutzt.
+
+Kostenlose Yahoo-Kurse sind für delistete und umbenannte Aktien unvollständig.
+Der Prototyp ist deshalb ein Test der Strategie-, Kosten- und Risikomechanik,
+noch kein belastbarer Alpha-Nachweis. Vor einer Portfolio-Kombination oder
+Hebelprüfung werden vollständige Delisting-Kurse und Point-in-Time-Fundamentals
+benötigt.

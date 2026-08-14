@@ -1,0 +1,1094 @@
+{
+  "cost_sensitivity": {
+    "0.0000": {
+      "cagr_pct": 7.283059167563999,
+      "max_drawdown_pct": -32.86596715929729,
+      "return_pct": 124.2983593511692,
+      "transaction_costs_usd": 0.0
+    },
+    "0.0010": {
+      "cagr_pct": 6.406438857700336,
+      "max_drawdown_pct": -33.065372473660595,
+      "return_pct": 104.11821436979847,
+      "transaction_costs_usd": 10126.798207864835
+    },
+    "0.0025": {
+      "cagr_pct": 5.106553885870002,
+      "max_drawdown_pct": -35.485497623184735,
+      "return_pct": 77.23227113712102,
+      "transaction_costs_usd": 23529.889998686962
+    },
+    "0.0050": {
+      "cagr_pct": 2.9794041674443994,
+      "max_drawdown_pct": -41.93941934992688,
+      "return_pct": 40.12366643351055,
+      "transaction_costs_usd": 41825.99144173889
+    }
+  },
+  "main": {
+    "annual_returns": [
+      {
+        "end_date": "2015-12-31",
+        "ending_value_usd": 100504.78512320099,
+        "return_pct": 0.5047851232009792,
+        "year": "2015"
+      },
+      {
+        "end_date": "2016-12-30",
+        "ending_value_usd": 97122.4643896813,
+        "return_pct": -3.3653330330228104,
+        "year": "2016"
+      },
+      {
+        "end_date": "2017-12-29",
+        "ending_value_usd": 110189.46379821972,
+        "return_pct": 13.454147287809871,
+        "year": "2017"
+      },
+      {
+        "end_date": "2018-12-31",
+        "ending_value_usd": 92980.37862727654,
+        "return_pct": -15.617722945323209,
+        "year": "2018"
+      },
+      {
+        "end_date": "2019-12-31",
+        "ending_value_usd": 97229.98788354467,
+        "return_pct": 4.570436600718963,
+        "year": "2019"
+      },
+      {
+        "end_date": "2020-12-31",
+        "ending_value_usd": 112566.7944091263,
+        "return_pct": 15.77374106428049,
+        "year": "2020"
+      },
+      {
+        "end_date": "2021-12-31",
+        "ending_value_usd": 118378.04645966725,
+        "return_pct": 5.162492261634299,
+        "year": "2021"
+      },
+      {
+        "end_date": "2022-12-30",
+        "ending_value_usd": 98352.40568261353,
+        "return_pct": -16.916684618441213,
+        "year": "2022"
+      },
+      {
+        "end_date": "2023-12-29",
+        "ending_value_usd": 94565.99282430264,
+        "return_pct": -3.849842646991042,
+        "year": "2023"
+      },
+      {
+        "end_date": "2024-12-31",
+        "ending_value_usd": 123438.59900539351,
+        "return_pct": 30.531701004540036,
+        "year": "2024"
+      },
+      {
+        "end_date": "2025-12-31",
+        "ending_value_usd": 136230.30248501568,
+        "return_pct": 10.36280675792769,
+        "year": "2025"
+      },
+      {
+        "end_date": "2026-06-30",
+        "ending_value_usd": 204118.2143697985,
+        "return_pct": 49.83319470515744,
+        "year": "2026"
+      }
+    ],
+    "annualized_volatility_pct": 21.51806324606763,
+    "average_invested_usd": 89743.99366875518,
+    "cagr_pct": 6.406438857700336,
+    "calmar_zero_rate": 0.19375069380523732,
+    "data_coverage": {
+      "available_price_share": 0.81640625,
+      "available_price_ticker_count": 627,
+      "membership_ticker_count": 768,
+      "missing_price_ticker_count": 141,
+      "quality_ticker_count": 0
+    },
+    "ending_positions": {
+      "ALB": 49.06236070107393,
+      "AMAT": 19.425077790420264,
+      "AMD": 17.230428240044986,
+      "APA": 232.24441426931256,
+      "CAT": 10.054688742687187,
+      "CIEN": 15.431416743166352,
+      "COHR": 24.605723492055805,
+      "FIX": 4.891414945965102,
+      "GLW": 49.029615849120084,
+      "INTC": 78.9109405360275,
+      "KLAC": 45.39238495471705,
+      "LITE": 10.459597402527809,
+      "LRCX": 27.940982272922554,
+      "MU": 8.553412956262106,
+      "SNDK": 4.98814321413994,
+      "STX": 9.760633205768068,
+      "TER": 23.558116171489733,
+      "VRT": 27.15325147008093,
+      "WBD": 320.3420106399327,
+      "WDC": 16.114694118732157
+    },
+    "ending_value_usd": 204118.2143697985,
+    "excess_return_pct_points": -233.50243479546015,
+    "forced_membership_exit_count": 0,
+    "market_end": "2026-06-30",
+    "market_start": "2015-01-02",
+    "max_drawdown_pct": -33.065372473660595,
+    "monthly_returns": [
+      {
+        "end_date": "2015-01-30",
+        "ending_value_usd": 99440.0364812245,
+        "month": "2015-01",
+        "return_pct": -0.5599635187755081
+      },
+      {
+        "end_date": "2015-02-27",
+        "ending_value_usd": 104904.00339362473,
+        "month": "2015-02",
+        "return_pct": 5.494735426240416
+      },
+      {
+        "end_date": "2015-03-31",
+        "ending_value_usd": 104956.1791720721,
+        "month": "2015-03",
+        "return_pct": 0.04973668950609689
+      },
+      {
+        "end_date": "2015-04-30",
+        "ending_value_usd": 100412.85051623658,
+        "month": "2015-04",
+        "return_pct": -4.328786253153217
+      },
+      {
+        "end_date": "2015-05-29",
+        "ending_value_usd": 106637.21720819027,
+        "month": "2015-05",
+        "return_pct": 6.1987750172944445
+      },
+      {
+        "end_date": "2015-06-30",
+        "ending_value_usd": 106648.93315956289,
+        "month": "2015-06",
+        "return_pct": 0.01098673772568226
+      },
+      {
+        "end_date": "2015-07-31",
+        "ending_value_usd": 109252.98232283264,
+        "month": "2015-07",
+        "return_pct": 2.4417020275052437
+      },
+      {
+        "end_date": "2015-08-31",
+        "ending_value_usd": 103197.35724637455,
+        "month": "2015-08",
+        "return_pct": -5.542754941521199
+      },
+      {
+        "end_date": "2015-09-30",
+        "ending_value_usd": 100822.42434305484,
+        "month": "2015-09",
+        "return_pct": -2.3013505061469486
+      },
+      {
+        "end_date": "2015-10-30",
+        "ending_value_usd": 100822.42434305484,
+        "month": "2015-10",
+        "return_pct": 0.0
+      },
+      {
+        "end_date": "2015-11-30",
+        "ending_value_usd": 102107.15418600755,
+        "month": "2015-11",
+        "return_pct": 1.2742500999394224
+      },
+      {
+        "end_date": "2015-12-31",
+        "ending_value_usd": 100504.78512320099,
+        "month": "2015-12",
+        "return_pct": -1.5693014613721856
+      },
+      {
+        "end_date": "2016-01-29",
+        "ending_value_usd": 98623.42932435204,
+        "month": "2016-01",
+        "return_pct": -1.8719066923457817
+      },
+      {
+        "end_date": "2016-02-29",
+        "ending_value_usd": 98623.42932435204,
+        "month": "2016-02",
+        "return_pct": 0.0
+      },
+      {
+        "end_date": "2016-03-31",
+        "ending_value_usd": 98623.42932435204,
+        "month": "2016-03",
+        "return_pct": 0.0
+      },
+      {
+        "end_date": "2016-04-29",
+        "ending_value_usd": 94408.1119480384,
+        "month": "2016-04",
+        "return_pct": -4.2741541286810625
+      },
+      {
+        "end_date": "2016-05-31",
+        "ending_value_usd": 96888.03387908693,
+        "month": "2016-05",
+        "return_pct": 2.6268102177633423
+      },
+      {
+        "end_date": "2016-06-30",
+        "ending_value_usd": 100170.09631222399,
+        "month": "2016-06",
+        "return_pct": 3.387479652268488
+      },
+      {
+        "end_date": "2016-07-29",
+        "ending_value_usd": 104460.23104655775,
+        "month": "2016-07",
+        "return_pct": 4.282849764825691
+      },
+      {
+        "end_date": "2016-08-31",
+        "ending_value_usd": 100333.65888946358,
+        "month": "2016-08",
+        "return_pct": -3.950376249172727
+      },
+      {
+        "end_date": "2016-09-30",
+        "ending_value_usd": 101615.20193745499,
+        "month": "2016-09",
+        "return_pct": 1.2772812854390914
+      },
+      {
+        "end_date": "2016-10-31",
+        "ending_value_usd": 96804.73607913854,
+        "month": "2016-10",
+        "return_pct": -4.7340021636500085
+      },
+      {
+        "end_date": "2016-11-30",
+        "ending_value_usd": 98436.97112982352,
+        "month": "2016-11",
+        "return_pct": 1.6861107387872165
+      },
+      {
+        "end_date": "2016-12-30",
+        "ending_value_usd": 97122.4643896813,
+        "month": "2016-12",
+        "return_pct": -1.3353791010174199
+      },
+      {
+        "end_date": "2017-01-31",
+        "ending_value_usd": 100514.6615754229,
+        "month": "2017-01",
+        "return_pct": 3.4927008978388185
+      },
+      {
+        "end_date": "2017-02-28",
+        "ending_value_usd": 99580.73544019458,
+        "month": "2017-02",
+        "return_pct": -0.9291441871169592
+      },
+      {
+        "end_date": "2017-03-31",
+        "ending_value_usd": 98721.86909603878,
+        "month": "2017-03",
+        "return_pct": -0.8624824273080534
+      },
+      {
+        "end_date": "2017-04-28",
+        "ending_value_usd": 98141.16826324642,
+        "month": "2017-04",
+        "return_pct": -0.5882190421530931
+      },
+      {
+        "end_date": "2017-05-31",
+        "ending_value_usd": 99467.5953228728,
+        "month": "2017-05",
+        "return_pct": 1.3515501018578346
+      },
+      {
+        "end_date": "2017-06-30",
+        "ending_value_usd": 98079.55589601751,
+        "month": "2017-06",
+        "return_pct": -1.395468968913649
+      },
+      {
+        "end_date": "2017-07-31",
+        "ending_value_usd": 100435.45881598801,
+        "month": "2017-07",
+        "return_pct": 2.4020326136755754
+      },
+      {
+        "end_date": "2017-08-31",
+        "ending_value_usd": 99590.92874046671,
+        "month": "2017-08",
+        "return_pct": -0.8408684397694599
+      },
+      {
+        "end_date": "2017-09-29",
+        "ending_value_usd": 102955.13993453886,
+        "month": "2017-09",
+        "return_pct": 3.3780297428887884
+      },
+      {
+        "end_date": "2017-10-31",
+        "ending_value_usd": 108623.9708991083,
+        "month": "2017-10",
+        "return_pct": 5.506117487843554
+      },
+      {
+        "end_date": "2017-11-30",
+        "ending_value_usd": 112527.2361626096,
+        "month": "2017-11",
+        "return_pct": 3.5933737564489476
+      },
+      {
+        "end_date": "2017-12-29",
+        "ending_value_usd": 110189.46379821972,
+        "month": "2017-12",
+        "return_pct": -2.0775169142265626
+      },
+      {
+        "end_date": "2018-01-31",
+        "ending_value_usd": 117565.44316585545,
+        "month": "2018-01",
+        "return_pct": 6.693906216970724
+      },
+      {
+        "end_date": "2018-02-28",
+        "ending_value_usd": 114078.19434806415,
+        "month": "2018-02",
+        "return_pct": -2.966219259575853
+      },
+      {
+        "end_date": "2018-03-29",
+        "ending_value_usd": 111986.1209539528,
+        "month": "2018-03",
+        "return_pct": -1.8338942039424433
+      },
+      {
+        "end_date": "2018-04-30",
+        "ending_value_usd": 112175.26819024241,
+        "month": "2018-04",
+        "return_pct": 0.16890239136631013
+      },
+      {
+        "end_date": "2018-05-31",
+        "ending_value_usd": 121190.1918454275,
+        "month": "2018-05",
+        "return_pct": 8.036462761021745
+      },
+      {
+        "end_date": "2018-06-29",
+        "ending_value_usd": 118313.96676372002,
+        "month": "2018-06",
+        "return_pct": -2.373315066103676
+      },
+      {
+        "end_date": "2018-07-31",
+        "ending_value_usd": 119427.31310891673,
+        "month": "2018-07",
+        "return_pct": 0.9410100731557236
+      },
+      {
+        "end_date": "2018-08-31",
+        "ending_value_usd": 128225.3645847305,
+        "month": "2018-08",
+        "return_pct": 7.366867131800925
+      },
+      {
+        "end_date": "2018-09-28",
+        "ending_value_usd": 124656.16915516899,
+        "month": "2018-09",
+        "return_pct": -2.7835330717293605
+      },
+      {
+        "end_date": "2018-10-31",
+        "ending_value_usd": 105240.4886883745,
+        "month": "2018-10",
+        "return_pct": -15.575386760543164
+      },
+      {
+        "end_date": "2018-11-30",
+        "ending_value_usd": 105214.06699730163,
+        "month": "2018-11",
+        "return_pct": -0.02510601328649109
+      },
+      {
+        "end_date": "2018-12-31",
+        "ending_value_usd": 92980.37862727654,
+        "month": "2018-12",
+        "return_pct": -11.62742655916803
+      },
+      {
+        "end_date": "2019-01-31",
+        "ending_value_usd": 91257.23076157061,
+        "month": "2019-01",
+        "return_pct": -1.853238168252025
+      },
+      {
+        "end_date": "2019-02-28",
+        "ending_value_usd": 91257.23076157061,
+        "month": "2019-02",
+        "return_pct": 0.0
+      },
+      {
+        "end_date": "2019-03-29",
+        "ending_value_usd": 93960.76242556315,
+        "month": "2019-03",
+        "return_pct": 2.9625396710273977
+      },
+      {
+        "end_date": "2019-04-30",
+        "ending_value_usd": 94329.98319113703,
+        "month": "2019-04",
+        "return_pct": 0.39295207493275086
+      },
+      {
+        "end_date": "2019-05-31",
+        "ending_value_usd": 91057.07637404226,
+        "month": "2019-05",
+        "return_pct": -3.469635747165367
+      },
+      {
+        "end_date": "2019-06-28",
+        "ending_value_usd": 91233.83744661137,
+        "month": "2019-06",
+        "return_pct": 0.19412118157959846
+      },
+      {
+        "end_date": "2019-07-31",
+        "ending_value_usd": 93066.80030545234,
+        "month": "2019-07",
+        "return_pct": 2.009082277081231
+      },
+      {
+        "end_date": "2019-08-30",
+        "ending_value_usd": 93912.3314826481,
+        "month": "2019-08",
+        "return_pct": 0.9085207339466495
+      },
+      {
+        "end_date": "2019-09-30",
+        "ending_value_usd": 91639.49312651677,
+        "month": "2019-09",
+        "return_pct": -2.4201703016512477
+      },
+      {
+        "end_date": "2019-10-31",
+        "ending_value_usd": 91627.39376587931,
+        "month": "2019-10",
+        "return_pct": -0.01320321645684741
+      },
+      {
+        "end_date": "2019-11-29",
+        "ending_value_usd": 95253.99958314942,
+        "month": "2019-11",
+        "return_pct": 3.9579929846488726
+      },
+      {
+        "end_date": "2019-12-31",
+        "ending_value_usd": 97229.98788354467,
+        "month": "2019-12",
+        "return_pct": 2.074441292798812
+      },
+      {
+        "end_date": "2020-01-31",
+        "ending_value_usd": 95792.63188653413,
+        "month": "2020-01",
+        "return_pct": -1.4783052310282208
+      },
+      {
+        "end_date": "2020-02-28",
+        "ending_value_usd": 88883.97659046963,
+        "month": "2020-02",
+        "return_pct": -7.21209466741427
+      },
+      {
+        "end_date": "2020-03-31",
+        "ending_value_usd": 89794.78142889563,
+        "month": "2020-03",
+        "return_pct": 1.0247120722585379
+      },
+      {
+        "end_date": "2020-04-30",
+        "ending_value_usd": 89794.78142889563,
+        "month": "2020-04",
+        "return_pct": 0.0
+      },
+      {
+        "end_date": "2020-05-29",
+        "ending_value_usd": 89794.78142889563,
+        "month": "2020-05",
+        "return_pct": 0.0
+      },
+      {
+        "end_date": "2020-06-30",
+        "ending_value_usd": 93465.80848415784,
+        "month": "2020-06",
+        "return_pct": 4.088240983323876
+      },
+      {
+        "end_date": "2020-07-31",
+        "ending_value_usd": 102941.91910299304,
+        "month": "2020-07",
+        "return_pct": 10.138585192296667
+      },
+      {
+        "end_date": "2020-08-31",
+        "ending_value_usd": 107830.60924221657,
+        "month": "2020-08",
+        "return_pct": 4.748979018287391
+      },
+      {
+        "end_date": "2020-09-30",
+        "ending_value_usd": 103051.83597102061,
+        "month": "2020-09",
+        "return_pct": -4.4317409544274655
+      },
+      {
+        "end_date": "2020-10-30",
+        "ending_value_usd": 99236.18043356176,
+        "month": "2020-10",
+        "return_pct": -3.702656533486559
+      },
+      {
+        "end_date": "2020-11-30",
+        "ending_value_usd": 106650.34069297781,
+        "month": "2020-11",
+        "return_pct": 7.471226952734034
+      },
+      {
+        "end_date": "2020-12-31",
+        "ending_value_usd": 112566.7944091263,
+        "month": "2020-12",
+        "return_pct": 5.5475244408085045
+      },
+      {
+        "end_date": "2021-01-29",
+        "ending_value_usd": 112149.72137025082,
+        "month": "2021-01",
+        "return_pct": -0.3705116069661063
+      },
+      {
+        "end_date": "2021-02-26",
+        "ending_value_usd": 115456.03574496237,
+        "month": "2021-02",
+        "return_pct": 2.948125358061393
+      },
+      {
+        "end_date": "2021-03-31",
+        "ending_value_usd": 111488.85671893583,
+        "month": "2021-03",
+        "return_pct": -3.43609496067393
+      },
+      {
+        "end_date": "2021-04-30",
+        "ending_value_usd": 116096.45478540403,
+        "month": "2021-04",
+        "return_pct": 4.132787977263042
+      },
+      {
+        "end_date": "2021-05-28",
+        "ending_value_usd": 116911.27916691857,
+        "month": "2021-05",
+        "return_pct": 0.7018512176109715
+      },
+      {
+        "end_date": "2021-06-30",
+        "ending_value_usd": 118495.62265867663,
+        "month": "2021-06",
+        "return_pct": 1.3551673568604317
+      },
+      {
+        "end_date": "2021-07-30",
+        "ending_value_usd": 114798.93942561545,
+        "month": "2021-07",
+        "return_pct": -3.1196791494225717
+      },
+      {
+        "end_date": "2021-08-31",
+        "ending_value_usd": 118003.93567586379,
+        "month": "2021-08",
+        "return_pct": 2.791834372585855
+      },
+      {
+        "end_date": "2021-09-30",
+        "ending_value_usd": 111678.193301306,
+        "month": "2021-09",
+        "return_pct": -5.360619828760194
+      },
+      {
+        "end_date": "2021-10-29",
+        "ending_value_usd": 121651.31227860315,
+        "month": "2021-10",
+        "return_pct": 8.930229512569055
+      },
+      {
+        "end_date": "2021-11-30",
+        "ending_value_usd": 118698.5666410671,
+        "month": "2021-11",
+        "return_pct": -2.427220538956243
+      },
+      {
+        "end_date": "2021-12-31",
+        "ending_value_usd": 118378.04645966725,
+        "month": "2021-12",
+        "return_pct": -0.27002868734637975
+      },
+      {
+        "end_date": "2022-01-31",
+        "ending_value_usd": 113339.31096822646,
+        "month": "2022-01",
+        "return_pct": -4.256477989064933
+      },
+      {
+        "end_date": "2022-02-28",
+        "ending_value_usd": 112906.49778758494,
+        "month": "2022-02",
+        "return_pct": -0.38187384142722713
+      },
+      {
+        "end_date": "2022-03-31",
+        "ending_value_usd": 113382.45218431581,
+        "month": "2022-03",
+        "return_pct": 0.421547391919197
+      },
+      {
+        "end_date": "2022-04-29",
+        "ending_value_usd": 104984.44105474837,
+        "month": "2022-04",
+        "return_pct": -7.406799701170286
+      },
+      {
+        "end_date": "2022-05-31",
+        "ending_value_usd": 104236.08328316905,
+        "month": "2022-05",
+        "return_pct": -0.7128273142770314
+      },
+      {
+        "end_date": "2022-06-30",
+        "ending_value_usd": 104236.08328316905,
+        "month": "2022-06",
+        "return_pct": 0.0
+      },
+      {
+        "end_date": "2022-07-29",
+        "ending_value_usd": 104236.08328316905,
+        "month": "2022-07",
+        "return_pct": 0.0
+      },
+      {
+        "end_date": "2022-08-31",
+        "ending_value_usd": 104236.08328316905,
+        "month": "2022-08",
+        "return_pct": 0.0
+      },
+      {
+        "end_date": "2022-09-30",
+        "ending_value_usd": 104236.08328316905,
+        "month": "2022-09",
+        "return_pct": 0.0
+      },
+      {
+        "end_date": "2022-10-31",
+        "ending_value_usd": 104236.08328316905,
+        "month": "2022-10",
+        "return_pct": 0.0
+      },
+      {
+        "end_date": "2022-11-30",
+        "ending_value_usd": 104236.08328316905,
+        "month": "2022-11",
+        "return_pct": 0.0
+      },
+      {
+        "end_date": "2022-12-30",
+        "ending_value_usd": 98352.40568261353,
+        "month": "2022-12",
+        "return_pct": -5.644568958497642
+      },
+      {
+        "end_date": "2023-01-31",
+        "ending_value_usd": 97370.5109477161,
+        "month": "2023-01",
+        "return_pct": -0.9983433837562061
+      },
+      {
+        "end_date": "2023-02-28",
+        "ending_value_usd": 94461.96076099787,
+        "month": "2023-02",
+        "return_pct": -2.9870955368407226
+      },
+      {
+        "end_date": "2023-03-31",
+        "ending_value_usd": 96137.19646310576,
+        "month": "2023-03",
+        "return_pct": 1.77345006245051
+      },
+      {
+        "end_date": "2023-04-28",
+        "ending_value_usd": 96782.36699191383,
+        "month": "2023-04",
+        "return_pct": 0.6710935543618346
+      },
+      {
+        "end_date": "2023-05-31",
+        "ending_value_usd": 96572.83245400146,
+        "month": "2023-05",
+        "return_pct": -0.21650073709179596
+      },
+      {
+        "end_date": "2023-06-30",
+        "ending_value_usd": 102175.26596469013,
+        "month": "2023-06",
+        "return_pct": 5.8012521413381535
+      },
+      {
+        "end_date": "2023-07-31",
+        "ending_value_usd": 104926.30893696517,
+        "month": "2023-07",
+        "return_pct": 2.6924744910629794
+      },
+      {
+        "end_date": "2023-08-31",
+        "ending_value_usd": 102544.2261900884,
+        "month": "2023-08",
+        "return_pct": -2.2702435366403817
+      },
+      {
+        "end_date": "2023-09-29",
+        "ending_value_usd": 94070.99339867699,
+        "month": "2023-09",
+        "return_pct": -8.263003297430327
+      },
+      {
+        "end_date": "2023-10-31",
+        "ending_value_usd": 90263.30604453753,
+        "month": "2023-10",
+        "return_pct": -4.047674226211595
+      },
+      {
+        "end_date": "2023-11-30",
+        "ending_value_usd": 90414.93993386142,
+        "month": "2023-11",
+        "return_pct": 0.16799062206858117
+      },
+      {
+        "end_date": "2023-12-29",
+        "ending_value_usd": 94565.99282430264,
+        "month": "2023-12",
+        "return_pct": 4.59111391710012
+      },
+      {
+        "end_date": "2024-01-31",
+        "ending_value_usd": 98152.65827139029,
+        "month": "2024-01",
+        "return_pct": 3.792764544598448
+      },
+      {
+        "end_date": "2024-02-29",
+        "ending_value_usd": 106094.02527378387,
+        "month": "2024-02",
+        "return_pct": 8.090832324108677
+      },
+      {
+        "end_date": "2024-03-28",
+        "ending_value_usd": 108730.9621702897,
+        "month": "2024-03",
+        "return_pct": 2.4854716273616795
+      },
+      {
+        "end_date": "2024-04-30",
+        "ending_value_usd": 101246.65265651273,
+        "month": "2024-04",
+        "return_pct": -6.883328689812728
+      },
+      {
+        "end_date": "2024-05-31",
+        "ending_value_usd": 109780.70768990641,
+        "month": "2024-05",
+        "return_pct": 8.428974992730032
+      },
+      {
+        "end_date": "2024-06-28",
+        "ending_value_usd": 109219.58566202514,
+        "month": "2024-06",
+        "return_pct": -0.5111299058722096
+      },
+      {
+        "end_date": "2024-07-31",
+        "ending_value_usd": 105065.54023841867,
+        "month": "2024-07",
+        "return_pct": -3.8033887406064393
+      },
+      {
+        "end_date": "2024-08-30",
+        "ending_value_usd": 108172.67423089338,
+        "month": "2024-08",
+        "return_pct": 2.9573292874370383
+      },
+      {
+        "end_date": "2024-09-30",
+        "ending_value_usd": 115223.98960565326,
+        "month": "2024-09",
+        "return_pct": 6.518573590691612
+      },
+      {
+        "end_date": "2024-10-31",
+        "ending_value_usd": 115203.01713315942,
+        "month": "2024-10",
+        "return_pct": -0.018201480929114222
+      },
+      {
+        "end_date": "2024-11-29",
+        "ending_value_usd": 130315.20036388283,
+        "month": "2024-11",
+        "return_pct": 13.117871047817896
+      },
+      {
+        "end_date": "2024-12-31",
+        "ending_value_usd": 123438.59900539351,
+        "month": "2024-12",
+        "return_pct": -5.276898887687387
+      },
+      {
+        "end_date": "2025-01-31",
+        "ending_value_usd": 136330.95159529228,
+        "month": "2025-01",
+        "return_pct": 10.444344551687145
+      },
+      {
+        "end_date": "2025-02-28",
+        "ending_value_usd": 129521.66482375358,
+        "month": "2025-02",
+        "return_pct": -4.994674130752442
+      },
+      {
+        "end_date": "2025-03-31",
+        "ending_value_usd": 117924.52650932569,
+        "month": "2025-03",
+        "return_pct": -8.953821223815094
+      },
+      {
+        "end_date": "2025-04-30",
+        "ending_value_usd": 117385.73537367549,
+        "month": "2025-04",
+        "return_pct": -0.456894889976589
+      },
+      {
+        "end_date": "2025-05-30",
+        "ending_value_usd": 117385.73537367549,
+        "month": "2025-05",
+        "return_pct": 0.0
+      },
+      {
+        "end_date": "2025-06-30",
+        "ending_value_usd": 123177.91460880119,
+        "month": "2025-06",
+        "return_pct": 4.934312688579556
+      },
+      {
+        "end_date": "2025-07-31",
+        "ending_value_usd": 126745.51972492896,
+        "month": "2025-07",
+        "return_pct": 2.896302577826604
+      },
+      {
+        "end_date": "2025-08-29",
+        "ending_value_usd": 124005.43684385542,
+        "month": "2025-08",
+        "return_pct": -2.1618775062189455
+      },
+      {
+        "end_date": "2025-09-30",
+        "ending_value_usd": 131655.67261344398,
+        "month": "2025-09",
+        "return_pct": 6.169274480458098
+      },
+      {
+        "end_date": "2025-10-31",
+        "ending_value_usd": 131957.79676220493,
+        "month": "2025-10",
+        "return_pct": 0.22948054023317344
+      },
+      {
+        "end_date": "2025-11-28",
+        "ending_value_usd": 130568.40473569992,
+        "month": "2025-11",
+        "return_pct": -1.0529063538464278
+      },
+      {
+        "end_date": "2025-12-31",
+        "ending_value_usd": 136230.30248501568,
+        "month": "2025-12",
+        "return_pct": 4.336345964229804
+      },
+      {
+        "end_date": "2026-01-30",
+        "ending_value_usd": 151337.35289712608,
+        "month": "2026-01",
+        "return_pct": 11.08934659656362
+      },
+      {
+        "end_date": "2026-02-27",
+        "ending_value_usd": 158930.86288819154,
+        "month": "2026-02",
+        "return_pct": 5.017604606991677
+      },
+      {
+        "end_date": "2026-03-31",
+        "ending_value_usd": 150568.0602538252,
+        "month": "2026-03",
+        "return_pct": -5.261912307271366
+      },
+      {
+        "end_date": "2026-04-30",
+        "ending_value_usd": 153108.9883222726,
+        "month": "2026-04",
+        "return_pct": 1.6875611362489051
+      },
+      {
+        "end_date": "2026-05-29",
+        "ending_value_usd": 173847.4322642752,
+        "month": "2026-05",
+        "return_pct": 13.5448899305318
+      },
+      {
+        "end_date": "2026-06-30",
+        "ending_value_usd": 204118.2143697985,
+        "month": "2026-06",
+        "return_pct": 17.412268741195412
+      }
+    ],
+    "parameters": {
+      "cost_per_side": 0.001,
+      "holdings": 20,
+      "liquidity_lookback_days": 63,
+      "max_position_weight": 0.1,
+      "max_quality_age_days": 550,
+      "minimum_average_dollar_volume_usd": 10000000.0,
+      "minimum_price_usd": 5.0,
+      "momentum_long_days": 252,
+      "momentum_skip_days": 21,
+      "quality_weight": 0.0,
+      "target_exposure": 1.0,
+      "trend_sma_days": 200
+    },
+    "peak_invested_usd": 204118.2143697985,
+    "rebalance_count": 138,
+    "regime_off_rebalance_count": 25,
+    "requested_end": "2026-06-30",
+    "requested_start": "2015-01-02",
+    "return_pct": 104.11821436979847,
+    "sharpe_zero_rate": 0.40014703974925514,
+    "sortino_zero_rate": 0.6123003328736243,
+    "spy_return_pct": 337.6206491652586,
+    "stale_position_day_count": 0,
+    "starting_cash_usd": 100000.0,
+    "transaction_costs_usd": 10126.798207864835,
+    "turnover_usd": 10126798.207864836
+  },
+  "membership_data_commit": "c31ac3cc56f28cf9a02b4e694eff7ceab596a0ff",
+  "quality_data": null,
+  "walk_forward": {
+    "compounded_test_return_pct": 102.87901313884448,
+    "positive_test_count": 5,
+    "tests_beating_spy_count": 3,
+    "training_years": 5,
+    "windows": [
+      {
+        "test_end": "2020-12-31",
+        "test_max_drawdown_pct": -14.23403806600697,
+        "test_return_pct": 14.996258006101893,
+        "test_spy_return_pct": 17.599399258593017,
+        "test_start": "2020-01-02",
+        "test_year": 2020,
+        "training_cagr_pct": -0.5609339875570662,
+        "training_end": "2019-12-31",
+        "training_max_drawdown_pct": -33.065372473660595,
+        "training_start": "2015-01-02"
+      },
+      {
+        "test_end": "2021-12-31",
+        "test_max_drawdown_pct": -18.182838177210925,
+        "test_return_pct": 4.064358493670639,
+        "test_spy_return_pct": 28.1100699447147,
+        "test_start": "2021-01-04",
+        "test_year": 2021,
+        "training_cagr_pct": 2.6848840021316267,
+        "training_end": "2020-12-31",
+        "training_max_drawdown_pct": -33.065372473660574,
+        "training_start": "2016-01-04"
+      },
+      {
+        "test_end": "2022-12-30",
+        "test_max_drawdown_pct": -21.388171370589692,
+        "test_return_pct": -17.540331125232257,
+        "test_spy_return_pct": -18.4871629371666,
+        "test_start": "2022-01-03",
+        "test_year": 2022,
+        "training_cagr_pct": 3.897147986491256,
+        "training_end": "2021-12-31",
+        "training_max_drawdown_pct": -33.065372473660595,
+        "training_start": "2017-01-03"
+      },
+      {
+        "test_end": "2023-12-29",
+        "test_max_drawdown_pct": -16.60695439043749,
+        "test_return_pct": -2.880254089371459,
+        "test_spy_return_pct": 25.413434123360258,
+        "test_start": "2023-01-03",
+        "test_year": 2023,
+        "training_cagr_pct": -2.379308696257254,
+        "training_end": "2022-12-30",
+        "training_max_drawdown_pct": -33.06537247366064,
+        "training_start": "2018-01-02"
+      },
+      {
+        "test_end": "2024-12-31",
+        "test_max_drawdown_pct": -15.48466867289422,
+        "test_return_pct": 31.708547738280824,
+        "test_spy_return_pct": 25.59389135735721,
+        "test_start": "2024-01-02",
+        "test_year": 2024,
+        "training_cagr_pct": 0.7165303662490574,
+        "training_end": "2023-12-29",
+        "training_max_drawdown_pct": -30.032559470355046,
+        "training_start": "2019-01-02"
+      },
+      {
+        "test_end": "2025-12-31",
+        "test_max_drawdown_pct": -20.61831830939501,
+        "test_return_pct": 9.292688870785648,
+        "test_spy_return_pct": 16.940904463748208,
+        "test_start": "2025-01-02",
+        "test_year": 2025,
+        "training_cagr_pct": 4.751120355595351,
+        "training_end": "2024-12-31",
+        "training_max_drawdown_pct": -30.032559470355068,
+        "training_start": "2020-01-02"
+      },
+      {
+        "test_end": "2026-06-30",
+        "test_max_drawdown_pct": -12.128162505235352,
+        "test_return_pct": 47.06089604006189,
+        "test_spy_return_pct": 9.373908624374927,
+        "test_start": "2026-01-02",
+        "test_year": 2026,
+        "training_cagr_pct": 3.6805860538649426,
+        "training_end": "2025-12-31",
+        "training_max_drawdown_pct": -30.032559470355157,
+        "training_start": "2021-01-04"
+      }
+    ]
+  }
+}
