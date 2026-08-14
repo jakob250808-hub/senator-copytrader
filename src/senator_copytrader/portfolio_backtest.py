@@ -342,8 +342,13 @@ def run_portfolio_backtest(
                 if signal.ticker in positions
                 else 0.0
             )
+            # Every leg of the limit check must be valued with information the
+            # bot would actually have at the open.  Valuing the *other* holdings
+            # at today's close (the previous behaviour) let the portfolio limit
+            # react to a price that had not printed yet — a small but genuine
+            # look-ahead in an otherwise clean simulation.
             current_portfolio_value = sum(
-                position_value(ticker, current_day, at_open=(ticker == signal.ticker))
+                position_value(ticker, current_day, at_open=True)
                 for ticker in positions
             )
             skip_reason = ""

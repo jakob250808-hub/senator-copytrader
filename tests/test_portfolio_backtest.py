@@ -1,7 +1,7 @@
 import json
 import tempfile
 import unittest
-from datetime import date
+from datetime import date, timedelta
 from pathlib import Path
 
 from senator_copytrader.backtest import PricePoint, PriceSeries
@@ -349,3 +349,65 @@ class PortfolioBacktestTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class LimitCheckLookAheadTests(unittest.TestCase):
+    """The portfolio-limit check must not use a close that has not printed.
+
+    Before the fix, holdings other than the signal ticker were valued at the
+    *current day's close* while the trade itself executed at the open.  On a
+    day where an existing holding jumps intraday, that made the bot skip a buy
+    for a reason it could not have known at the time it placed the order.
+    """
+
+    def _prices(self):
+        days = [date(2026, 1, 5), date(2026, 1, 6), date(2026, 1, 7)]
+        spy = PriceSeries(
+            "SPY",
+            "ETF",
+            {day: PricePoint(100.0, 100.0, 1e9) for day in days},
+        )
+        # HELD is bought on day one at 10.0.  On day two it opens unchanged but
+        # closes 50% higher.
+        held = PriceSeries(
+            "HELD",
+            "EQUITY",
+            {
+                days[0]: PricePoint(10.0, 10.0, 1e8),
+                days[1]: PricePoint(10.0, 15.0, 1e8),
+                days[2]: PricePoint(15.0, 15.0, 1e8),
+            },
+        )
+        new = PriceSeries(
+            "NEW",
+            "EQUITY",
+            {day: PricePoint(20.0, 20.0, 1e8) for day in days},
+        )
+        return days, {"SPY": spy, "HELD": held, "NEW": new}
+
+    def test_buy_is_judged_on_open_prices(self):
+        days, prices = self._prices()
+        signals = (
+            signal("held", "HELD", days[0] - timedelta(days=1)),
+            signal("new", "NEW", days[0]),
+        )
+        summary, rows = run_portfolio_backtest(
+            signals,
+            prices,
+            days[0],
+            days[-1],
+            starting_cash_usd=100_000.0,
+            buy_notional_usd=1_000.0,
+            max_position_usd=1_000.0,
+            max_portfolio_usd=2_000.0,
+            max_daily_notional_usd=10_000.0,
+            cost_per_side=0.0,
+        )
+        by_id = {row["event_id"]: row for row in rows}
+        self.assertEqual(by_id["held"]["status"], "executed")
+        # HELD is worth 1,000 USD at the open of day two, so the 2,000 USD
+        # portfolio limit still has room for the 1,000 USD NEW buy.  Valuing
+        # HELD at day two's close (1,500 USD) would wrongly skip it.
+        self.assertEqual(by_id["new"]["status"], "executed")
+        self.assertEqual(by_id["new"]["reason"], "position_opened_or_increased")
+        self.assertEqual(summary["limit_skip_counts"]["portfolio_limit"], 0)

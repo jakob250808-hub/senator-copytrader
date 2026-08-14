@@ -304,3 +304,63 @@ Der Prototyp ist deshalb ein Test der Strategie-, Kosten- und Risikomechanik,
 noch kein belastbarer Alpha-Nachweis. Vor einer Portfolio-Kombination oder
 Hebelprüfung werden vollständige Delisting-Kurse und Point-in-Time-Fundamentals
 benötigt.
+
+## Strategie-Research mit Datenvertrag (`research_backtest`)
+
+Der zweite Research-Durchgang hat den bestehenden Backtester methodisch
+auditiert und die gefundenen Fehler in einer neuen, signalunabhängigen Engine
+korrigiert. Das vollständige Audit steht in `backtest_audit_report.md`, die
+Ergebnisse in `strategy_research_report.md`.
+
+**Der wichtigste Befund ist methodisch:** die bisher berichtete Momentum-CAGR
+von +6,41 % besteht fast vollständig aus dem Teiljahr 2026. Ohne dieses halbe
+Jahr bleiben +2,85 % CAGR über elf Jahre, während SPY +297,9 % erzielte.
+
+```bash
+# einmalig: historische Indexmitgliedschaft besorgen (siehe Abschnitt oben)
+PYTHONPATH=src python3 scripts/run_strategy_research.py
+```
+
+Der Lauf schreibt vier Artefakte:
+
+| Datei | Inhalt |
+|---|---|
+| `strategy_research_report.md` | lesbarer Bericht inklusive Gate-Auswertung |
+| `strategy_research_summary.json` | alle Kennzahlen, Gate-Checks, Datenvertrag |
+| `strategy_research_equity.csv` | tägliche Equity-Kurve je Baustein |
+| `strategy_research_rebalances.csv` | jede Rebalance-Entscheidung |
+| `strategy_research_rolling_12m.csv` | alle rollierenden 12-Monats-Fenster |
+
+Getestete, voneinander unabhängige Bausteine:
+
+- **B0** 12-1-Momentum – Referenzlauf gegen den alten Bericht
+- **B1** Residualmomentum (Marktkomponente herausgerechnet, auf
+  idiosynkratische Volatilität normiert)
+- **B2** B1 mit 12-%-Volatilitätsziel als Risiko-Overlay
+- **B3** Kurzfristige Mean-Reversion über eine Woche in den 100 liquidesten
+  Titeln
+
+**Ergebnis: kein Baustein besteht das Research-Gate.** Ohne das Teiljahr 2026
+liegen die CAGRs zwischen +2,2 % und +4,2 % bei Drawdowns von 28 bis 34 %. Bei
+gleicher Volatilität erzielt schlichtes SPY im selben Fenster +251 bis +300 %.
+Es wurde deshalb weder gehebelt, noch kombiniert, noch etwas in die
+Paper-Konfiguration übernommen.
+
+### Datenvertrag statt stiller Annahmen
+
+`DataContract` hält fest, was ein Lauf tatsächlich hatte. Fehlt eine harte
+Anforderung — survivorshipfreie Kurse, Delisting-Renditen, dauerhafte
+Security-IDs, vollständige Kapitalmaßnahmen — dann meldet der Lauf sich selbst
+als **Prototyp** und kann das Gate formal nicht bestehen. Das ist Absicht: es
+verhindert, dass ein hübsches Ergebnis aus unzureichenden Daten später wie ein
+Freigabesignal aussieht.
+
+Ebenso verweigert `make_momentum_with_quality()` den Dienst, wenn keine
+Fundamentaldaten mit echtem Veröffentlichungsdatum vorliegen, statt auf heutige
+Kennzahlen zurückzufallen.
+
+### Look-ahead-Schutz in der Schnittstelle
+
+Ein Signal bekommt nur einen `SignalContext`. Dessen Methoden werfen eine
+`ValueError`, sobald ein Index nach dem Signaltag abgefragt wird. Der Schutz
+liegt damit im Interface, nicht in der Disziplin des Autors, und ist getestet.

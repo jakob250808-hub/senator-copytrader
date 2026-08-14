@@ -7,7 +7,7 @@ aktualisieren. Nicht gleichzeitig an derselben Datei arbeiten.
 
 ## Status (maschinenlesbar für die Automatisierung)
 
-**Nächster Bearbeiter:** Claude
+**Nächster Bearbeiter:** Mensch (Datenentscheidung nötig, siehe letzter Abschnitt)
 
 Regeln für beide Loops (lokaler Codex-Loop und Claudes geplante
 Cloud-Aufgabe):
@@ -1099,3 +1099,157 @@ Paper-Limits ändern. Danach sollte der Mensch zwischen zwei Datenwegen wählen:
 delisteten Titeln oder (2) vorerst nur fünf kostenlose Jahre als kleiner
 Qualitäts-Prototyp. Erst mit diesen Daten den 30-%-Qualitätsanteil aktivieren;
 anschließend Earnings-Reaction als separaten Baustein prüfen.
+
+## 2026-08-14 – Claude: Methodik-Audit + unabhängige Strategiebausteine
+
+**Bearbeiter:** Claude (Review, Korrekturen, neue Research-Engine)
+**Status:** abgeschlossen; Research-Gate von keinem Baustein bestanden
+
+### Bearbeitete Dateien
+
+- `src/senator_copytrader/research_backtest.py` (neu: signalunabhängige Engine,
+  Datenvertrag, Security-IDs, Delisting-Behandlung, vollständige Kennzahlen)
+- `src/senator_copytrader/strategies.py` (neu: die einzelnen Signale)
+- `src/senator_copytrader/portfolio_backtest.py` (Look-ahead-Korrektur)
+- `scripts/run_strategy_research.py` (neu: reproduzierbarer Gesamtlauf)
+- `tests/test_research_backtest.py` (neu, 26 Tests)
+- `tests/test_portfolio_backtest.py` (Regressionstest für den Look-ahead)
+- `backtest_audit_report.md` (neu: Audit mit Codestellen und Zahlen)
+- `strategy_research_report.md`, `strategy_research_summary.json`,
+  `strategy_research_equity.csv`, `strategy_research_rebalances.csv` (neu)
+- `README.md`, `HANDOFF.md`
+
+**Nicht angefasst:** `config.example.json`, `config.paper-demo.json`,
+No-Margin-Schutz, doppelte Ausführungsfreigabe, `factor_backtest.py` (bleibt
+lauffähig, damit der bereits veröffentlichte Bericht reproduzierbar ist).
+
+### Der entscheidende Befund
+
+`factor_backtest_report.md` nennt +6,41 % CAGR für 2015 bis 30.06.2026.
+Derselbe Code, nur bis 31.12.2025 gerechnet:
+
+| Fenster | Gesamtrendite | CAGR |
+|---|---:|---:|
+| 2015 – 30.06.2026 | +104,12 % | +6,41 % |
+| **2015 – 31.12.2025** | **+36,23 %** | **+2,85 %** |
+| SPY 2015 – 31.12.2025 | +297,90 % | — |
+
+Das Halbjahr 2026 allein trägt +49,8 % bei und stammt aus sechs korrelierten
+Speicher-/Halbleiternamen. Die Kursdaten sind intern konsistent; es ist kein
+Rechenfehler, sondern eine sehr konzentrierte Sektorwette. Damit ist das
+Gate-Kriterium „keine Abhängigkeit von einem Jahr oder wenigen Aktien" verletzt.
+
+### Audit-Befunde (Details in `backtest_audit_report.md`)
+
+| Nr. | Befund | Schwere | Status |
+|---|---|---|---|
+| A1 | CAGR hängt am Teiljahr 2026 | kritisch | korrigiert (Doppelausweis, Gate ohne 2026) |
+| A2 | 141 von 768 Tickern ohne Kurse; nur 12 Reihen enden früh | kritisch | quantifiziert, braucht Datenkauf |
+| A3 | Position ohne Kursreihe blieb ewig zum letzten Kurs bewertet | kritisch | korrigiert + 2 Tests |
+| A4 | Ticker als Identität; 52 recycelte Ticker, 19 beweisbar falsche Emittenten | hoch | `SecurityId` + Detektor |
+| A5 | Look-ahead in der Portfoliolimit-Prüfung von Strategie G | mittel | korrigiert + Regressionstest |
+| A6 | Kennzahlenset unvollständig, Benchmark nicht risikogleich | mittel | ergänzt (vol-gleicher SPY) |
+| A7 | Indexaustritt-Pfad nie ausgelöst, also ungetestet | mittel | Test ergänzt |
+| A8 | Benchmarkkosten einseitig | niedrig | dokumentiert |
+| A9 | Drawdown startete nach dem ersten Rebalance | niedrig | korrigiert |
+| A10 | 2008 liegt außerhalb des Kurscaches (ab 28.11.2013) | niedrig | dokumentiert |
+
+Korrekt vorgefunden und deshalb unverändert: Signal am Vortagsschluss mit
+Ausführung am Folge-Open, Split-/Dividendenadjustierung, Dollarvolumen aus
+unadjustiertem Kurs mal Volumen, Cash-Deckung vor jedem Kauf,
+Walk-forward-Reset.
+
+### Getestete Bausteine und Ergebnis
+
+Fenster 02.01.2015 – 31.12.2025 (ohne das Teiljahr 2026), 0,10 % Kosten je
+Seite, long-only, kein Hebel:
+
+| Baustein | CAGR | Max DD | Vol | Sharpe | Umsatz p.a. | Gate |
+|---|---:|---:|---:|---:|---:|---|
+| B0 12-1-Momentum (Referenz) | +2,98 % | −33,07 % | 19,7 % | 0,25 | 8,2× | nicht bestanden |
+| B1 Residualmomentum | +4,16 % | −27,93 % | 15,9 % | 0,33 | 9,0× | nicht bestanden |
+| B2 B1 + 12-%-Vol-Ziel | +2,22 % | −27,86 % | 12,0 % | 0,24 | 7,5× | nicht bestanden |
+| B3 Mean-Reversion 1 Woche | +2,68 % | −34,15 % | 16,8 % | 0,24 | **68,0×** | nicht bestanden |
+
+Volatilitätsgleicher SPY im selben Fenster: +251 bis +300 %. Die Bausteine
+kommen auf +27 bis +57 %. Kostenstress bei 0,50 % je Seite: B0 −0,34 %,
+B1 +0,47 %, B2 −0,83 %, B3 **−21,60 %**.
+
+Positiv festzuhalten: Residualmomentum verbessert gegenüber rohem Momentum
+Drawdown (−27,9 statt −33,1 %), Volatilität (15,9 statt 19,7 %) und Sharpe
+(0,33 statt 0,25) — und ist als einziger Baustein nicht von einem einzelnen
+Jahr abhängig. Das reicht aber nicht annähernd für das Gate.
+
+Die Bausteine korrelieren untereinander mit 0,58 bis 0,96 (Tagesrenditen).
+Eine Kombination wurde **bewusst nicht gerechnet**: kein Baustein hat einzeln
+bestanden, und schwache Strategien zu mischen versteckt Fehler, statt sie zu
+beheben.
+
+### Fehlende Daten (unverändert der Engpass)
+
+1. Point-in-Time-Kurse **inklusive delisteter Titel** samt finaler
+   Delisting-Auszahlung. Ohne das ist jede Zahl nach oben verzerrt.
+2. Dauerhafte Security-IDs (CUSIP/PERMNO/FIGI) statt Ticker.
+3. Fundamentaldaten mit tatsächlichem Veröffentlichungsdatum (Qualitätsfaktor;
+   der Adapter existiert und verweigert ohne die Daten den Dienst).
+4. Quartalszahlen mit Announcement-Zeitpunkt für Earnings-Surprise/PEAD.
+   **In dieser Session geprüft:** Alpha Vantage `EARNINGS` liefert je Symbol
+   `reportedDate`, `estimatedEPS`, `surprise` und `reportTime` zurück bis 1996.
+   Ein vollständiger Lauf braucht rund 630 Symbolabrufe; das gehört in einen
+   Batch-Download außerhalb einer interaktiven Session und muss vorher gegen
+   die Rate-Limits und Nutzungsbedingungen des Anbieters geprüft werden.
+5. Historische Analystenschätzungen/Revisionen. **Geprüft:** der
+   FMP-`historical-grades`-Endpunkt liefert Monatsstände, das nötige
+   Historienfenster ist im aktuellen Tarif gesperrt.
+6. Sektor-/Branchenzuordnung zum damaligen Zeitpunkt (deshalb ist im Bericht
+   keine Sektorkonzentration ausgewiesen, statt eine mit heutigen Sektoren zu
+   erfinden).
+7. Senatorenmeldungen mit Veröffentlichungsdatum über **mehrere Jahre**.
+   **Geprüft:** der FMP-Senats-Endpunkt ist im aktuellen Tarif gesperrt; ein
+   Kauf wurde vereinbarungsgemäß nicht getätigt. Im Repository liegen gut ein
+   Jahr Kadoa-Daten, die tagesaktuelle Datei enthält nur die letzten 5.000
+   Zeilen (rund zehn Wochen).
+
+Die verbesserten Senatorensignale (Meldungsverzögerung, Kauf gegen Verkauf,
+Depoteigentümer, Ausschusszugehörigkeit, Clusterkäufe, Wiederholungskäufe,
+Zuverlässigkeit je Person) wurden bewertet, aber **nicht implementiert**:
+mit einem Jahr Historie und 57 ausgeführten Käufen würde jede dieser
+Unterteilungen Rauschen produzieren, das wie Alpha aussieht.
+
+### Tests
+
+```text
+PYTHONPATH=src python3 -m unittest discover -s tests
+Ran 90 tests – OK   (63 vorher, 27 neu)
+
+PYTHONPATH=src python3 scripts/run_strategy_research.py
+4 Bausteine × (Hauptlauf + Lauf ohne 2026 + 4 Kostenstufen + 7 Walk-forward-Fenster) – OK
+```
+
+Neu abgesichert: Look-ahead-Sperre im `SignalContext`, Kauf am Folge-Open,
+Delisting-Liquidation mit Abschlag, Größe der Verzerrung ohne Delisting-Schutz,
+Indexaustritt außerhalb des Rebalance, Inklusiv-Semantik von `end_date`,
+Kostenmonotonie und Kostenabgleich gegen den Umsatz, Positionsobergrenze,
+Wert = Cash + Positionen, vol-gleicher Benchmark ohne Hebel, schlechtestes
+Jahr/Monat, Recycling-Detektor, Prototyp-Flag des Datenvertrags, Verweigerung
+des Qualitätssignals ohne PIT-Daten, sowie der Look-ahead in der
+Limitprüfung von Strategie G.
+
+### Nächste Aufgabe – Entscheidung liegt beim Menschen
+
+Weitere Strategiesuche auf dieser Datenlage ist verschwendete Zeit. Zu
+entscheiden ist der Datenweg:
+
+1. **Kursanbieter mit delisteten Titeln und Delisting-Renditen** (z. B. CRSP,
+   Norgate, Sharadar) plus Point-in-Time-Fundamentals (z. B. SimFin,
+   Sharadar SF1 mit `datekey`). Erst danach sind Qualität, PEAD und ein
+   belastbares Gate überhaupt messbar.
+2. **Oder** bewusst beim kostenlosen Prototyp bleiben und akzeptieren, dass
+   kein Ergebnis über „Mechanik funktioniert" hinausgeht.
+
+Kein Abonnement und kein Kauf ohne ausdrückliche menschliche Freigabe.
+
+Für das Paperkonto: Strategie G läuft unverändert weiter (2.000 / 6.000 /
+60.000 / 16.000 USD, Exits deaktiviert). Sie ist die einzige Strategie, die
+tatsächlich beobachtet werden sollte — allerdings ausschließlich als
+eingefrorene Watchlist im **zukünftigen** Fenster, nicht als belegter Vorteil.
